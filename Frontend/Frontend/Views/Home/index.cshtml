@@ -51,6 +51,18 @@
 
 </head>
 <body class="template-collection belle" id="body">
+    <!--* Page Loader Start -->
+    <div class="page-loader">
+        <div class="loader" style="background-image: url('arenales/logo.jpg')">
+            <div class="face">
+                <div class="circle first-circle"></div>
+            </div>
+            <div class="face">
+                <div class="circle second-circle"></div>
+            </div>
+        </div>
+    </div>
+    <!--* Page Loader End -->
     <div class="pageWrapper">
         <!--Search Form Drawer-->
         <div class="search">
@@ -365,6 +377,8 @@
                         <a><i id="cart" class="fa fa-shopping-cart"></i></a>
                     </li>
                 </ul>
+                
+
                 <!--* Cart Button End-->
                 <!--* Search Button Start -->
                 <ul class="right-nav">
@@ -375,6 +389,53 @@
                     </li>
                 </ul>
                 <!--* Search Button End -->
+                <!--* Shopping Cart Start-->
+               @*  <ul class="shopping-cart-wrapper">
+                    <li class="nav-item">
+                        <div class="shopping-cart">
+                            <div class="left-badge">
+                                <a href="shop-cart.html"><span class="featured">CHECKOUT</span></a>
+                            </div>
+                            <ul class="shopping-cart-items mt-10">
+                                <li class="clearfix shopping-cart-item-1">
+                                    <img src="multi/images/shop/shop-cart-5.webp" width="55" height="75" alt="cart-item-1">
+                                    <span class="item-name">Women's Clothing (SM)</span><i class="fas fa-trash fa-2x right trash-1"></i>
+                                    <span class="item-price">$85.99</span>
+                                    <span class="item-quantity">2 Left</span>
+                                </li>
+                                <li class="cart-close">
+                                    <div>
+                                        <i class="fas fa-times-circle fa-2x right close-cart"></i>
+                                    </div>
+                                </li>
+                                <li class="clearfix shopping-cart-item-2">
+                                    <img src="multi/images/shop/shop-cart-6.webp" width="55" height="75" alt="cart-item-2">
+                                    <span class="item-name">Women's Clothing (2XL)</span> <i class="fas fa-trash fa-2x right trash-2"></i>
+                                    <span class="item-price">$55.99</span>
+                                    <span class="item-quantity">15 Left</span>
+                                </li>
+                                <li class="clearfix shopping-cart-item-3">
+                                    <img src="multi/images/shop/shop-cart-4.webp" width="55" height="75" alt="cart-item-3">
+                                    <span class="item-name">Men's White Suit (MD)</span><i class="fas fa-trash fa-2x right trash-3"></i>
+                                    <span class="item-price">$119.99</span>
+                                    <span class="item-quantity">1 Left</span>
+                                </li>
+                            </ul>
+                            <i class="fas fa-trash trash-all"> 3+</i>
+                            <div class="shopping-cart-footer">
+                                <div class="shopping-cart-total">
+                                    <span class="lighter-text">Total:</span>
+                                    <span>$261.97</span>
+                                </div>
+                            </div>
+                            <a href="shop-cart.html" class="material-btn primary-outline-btn rounded-btn">
+                                <i class="fas fa-arrow-alt-circle-right"></i>
+                                VIEW CART
+                            </a>
+                        </div>
+                    </li>
+                </ul> *@
+
                 <!--* Shopping Cart Start-->
                 <ul class="shopping-cart-wrapper">
                     <li class="nav-item">
@@ -422,6 +483,10 @@
                     </li>
                 </ul>
                 <!--* Shopping Cart End-->
+
+
+
+                <!--* Shopping Cart End-->
                 <!--* Search Wrapper Start -->
                 <div id="search">
                     <i class="fas fa-times-circle close"></i>
@@ -437,7 +502,7 @@
         <!--* Header End -->
         <!--* Home Section Start -->
         <section class="jarallax home-section bg-scroll bg-dark-alfa-10 full-height" id="home"
-                 style="background-image: url('multi/images/placeholder/video-screen-placeholder.png');">
+                @*  style="background-image: url('multi/images/placeholder/video-screen-placeholder.png'); *@">
             <!--* Video BG Init Start -->
             <div class="player"
                  data-property="{videoURL:'https://youtu.be/QIs695Irf6Y',containment:'#home',autoPlay:true, showControls:false, showYTLogo: false, mute:true, startAt:0, opacity:1}">
@@ -450,8 +515,8 @@
                         <div class="row justify-content-center">
                             <div class="col-lg-12">
                                 <div class="text-center header-content mx-auto">
-                                @*     <h1 class="hs-line-8 no-transp font-alt flicker mb-30 mb-xs-20">
-                                        Perfect <strong><span class="first">text rotator</span></strong> plugin
+                                     <h1 class="hs-line-8 no-transp font-alt flicker mb-30 mb-xs-20">
+                                        @* Perfect  *@<strong><span class="first">Arenales@* text rotator *@</span></strong> @* plugin *@
                                     </h1> 
                                     <h2 class="hs-line-7 font-pottaone mb-30 mb-xs-20">
                                         <span class="rotate">
@@ -460,15 +525,15 @@
                                             Ready to work for you
                                         </span>
                                     </h2>
-                                    <a href="#about" class="material-btn info-anim-grad-btn mb-xs-20">
+                                   @*  <a href="#about" class="material-btn info-anim-grad-btn mb-xs-20">
                                         <i class="fas fa-plus"></i>SEE MORE
                                     </a>
                                     <span class="hidden-xs">&nbsp;</span>
                                     <a href="videos/video.mp4"
                                        class="material-btn info-anim-grad-btn d-none d-md-inline-block lightbox mfp-iframe mb-xs-20">
                                         <i class="fas fa-play"></i>PLAY INTRO
-                                    </a>
-                                    *@
+                                    </a> *@
+                                    
                                 </div>
                             </div>
                         </div>
@@ -504,7 +569,7 @@
                         <div class="sidebar_tags">
                             <!--Categories-->
                             <div class="sidebar_widget categories filter-widget">
-                                <div class="widget-title"><h2>Categories</h2></div>
+                                <div class="widget-title"><h2>Categorías</h2></div>
                                 <div class="widget-content">
                                     <ul class="sidebar_categories">
                                         <li class="level1 sub-level">
@@ -2234,8 +2299,8 @@
         </div>
         <!--End Quick View popup-->
         <!-- Including Jquery -->
-        <script src="belle/js/vendor/jquery-3.3.1.min.js"></script>
-        <script src="belle/js/vendor/jquery.cookie.js"></script>
+         <script src="belle/js/vendor/jquery-3.3.1.min.js"></script>
+    <script src="belle/js/vendor/jquery.cookie.js"></script>
         <script src="belle/js/vendor/modernizr-3.6.0.min.js"></script>
         <script src="belle/js/vendor/wow.min.js"></script>
         <!-- Including Javascript -->
@@ -2245,7 +2310,34 @@
         <script src="belle/js/lazysizes.js"></script>
         <script src="belle/js/main.js"></script>
     </div>
-
+    <!--! social-links-wrapper Start -->
+    <div class="social-links-wrapper">
+        <div class="social-links-icon">
+            <i class="fa fa-link"></i>
+        </div>
+        <a href="https://instagram.com" rel="noreferrer" aria-label="instagram">
+            <div class="hidden-children sc-1">
+                <i class="fab fa-instagram"></i>
+            </div>
+        </a>
+        <a href="https://twitter.com" rel="noreferrer" aria-label="twitter">
+            <div class="hidden-children sc-2">
+                <i class="fab fa-twitter"></i>
+            </div>
+        </a>
+       
+        <a href="https://www.linkedin.com" rel="noreferrer" aria-label="linkedin">
+            <div class="hidden-children sc-3">
+                <i class="fab fa-linkedin"></i>
+            </div>
+        </a>
+        <a href="https://www.facebook.com/" rel="noreferrer" aria-label="facebook">
+            <div class="hidden-children sc-4">
+                <i class="fab fa-facebook"></i>
+            </div>
+        </a>
+    </div>
+    <!--! social-links-wrapper End -->
 
     <!--* Page Wrap End -->
     <!--* JavaScript Links Start -->
@@ -2267,7 +2359,7 @@
     <script src="multi/js/lottie.min.js"></script>
     <script src="multi/js/jquery.mb.YTPlayer.min.js"> </script>
     <script src="multi/js/jquery.simple-text-rotator.min.js"></script>
-
+    
 </body>
 
 

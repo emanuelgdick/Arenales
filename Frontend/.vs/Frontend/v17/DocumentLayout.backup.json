@@ -1,0 +1,66 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Arenales\\Frontend\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{29454BF7-8636-49B2-8ABD-7D095345526E}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29454BF7-8636-49B2-8ABD-7D095345526E}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{29454BF7-8636-49B2-8ABD-7D095345526E}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\frontend\\views\\home\\mp-index-15.html||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{29454BF7-8636-49B2-8ABD-7D095345526E}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\home\\mp-index-15.html||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "index.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Frontend\\Views\\Home\\index.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Home\\index.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Frontend\\Views\\Home\\index.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Home\\index.cshtml",
+              "ViewState": "AgIAAAgJAAAAAAAAAAAowDYJAAAyAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-13T12:12:06.423Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "mp-index-15.html",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Frontend\\Views\\Home\\mp-index-15.html",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Home\\mp-index-15.html",
+              "ToolTip": "C:\\Arenales\\Frontend\\Frontend\\Views\\Home\\mp-index-15.html",
+              "RelativeToolTip": "Frontend\\Views\\Home\\mp-index-15.html",
+              "ViewState": "AgIAACkIAAAAAAAAAAAAADEIAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001512|",
+              "WhenOpened": "2025-08-13T12:17:51.617Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
