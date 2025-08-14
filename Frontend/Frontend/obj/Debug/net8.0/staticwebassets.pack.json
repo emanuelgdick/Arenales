@@ -2,7 +2,315 @@
   "Files": [
     {
       "Id": "C:\\Arenales\\Frontend\\Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Frontend.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Frontend.v9pnla25ig.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Frontend.bundle.scp.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\css\\libs.bundle.css",
+      "PackagePath": "staticwebassets\\alpine\\css\\libs.bundle.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\css\\libs.bundle.css.map",
+      "PackagePath": "staticwebassets\\alpine\\css\\libs.bundle.css.map"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\css\\theme.bundle.css",
+      "PackagePath": "staticwebassets\\alpine\\css\\theme.bundle.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\css\\theme.bundle.css.map",
+      "PackagePath": "staticwebassets\\alpine\\css\\theme.bundle.css.map"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\android-chrome-192x192.png",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\android-chrome-192x192.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\android-chrome-256x256.png",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\android-chrome-256x256.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\apple-touch-icon.png",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\apple-touch-icon.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\browserconfig.xml",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\browserconfig.xml"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\favicon-16x16.png",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\favicon-16x16.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\favicon-32x32.png",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\favicon-32x32.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\favicon.ico",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\favicon.ico"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\favicon\\mstile-150x150.png",
+      "PackagePath": "staticwebassets\\alpine\\favicon\\mstile-150x150.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\fonts\\remixicon.woff",
+      "PackagePath": "staticwebassets\\alpine\\fonts\\remixicon.woff"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\banners\\banner-1.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\banners\\banner-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\banners\\banner-2.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\banners\\banner-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\banners\\banner-3.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\banners\\banner-3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\banners\\banner-4.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\banners\\banner-4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-1.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-2.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-3.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-4.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-5.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-6.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-6.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-7.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-7.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-8.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-8.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\instagram\\instagram-9.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\instagram\\instagram-9.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-1.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-1.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-2.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-2.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-3.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-3.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-4.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-4.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-5.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-5.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-6.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-6.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-7.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-7.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-8.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-8.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\logos\\logo-9.svg",
+      "PackagePath": "staticwebassets\\alpine\\images\\logos\\logo-9.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-1.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-10.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-10.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-11.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-11.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-12.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-12.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-13.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-13.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-14.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-14.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-15.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-15.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-16.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-16.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-1b.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-1b.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-2.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-3.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-4.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-5.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-5b.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-5b.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-5c.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-5c.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-6.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-6.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-7.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-7.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\products\\product-8.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\products\\product-8.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\slideshows\\slideshow-1.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\slideshows\\slideshow-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\slideshows\\slideshow-2.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\slideshows\\slideshow-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\slideshows\\slideshow-3.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\slideshows\\slideshow-3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\images\\slideshows\\slideshow-7.jpg",
+      "PackagePath": "staticwebassets\\alpine\\images\\slideshows\\slideshow-7.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\js\\theme.bundle.js",
+      "PackagePath": "staticwebassets\\alpine\\js\\theme.bundle.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\js\\vendor.bundle.js",
+      "PackagePath": "staticwebassets\\alpine\\js\\vendor.bundle.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\alipay.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\alipay.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\american-express.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\american-express.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\apple-pay.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\apple-pay.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\bitcoin.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\bitcoin.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\diners-club.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\diners-club.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\ethereum.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\ethereum.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\girocard.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\girocard.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\giropay.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\giropay.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\google-pay.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\google-pay.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\ideal.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\ideal.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\klarna.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\klarna.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\maestro.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\maestro.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\mastercard.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\mastercard.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\paypal.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\paypal.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\przelewy24.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\przelewy24.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\ripple.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\ripple.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\visa.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\visa.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\alpine\\svgs\\vpay.svg",
+      "PackagePath": "staticwebassets\\alpine\\svgs\\vpay.svg"
     },
     {
       "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\arenales\\logo.jpg",
@@ -2047,6 +2355,1202 @@
     {
       "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\belle\\js\\vendor\\wow.min.js",
       "PackagePath": "staticwebassets\\belle\\js\\vendor\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\css\\custom-responsive.css",
+      "PackagePath": "staticwebassets\\fables\\custom\\css\\custom-responsive.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\css\\custom.css",
+      "PackagePath": "staticwebassets\\fables\\custom\\css\\custom.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\css\\fables-icons.css",
+      "PackagePath": "staticwebassets\\fables\\custom\\css\\fables-icons.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\demo\\demo1.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\demo\\demo1.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\demo\\demo2.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\demo\\demo2.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\demo\\demo3.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\demo\\demo3.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\demo\\demo4.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\demo\\demo4.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\demo\\index1.gif",
+      "PackagePath": "staticwebassets\\fables\\custom\\demo\\index1.gif"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\fonts\\fables.eot",
+      "PackagePath": "staticwebassets\\fables\\custom\\fonts\\fables.eot"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\fonts\\fables.svg",
+      "PackagePath": "staticwebassets\\fables\\custom\\fonts\\fables.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\fonts\\fables.ttf",
+      "PackagePath": "staticwebassets\\fables\\custom\\fonts\\fables.ttf"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\fonts\\fables.woff",
+      "PackagePath": "staticwebassets\\fables\\custom\\fonts\\fables.woff"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\528056-1M05og1492827243.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\528056-1M05og1492827243.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\567242-1A4JhC1509710184.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\567242-1A4JhC1509710184.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\Article-Writing.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\Article-Writing.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\Article-Writing2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\Article-Writing2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\France.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\France.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\Group 706.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\Group 706.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\IMG_8573-1078.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\IMG_8573-1078.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\Path 152.svg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\Path 152.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\avatar.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\avatar.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\big-overlay.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\big-overlay.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-cat1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-cat1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-cat2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-cat2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-cat3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-cat3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-cat4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-cat4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-cat5.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-cat5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-cat6.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-cat6.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-details.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-details.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-detials.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-detials.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-slider1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-slider1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-slider2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-slider2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-slider3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-slider3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-teaser-img1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-teaser-img1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-teaser-img2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-teaser-img2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-xl-img1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-xl-img1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\blog-xl.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\blog-xl.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\brand-4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\brand-4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\business-support.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\business-support.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\bussiness-experience.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\bussiness-experience.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\bussiness.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\bussiness.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg5.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg6.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg6.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg7.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg7.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cat-larg8.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cat-larg8.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\cc_careers_highlighting-lines-16x9.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\cc_careers_highlighting-lines-16x9.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\choose-img.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\choose-img.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\choose-us-background.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\choose-us-background.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\choose-us-index.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\choose-us-index.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\company1-img1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\company1-img1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\company1-img2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\company1-img2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\conference-room-768441_1920.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\conference-room-768441_1920.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\contact-caption-back.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\contact-caption-back.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\counter-background.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\counter-background.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\england.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\england.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\fables-logo.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\fables-logo.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\footer-back.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\footer-back.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery-timeline1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery-timeline1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery-timeline2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery-timeline2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery-timeline3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery-timeline3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery-timeline4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery-timeline4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery-timeline5.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery-timeline5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery2-timeline.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery2-timeline.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\gallery4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\gallery4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\header.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\header.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-center.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-center.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-img.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-img.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-img1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-img1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-img2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-img2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-img3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-img3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-slider.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-slider.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-video.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-video.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\history-video2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\history-video2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\hostory-col-8.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\hostory-col-8.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\hp_innovacion2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\hp_innovacion2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\image.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\image.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\img.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\img.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\img2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\img2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\img3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\img3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-background.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-background.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-overlay.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-overlay.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-product1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-product1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-product2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-product2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-products-overlay.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-products-overlay.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-services-bg.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-services-bg.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-testimonial.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-testimonial.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-testimonial1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-testimonial1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-testimonial2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-testimonial2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-testimonial3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-testimonial3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-testimonial4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-testimonial4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-testimonial5.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-testimonial5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index-video.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index-video.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index1-back.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index1-back.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index2-overlay.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index2-overlay.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\index3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\index3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\isotope-filtering.zip",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\isotope-filtering.zip"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\lamp.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\lamp.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\laptop-1209008.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\laptop-1209008.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\logo-dark.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\logo-dark.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\magazine-2559842 (1).jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\magazine-2559842 (1).jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\magazine-2559842.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\magazine-2559842.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\man-image.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\man-image.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\map-marker.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\map-marker.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry-sm-img.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry-sm-img.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry5.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry6.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry6.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry7.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry7.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry8.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry8.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\masonry9.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\masonry9.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\mission-img.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\mission-img.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\mobile-apps.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\mobile-apps.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\office-1516329.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\office-1516329.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\overlay-contactus.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\overlay-contactus.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\overlay1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\overlay1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\pages-header-background.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\pages-header-background.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\paper-3139127_1280.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\paper-3139127_1280.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\partner1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\partner1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\partner2-1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\partner2-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\partner2-2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\partner2-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\partner2-2.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\partner2-2.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\partner2-3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\partner2-3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\partner2-4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\partner2-4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\paul-bence-395888.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\paul-bence-395888.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\pexels-photo-288477.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\pexels-photo-288477.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\pic02.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\pic02.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\play-button.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\play-button.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\post-1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\post-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\post-2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\post-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product5.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product6.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product6.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product7.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product7.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product8.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product8.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\product9.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\product9.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\responsive-mega-menu.zip",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\responsive-mega-menu.zip"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\shortcut.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\shortcut.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\signin-logo.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\signin-logo.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\single-blog.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\single-blog.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\single-gallery.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\single-gallery.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\single-product.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\single-product.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\single-video.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\single-video.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\sm.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\sm.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\smaller-product-img.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\smaller-product-img.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\sml1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\sml1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\sml2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\sml2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\sml3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\sml3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\sml4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\sml4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\table-bg.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\table-bg.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\talk-coasts-friends.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\talk-coasts-friends.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team1-1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team1-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team1-2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team1-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team1-3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team1-3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team1-4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team1-4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team2-1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team2-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team2-2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team2-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team3-1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team3-1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team3-2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team3-2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\team3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\team3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\technology-785742.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\technology-785742.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\testimonial-background.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\testimonial-background.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\testimonial-img.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\testimonial-img.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\testimonial-index-bg.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\testimonial-index-bg.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\timeline1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\timeline1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\timeline2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\timeline2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\timeline3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\timeline3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\timeline4.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\timeline4.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\timeline5.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\timeline5.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\timeline6.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\timeline6.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\timeline7.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\timeline7.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\together.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\together.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\top-header-background.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\top-header-background.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\v.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\v.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\video-play.png",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\video-play.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\video1.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\video1.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\video2.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\video2.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\video3.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\video3.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\vision-img.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\vision-img.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\images\\vision-overlay-background.jpg",
+      "PackagePath": "staticwebassets\\fables\\custom\\images\\vision-overlay-background.jpg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\js\\custom.js",
+      "PackagePath": "staticwebassets\\fables\\custom\\js\\custom.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\custom\\js\\jquery-data-to.js",
+      "PackagePath": "staticwebassets\\fables\\custom\\js\\jquery-data-to.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\README.md",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\README.md"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\bubble.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\bubble.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\cornerbox.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\cornerbox.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\cornerbox_nested.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\cornerbox_nested.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\cornermorph.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\cornermorph.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\demo.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\demo.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_bubble.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_bubble.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_cornerbox.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_cornerbox.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_cornerbox_nested.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_cornerbox_nested.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_cornermorph.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_cornermorph.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_elastic.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_elastic.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_sideslide.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_sideslide.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_topexpand.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_topexpand.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_topside.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_topside.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_wave.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\menu_wave.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\css\\normalize.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\css\\normalize.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\elastic.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\elastic.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.eot",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.eot"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.svg",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.ttf",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.ttf"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.woff",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\codropsicons.woff"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\license.txt",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\codropsicons\\license.txt"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\css\\font-awesome.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\css\\font-awesome.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.eot",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.eot"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.svg",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.ttf",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.ttf"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.woff",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\fonts\\font-awesome-4.2.0\\fonts\\fontawesome-webfont.woff"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\img\\related\\PerspectiveNavigation.png",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\img\\related\\PerspectiveNavigation.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\img\\related\\sidebartransitions.png",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\img\\related\\sidebartransitions.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\img\\user1.png",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\img\\user1.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\index.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\index.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\js\\classie.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\js\\classie.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\js\\main.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\js\\main.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\js\\main2.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\js\\main2.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\js\\main3.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\js\\main3.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\js\\main4.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\js\\main4.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\js\\snap.svg-min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\js\\snap.svg-min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\sideslide.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\sideslide.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\topexpand.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\topexpand.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\OffCanvasMenuEffects\\wave.html",
+      "PackagePath": "staticwebassets\\fables\\vendor\\OffCanvasMenuEffects\\wave.html"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\WOW-master\\dist\\wow.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\WOW-master\\dist\\wow.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\animate.css-master\\animate.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\animate.css-master\\animate.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\bootstrap\\css\\bootstrap-4-navbar.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\bootstrap\\css\\bootstrap-4-navbar.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\bootstrap\\css\\bootstrap.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\bootstrap\\css\\bootstrap.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\bootstrap\\js\\bootstrap-4-navbar.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\bootstrap\\js\\bootstrap-4-navbar.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\bootstrap\\js\\bootstrap.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\bootstrap\\js\\bootstrap.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fancybox-master\\jquery.fancybox.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fancybox-master\\jquery.fancybox.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fancybox-master\\jquery.fancybox.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fancybox-master\\jquery.fancybox.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fa-brands.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fa-brands.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fa-brands.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fa-brands.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fa-regular.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fa-regular.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fa-regular.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fa-regular.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fa-solid.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fa-solid.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fa-solid.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fa-solid.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fontawesome-all.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fontawesome-all.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fontawesome-all.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fontawesome-all.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fontawesome.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fontawesome.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\css\\fontawesome.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\css\\fontawesome.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.eot",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.eot"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.svg",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.ttf",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.ttf"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.woff",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.woff"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.woff2",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-brands-400.woff2"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.eot",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.eot"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.svg",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.ttf",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.ttf"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.woff",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.woff"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.woff2",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-regular-400.woff2"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.eot",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.eot"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.svg",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.ttf",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.ttf"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.woff",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.woff"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.woff2",
+      "PackagePath": "staticwebassets\\fables\\vendor\\fontawesome\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\imagesLoaded\\New Text Document.txt",
+      "PackagePath": "staticwebassets\\fables\\vendor\\imagesLoaded\\New Text Document.txt"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\imagesLoaded\\imagesloaded.pkgd.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\imagesLoaded\\imagesloaded.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\jQuery.countdown-master\\jquery.countdown.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\jQuery.countdown-master\\jquery.countdown.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\jquery-circle-progress\\circle-progress.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\jquery-circle-progress\\circle-progress.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\jquery-circle-progress\\circle.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\jquery-circle-progress\\circle.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\jquery\\jquery-3.3.1.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\jquery\\jquery-3.3.1.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\loadscreen\\css\\spinkit.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\loadscreen\\css\\spinkit.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\loadscreen\\js\\ju-loading-screen.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\loadscreen\\js\\ju-loading-screen.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\masonry\\masonry.pkgd.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\masonry\\masonry.pkgd.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\megamenu\\fables-mega-menu.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\megamenu\\fables-mega-menu.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\owlcarousel\\ajax-loader.gif",
+      "PackagePath": "staticwebassets\\fables\\vendor\\owlcarousel\\ajax-loader.gif"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\owlcarousel\\owl.carousel.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\owlcarousel\\owl.carousel.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\owlcarousel\\owl.carousel.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\owlcarousel\\owl.carousel.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\owlcarousel\\owl.theme.default.min.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\owlcarousel\\owl.theme.default.min.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\owlcarousel\\owl.video.play.png",
+      "PackagePath": "staticwebassets\\fables\\vendor\\owlcarousel\\owl.video.play.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\popper\\popper.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\popper\\popper.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\portfolio-filter-gallery\\jquery.isotope.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\portfolio-filter-gallery\\jquery.isotope.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\portfolio-filter-gallery\\portfolio-filter-gallery.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\portfolio-filter-gallery\\portfolio-filter-gallery.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\portfolio-filter-gallery\\portfolio-filter-gallery.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\portfolio-filter-gallery\\portfolio-filter-gallery.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\progressbar\\progressbar.min.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\progressbar\\progressbar.min.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\range-slider\\range-slider.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\range-slider\\range-slider.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\range-slider\\range-slider.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\range-slider\\range-slider.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\timeline\\jquery.timelify.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\timeline\\jquery.timelify.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\timeline\\modernizr.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\timeline\\modernizr.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\timeline\\timelify.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\timeline\\timelify.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\timeline\\timeline.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\timeline\\timeline.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\timeline\\timeline.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\timeline\\timeline.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\timeline\\timelinex.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\timeline\\timelinex.css"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\video-background\\jquery.mb.YTPlayer.js",
+      "PackagePath": "staticwebassets\\fables\\vendor\\video-background\\jquery.mb.YTPlayer.js"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\fables\\vendor\\video-background\\video-background.css",
+      "PackagePath": "staticwebassets\\fables\\vendor\\video-background\\video-background.css"
     },
     {
       "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\favicon.ico",
@@ -4379,10 +5883,6 @@
     {
       "Id": "C:\\Arenales\\Frontend\\Frontend\\wwwroot\\multi\\webfonts\\fa-solid-900.woff2",
       "PackagePath": "staticwebassets\\multi\\webfonts\\fa-solid-900.woff2"
-    },
-    {
-      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
-      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssets.props",

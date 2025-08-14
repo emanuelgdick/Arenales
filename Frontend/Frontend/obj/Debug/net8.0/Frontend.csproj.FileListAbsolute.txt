@@ -360,13 +360,9 @@ C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\staticwebassets.pack.json
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\scopedcss\Views\Shared\_Layout.cshtml.rz.scp.css
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\scopedcss\bundle\Frontend.styles.css
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\scopedcss\projectbundle\Frontend.bundle.scp.css
+C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\Frontend.csproj.CopyComplete
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\Frontend.dll
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\refint\Frontend.dll
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\Frontend.pdb
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\Frontend.genruntimeconfig.cache
 C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\ref\Frontend.dll
-C:\Arenales\Frontend\Frontend\bin\Debug\net8.0\Frontend.staticwebassets.endpoints.json
-C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
-C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\staticwebassets\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
-C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Arenales\Frontend\Frontend\obj\Debug\net8.0\Frontend.csproj.Up2Date
