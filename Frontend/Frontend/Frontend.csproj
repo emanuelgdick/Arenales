@@ -7,11 +7,15 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Content Remove="Views\Home\index.cshtml" />
+    <Content Remove="Views\AuthUser\accountsetting.cshtml" />
+    <Content Remove="Views\AuthUser\signin.cshtml" />
+    <Content Remove="Views\AuthUser\signup.cshtml" />
   </ItemGroup>
 
   <ItemGroup>
-    <None Include="Views\Home\index.cshtml" />
+    <None Include="Views\AuthUser\accountSetting.cshtml" />
+    <None Include="Views\AuthUser\signin.cshtml" />
+    <None Include="Views\AuthUser\signup.cshtml" />
     <None Include="wwwroot\alpine\css\libs.bundle.css.map" />
     <None Include="wwwroot\alpine\css\theme.bundle.css.map" />
     <None Include="wwwroot\alpine\images\logos\logo-1.svg" />

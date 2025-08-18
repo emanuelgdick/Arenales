@@ -553,19 +553,19 @@ var isChrome = !!window.chrome && (!!window.chrome.webstore || !!window.chrome.r
 var isEdgeChromium = isChrome && (navigator.userAgent.indexOf("Edg") != -1);
 var isBlink = (isChrome || isOpera) && !!window.CSS;
 if (isOpera = true) {
-  document.getElementById("browser-alert").style.display = "none";
+ // document.getElementById("browser-alert").style.display = "none";
 }
 if (isFirefox = true) {
-  document.getElementById("browser-alert").style.display = "none";
+ // document.getElementById("browser-alert").style.display = "none";
 }
 if (isEdgeChromium = true) {
-  document.getElementById("browser-alert").style.display = "none";
+ // document.getElementById("browser-alert").style.display = "none";
 }
 if (isChrome = true) {
-  document.getElementById("browser-alert").style.display = "none";
+//  document.getElementById("browser-alert").style.display = "none";
 }
 if (isBlink = true) {
-  document.getElementById("browser-alert").style.display = "none";
+//  document.getElementById("browser-alert").style.display = "none";
 }
 
 /*

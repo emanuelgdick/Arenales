@@ -1457,11 +1457,11 @@ button {
     font-size: 1rem;
 }
 
-a:hover,
-button:hover {
-    color: rgb(255, 255, 255);
-    text-decoration: none;
-}
+    a:hover,
+    button:hover {
+        color: rgb(0,0,0) /*modificado por mi rgb(255, 255, 255)*/;
+        text-decoration: none;
+    }
 
 p {
     font-size: 1rem;
@@ -3349,7 +3349,7 @@ a.logo:hover {
 }
 
 /* 7.e Search Wrapper */
-
+/*
 #search {
     position: fixed;
     top: 0;
@@ -3447,7 +3447,7 @@ a.logo:hover {
     background-color: rgb(205, 68, 50);
     animation: shadowPulse 2s infinite ease;
 }
-
+*/
 /* 7.f Toggle Light - Dark Buttons */
 
 .non-active-theme i {
@@ -3623,11 +3623,13 @@ a.logo:hover {
 }
 
 /* 7.i Cart */
+/*
 .shopping-cart-wrapper {
     width: 0;
     padding: 0;
     margin: 0;
 }
+
 .shopping-cart {
     margin-top: 35px;
     right: 40px;
@@ -3641,7 +3643,7 @@ a.logo:hover {
     transition: all 1s;
     display: none;
 }
-
+    
 .shopping-cart .shopping-cart-footer {
     padding-bottom: 15px;
     display: inline !important;
@@ -3715,7 +3717,7 @@ a.logo:hover {
 .close-cart:hover {
     color: rgb(179, 17, 112);
 }
-
+    
 .trash-all {
     background-color: rgb(255, 3, 3);
     padding: 10px;
@@ -3756,7 +3758,7 @@ a.logo:hover {
     margin-right: 7px;
     float: left;
 }
-
+*/
 /* 7.j Hamburger Menu */
 
 
