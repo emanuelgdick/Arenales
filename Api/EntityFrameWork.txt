@@ -1,0 +1,1 @@
+scaffold-DbContext "Server=SQL5098.site4now.net;DataBase =db_a6292f_pedidos;User Id=db_a6292f_pedidos_admin;Password=mapi1986." Microsoft.EntityFrameworkCore.SqlServer -OutPutDir Models222

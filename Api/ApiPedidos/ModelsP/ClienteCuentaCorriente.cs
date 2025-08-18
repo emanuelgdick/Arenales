@@ -1,0 +1,21 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Text.Json.Serialization;
+
+namespace ApiPedidos.Models
+{
+    public partial class ClienteCuentaCorriente
+    {
+        public ClienteCuentaCorriente()
+        {
+            ClienteCuentaCorrienteMovimientos = new HashSet<ClienteCuentaCorrienteMovimiento>();
+        }
+
+        public int Id { get; set; }
+        public long IdCliente { get; set; }
+        public int EstadoCuentaCorriente { get; set; }
+        public decimal Saldo { get; set; }
+        public virtual Cliente? oCliente { get; set; } = null!;
+        public virtual ICollection<ClienteCuentaCorrienteMovimiento> ClienteCuentaCorrienteMovimientos { get; set; }
+    }
+}
