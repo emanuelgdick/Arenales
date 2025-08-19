@@ -24,6 +24,8 @@ namespace ApiPedidos.Controllers
             _webHostEnvironment = webHostEnvironment;
         }
 
+
+
         public class ProductoEnStock
         {
             public long Id { get; set; }
@@ -103,6 +105,7 @@ namespace ApiPedidos.Controllers
             }
         }
 
+
         [HttpGet]
         [Route("ObtenerProductoPorRubro/{idRubro:int}")]
         public IActionResult ObtenerProductoPorRubro(long idRubro)
@@ -130,6 +133,7 @@ namespace ApiPedidos.Controllers
 
             }
         }
+
 
         [HttpDelete]
         [Route("Eliminar/{idProducto:int}")]
@@ -160,6 +164,7 @@ namespace ApiPedidos.Controllers
 
         }
 
+
         [HttpPost, Route("subirDocumento")]
         public ActionResult subirDocumento([FromForm] IFormFile fichero)
         {
@@ -189,6 +194,7 @@ namespace ApiPedidos.Controllers
             }
         }
 
+
         [HttpPost("bajarDocumento")]
         public ActionResult BajarDocumento([FromForm] string nombreFichero)
         {
@@ -204,6 +210,8 @@ namespace ApiPedidos.Controllers
                 return NotFound();
             }
         }
+
+
 
         [HttpPut]
         [Route("Editar")]
@@ -275,3 +283,95 @@ namespace ApiPedidos.Controllers
 
     }
 }
+
+
+/*
+ 
+ ﻿using Microsoft.AspNetCore.Mvc;
+
+namespace WebAPI_SubirBarjarFicheros.Controllers
+{
+    public class FicherosController : Controller
+    {
+
+        private readonly IWebHostEnvironment _webHostEnvironment;
+
+        public IActionResult Index()
+        {
+            return View();
+        }
+
+        public FicherosController(IWebHostEnvironment webHostEnvironment)
+        {
+            _webHostEnvironment = webHostEnvironment;
+        }
+
+
+      
+
+
+        [HttpPost, Route("subirDocumentoBase64")]
+        public ActionResult subirDocumentoBase64([FromForm] string base64, [FromForm] string nombreFichero)
+        {
+            try
+            {
+                // Obtener ruta de destino
+                string rutaDestino = _webHostEnvironment.ContentRootPath + "\\FicherosSubidos"; ;
+                if (!Directory.Exists(rutaDestino)) Directory.CreateDirectory(rutaDestino);
+                string rutaDestinoCompleta = Path.Combine(rutaDestino, nombreFichero);
+
+                // Grabar base64 como fichero
+                byte[] documento = Convert.FromBase64String(base64);
+                System.IO.File.WriteAllBytes(rutaDestinoCompleta, documento);
+
+                // Respuesta
+                return Ok("El documento se ha subido correctamente.");
+            }
+            catch (Exception)
+            {
+                return BadRequest();
+            }
+        }
+
+
+        [HttpPost("bajarDocumento")]
+        public ActionResult BajarDocumento([FromForm] string nombreFichero)
+        {
+            try
+            {
+                string rutaDestino = _webHostEnvironment.ContentRootPath + "\\FicherosSubidos";
+                string rutaDestinoCompleta = Path.Combine(rutaDestino, nombreFichero);
+                byte[] bytes = System.IO.File.ReadAllBytes(rutaDestinoCompleta);
+                return File(bytes, "application/octet-stream", nombreFichero);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+        }
+
+
+        [HttpPost("bajarDocumentoBase64")]
+        public ActionResult BajarDocumentoBase64([FromForm] string nombreFichero)
+        {
+            try
+            {
+                string rutaDestino = _webHostEnvironment.ContentRootPath + "\\FicherosSubidos";
+                string rutaDestinoCompleta = Path.Combine(rutaDestino, nombreFichero);
+
+                byte[] bytes = System.IO.File.ReadAllBytes(rutaDestinoCompleta);
+                var base64String = Convert.ToBase64String(bytes);
+                return Ok(base64String);
+            }
+            catch (Exception)
+            {
+                return NotFound();
+            }
+        }
+
+
+
+    }
+
+}*/
+

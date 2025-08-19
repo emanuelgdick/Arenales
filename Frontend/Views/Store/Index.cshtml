@@ -1,6 +1,35 @@
 ﻿@{
     Layout = "_Layout";
 }
+<!--FASHION CSS here -->
+<meta charset="utf-8">
+<meta http-equiv="x-ua-compatible" content="ie=edge">
+<title>Vue - Clean Minimal eCommerce HTML Template</title>
+<meta name="description" content="">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+
+@*   <link rel="manifest" href="site.html"> *@
+<link rel="shortcut icon" type="image/x-icon" href="~/Fashion/img/favicon.png">
+<!-- Place favicon.ico in the root directory -->
+<!-- CSS here -->
+<link rel="stylesheet" href="~/Fashion/css/bootstrap.min.css">
+
+<link rel="stylesheet" href="~/Fashion/css/owl.carousel.min.css">
+<link rel="stylesheet" href="~/Fashion/css/animate.min.css">
+<link rel="stylesheet" href="~/Fashion/css/magnific-popup.css">
+<link rel="stylesheet" href="~/Fashion/css/fontawesome-all.min.css">
+
+<link rel="stylesheet" href="~/Fashion/css/flaticon.css">
+<link rel="stylesheet" href="~/Fashion/css/meanmenu.css">
+<link rel="stylesheet" href="~/Fashion/css/jquery-ui.css">
+
+<link rel="stylesheet" href="~/Fashion/css/slick.css">
+<link rel="stylesheet" href="~/Fashion/css/default.css">
+<link rel="stylesheet" href="~/Fashion/css/style.css">
+<link rel="stylesheet" href="~/Fashion/css/responsive.css">
+
+
+
 <section class="shop-area pt-100 pb-100">
     <div class="container">
         <div class="row">
@@ -778,7 +807,7 @@
                     </div>
 
                     <div class="shop-widget">
-                        <h3 class="shop-title">Catergorias</h3>
+                        <h3 class="shop-title">Catergorías</h3>
                         <ul class="shop-link">
                             <li><a href="shop.html"><i class="far fa-square"></i> Accessories</a></li>
                             <li><a href="shop.html"><i class="far fa-square"></i> Bags</a></li>
@@ -1182,7 +1211,155 @@
         </ul>
     </div>
 </div>
-<!-- Color Filter END -->
+@section scripts{
+
+    <script>
+
+              function () {
+                  jQuery.ajax({
+                      url: '@Url.Action("GetAllRubros", "Rubro")',
+                      type: "GET",
+                      data: null,
+                      dataType: "json",
+                      contentType: "application/json; charset=utf-8",
+                      success: function (data) {
+
+                                <ul class="shop-link">
+                                  <li><a href="shop.html"><i class="far fa-square"></i> Accessories</a></li>
+                                  <li><a href="shop.html"><i class="far fa-square"></i> Bags</a></li>
+                                  <li><a href="shop.html"><i class="far fa-square"></i> Clothing</a></li>
+                                  <li><a href="shop.html"><i class="far fa-square"></i> Shoes</a></li>
+                                  <li><a href="shop.html"><i class="far fa-square"></i> Exclusive</a></li>
+                                  <li><a href="shop.html"><i class="far fa-square"></i> Uncategorized</a></li>
+                                  <li><a href="shop.html"><i class="far fa-square"></i> Women</a></li>
+                              </ul>
+
+
+
+
+
+                          $(".row-marca").html("");
+                          if (data.data != null) {
+                              $("<div>").addClass("col-3").append(
+                                  $("<button>").addClass("btn btn-outline-primary btn-marca m-1  w-100").text("Ver Todos").attr({ "onclick":"ListarProductos(0)"})
+                              ).appendTo(".row-marca")
+
+                              $.each(data.data, function (i, item) {
+
+                                  $("<div>").addClass("col-3").append
+                                  $("<div>").addClass("col mb-1").append(
+                                   //   $("<div>").addClass("card h-100").append(
+                                      /*$("<img>").addClass("card-img-body").attr({ "src": "data:image/" + item.extension + ";base64," + item.base64 }),*/
+                                          $("<button>").addClass("btn btn-outline-primary btn-marca m-1 w-100").text(item.Descripcion).attr({ "onclick": "ListarProductos(" + item.Id + ")" })
+
+                                   //   )
+                                      ).appendTo(".row-marca")
+
+                              });
+                          }
+                          /*--------------------------------------*/
+
+                  /*        $("<div>").addClass("col mb-5").append(
+                              $("<div>").addClass("card h-100").append(
+                                  $("<img>").addClass("card-img-top").attr({ "src": "data:image/" + item.extension + ";base64," + item.base64 }),
+                                  //Product details
+                                  $("<div>").addClass("card-body p-4").append(
+                                      $("<div>").addClass("text-center").append(
+                                          $("<h5>").addClass("fw-bolder").text(item.Nombre),
+                                          "$ " + item.Precio
+                                      )
+                                  ),
+                                  //Product actions
+                                  $("<div>").addClass("card-footer p-4 pt-0 border-top-0 bg-transparent").append(
+                                      $("<div>").addClass("d-grid d-md-grid gap-2 d-md-block align-items-center text-center").append(
+                                          $("<button>").addClass("btn btn-outline-dark mt-auto").text("Ver Detalle"),
+                                          $("<button>").addClass("btn btn-outline-dark mt-auto").text("Agregar al carrito")
+
+                                      )
+                                  )
+
+                              ).appendTo("#catalogo-productos")
+                          )
+
+
+
+
+
+
+
+
+
+                          ******************************************/
+                      },
+                      error: function (error) {
+                          console.log(error)
+                      },
+                      beforeSend: function () {
+                          $(".modal-body").LoadingOverlay("show");
+                      },
+                  });
+
+                  $('#exampleModal').modal('show');
+              }
+
+
+
+
+
+  function ListarProductos() {
+            
+            jQuery.ajax({
+                url: '@Url.Action("ListarProducto", "Store")',
+                type: "GET",
+               // data: JSON.stringify({ IdMarca: _idmarca }),
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    $("#catalogo-productos").html("");
+                    $("#catalogo-productos").LoadingOverlay("hide");
+                    if (data.data != null) {
+                        
+                        // $.each(data.data, function (i, item) {
+                        //     //catalogo-productos
+                               
+                        //     $("<div>").addClass("col mb-5").append(
+                        //         $("<div>").addClass("card h-100").append(
+                        //             $("<img>").addClass("card-img-top").attr({ "src": "data:image/" + item.extension + ";base64," + item.base64 }),
+                        //             //Product details
+                        //             $("<div>").addClass("card-body p-4").append(
+                        //                 $("<div>").addClass("text-center").append(
+                        //                     $("<h5>").addClass("fw-bolder").text(item.Nombre),
+                        //                     "$ " + item.Precio
+                        //                 )
+                        //             ),
+                        //             //Product actions
+                        //             $("<div>").addClass("card-footer p-4 pt-0 border-top-0 bg-transparent").append(
+                        //                 $("<div>").addClass("d-grid d-md-grid gap-2 d-md-block align-items-center text-center").append(
+                        //                     $("<button>").addClass("btn btn-outline-dark mt-auto btn-detalle").text("Ver Detalle").attr({ "data-elemento": JSON.stringify(item) }),
+                                           
+                        //                    @{
+                                               
+                        //                        if (((ProyectoTest.Models.Usuario)Session["Usuario"]).EsAdministrador == false) {
+                        //                             @:$("<button>").addClass("btn btn-outline-dark mt-auto btn-agregar-carrito").data("id", item.Id).text("Agregar al carrito")
+                        //                        }
+                        //                    }
+                        //                 )
+                        //             )
+                        //         )
+                        //     ).appendTo("#catalogo-productos");
+                        // });
+                    }
+                },
+                error: function (error) {
+                    console.log(error)
+                },
+                beforeSend: function () {
+                    $("#catalogo-productos").LoadingOverlay("show");
+                },
+            });
+        }
+    </script>
+}
 
 <!-- ALPINE CSS here (FILTRO DE PRECIO)-->
 <!-- Vendor JS -->
@@ -1206,7 +1383,7 @@
 <script type="text/javascript" src="~/Ecomus/js/multiple-modal.js"></script>
 <script type="text/javascript" src="~/Ecomus/js/main.js"></script> 
 
-
+*@
 
 <!--FASHION JS here -->
 <script src="~/Fashion/js/vendor/jquery-1.12.4.min.js"></script>
@@ -1225,4 +1402,3 @@
 <script src="~/Fashion/js/jquery.magnific-popup.min.js"></script>
 <script src="~/Fashion/js/plugins.js"></script>
 <script src="~/Fashion/js/main.js"></script>
-*@

@@ -99,7 +99,6 @@ namespace ApiPedidos.Controllers
             }
         }
 
-
         [HttpPut]
         [Route("Editar")]
         public async Task<Rubro> Editar([FromBody] Rubro objeto)

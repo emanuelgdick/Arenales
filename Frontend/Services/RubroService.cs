@@ -9,11 +9,11 @@ namespace Frontend.Services
     {
 
         private readonly HttpClient _httpClient;
-        private string _ApiURLPath = "http://localhost:5087/"; /* "http://mpiscicelli-001-site2.stempurl.com/"*/
+        private string _ApiURLPath = "http://localhost:5087/"; 
         public async Task<List<Rubro>> GetAllRubros(/*string token*/)
         {
             //    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubro?");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubro/Lista?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<List<Rubro>>(contents);

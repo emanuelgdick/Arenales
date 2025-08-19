@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Arenales\\Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Frontend.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Frontend.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Frontend.v9pnla25ig.bundle.scp.css"
     },
     {
       "Id": "C:\\Arenales\\Frontend\\wwwroot\\Conforty\\assets\\images\\all-img\\brand-logo-01.png",
@@ -17555,6 +17555,10 @@
     {
       "Id": "C:\\Arenales\\Frontend\\wwwroot\\multi\\webfonts\\fa-solid-900.woff2",
       "PackagePath": "staticwebassets\\multi\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssets.props",

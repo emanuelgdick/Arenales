@@ -11,7 +11,7 @@ namespace ApiPedidos.Models
             Productos = new HashSet<Producto>();
         }
 
-        public int Id { get; set; }
+        public long Id { get; set; }
         public string Descripcion { get; set; } = null!;
         public string Codigo { get; set; } = null!;
         public string? Imagen { get; set; }

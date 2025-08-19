@@ -1,0 +1,117 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Arenales\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\services\\rubroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\rubroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 7,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "RubroController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\RubroController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\RubroController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\RubroController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\RubroController.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T20:09:39.113Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "RubroController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "RelativeDocumentMoniker": "Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "RelativeToolTip": "Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "ViewState": "AgIAABQAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T20:04:07.341Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "RubroService.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Services\\RubroService.cs",
+              "RelativeDocumentMoniker": "Frontend\\Services\\RubroService.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Services\\RubroService.cs",
+              "RelativeToolTip": "Frontend\\Services\\RubroService.cs",
+              "ViewState": "AgIAAAIAAAAAAAAAAAAUwA8AAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T20:03:00.757Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "StoreController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\StoreController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\StoreController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\StoreController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\StoreController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-18T20:01:21.212Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Index.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Store\\Index.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Store\\Index.cshtml",
+              "ViewState": "AgIAAMEEAAAAAAAAAAAAANMEAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-08-18T19:55:16.374Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

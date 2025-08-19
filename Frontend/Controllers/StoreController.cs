@@ -13,8 +13,5 @@ namespace Frontend.Controllers
         {
             return View();
         }
-
-
-
     }
 }

@@ -1,0 +1,49 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="Imagenes\**" />
+    <Compile Remove="ModelsA\**" />
+    <Compile Remove="ModelsP\**" />
+    <Compile Remove="ModelsV\**" />
+    <Content Remove="Imagenes\**" />
+    <Content Remove="ModelsA\**" />
+    <Content Remove="ModelsP\**" />
+    <Content Remove="ModelsV\**" />
+    <EmbeddedResource Remove="Imagenes\**" />
+    <EmbeddedResource Remove="ModelsA\**" />
+    <EmbeddedResource Remove="ModelsP\**" />
+    <EmbeddedResource Remove="ModelsV\**" />
+    <None Remove="Imagenes\**" />
+    <None Remove="ModelsA\**" />
+    <None Remove="ModelsP\**" />
+    <None Remove="ModelsV\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Remove="Controllers\WeatherForecastController.cs" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.EntityFrameworkCore.SqlServer" Version="6.0.4" />
+    <PackageReference Include="Microsoft.EntityFrameworkCore.Tools" Version="6.0.4">
+      <PrivateAssets>all</PrivateAssets>
+      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
+    </PackageReference>
+    <PackageReference Include="Swashbuckle.AspNetCore" Version="6.2.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Models\" />
+    <Folder Include="wwwroot\Images\Marcas\" />
+    <Folder Include="wwwroot\Images\Clientes\" />
+    <Folder Include="wwwroot\Images\Productos\" />
+    <Folder Include="wwwroot\Images\Rubros\" />
+  </ItemGroup>
+
+</Project>
