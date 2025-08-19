@@ -48,7 +48,7 @@ namespace FrontEnd.Controllers
             //return Json(new { data = oLista });
 
             List<Rubro> oLista = new List<Rubro>();
-            oLista = await _rubroService.GetAllRubros(/*HttpContext.Session.GetString("APIToken")*/);
+            /*oLista =*/ await _rubroService.GetAllRubros(/*HttpContext.Session.GetString("APIToken")*/);
             List<Rubro> resultados = new List<Rubro>();
             if (q == null || q == "null")
             {

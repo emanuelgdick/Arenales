@@ -2,6 +2,7 @@
 using System.Net.Http.Headers;
 using System.Net.Http;
 using Frontend.Models;
+using Microsoft.AspNetCore.Mvc;
 
 namespace Frontend.Services
 {
@@ -9,11 +10,22 @@ namespace Frontend.Services
     {
 
         private readonly HttpClient _httpClient;
-        private string _ApiURLPath = "http://localhost:5087/"; 
+        private string _ApiURLPath = "http://localhost:5206/";
+
+
+        public RubroService()
+        {
+            _httpClient = new HttpClient();
+            _httpClient.BaseAddress = new Uri(_ApiURLPath);
+            _httpClient.DefaultRequestHeaders.Accept.Clear();
+            _httpClient.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
+
+        }
+
         public async Task<List<Rubro>> GetAllRubros(/*string token*/)
         {
             //    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubro/Lista?");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubro?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<List<Rubro>>(contents);

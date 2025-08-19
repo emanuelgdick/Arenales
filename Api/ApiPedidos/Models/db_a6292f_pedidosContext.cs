@@ -335,10 +335,10 @@ namespace ApiPedidos.Models
 
                 entity.Property(e => e.Descuento).HasColumnType("decimal(18, 2)");
 
-                entity.HasOne(d => d.IdRubroNavigation)
-                    .WithMany(p => p.ClienteBonificacions)
-                    .HasForeignKey(d => d.IdRubro)
-                    .HasConstraintName("FK_ClienteBonificacion_Rubro");
+                //entity.HasOne(d => d.IdRubroNavigation)
+                //    .WithMany(p => p.ClienteBonificacions)
+                //    .HasForeignKey(d => d.IdRubro)
+                //    .HasConstraintName("FK_ClienteBonificacion_Rubro");
 
                 entity.HasOne(d => d.IdTipoClienteNavigation)
                     .WithMany(p => p.ClienteBonificacions)
@@ -898,11 +898,11 @@ namespace ApiPedidos.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Producto_Marca");
 
-                entity.HasOne(d => d.oRubro)
-                    .WithMany(p => p.Productos)
-                    .HasForeignKey(d => d.IdRubro)
-                    .OnDelete(DeleteBehavior.ClientSetNull)
-                    .HasConstraintName("FK_Producto_Rubro");
+                //entity.HasOne(d => d.oRubro)
+                //    .WithMany(p => p.Productos)
+                //    .HasForeignKey(d => d.IdRubro)
+                //    .OnDelete(DeleteBehavior.ClientSetNull)
+                //    .HasConstraintName("FK_Producto_Rubro");
             });
 
             modelBuilder.Entity<ProductoMovimiento>(entity =>

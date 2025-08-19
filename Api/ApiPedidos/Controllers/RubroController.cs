@@ -27,7 +27,7 @@ namespace ApiPedidos.Controllers
         }
 
         [HttpGet]
-        [Route("Lista")]
+      //  [Route("Lista")]
         public IActionResult Lista()
         {
             List<Rubro> lista = new List<Rubro>();
