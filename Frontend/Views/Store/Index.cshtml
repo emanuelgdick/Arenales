@@ -73,42 +73,10 @@
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
                         <div class="row">
-                            <div class="col-xl-4 col-lg-6 col-md-6">
-                                <div class="product-wrapper mb-50">
-                                    <div class="product-img mb-25">
-                                        <a href="product-details.html">
-                                            <img src="~/Fashion/img/product/pro1.jpg" alt="">
-                                            <img class="secondary-img" src="~/Fashion/img/product/pro2.jpg" alt="">
-                                        </a>
-                                        <div class="product-action text-center">
-                                            <a href="#" title="Shoppingb Cart">
-                                                <i class="flaticon-shopping-cart"></i>
-                                            </a>
-                                            <a href="#" title="Quick View">
-                                                <i class="flaticon-eye"></i>
-                                            </a>
-                                            <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                                                <i class="flaticon-compare"></i>
-                                            </a>
-                                        </div>
-                                    </div>
-                                    <div class="product-content pr-0">
-                                        <div class="pro-cat mb-10">
-                                            <a href="shop.html">furniture</a>
-                                        </div>
-                                        <h4>
-                                            <a href="product-details.html">Minimal Deco Furniture</a>
-                                        </h4>
-                                        <div class="product-meta">
-                                            <div class="pro-price">
-                                                <span>$119.00 USD</span>
-                                                <span class="old-price">$230.00 USD</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-xl-4 col-lg-6 col-md-6">
+                          @*   <div class="col-xl-4 col-lg-6 col-md-6"> *@
+                              <div id="producto"></div>
+                          @*   </div> *@
+                           @*  <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="product-wrapper mb-50">
                                     <div class="product-img mb-25">
                                         <a href="product-details.html">
@@ -510,7 +478,7 @@
                                         </div>
                                     </div>
                                 </div>
-                            </div>
+                            </div> *@
                         </div>
                     </div>
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
@@ -917,23 +885,7 @@
     </div>
 </section>
 <!-- shop-area end -->
-<!-- Breadcrumb Start -->
-@* <div class="breadcrumb">
-    <div class="container px-3 md:px-5 xl:px-0">
-        <div class="flex items-center gap-1 py-[1.5px]">
-            <a href="#" class="text-[14px] font-normal leading-[110%] text-dark-gray">Home</a>
 
-            <svg width="18" height="18" viewBox="0 0 18 18" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M7.125 5.25L10.875 9L7.125 12.75" stroke="#636270" stroke-linecap="round" stroke-linejoin="round" />
-            </svg>
-
-            <span class="text-[14px] font-medium leading-[110%] font-display text-gray-black inline-block">Shop</span>
-        </div>
-
-        <h2 class="pt-[13.5px] text-2xl font-semibold text-gray-black font-display">Shop</h2>
-    </div>
-</div> *@
-<!-- Breadcrumb End -->
 
 <section>
     <div class="container px-3 md:px-5 xl:px-0">
@@ -1248,477 +1200,54 @@
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-              
-                $("#myTabContent").html("");
+           
+                $("#producto").html("");
                 if (data.data != null) {
-                    console.log(data);
-                      $.each(data.data, function (i, item) {
-                            $('<div>').addClass("tab-pane fade show active")
-                            .append('<div>').addClass("row")
-                            .append('<div>').addClass("col-xl-4 col-lg-6 col-md-6")
-                            .append('<div>').addClass("product-wrapper mb-50")
-                            .append('<div>').addClass("product-img mb-25")
-                            .append('<a>').attr('href',"product-details.html")
-                            .append('<img>').attr({'src': data.data[i].imagen,'alt':""})
-                            .append('<img>').addClass("secondary-img").attr({'src': data.data[i].imagen,'alt':""})
-                            .append('<div>').addClass("product-action text-center")
-                            .append('<a>').attr({"title":"Shoppingb Cart","href":"#"})
-                            .append('<i>').addClass("flaticon-shopping-cart")
-                            .append('<a>').attr({"title":"Quick View","href":"#"})
-                            .append('<i>').addClass("flaticon-eye")
-                            .append('<a>').attr({"title":"Compare","href":"#"})
-                            .append('<i>').addClass("flaticon-compare")
-                            .appendTo('#myTabContent')
-                          }
-                          
-                      )
-
-                    //       <div class="" id="home" role="tabpanel" aria-labelledby="home-tab">
-                    //     <div class="row">
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro1.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro2.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro2.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro3.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                     <div class="sale-tag">
-                    //                         <span class="new">new</span>
-                    //                         <span class="sale">sale</span>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro3.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro4.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro4.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro5.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                     <div class="sale-tag">
-                    //                         <span class="new">new</span>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro5.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro6.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro6.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro7.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro7.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro8.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro8.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro9.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                     <div class="sale-tag">
-                    //                         <span class="new">new</span>
-                    //                         <span class="sale">sale</span>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro9.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro1.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro9.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro1.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro11.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro12.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                     <div class="sale-tag">
-                    //                         <span class="new">new</span>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //         <div class="col-xl-4 col-lg-6 col-md-6">
-                    //             <div class="product-wrapper mb-50">
-                    //                 <div class="product-img mb-25">
-                    //                     <a href="product-details.html">
-                    //                         <img src="~/Fashion/img/product/pro10.jpg" alt="">
-                    //                         <img class="secondary-img" src="~/Fashion/img/product/pro11.jpg" alt="">
-                    //                     </a>
-                    //                     <div class="product-action text-center">
-                    //                         <a href="#" title="Shoppingb Cart">
-                    //                             <i class="flaticon-shopping-cart"></i>
-                    //                         </a>
-                    //                         <a href="#" title="Quick View">
-                    //                             <i class="flaticon-eye"></i>
-                    //                         </a>
-                    //                         <a href="#" data-toggle="tooltip" data-placement="right" title="Compare">
-                    //                             <i class="flaticon-compare"></i>
-                    //                         </a>
-                    //                     </div>
-                    //                     <div class="sale-tag">
-                    //                         <span class="new">new</span>
-                    //                         <span class="sale">sale</span>
-                    //                     </div>
-                    //                 </div>
-                    //                 <div class="product-content pr-0">
-                    //                     <div class="pro-cat mb-10">
-                    //                         <a href="shop.html">furniture</a>
-                    //                     </div>
-                    //                     <h4>
-                    //                         <a href="product-details.html">Minimal Deco Furniture</a>
-                    //                     </h4>
-                    //                     <div class="product-meta">
-                    //                         <div class="pro-price">
-                    //                             <span>$119.00 USD</span>
-                    //                             <span class="old-price">$230.00 USD</span>
-                    //                         </div>
-                    //                     </div>
-                    //                 </div>
-                    //             </div>
-                    //         </div>
-                    //     </div>
-                    // </div>
-                          
-                          
-                          
+                    $.each(data.data, function (i, item) {
+                        $('<div>').addClass("col-xl-4 col-lg-6 col-md-6").append(
+                            $('<div>').addClass("product-wrapper mb-50").append(
+                                $('<div>').addClass("product-img mb-25").append(
+                                   $('<a>').attr('href', "product-details.html").append(
+                                        $('<img>').attr({ 'src': "../Fashion/img/product/pro30.jpg", 'alt': "" }).append(
+                                            $('<img>').addClass("secondary-img").attr({ 'src': "../Fashion/img/product/pro31.jpg", 'alt': "" }).append(
+                                                  $('<div>').addClass("product-action text-center").append(
+                                                          $('<a>').attr({"title":"Shoppingb Cart","href":"#"}).append(
+                                                          $('<i>').addClass("flaticon-shopping-cart").append(
+                                                          $('<a>').attr({"title":"Quick View","href":"#"}).append(
+                                                          $('<i>').addClass("flaticon-eye").append(
+                                                          $('<a>').attr({ "title": "Compare", "href": "#", "data-toggle":"tooltip","data-placement":"right"}).append(
+                                                          $('<i>').addClass("flaticon-compare").append(
+                                                          $('<div>').addClass("product-content").addClass("pr-0").append(
+                                                          $('<div>').addClass("pro-cat").addClass("mb-10").append(
+                                                          $('<a>').attr({ "href": "shop.html", "text": "furniture" }).append(
+                                                                        $('<h4>').attr({ "href": "product-details.html", "title": data.data[i].descripcion}).append(
+                                                          $('<div>').addClass("product-meta").append(
+                                                          $('<div>').addClass("pro-price").append(
+                                                          $('<span>').text("$" + data.data[i].precio).append(
+                                                          $('<span>').addClass("old-price").text("$230.00 USD")
+                                                                    )
+                                                                )
+                                                            )
+                                                        )
+                                                    )
+                                                )
+                                            )
+                                        )
+                                    )
+                                    )
+                                )
+                                )
+                                )
+                            )
                         
+                            )
+                            )
+                            )
+                            )
+                            )
+                         ).appendTo('#producto')
+
+                    })
                 }
             },
             error: function (error) {

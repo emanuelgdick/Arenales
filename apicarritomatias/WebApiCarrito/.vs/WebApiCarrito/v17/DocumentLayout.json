@@ -1,0 +1,245 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\webapicarrito.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\webapicarrito.http||{5703B403-55E7-4C63-8C88-A8F52C7A45C5}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\weatherforecast.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\data\\productoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\data\\productoconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\controllers\\colorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\controllers\\colorescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\controllers\\tallescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\controllers\\tallescontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\controllers\\marcascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\controllers\\marcascontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\models\\dba17140benitojuarezcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\models\\dba17140benitojuarezcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|c:\\users\\matias\\source\\repos\\webapicarrito\\webapicarrito\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{04942A4F-DC57-4944-85A6-72256FD05BE2}|WebApiCarrito\\WebApiCarrito.csproj|solutionrelative:webapicarrito\\models\\producto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "WeatherForecast.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\WeatherForecast.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\WeatherForecast.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\WeatherForecast.cs",
+              "RelativeToolTip": "WebApiCarrito\\WeatherForecast.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T14:45:26.435Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WebApiCarrito.http",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\WebApiCarrito.http",
+              "RelativeDocumentMoniker": "WebApiCarrito\\WebApiCarrito.http",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\WebApiCarrito.http",
+              "RelativeToolTip": "WebApiCarrito\\WebApiCarrito.http",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003502|",
+              "WhenOpened": "2025-08-19T13:52:30.255Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Program.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Program.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Program.cs",
+              "RelativeToolTip": "WebApiCarrito\\Program.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T11:44:34.036Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "appsettings.Development.json",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\appsettings.Development.json",
+              "RelativeDocumentMoniker": "WebApiCarrito\\appsettings.Development.json",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\appsettings.Development.json",
+              "RelativeToolTip": "WebApiCarrito\\appsettings.Development.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-19T13:22:25.544Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "MarcasController.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\MarcasController.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Controllers\\MarcasController.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\MarcasController.cs",
+              "RelativeToolTip": "WebApiCarrito\\Controllers\\MarcasController.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAAQwB0AAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T12:30:24.222Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "ColoresController.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\ColoresController.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Controllers\\ColoresController.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\ColoresController.cs",
+              "RelativeToolTip": "WebApiCarrito\\Controllers\\ColoresController.cs",
+              "ViewState": "AgIAAAkAAAAAAAAAAAAAABkAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T12:25:52.452Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "TallesController.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\TallesController.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Controllers\\TallesController.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\TallesController.cs",
+              "RelativeToolTip": "WebApiCarrito\\Controllers\\TallesController.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAIwBwAAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T12:08:07.539Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 12,
+              "Title": "Producto.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Models\\Producto.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Models\\Producto.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Models\\Producto.cs",
+              "RelativeToolTip": "WebApiCarrito\\Models\\Producto.cs",
+              "ViewState": "AgIAABcAAAAAAAAAAAAAwCUAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T11:51:03.481Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
+              "Title": "ProductosController.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\ProductosController.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Controllers\\ProductosController.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Controllers\\ProductosController.cs",
+              "RelativeToolTip": "WebApiCarrito\\Controllers\\ProductosController.cs",
+              "ViewState": "AgIAAFoAAAAAAAAAAAAmwAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T11:49:07.761Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\appsettings.json",
+              "RelativeDocumentMoniker": "WebApiCarrito\\appsettings.json",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\appsettings.json",
+              "RelativeToolTip": "WebApiCarrito\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAkAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-19T11:44:08.045Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "ProductoConfig.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Data\\ProductoConfig.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Data\\ProductoConfig.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Data\\ProductoConfig.cs",
+              "RelativeToolTip": "WebApiCarrito\\Data\\ProductoConfig.cs",
+              "ViewState": "AgIAAAQAAAAAAAAAAAAYwBQAAAAHAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T11:43:18.993Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 11,
+              "Title": "DbA17140BenitoJuarezContext.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Models\\DbA17140BenitoJuarezContext.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Models\\DbA17140BenitoJuarezContext.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Models\\DbA17140BenitoJuarezContext.cs",
+              "RelativeToolTip": "WebApiCarrito\\Models\\DbA17140BenitoJuarezContext.cs",
+              "ViewState": "AgIAAGMAAAAAAAAAAAAAwHUAAAAFAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-19T11:42:16.042Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Data\\AppDbContext.cs",
+              "RelativeDocumentMoniker": "WebApiCarrito\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\Matias\\source\\repos\\WebApiCarrito\\WebApiCarrito\\Data\\AppDbContext.cs",
+              "RelativeToolTip": "WebApiCarrito\\Data\\AppDbContext.cs",
+              "ViewState": "AgIAAFoCAAAAAAAAAAAuwGADAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-13T15:22:47.516Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

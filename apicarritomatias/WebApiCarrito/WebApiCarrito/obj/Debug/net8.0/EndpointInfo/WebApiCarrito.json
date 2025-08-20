@@ -1,0 +1,2488 @@
+{
+  "openapi": "3.0.1",
+  "info": {
+    "title": "WebApiCarrito",
+    "version": "1.0"
+  },
+  "paths": {
+    "/api/Colores": {
+      "get": {
+        "tags": [
+          "Colores"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Color"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Color"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Color"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Colores"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Color"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Color"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Color"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Color"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Color"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Color"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Colores/{id}": {
+      "get": {
+        "tags": [
+          "Colores"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Color"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Color"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Color"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Colores"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Color"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Color"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Color"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Colores"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Marcas": {
+      "get": {
+        "tags": [
+          "Marcas"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Marca"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Marca"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Marca"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Marcas"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Marca"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Marca"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Marca"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Marca"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Marca"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Marca"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Marcas/{id}": {
+      "get": {
+        "tags": [
+          "Marcas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Marca"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Marca"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Marca"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Marcas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Marca"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Marca"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Marca"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Marcas"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Productos": {
+      "get": {
+        "tags": [
+          "Productos"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Producto"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Productos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Producto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Producto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Producto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Productos/{id}": {
+      "get": {
+        "tags": [
+          "Productos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Producto"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Productos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Producto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Producto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Producto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Productos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Talles": {
+      "get": {
+        "tags": [
+          "Talles"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talle"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talle"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talle"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Talles"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talle"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talle"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Talle"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Talle"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Talle"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Talles/{id}": {
+      "get": {
+        "tags": [
+          "Talles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Talle"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Talle"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Talle"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Talles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talle"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talle"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Talle"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Talles"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/WeatherForecast": {
+      "get": {
+        "tags": [
+          "WeatherForecast"
+        ],
+        "operationId": "GetWeatherForecast",
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/WeatherForecast"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  },
+  "components": {
+    "schemas": {
+      "ActualizacionPrecio": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "modelo": {
+            "type": "string",
+            "nullable": true
+          },
+          "idMarca": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "porcentajeImporte": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "importe": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "precioLista": {
+            "type": "string",
+            "nullable": true
+          },
+          "talledesde": {
+            "type": "string",
+            "nullable": true
+          },
+          "tallehasta": {
+            "type": "string",
+            "nullable": true
+          },
+          "idMarcaNavigation": {
+            "$ref": "#/components/schemas/Marca"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Banco": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cheques": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cheque"
+            },
+            "nullable": true
+          },
+          "tarjeta": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Tarjetum"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Caja": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "fechaApertura": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "fechaCierre": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idVendedor": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cajaMovimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CajaMovimiento"
+            },
+            "nullable": true
+          },
+          "comprobantes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comprobante"
+            },
+            "nullable": true
+          },
+          "pagos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Pago"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "CajaMovimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "importe": {
+            "type": "number",
+            "format": "double"
+          },
+          "idTipoMovimientoCaja": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idVendedor": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idCajaNavigation": {
+            "$ref": "#/components/schemas/Caja"
+          },
+          "idTipoMovimientoCajaNavigation": {
+            "$ref": "#/components/schemas/TipoMovimientoCaja"
+          },
+          "idVendedorNavigation": {
+            "$ref": "#/components/schemas/Vendedor"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cheque": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idBanco": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "sucursal": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaEmision": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "fechaCobro": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "esPropio": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "importeCheque": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "idPago": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "idBancoNavigation": {
+            "$ref": "#/components/schemas/Banco"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Cliente": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "calle": {
+            "type": "string",
+            "nullable": true
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cuit": {
+            "type": "string",
+            "nullable": true
+          },
+          "depto": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "telefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "torre": {
+            "type": "string",
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCondicionIva": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "razonSocial": {
+            "type": "string",
+            "nullable": true
+          },
+          "codCliente": {
+            "type": "string",
+            "nullable": true
+          },
+          "comprobantes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comprobante"
+            },
+            "nullable": true
+          },
+          "creditos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Credito"
+            },
+            "nullable": true
+          },
+          "idCondicionIvaNavigation": {
+            "$ref": "#/components/schemas/CondicionIva"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClienteCuentaCorriente": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idCliente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "estadoCuentaCorriente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaUltimoPago": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "clienteCuentaCorrienteMovimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClienteCuentaCorrienteMovimiento"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ClienteCuentaCorrienteMovimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idClienteCuentaCorriente": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "idComprobante": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "concepto": {
+            "type": "string",
+            "nullable": true
+          },
+          "debe": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "haber": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "vencimiento": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idTipoMovimiento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idClienteCuentaCorrienteNavigation": {
+            "$ref": "#/components/schemas/ClienteCuentaCorriente"
+          },
+          "idComprobanteNavigation": {
+            "$ref": "#/components/schemas/Comprobante"
+          },
+          "pagos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Pago"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Color": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Producto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Comprobante": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "letra": {
+            "type": "string",
+            "nullable": true
+          },
+          "centroEmisor": {
+            "type": "string",
+            "nullable": true
+          },
+          "idTipoComprobante": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idCliente": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "razonSocial": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuit": {
+            "type": "string",
+            "nullable": true
+          },
+          "importeNeto": {
+            "type": "number",
+            "format": "double"
+          },
+          "recargos": {
+            "type": "number",
+            "format": "double"
+          },
+          "subTotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "ivaTasa1": {
+            "type": "number",
+            "format": "double"
+          },
+          "ivaTasa2": {
+            "type": "number",
+            "format": "double"
+          },
+          "percepcionIibb": {
+            "type": "number",
+            "format": "double"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idMovimiento": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "idAsiento": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idComprobanteReferencia": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double"
+          },
+          "nc": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "garantia": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "numeroCae": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaVencimientoCae": {
+            "type": "string",
+            "nullable": true
+          },
+          "idTarjeta": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "clienteCuentaCorrienteMovimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ClienteCuentaCorrienteMovimiento"
+            },
+            "nullable": true
+          },
+          "comprobanteItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComprobanteItem"
+            },
+            "nullable": true
+          },
+          "idCajaNavigation": {
+            "$ref": "#/components/schemas/Caja"
+          },
+          "idClienteNavigation": {
+            "$ref": "#/components/schemas/Cliente"
+          },
+          "idMovimientoNavigation": {
+            "$ref": "#/components/schemas/Movimiento"
+          },
+          "idTipoComprobanteNavigation": {
+            "$ref": "#/components/schemas/TipoComprobante"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComprobanteCompra": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numero": {
+            "type": "string",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "letra": {
+            "type": "string",
+            "nullable": true
+          },
+          "importeNeto": {
+            "type": "number",
+            "format": "double"
+          },
+          "descuentos": {
+            "type": "number",
+            "format": "double"
+          },
+          "subtotal": {
+            "type": "number",
+            "format": "double"
+          },
+          "ivaTasa1": {
+            "type": "number",
+            "format": "double"
+          },
+          "ivaTasa2": {
+            "type": "number",
+            "format": "double"
+          },
+          "percepcionIibb": {
+            "type": "number",
+            "format": "double"
+          },
+          "total": {
+            "type": "number",
+            "format": "double"
+          },
+          "idTipoComprobante": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idMovimiento": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idProveedor": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "puntoVenta": {
+            "type": "string",
+            "nullable": true
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "otrosImpuestos": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "comprobanteCompraDescuentos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComprobanteCompraDescuento"
+            },
+            "nullable": true
+          },
+          "comprobanteCompraItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComprobanteCompraItem"
+            },
+            "nullable": true
+          },
+          "idMovimientoNavigation": {
+            "$ref": "#/components/schemas/Movimiento"
+          },
+          "idProveedorNavigation": {
+            "$ref": "#/components/schemas/Proveedor"
+          },
+          "idTipoComprobanteNavigation": {
+            "$ref": "#/components/schemas/TipoComprobante"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComprobanteCompraDescuento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "porcentaje": {
+            "type": "number",
+            "format": "double"
+          },
+          "idComprobanteCompra": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idComprobanteCompraNavigation": {
+            "$ref": "#/components/schemas/ComprobanteCompra"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComprobanteCompraItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idProducto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idComprobanteCompra": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "impuestoUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalItem": {
+            "type": "number",
+            "format": "double"
+          },
+          "idComprobanteCompraNavigation": {
+            "$ref": "#/components/schemas/ComprobanteCompra"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ComprobanteItem": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idProducto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idComprobante": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "precioUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "impuestoUnitario": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalItem": {
+            "type": "number",
+            "format": "double"
+          },
+          "bonificacion": {
+            "type": "number",
+            "format": "double",
+            "nullable": true
+          },
+          "nc": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "idComprobanteItemNc": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "idComprobanteNavigation": {
+            "$ref": "#/components/schemas/Comprobante"
+          },
+          "idProductoNavigation": {
+            "$ref": "#/components/schemas/Producto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CondicionIva": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "clientes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Cliente"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Credito": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "cuotas": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "interes": {
+            "type": "number",
+            "format": "double"
+          },
+          "idCliente": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "idEstado": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "saldo": {
+            "type": "number",
+            "format": "double"
+          },
+          "capital": {
+            "type": "number",
+            "format": "double"
+          },
+          "cuotaCreditos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CuotaCredito"
+            },
+            "nullable": true
+          },
+          "idClienteNavigation": {
+            "$ref": "#/components/schemas/Cliente"
+          },
+          "idEstadoNavigation": {
+            "$ref": "#/components/schemas/EstadoCredito"
+          }
+        },
+        "additionalProperties": false
+      },
+      "CuotaCredito": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idCredito": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "amortizacion": {
+            "type": "number",
+            "format": "double"
+          },
+          "interes": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalCuota": {
+            "type": "number",
+            "format": "double"
+          },
+          "totalPago": {
+            "type": "number",
+            "format": "double"
+          },
+          "fechaVencimiento": {
+            "type": "string",
+            "format": "date"
+          },
+          "fechaPago": {
+            "type": "string",
+            "format": "date",
+            "nullable": true
+          },
+          "pago": {
+            "type": "boolean"
+          },
+          "interesMora": {
+            "type": "number",
+            "format": "double"
+          },
+          "idCreditoNavigation": {
+            "$ref": "#/components/schemas/Credito"
+          }
+        },
+        "additionalProperties": false
+      },
+      "EstadoCredito": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "creditos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Credito"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "FormaPago": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "pagos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Pago"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Marca": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "actualizacionPrecios": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ActualizacionPrecio"
+            },
+            "nullable": true
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Producto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Movimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idTipoMovimiento": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idSucursalIngreso": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "idSucursalEgreso": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "comprobanteCompras": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComprobanteCompra"
+            },
+            "nullable": true
+          },
+          "comprobantes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comprobante"
+            },
+            "nullable": true
+          },
+          "idTipoMovimientoNavigation": {
+            "$ref": "#/components/schemas/TipoMovimiento"
+          },
+          "productoMovimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoMovimiento"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Pago": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "fecha": {
+            "type": "string",
+            "format": "date-time"
+          },
+          "idFormaPago": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idClienteCuentaCorrienteMovimiento": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "importePago": {
+            "type": "number",
+            "format": "double"
+          },
+          "idTarjeta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "numeroTarjeta": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroCupon": {
+            "type": "string",
+            "nullable": true
+          },
+          "numeroCheque": {
+            "type": "string",
+            "nullable": true
+          },
+          "fechaCobroCheque": {
+            "type": "string",
+            "format": "date-time",
+            "nullable": true
+          },
+          "idCaja": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "idCajaNavigation": {
+            "$ref": "#/components/schemas/Caja"
+          },
+          "idClienteCuentaCorrienteMovimientoNavigation": {
+            "$ref": "#/components/schemas/ClienteCuentaCorrienteMovimiento"
+          },
+          "idFormaPagoNavigation": {
+            "$ref": "#/components/schemas/FormaPago"
+          },
+          "idTarjetaNavigation": {
+            "$ref": "#/components/schemas/Tarjetum"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Producto": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idMarca": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idTalle": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idColor": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigoBarras": {
+            "type": "string",
+            "nullable": true
+          },
+          "precio": {
+            "type": "number",
+            "format": "double"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "precioSinIva": {
+            "type": "number",
+            "format": "double"
+          },
+          "costo": {
+            "type": "number",
+            "format": "double"
+          },
+          "idImpuesto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "activo": {
+            "type": "boolean"
+          },
+          "comprobanteItems": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComprobanteItem"
+            },
+            "nullable": true
+          },
+          "idColorNavigation": {
+            "$ref": "#/components/schemas/Color"
+          },
+          "idMarcaNavigation": {
+            "$ref": "#/components/schemas/Marca"
+          },
+          "idTalleNavigation": {
+            "$ref": "#/components/schemas/Talle"
+          },
+          "productoMovimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoMovimiento"
+            },
+            "nullable": true
+          },
+          "productoStocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoStock"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoMovimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idProducto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idMovimiento": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idMovimientoNavigation": {
+            "$ref": "#/components/schemas/Movimiento"
+          },
+          "idProductoNavigation": {
+            "$ref": "#/components/schemas/Producto"
+          }
+        },
+        "additionalProperties": false
+      },
+      "ProductoStock": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idProducto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "cantidad": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idProductoNavigation": {
+            "$ref": "#/components/schemas/Producto"
+          },
+          "idSucursalNavigation": {
+            "$ref": "#/components/schemas/Sucursal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Proveedor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "calle": {
+            "type": "string",
+            "nullable": true
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cuit": {
+            "type": "string",
+            "nullable": true
+          },
+          "depto": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "piso": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "telefonoFijo": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefonoMovil": {
+            "type": "string",
+            "nullable": true
+          },
+          "torre": {
+            "type": "string",
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "comprobanteCompras": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComprobanteCompra"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Rol": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "vendedors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Vendedor"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Sucursal": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "esCorriente": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "pathRemitos": {
+            "type": "string",
+            "nullable": true
+          },
+          "pathPrecios": {
+            "type": "string",
+            "nullable": true
+          },
+          "coneccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "mail": {
+            "type": "string",
+            "nullable": true
+          },
+          "mailPassword": {
+            "type": "string",
+            "nullable": true
+          },
+          "pathDownloads": {
+            "type": "string",
+            "nullable": true
+          },
+          "productoStocks": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ProductoStock"
+            },
+            "nullable": true
+          },
+          "vendedors": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Vendedor"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Talle": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "numero": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Producto"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Tarjetum": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "idBanco": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "cuit": {
+            "type": "string",
+            "nullable": true
+          },
+          "email": {
+            "type": "string",
+            "nullable": true
+          },
+          "observaciones": {
+            "type": "string",
+            "nullable": true
+          },
+          "pathCertificado": {
+            "type": "string",
+            "nullable": true
+          },
+          "idCondicionIva": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "puntoVenta": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "fechaInicioActividades": {
+            "type": "string",
+            "nullable": true
+          },
+          "sign": {
+            "type": "string",
+            "nullable": true
+          },
+          "token": {
+            "type": "string",
+            "nullable": true
+          },
+          "expirationTime": {
+            "type": "string",
+            "nullable": true
+          },
+          "passCert": {
+            "type": "string",
+            "nullable": true
+          },
+          "test": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "pathImagen": {
+            "type": "string",
+            "nullable": true
+          },
+          "idBancoNavigation": {
+            "$ref": "#/components/schemas/Banco"
+          },
+          "pagos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Pago"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoComprobante": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "signo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "letra": {
+            "type": "string",
+            "nullable": true
+          },
+          "esFiscal": {
+            "type": "boolean",
+            "nullable": true
+          },
+          "comprobanteCompras": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/ComprobanteCompra"
+            },
+            "nullable": true
+          },
+          "comprobantes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Comprobante"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoMovimiento": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "manual": {
+            "type": "boolean"
+          },
+          "signo": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "movimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Movimiento"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "TipoMovimientoCaja": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "signo": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "cajaMovimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CajaMovimiento"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Vendedor": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "nombre": {
+            "type": "string",
+            "nullable": true
+          },
+          "apellido": {
+            "type": "string",
+            "nullable": true
+          },
+          "legajo": {
+            "type": "string",
+            "nullable": true
+          },
+          "idSucursal": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "usuario": {
+            "type": "string",
+            "nullable": true
+          },
+          "idRol": {
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
+          },
+          "cajaMovimientos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/CajaMovimiento"
+            },
+            "nullable": true
+          },
+          "idRolNavigation": {
+            "$ref": "#/components/schemas/Rol"
+          },
+          "idSucursalNavigation": {
+            "$ref": "#/components/schemas/Sucursal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "WeatherForecast": {
+        "type": "object",
+        "properties": {
+          "date": {
+            "type": "string",
+            "format": "date"
+          },
+          "temperatureC": {
+            "type": "integer",
+            "format": "int32"
+          },
+          "temperatureF": {
+            "type": "integer",
+            "format": "int32",
+            "readOnly": true
+          },
+          "summary": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      }
+    }
+  }
+}
