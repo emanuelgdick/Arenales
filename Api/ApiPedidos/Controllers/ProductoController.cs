@@ -40,38 +40,17 @@ namespace ApiPedidos.Controllers
         }
 
         [HttpGet]
-        [Route("Lista")]
-        public IActionResult Lista() { 
+        //[Route("Lista")]
+        public IActionResult Lista() {
             List<Producto> lista = new List<Producto>();
 
             try
             {
-                lista = _dbcontext.Productos.Include(c => c.oRubro).Include(d=>d.oMarca).ToList();
-                var ProductoEnStock = new List<ProductoEnStock>();
-                using (var ctx = new db_a6292f_pedidosContext())
-                {
-                    var query = from p in ctx.Productos
-                                join ps in ctx.ProductoStocks on p.Id equals ps.IdProducto
-                                select new ProductoEnStock
-                                {
-                                    Id = p.Id,
-                                    Descripcion = p.Descripcion,
-                                    CodigoBarras = p.CodigoBarras,
-                                    IdMarca=p.IdMarca,
-                                    IdRubro = p.IdRubro,
-                                    Precio = p.Precio,
-                                    Imagen = p.Imagen,
-                                    Cantidad = ps.Cantidad
-                                };
-
-                    ProductoEnStock = query.ToList();
-                }
-                
-
-
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = ProductoEnStock });
+                lista = _dbcontext.Productos.ToList();
+                return Ok(lista);//StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = lista });
             }
-            catch (Exception ex) {
+            catch (Exception ex)
+            {
 
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = lista });
 

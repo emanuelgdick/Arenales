@@ -35,7 +35,7 @@ namespace ApiPedidos.Controllers
             try
             {
                 lista = _dbcontext.Rubros.ToList();
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = lista });
+                return Ok(lista);//StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = lista });
             }
             catch (Exception ex)
             {
@@ -43,6 +43,7 @@ namespace ApiPedidos.Controllers
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = lista });
 
             }
+            
         }
 
         [HttpGet]

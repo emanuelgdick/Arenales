@@ -7,20 +7,8 @@
       "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\storecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\services\\rubroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\rubroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -30,7 +18,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 7,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -47,53 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "RubroController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\RubroController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\RubroController.cs",
-              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\RubroController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\RubroController.cs",
-              "ViewState": "AgIAABsAAAAAAAAAAAAYwAAAAAAAAAAAAAAAAA==",
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAC8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T20:09:39.113Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "RubroController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\RubroController.cs",
-              "RelativeDocumentMoniker": "Api\\ApiPedidos\\Controllers\\RubroController.cs",
-              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\RubroController.cs",
-              "RelativeToolTip": "Api\\ApiPedidos\\Controllers\\RubroController.cs",
-              "ViewState": "AgIAABQAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T20:04:07.341Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "RubroService.cs",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Services\\RubroService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\RubroService.cs",
-              "ToolTip": "C:\\Arenales\\Frontend\\Services\\RubroService.cs",
-              "RelativeToolTip": "Frontend\\Services\\RubroService.cs",
-              "ViewState": "AgIAAAIAAAAAAAAAAAAUwA8AAABXAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T20:03:00.757Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "StoreController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\StoreController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\StoreController.cs",
-              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\StoreController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\StoreController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-18T20:01:21.212Z",
+              "WhenOpened": "2025-08-19T21:58:59.284Z",
               "EditorCaption": ""
             },
             {
@@ -104,9 +53,9 @@
               "RelativeDocumentMoniker": "Frontend\\Views\\Store\\Index.cshtml",
               "ToolTip": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml",
               "RelativeToolTip": "Frontend\\Views\\Store\\Index.cshtml",
-              "ViewState": "AgIAAMEEAAAAAAAAAAAAANMEAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAN4EAAAAAAAAAAAowOoEAABOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-18T19:55:16.374Z",
+              "WhenOpened": "2025-08-19T21:49:25.31Z",
               "EditorCaption": ""
             }
           ]

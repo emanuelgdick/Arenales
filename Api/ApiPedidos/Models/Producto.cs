@@ -40,8 +40,8 @@ namespace ApiPedidos.Models
 
         [JsonIgnore]
         public virtual Marca oMarca { get; set; } = null!;
-        [JsonIgnore]
-        public virtual Rubro oRubro { get; set; } = null!;
+        //[JsonIgnore]
+       // public virtual Rubro oRubro { get; set; } = null!;
         [JsonIgnore]
         public virtual ICollection<CarritoItem> CarritoItems { get; set; }
         [JsonIgnore]

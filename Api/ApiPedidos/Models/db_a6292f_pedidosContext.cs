@@ -898,11 +898,11 @@ namespace ApiPedidos.Models
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Producto_Marca");
 
-                //entity.HasOne(d => d.oRubro)
-                //    .WithMany(p => p.Productos)
-                //    .HasForeignKey(d => d.IdRubro)
-                //    .OnDelete(DeleteBehavior.ClientSetNull)
-                //    .HasConstraintName("FK_Producto_Rubro");
+            //    entity.HasOne(d => d.oRubro)
+            //        //.WithMany(p => p.Producto)
+            //        //.HasForeignKey(d => d.IdRubro)
+            //        //.OnDelete(DeleteBehavior.ClientSetNull)
+            //        //.HasConstraintName("FK_Producto_Rubro");
             });
 
             modelBuilder.Entity<ProductoMovimiento>(entity =>

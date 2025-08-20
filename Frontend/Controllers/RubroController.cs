@@ -48,19 +48,21 @@ namespace FrontEnd.Controllers
             //return Json(new { data = oLista });
 
             List<Rubro> oLista = new List<Rubro>();
-            /*oLista =*/ await _rubroService.GetAllRubros(/*HttpContext.Session.GetString("APIToken")*/);
+            oLista = await _rubroService.GetAllRubros(/*HttpContext.Session.GetString("APIToken")*/);
             List<Rubro> resultados = new List<Rubro>();
             if (q == null || q == "null")
             {
                 resultados = oLista.ToList();
 
-                return Json(new { data = resultados.Select(c => new { id = c.Id, text = c.Descripcion }) });
+                //return Json(new { data = resultados.Select(c => new { id = c.Id, text = c.Descripcion }) });
             }
             else
             {
                 resultados = oLista.Where(s => s.Descripcion.ToLower().Contains(q.ToLower())).ToList();
-                return Json(new { data = resultados.Select(c => new { id = c.Id, text = c.Descripcion }).ToList() });
+                //return Json(new { data = resultados.Select(c => new { id = c.Id, text = c.Descripcion }).ToList() });
             }
+
+            return Json(new { data = resultados});
         }
 
 
