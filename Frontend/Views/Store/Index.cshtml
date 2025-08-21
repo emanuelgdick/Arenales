@@ -72,11 +72,11 @@
                 <!-- tab content -->
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        <div class="row">
-                          @*   <div class="col-xl-4 col-lg-6 col-md-6"> *@
-                              <div id="producto"></div>
-                          @*   </div> *@
-                           @*  <div class="col-xl-4 col-lg-6 col-md-6">
+                        <div class="row" id="producto">
+                            @*   <div class="col-xl-4 col-lg-6 col-md-6"> *@
+
+                            @*   </div> *@
+                            @*  <div class="col-xl-4 col-lg-6 col-md-6">
                                 <div class="product-wrapper mb-50">
                                     <div class="product-img mb-25">
                                         <a href="product-details.html">
@@ -1200,52 +1200,73 @@
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-           
-                $("#producto").html("");
-                if (data.data != null) {
-                    $.each(data.data, function (i, item) {
-                        $('<div>').addClass("col-xl-4 col-lg-6 col-md-6").append(
-                            $('<div>').addClass("product-wrapper mb-50").append(
-                                $('<div>').addClass("product-img mb-25").append(
-                                   $('<a>').attr('href', "product-details.html").append(
-                                        $('<img>').attr({ 'src': "../Fashion/img/product/pro30.jpg", 'alt': "" }).append(
-                                            $('<img>').addClass("secondary-img").attr({ 'src': "../Fashion/img/product/pro31.jpg", 'alt': "" }).append(
-                                                  $('<div>').addClass("product-action text-center").append(
-                                                          $('<a>').attr({"title":"Shoppingb Cart","href":"#"}).append(
-                                                          $('<i>').addClass("flaticon-shopping-cart").append(
-                                                          $('<a>').attr({"title":"Quick View","href":"#"}).append(
-                                                          $('<i>').addClass("flaticon-eye").append(
-                                                          $('<a>').attr({ "title": "Compare", "href": "#", "data-toggle":"tooltip","data-placement":"right"}).append(
-                                                          $('<i>').addClass("flaticon-compare").append(
-                                                          $('<div>').addClass("product-content").addClass("pr-0").append(
-                                                          $('<div>').addClass("pro-cat").addClass("mb-10").append(
-                                                          $('<a>').attr({ "href": "shop.html", "text": "furniture" }).append(
-                                                                        $('<h4>').attr({ "href": "product-details.html", "title": data.data[i].descripcion}).append(
-                                                          $('<div>').addClass("product-meta").append(
-                                                          $('<div>').addClass("pro-price").append(
-                                                          $('<span>').text("$" + data.data[i].precio).append(
-                                                          $('<span>').addClass("old-price").text("$230.00 USD")
-                                                                    )
-                                                                )
-                                                            )
-                                                        )
-                                                    )
+            $("#producto").html("");
+            if (data.data != null) {
+               $.each(data.data, function (i, item) {
+                 $('<div>').addClass("col-xl-4 col-lg-6 col-md-6").append(
+                 $('<div>').addClass("product-wrapper  mb-50").append(
+                 $('<div>').addClass("product-img mb-25").append(
+                 $('<a>').attr('href', "product-details.html").append(
+                            $('<img>').attr({ 'src': "../Fashion/img/product/pro1.jpg", 'alt': "" }).hover(
+                                                function(){
+                                                     $(this).attr('src', '../Fashion/img/product/pro2.jpg')
+
+                                                }                                ,
+                                                function(){
+                                                    $(this).attr('src', '../Fashion/img/product/pro1.jpg');
+                                                }
+                                        )
+                            ).append(
+                 $('<div>').addClass("product-action text-center").append(
+                        $('<a>').attr({"title":"Shoppingb Cart","href":"#"}).append(
+                        $('<i>').addClass("flaticon-shopping-cart").append(
+                        $('<a>').attr({"title":"Quick View","href":"#"}).append(
+                        $('<i>').addClass("flaticon-eye").append(
+                        $('<a>').attr({ "title": "Compare", "href": "#", "data-toggle":"tooltip","data-placement":"right"}).append(
+                        $('<i>').addClass("flaticon-compare")
+                                                                 )
+                                  
+                                            ).append(
+                                            
+                                            $('<div>').addClass("product-content").addClass("pr-0").append(
+                                            $('<div>').addClass("pro-cat").addClass("mb-10").append(
+                                            $('<a>').attr({ "href": "shop.html", "text": "furniture" }).append(
+                                            $('<h4>').attr({ "href": "product-details.html", "title": data.data[i].descripcion}).append(
+                                            $('<div>').addClass("product-meta").append(
+                                            $('<div>').addClass("pro-price").append(
+                                               $('<span>').text("$" + data.data[i].precio).append(
+                                                     $('<span>').addClass("old-price").text("$230.00 USD")
                                                 )
                                             )
-                                        )
-                                    )
-                                    )
+                                 )
                                 )
                                 )
-                                )
-                            )
-                        
+                               )
                             )
                             )
-                            )
-                            )
-                            )
-                         ).appendTo('#producto')
+                           )
+                           )
+                           )
+                           )
+                           )
+                                         )
+                                                )
+                                                )
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                         .appendTo('#producto')
 
                     })
                 }
@@ -1257,7 +1278,7 @@
 
             },
         });
-         
+
 
         // }
 

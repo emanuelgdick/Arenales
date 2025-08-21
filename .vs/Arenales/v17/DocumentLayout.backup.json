@@ -7,8 +7,8 @@
       "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\wwwroot\\fashion\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\wwwroot\\fashion\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
     }
   ],
   "DocumentGroupContainers": [
@@ -35,14 +35,14 @@
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAAC8AAAAAAAAAAAAgwAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-08-19T21:58:59.284Z",
+              "Title": "style.css",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\wwwroot\\Fashion\\css\\style.css",
+              "RelativeDocumentMoniker": "Frontend\\wwwroot\\Fashion\\css\\style.css",
+              "ToolTip": "C:\\Arenales\\Frontend\\wwwroot\\Fashion\\css\\style.css",
+              "RelativeToolTip": "Frontend\\wwwroot\\Fashion\\css\\style.css",
+              "ViewState": "AgIAAHEJAAAAAAAAAAAawIIJAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
+              "WhenOpened": "2025-08-20T18:11:04.567Z",
               "EditorCaption": ""
             },
             {
@@ -51,9 +51,9 @@
               "Title": "Index.cshtml",
               "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml",
               "RelativeDocumentMoniker": "Frontend\\Views\\Store\\Index.cshtml",
-              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Store\\Index.cshtml",
-              "ViewState": "AgIAAN4EAAAAAAAAAAAowOoEAABOAAAAAAAAAA==",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml*",
+              "RelativeToolTip": "Frontend\\Views\\Store\\Index.cshtml*",
+              "ViewState": "AgIAALUEAAAAAAAAAAAswOUEAAAxAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-08-19T21:49:25.31Z",
               "EditorCaption": ""

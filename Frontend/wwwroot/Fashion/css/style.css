@@ -1198,11 +1198,11 @@ ul.minicart .cart-price span {
 	padding-right: 105px;
 }
 .product-wrapper {
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 .product-img {
 	position: relative;
-	/*overflow: hidden;*/
+	overflow: hidden;
 }
 .product-img > a{}
 .product-img img {
