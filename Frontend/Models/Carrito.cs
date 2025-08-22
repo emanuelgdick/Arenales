@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Frontend.Models
 {
@@ -19,6 +20,8 @@ namespace Frontend.Models
 
         public virtual Cliente IdClienteNavigation { get; set; } = null!;
         public virtual Vendedor IdVendedorNavigation { get; set; } = null!;
+
+        //[JsonIgnore]
         public virtual ICollection<CarritoItem> CarritoItems { get; set; }
     }
 }

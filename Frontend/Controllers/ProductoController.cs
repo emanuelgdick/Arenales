@@ -75,20 +75,20 @@ namespace FrontEnd.Controllers
 
 
 
-        [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
-        public async Task<JsonResult> CreateProducto([FromBody] Producto Producto)
+        //[Authorize(Roles = "Admin")]
+        //[ResponseCache(Duration = 30)]
+        public async Task<JsonResult> CreateProducto([FromBody] Producto producto)
         {
             object resultado;
             string mensaje = String.Empty;
             try
             {
-                if (Producto.Id == 0)
+                if (producto.Id == 0)
                 {
-                    if (Producto.Descripcion != "")
+                    if (producto.Descripcion != "")
                     {
-                        Producto = await _ProductoService.AddProducto(Producto, HttpContext.Session.GetString("APIToken"));
-                        resultado = Producto.Id;
+                        producto = await _ProductoService.AddProducto(producto, HttpContext.Session.GetString("APIToken"));
+                        resultado = producto.Id;
                         mensaje = "Producto ingresado correctamente";
                     }
                     else
@@ -99,9 +99,9 @@ namespace FrontEnd.Controllers
                 }
                 else
                 {
-                    if (Producto.Descripcion != "")
+                    if (producto.Descripcion != "")
                     {
-                        await _ProductoService.UpdateProducto(Producto.Id, Producto, HttpContext.Session.GetString("APIToken"));
+                        await _ProductoService.UpdateProducto(producto.Id, producto, HttpContext.Session.GetString("APIToken"));
 
                         resultado = true;
                         mensaje = "Producto modificado correctamente";

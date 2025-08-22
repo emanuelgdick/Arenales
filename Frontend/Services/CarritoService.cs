@@ -32,14 +32,14 @@ namespace Frontend.Services
             return APIResponse;
         }
 
-        public async Task<Carrito> AddCarrito(Carrito Carrito, string token)
+        public async Task<Carrito> AddProductoCarrito(Producto producto/*, string token*/)
         {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Carrito>($"api/Carrito/AddCarrito", Carrito);
-            response.EnsureSuccessStatusCode();
-            var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
-            return APIResponse;
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            // HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Carrito>($"api/Carrito/AddProductoCarrito",producto);
+            // response.EnsureSuccessStatusCode();
+            //var contents = await response.Content.ReadAsStringAsync();
+            //var APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
+            return null; // APIResponse;
         }
 
         public async Task<Carrito> GetCarritoById(int id, string token)

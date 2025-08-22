@@ -379,7 +379,6 @@ C:\Arenales\Frontend\obj\Debug\net8.0\Frontend.sourcelink.json
 C:\Arenales\Frontend\bin\Debug\net8.0\appsettings.Development.json
 C:\Arenales\Frontend\bin\Debug\net8.0\appsettings.json
 C:\Arenales\Frontend\bin\Debug\net8.0\Frontend.staticwebassets.runtime.json
-C:\Arenales\Frontend\bin\Debug\net8.0\Frontend.staticwebassets.endpoints.json
 C:\Arenales\Frontend\bin\Debug\net8.0\Frontend.exe
 C:\Arenales\Frontend\bin\Debug\net8.0\Frontend.deps.json
 C:\Arenales\Frontend\bin\Debug\net8.0\Frontend.runtimeconfig.json
@@ -725,17 +724,14 @@ C:\Arenales\Frontend\obj\Debug\net8.0\scopedcss\bundle\Frontend.styles.css
 C:\Arenales\Frontend\obj\Debug\net8.0\scopedcss\projectbundle\Frontend.bundle.scp.css
 C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets.build.json
 C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets.development.json
-C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets.build.endpoints.json
 C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssets.props
-C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props
 C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets\msbuild.build.Frontend.props
 C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets\msbuild.buildMultiTargeting.Frontend.props
 C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets\msbuild.buildTransitive.Frontend.props
 C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets.pack.json
-C:\Arenales\Frontend\obj\Debug\net8.0\staticwebassets.upToDateCheck.txt
-C:\Arenales\Frontend\obj\Debug\net8.0\Frontend.csproj.Up2Date
 C:\Arenales\Frontend\obj\Debug\net8.0\Frontend.dll
 C:\Arenales\Frontend\obj\Debug\net8.0\refint\Frontend.dll
 C:\Arenales\Frontend\obj\Debug\net8.0\Frontend.pdb
 C:\Arenales\Frontend\obj\Debug\net8.0\Frontend.genruntimeconfig.cache
 C:\Arenales\Frontend\obj\Debug\net8.0\ref\Frontend.dll
+C:\Arenales\Frontend\obj\Debug\net8.0\Frontend.csproj.CopyComplete

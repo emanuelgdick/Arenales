@@ -28,7 +28,7 @@
  <link rel="stylesheet" href="~/Fashion/css/style.css">
  <link rel="stylesheet" href="~/Fashion/css/responsive.css">
 
-<!--BELLE CSS here -->
+@* <!--BELLE CSS here -->
 <!-- Favicon -->
 <link rel="shortcut icon" href="~/belle/images/favicon.png" />
 <!-- Plugins CSS -->
@@ -38,7 +38,7 @@
 <!-- Main Style CSS -->
 <link rel="stylesheet" href="~/belle/css/style.css">
 <link rel="stylesheet" href="~/belle/css/responsive.css">
-
+ *@
 
 <!--Quick View popup-->
 <div class="modal fade quick-view-popup" id="content_quickview">
@@ -949,7 +949,27 @@
                                     )
                                     .append(
                                             $('<div>').addClass("product-action text-center").append(
-                                                $('<a>').attr({ "title": "Agregar al Carrito", "href": "#content_quickview" }).append(
+                                                $('<a>').attr({ "title": "Agregar al Carrito", "href": "#" }).on('click', function (e) {
+                                                    e.preventDefault(); 
+                                                    console.log();
+                                                    let producto = data.data[i];
+                                                    jQuery.ajax({
+                                                        url: '@Url.Action("AddProductoCarrito", "Carrito")',
+                                                        type: "POST",
+                                                        data: JSON.stringify(producto),
+                                                        dataType: "json",
+                                                        contentType: "application/json; charset=utf-8",
+                                                        success: function (data) {
+
+                                                        }
+                                                    
+                                                    })
+
+
+
+
+                                                })
+                                                .append(
                                                                $('<i>').addClass("flaticon-shopping-cart")
                                                      ),
                                                 $('<a>').addClass("quick-view-popup quick-view").attr({ "title": "Ver", "href":"javascript:void(0)", "data-toggle": "modal", "data-target": "#content_quickview" }).append(
