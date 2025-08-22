@@ -44,32 +44,54 @@ namespace ApiPedidos.Controllers
             }
         }
 
-        [HttpGet]
-        [Route("Obtener/{idCarrito:int}")]
-        public IActionResult Obtener(long idCarrito)
-        {
-            Carrito oCarrito = _dbcontext.Carritos.Find(idCarrito);
+        //[HttpGet]
+        //[Route("Obtener/{idCarrito:int}")]
+        //public IActionResult Obtener(long idCarrito)
+        //{
+        //    Carrito oCarrito = _dbcontext.Carritos.Find(idCarrito);
 
+        //    if (oCarrito == null)
+        //    {
+        //        return BadRequest("Carrito no encontrado");
+
+        //    }
+
+        //    try
+        //    {
+
+        //        oCarrito = _dbcontext.Carritos.Include(s => s.CarritoItems).Where(p => p.Id == idCarrito).FirstOrDefault();
+
+        //        return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = oCarrito });
+        //    }
+        //    catch (Exception ex)
+        //    {
+        //        return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = oCarrito });
+
+
+        //    }
+        //}
+
+
+        [HttpGet]
+        [Route("GetCarritoByCliente")]
+        public IActionResult GetCarritoByCliente(long idCliente)
+        {
+            Carrito oCarrito = _dbcontext.Carritos.Find(idCliente);
             if (oCarrito == null)
             {
                 return BadRequest("Carrito no encontrado");
-
             }
-
             try
             {
-
-                oCarrito = _dbcontext.Carritos.Include(s => s.CarritoItems).Where(p => p.Id == idCarrito).FirstOrDefault();
-
+                oCarrito = _dbcontext.Carritos.Include(s => s.CarritoItems).Where(p => p.Id == idCliente).FirstOrDefault();
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = oCarrito });
             }
             catch (Exception ex)
             {
                 return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = oCarrito });
-
-
             }
         }
+
 
         [HttpPost]
         [Route("Guardar")]

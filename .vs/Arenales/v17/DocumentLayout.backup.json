@@ -3,12 +3,40 @@
   "WorkspaceRootPath": "C:\\Arenales\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\store\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\wwwroot\\fashion\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\wwwroot\\fashion\\css\\style.css||{A5401142-F49D-43DB-90B1-F57BA349E55C}"
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\models\\carritoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\models\\carritoitem.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|c:\\arenales\\api\\apipedidos\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{4D5C22C7-41FF-444F-9DE2-B27E9582D26C}|Api\\ApiPedidos\\ApiPedidos.csproj|solutionrelative:api\\apipedidos\\controllers\\rubrocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     }
   ],
   "DocumentGroupContainers": [
@@ -18,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 4,
+          "SelectedChildIndex": 7,
           "Children": [
             {
               "$type": "Bookmark",
@@ -34,28 +62,119 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "style.css",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\wwwroot\\Fashion\\css\\style.css",
-              "RelativeDocumentMoniker": "Frontend\\wwwroot\\Fashion\\css\\style.css",
-              "ToolTip": "C:\\Arenales\\Frontend\\wwwroot\\Fashion\\css\\style.css",
-              "RelativeToolTip": "Frontend\\wwwroot\\Fashion\\css\\style.css",
-              "ViewState": "AgIAAHEJAAAAAAAAAAAawIIJAAAoAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003000|",
-              "WhenOpened": "2025-08-20T18:11:04.567Z",
+              "DocumentIndex": 4,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\Program.cs",
+              "RelativeDocumentMoniker": "Api\\ApiPedidos\\Program.cs",
+              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\Program.cs",
+              "RelativeToolTip": "Api\\ApiPedidos\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAABGAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T21:42:10.374Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "appsettings.json",
+              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\appsettings.json",
+              "RelativeDocumentMoniker": "Api\\ApiPedidos\\appsettings.json",
+              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\appsettings.json",
+              "RelativeToolTip": "Api\\ApiPedidos\\appsettings.json",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2025-08-21T21:42:07.278Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarritoItem.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\Models\\CarritoItem.cs",
+              "RelativeDocumentMoniker": "Api\\ApiPedidos\\Models\\CarritoItem.cs",
+              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\Models\\CarritoItem.cs",
+              "RelativeToolTip": "Api\\ApiPedidos\\Models\\CarritoItem.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABIAAAAIAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T21:37:34.679Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Carrito.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\Models\\Carrito.cs",
+              "RelativeDocumentMoniker": "Api\\ApiPedidos\\Models\\Carrito.cs",
+              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\Models\\Carrito.cs",
+              "RelativeToolTip": "Api\\ApiPedidos\\Models\\Carrito.cs",
+              "ViewState": "AgIAAA8AAAAAAAAAAAAgwBcAAAAUAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T21:34:32.886Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "Index.cshtml",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Store\\Index.cshtml",
-              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Store\\Index.cshtml*",
-              "RelativeToolTip": "Frontend\\Views\\Store\\Index.cshtml*",
-              "ViewState": "AgIAALUEAAAAAAAAAAAswOUEAAAxAAAAAAAAAA==",
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "Api\\ApiPedidos\\Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\CarritoController.cs*",
+              "RelativeToolTip": "Api\\ApiPedidos\\Controllers\\CarritoController.cs*",
+              "ViewState": "AgIAAEUAAAAAAAAAAAAowFUAAABbAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T19:24:19.617Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAOgCAAAAAAAAAAAswM0CAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-08-19T21:49:25.31Z",
+              "WhenOpened": "2025-08-21T18:24:15.345Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\CarritoController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\CarritoController.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAArwEsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T19:34:29.595Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "CarritoService.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Services\\CarritoService.cs",
+              "RelativeDocumentMoniker": "Frontend\\Services\\CarritoService.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Services\\CarritoService.cs",
+              "RelativeToolTip": "Frontend\\Services\\CarritoService.cs",
+              "ViewState": "AgIAACkAAAAAAAAAAAAnwDUAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T19:29:49.206Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "RubroController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "RelativeDocumentMoniker": "Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "ToolTip": "C:\\Arenales\\Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "RelativeToolTip": "Api\\ApiPedidos\\Controllers\\RubroController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-08-21T21:19:54.326Z",
               "EditorCaption": ""
             }
           ]

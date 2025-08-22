@@ -46,7 +46,7 @@ namespace ApiPedidos.Controllers
 
             try
             {
-                lista = _dbcontext.Productos.Take(10).ToList();
+                lista = _dbcontext.Productos.ToList();
                 return Ok(lista);//StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = lista });
             }
             catch (Exception ex)
