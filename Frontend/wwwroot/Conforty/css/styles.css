@@ -45,7 +45,6 @@
   line-height: 15.4px;
 }
 
-
 /* sign_in Start */
 
 .sign_in {
@@ -68,7 +67,6 @@
   padding-bottom: 24px;
 }
 
-
 .field-icon {
   float: right;
   margin-left: -25px;
@@ -81,7 +79,6 @@
   margin: 0 32px;
 }
 
-
 /* password icon start */
 
 #current-icon-hide{
@@ -91,11 +88,9 @@
   display: none;
 }
 
-
 #create-icon-hide {
   display: none;
 }
-
 
 input[type=checkbox] {
   position: relative;
@@ -122,7 +117,6 @@ input[type=checkbox]:checked {
   background-color: #029FAE;
   opacity: 1;
 }
-
 
 input[type=checkbox]:before {
   content: url("data:image/svg+xml,%3Csvg width='13' height='10' viewBox='0 0 13 10' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M1 4.99996L4.33474 8.33329L11.0014 1.66663' stroke='white' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
@@ -228,7 +222,6 @@ label{
     color: #272343;
 }
 
-
 .form_btn {
   background-color: var(--accents);
   padding: 14px 24px;
@@ -288,7 +281,6 @@ label{
 
 }
 
-
 /* shopping cart page start */
 .shopping-cart {
   background-color: var(--gray-white);
@@ -297,7 +289,7 @@ label{
 
 }
 
-.cart-total {
+.cart-total2 {
   background-color: var(--gray-white);
   box-shadow: 0px 0px 30px rgba(39, 35, 67, 0.12);
   border-radius: 12px;
@@ -400,7 +392,7 @@ a {
 .btn-wishlist:hover{
  
 
-    /* background-color: #11636a; */
+     background-color: #11636a; 
     background-color: #272343;
 
 
@@ -956,6 +948,7 @@ a {
   right: auto !important;
   z-index: 99999;
 }
+
 .select2-container--default .select2-selection--single .select2-selection__rendered{
   font-family: 'Inter';
   font-style: normal;
@@ -1016,8 +1009,8 @@ header{
 }
 
 
-/* mobile menu css  */
-/* mobile menu css */
+ mobile menu css  
+ mobile menu css 
 
 .hamburger-btn span,
 .hamburger-btn2 span {
@@ -1241,7 +1234,7 @@ header{
   color: #272343;
 }
 
-/* plus Mines ++ -- */
+ plus Mines ++ -- 
 .plus_mines_input {
     height: 34px;
     width: 50px;
@@ -1258,7 +1251,7 @@ header{
     user-select: none;
 }
 
-/* custom input file */
+ custom input file 
 #custom-button {
     padding: 10px;
     color: white;
@@ -1278,7 +1271,7 @@ header{
   }
   
 
-  /* custom btn file */
+   custom btn file 
 
   .custom-radio input[type=radio]:checked~.custom-bg{
     border: 2px solid white;
@@ -1311,10 +1304,10 @@ header{
   .shipping_info{
     display: block;
   }
-  /* #addToCart:hover + .cart-content ul{
+   #addToCart:hover + .cart-content ul{
     opacity: 1;
     visibility: visible;
-  } */
+  } 
   .red {display: none;}
   .red {display: block;}
   .new-class {
