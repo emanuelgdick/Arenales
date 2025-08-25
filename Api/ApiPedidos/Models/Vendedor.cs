@@ -8,7 +8,7 @@ namespace ApiPedidos.Models
         public Vendedor()
         {
             CajaMovimientos = new HashSet<CajaMovimiento>();
-            Carritos = new HashSet<Carrito>();
+            //Carritos = new HashSet<Carrito>();
         }
 
         public int Id { get; set; }

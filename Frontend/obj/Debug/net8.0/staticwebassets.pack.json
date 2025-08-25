@@ -2,7 +2,7 @@
   "Files": [
     {
       "Id": "C:\\Arenales\\Frontend\\obj\\Debug\\net8.0\\scopedcss\\projectbundle\\Frontend.bundle.scp.css",
-      "PackagePath": "staticwebassets\\Frontend.bundle.scp.css"
+      "PackagePath": "staticwebassets\\Frontend.v9pnla25ig.bundle.scp.css"
     },
     {
       "Id": "C:\\Arenales\\Frontend\\wwwroot\\Conforty\\assets\\images\\all-img\\brand-logo-01.png",
@@ -6155,6 +6155,158 @@
     {
       "Id": "C:\\Arenales\\Frontend\\wwwroot\\alpine\\svgs\\vpay.svg",
       "PackagePath": "staticwebassets\\alpine\\svgs\\vpay.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Clientes\\10059.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Clientes\\10059.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Clientes\\10063.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Clientes\\10063.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Clientes\\10074.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Clientes\\10074.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Clientes\\10094.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Clientes\\10094.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Clientes\\10099.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Clientes\\10099.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Marcas\\23.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Marcas\\23.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Marcas\\24.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Marcas\\24.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Marcas\\28.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Marcas\\28.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Marcas\\29.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Marcas\\29.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Productos\\30091.png",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Productos\\30091.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Productos\\30092.png",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Productos\\30092.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Productos\\30093.png",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Productos\\30093.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\182.png",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\182.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\254.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\254.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\266.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\266.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\267.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\267.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\268.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\268.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\46.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\46.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\47.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\47.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\50.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\50.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\50123.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\50123.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\59.webp",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\59.webp"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\image.png",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros\\image.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\null",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Rubros\\nullpng",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Rubros"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Sin título.png",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Sin título.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Images\\Sin título2.png",
+      "PackagePath": "staticwebassets\\arenales\\Images\\Sin título2.png"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\apple-1296860.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\apple-1296860.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\apple-3418652.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\apple-3418652.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\apple.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\apple.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\bananas.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\bananas.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\citrus.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\citrus.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\food-2027563.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\food-2027563.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\fruit-5983089.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\fruit-5983089.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\frutilla.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\frutilla.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\guinda.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\guinda.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\naranja.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\naranja.svg"
+    },
+    {
+      "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\Rubros\\popsicle-152004.svg",
+      "PackagePath": "staticwebassets\\arenales\\Rubros\\popsicle-152004.svg"
     },
     {
       "Id": "C:\\Arenales\\Frontend\\wwwroot\\arenales\\logo.jpg",
@@ -17555,6 +17707,10 @@
     {
       "Id": "C:\\Arenales\\Frontend\\wwwroot\\multi\\webfonts\\fa-solid-900.woff2",
       "PackagePath": "staticwebassets\\multi\\webfonts\\fa-solid-900.woff2"
+    },
+    {
+      "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssetEndpoints.props",
+      "PackagePath": "build\\Microsoft.AspNetCore.StaticWebAssetEndpoints.props"
     },
     {
       "Id": "obj\\Debug\\net8.0\\staticwebassets\\msbuild.Frontend.Microsoft.AspNetCore.StaticWebAssets.props",

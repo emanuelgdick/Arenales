@@ -14,11 +14,10 @@ namespace ApiPedidos.Models
         public long IdProducto { get; set; }
         public decimal Cantidad { get; set; }
         public decimal Punitario { get; set; }
-        
-        
+
         [JsonIgnore]
-        public virtual Carrito oCarrito { get; set; } = null!;
+        public virtual Carrito? oCarrito { get; set; } = null!;
         [JsonIgnore]
-        public virtual Producto oProducto { get; set; } = null!;
+        public virtual Producto? oProducto { get; set; } = null!;
     }
 }

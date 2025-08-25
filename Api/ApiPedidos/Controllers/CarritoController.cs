@@ -30,7 +30,7 @@ namespace ApiPedidos.Controllers
 
             try
             {
-                lista = _dbcontext.Carritos.Include(s=>s.CarritoItems).ToList();
+                lista = null;// _dbcontext.Carritos.Include(s => s.CarritoItems).ToList();
                 
 
 
@@ -76,20 +76,83 @@ namespace ApiPedidos.Controllers
         [Route("GetCarritoByCliente")]
         public IActionResult GetCarritoByCliente(long idCliente)
         {
-            Carrito oCarrito = _dbcontext.Carritos.Find(idCliente);
-            if (oCarrito == null)
-            {
-                return BadRequest("Carrito no encontrado");
-            }
-            try
-            {
-                oCarrito = _dbcontext.Carritos.Include(s => s.CarritoItems).Where(p => p.Id == idCliente).FirstOrDefault();
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = oCarrito });
-            }
-            catch (Exception ex)
-            {
-                return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = oCarrito });
-            }
+            //Carrito oCarrito = _dbcontext.Carritos.Find(idCliente);
+            //if (oCarrito == null)
+            //{
+            //    return BadRequest("Carrito no encontrado");
+            //}
+            //try
+            //{
+            //    oCarrito = _dbcontext.Carritos.Include(s => s.CarritoItems).Where(p => p.Id == idCliente).FirstOrDefault();
+            //    return StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = oCarrito });
+            //}
+            //catch (Exception ex)
+            //{
+            //    return StatusCode(StatusCodes.Status200OK, new { mensaje = ex.Message, response = oCarrito });
+            //}
+
+            // Obtener datos de las tablas
+            var carrito = _dbcontext.Carritos.ToList();//.Find(idCliente);
+
+            var detalleCarrito = _dbcontext.CarritoItems.ToList();
+        
+
+            var resultado = (from carr in carrito  join det in detalleCarrito on 
+                            carr.Id equals det.IdCarrito into detCarrito
+                             where carr.IdCliente==idCliente && carr.Id==1
+
+                             select new// Carrito()
+                             {
+                                 Id = carr.Id,
+                                 IdCliente = carr.IdCliente,
+                                 Fecha = carr.Fecha,
+                                 Total = carr.Total,
+                                 Nro = carr.Nro,
+                                 //CarritoItems = (ICollection<CarritoItem>)detCarrito,
+                                 CarritoItems = (from dc in detCarrito//detalleCarrito
+                                                 where dc.IdCarrito == carr.Id
+                                                 select new //CarritoItem()
+                                                 {
+                                                     Id = dc.Id,
+                                                     IdCarrito = dc.IdCarrito,
+                                                     IdProducto = dc.IdProducto,
+                                                     Punitario = dc.Punitario,
+                                                     Cantidad = dc.Cantidad,
+
+                                                     oProducto = new //Producto()
+                                                     {
+                                                         Id = dc.IdProducto,//dc.IdProducto,
+                                                         Descripcion = _dbcontext.Productos.Where(s => s.Id == dc.IdProducto).FirstOrDefault().Descripcion,//dc.oProducto.Descripcion,
+                                                         Imagen = _dbcontext.Productos.Where(s => s.Id == dc.IdProducto).FirstOrDefault().Imagen,//dc.oProducto.Descripcion,
+
+                                                     },
+                                                 }).ToList(),
+                             }).FirstOrDefault();
+
+            //select new //Carrito
+            //                 {
+            //                     Id = carr.Id,
+            //                     IdCliente = carr.IdCliente,
+            //                     Fecha = carr.Fecha,
+            //                     Total = carr.Total,
+            //                     CarritoItems =/* (ICollection<CarritoItem>)*/detCarrito,
+                                 
+
+
+            //                 }).FirstOrDefault();
+
+     
+
+
+
+
+
+            return Ok(resultado);
+
+
+
+
+
         }
 
 
@@ -102,7 +165,7 @@ namespace ApiPedidos.Controllers
             long id = 0;
 
             int nro = _dbcontext.Carritos.Count() + 1;
-            objeto.Nro = nro;
+           // objeto.Nro = nro;
             _dbcontext.Carritos.Add(objeto);
             try
             {

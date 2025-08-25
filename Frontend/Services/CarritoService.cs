@@ -3,6 +3,7 @@ using System.Net.Http.Headers;
 using System.Net.Http;
 using Frontend.Models;
 using Microsoft.AspNetCore.Mvc;
+using System.Net.Http.Json;
 
 namespace Frontend.Services
 {
@@ -32,14 +33,14 @@ namespace Frontend.Services
             return APIResponse;
         }
 
-        public async Task<Carrito> AddProductoCarrito(Producto producto/*, string token*/)
+        public async Task<CarritoItem> AddProductoCarrito(CarritoItem item/*, string token*/)
         {
-            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            // HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Carrito>($"api/Carrito/AddProductoCarrito",producto);
-            // response.EnsureSuccessStatusCode();
-            //var contents = await response.Content.ReadAsStringAsync();
-            //var APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
-            return null; // APIResponse;
+           // _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<CarritoItem>($"api/Carrito/AddProductoCarrito", item);
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<CarritoItem>(contents);
+            return  APIResponse;
         }
 
         public async Task<Carrito> GetCarritoById(int id, string token)
@@ -54,12 +55,21 @@ namespace Frontend.Services
         public async Task<Carrito> GetCarritoByCliente(long idCliente/*, string token*/)
         {
             //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Carrito/GetCarritoByCliente?idCliente=1");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Carrito/GetCarritoByCliente?idCliente={idCliente}");
                                                   
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
             return APIResponse;
+            //try
+            //{
+            //    
+            //}
+            //catch (Exception e) {
+            //    Console.WriteLine(e.Message);
+            //}
+
+            //return null;// APIResponse;
         }
 
 

@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Newtonsoft;
 using System.Security.Claims;
+using static System.Net.WebRequestMethods;
 
 namespace FrontEnd.Controllers
 {
@@ -73,54 +74,10 @@ namespace FrontEnd.Controllers
         {
             Carrito oLista = new Carrito();
             oLista = await _CarritoService.GetCarritoByCliente(idCliente/*,HttpContext.Session.GetString("APIToken")*/);
-            var carrito = new List<Carrito>
-            {
-                new Carrito {
-                            Id = 1,
-                            Fecha = DateTime.Parse("29-09-1978"),
-                            Total=10000,
-                            Nro=1,
-                            IdCliente=1,
-                            IdVendedor=1,
-                            CarritoItems =new List<CarritoItem>{
-                                new CarritoItem{Id = 1, IdCarrito = 1, IdProducto = 1 ,Punitario = 10,Cantidad=10,
-                                       /* oProducto=new Producto{Id =1,Descripcion="aaaa",Imagen="" }*/ },
-                                new CarritoItem{Id = 2, IdCarrito = 1, IdProducto = 2 ,Punitario = 20,Cantidad=20},
-                                new CarritoItem{Id = 3, IdCarrito = 1, IdProducto = 3 ,Punitario = 30,Cantidad=30}
-                            }
-
-
-                },
-                new Carrito {
-                            Id = 2,
-                            Fecha = DateTime.Parse("22-01-2010"),
-                            Total=20000,
-                            Nro=2,
-                            IdCliente=2,
-                            IdVendedor=2,
-                            CarritoItems =new List<CarritoItem>{
-                                new CarritoItem{Id = 4, IdCarrito = 2, IdProducto = 4 ,Punitario = 40,Cantidad=40},
-                                new CarritoItem{Id = 5, IdCarrito = 2, IdProducto = 5 ,Punitario = 50,Cantidad=50},
-                                new CarritoItem{Id = 6, IdCarrito = 2, IdProducto = 6 ,Punitario = 60,Cantidad=60}
-                            }
-
-
-                },
-                new Carrito {
-                            Id = 3,
-                            Fecha = DateTime.Parse("04-10-1950"),
-                            Total=30000,
-                            Nro=3,
-                            IdCliente=3,
-                            IdVendedor=3,
-                            CarritoItems =new List<CarritoItem>{
-                                new CarritoItem{Id = 7, IdCarrito = 3, IdProducto = 7 ,Punitario = 70,Cantidad=70},
-                                new CarritoItem{Id = 8, IdCarrito = 3, IdProducto = 8 ,Punitario = 80,Cantidad=80},
-                                new CarritoItem{Id = 9, IdCarrito = 3, IdProducto = 9 ,Punitario = 90,Cantidad=90}
-                            }
-                }
-            };
-            return Json(new { data = carrito });
+            foreach (CarritoItem ci in oLista.CarritoItems) {
+                ci.oProducto.Imagen = "http://localhost:5165/arenales/"+ ci.oProducto.Imagen;
+            }
+            return Json(new { data = oLista });
         }
 
 
@@ -213,16 +170,16 @@ namespace FrontEnd.Controllers
 
         //[Authorize(Roles = "Admin")]
         //[ResponseCache(Duration = 30)]
-        public async Task<JsonResult> AddProductoCarrito([FromBody] Producto producto)
+        public async Task<JsonResult> AddProductoCarrito([FromBody] CarritoItem item)
         {
             object resultado;
             string mensaje = String.Empty;
             try
             {
-                if (producto.Id == 0)
+                if (item.Id == 0)
                 {
-            //        producto = await _CarritoService.AddProductoCarrito(producto/*, HttpContext.Session.GetString("APIToken")*/);
-                    resultado = producto.Id;
+                    item = await _CarritoService.AddProductoCarrito(item/*, HttpContext.Session.GetString("APIToken")*/);
+                    resultado = item.Id;
                     mensaje = "Producto ingresado correctamente";
                 }
                 else

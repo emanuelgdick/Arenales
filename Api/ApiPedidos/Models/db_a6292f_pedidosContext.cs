@@ -145,9 +145,9 @@ namespace ApiPedidos.Models
             {
                 entity.ToTable("Carrito");
 
-                entity.Property(e => e.Fecha).HasColumnType("date");
+                //entity.Property(e => e.Fecha).HasColumnType("date");
 
-                entity.Property(e => e.Total).HasColumnType("money");
+                //entity.Property(e => e.Total).HasColumnType("money");
 
                 entity.HasOne(d => d.IdClienteNavigation)
                     .WithMany(p => p.Carritos)
@@ -335,9 +335,9 @@ namespace ApiPedidos.Models
 
                 entity.Property(e => e.Descuento).HasColumnType("decimal(18, 2)");
 
-                //entity.HasOne(d => d.IdRubroNavigation)
-                //    .WithMany(p => p.ClienteBonificacions)
-                //    .HasForeignKey(d => d.IdRubro)
+              //  entity.HasOne(d => d.IdRubroNavigation)
+                 //   .WithMany(p => p.ClienteBonificacions)
+                 //   .HasForeignKey(d => d.IdRubro)
                 //    .HasConstraintName("FK_ClienteBonificacion_Rubro");
 
                 entity.HasOne(d => d.IdTipoClienteNavigation)

@@ -8,7 +8,7 @@ namespace ApiPedidos.Models
     {
         public Cliente()
         {
-            Carritos = new HashSet<Carrito>();
+            //Carritos = new HashSet<Carrito>();
             ClienteCuentaCorrientes = new HashSet<ClienteCuentaCorriente>();
             Comprobantes = new HashSet<Comprobante>();
             Movimientos = new HashSet<Movimiento>();

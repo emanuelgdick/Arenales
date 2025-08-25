@@ -46,7 +46,7 @@ namespace ApiPedidos.Controllers
 
             try
             {
-                lista = _dbcontext.Productos.ToList();
+                lista = _dbcontext.Productos.Where(s=>s.Id>=30091).ToList();
                 return Ok(lista);//StatusCode(StatusCodes.Status200OK, new { mensaje = "ok", response = lista });
             }
             catch (Exception ex)
