@@ -1,0 +1,295 @@
+﻿@{
+    Layout = "_Layout";
+}
+
+
+<section>
+    <!-- shoping cart List Start -->
+    <div class=" px-3 md:px-5 xl:px-0">
+        @*         container *@
+        <div class="row">
+            <div class="col-8">
+                <!-- shopping cart start -->
+                <div class="shopping-cart  w-full mt-5 mb-5">
+                    @* lg:w-2/3 *@
+                    <div class="px-6 py-6 ">
+                        <table class="w-[824px] leading-normal" id="tabla">
+                            <thead>
+                                <tr>
+                                    <th class="pb-6 border-b border-[#E1E3E6] text-left text-xs font-semibold text-[#272343] uppercase tracking-wider w-[240px]">
+                                        Productos
+                                    </th>
+                                    <th class="pb-6 border-b border-[#E1E3E6] text-left text-xs font-semibold text-[#272343] uppercase tracking-wider w-[104px]">
+                                        Precio
+                                    </th>
+                                    <th class="pb-6 border-b border-[#E1E3E6] text-left text-xs font-semibold text-[#272343] uppercase tracking-wider w-[164px]">
+                                        Cantidad
+                                    </th>
+                                    <th class="pb-6 border-b border-[#E1E3E6] text-left text-xs font-semibold text-[#272343] uppercase tracking-wider w-[96px]">
+                                        Sub Total
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody >
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+                <!-- shopping cart end -->
+            </div>
+
+            @*  <div class="col-2">
+            </div> *@
+            <div class="col-4">
+
+                <!-- Cart Total End -->
+                <div class="cart-total2 p-8 mt-5 w-full">
+                    @* lg:w-1/3 *@
+                    <div class="subtotal-info">
+                        <div class="flex justify-between items-center">
+                            <p class="common-hedding">sub total</p>
+                            <p class="text-gray-black text-[16px] leading-[120%] font-display font-medium" id="subTotal"></p>
+                        </div>
+                        <div class="flex justify-between items-center pt-4">
+                            <p class="common-hedding">descuento</p>
+                            <p class="text-gray-black text-[16px] leading-[120%] font-display font-medium" id="descuento"></p>
+                        </div>
+                        @* <div class="flex justify-between items-center pt-4">
+                            <p class="common-hedding">shipping </p>
+                            <p class="text-gray-black text-[16px] leading-[120%] font-display font-medium">Free</p>
+                        </div> *@
+                        <hr>
+                        <div class="flex justify-between items-center">
+                            <p class="common-hedding">Total:</p>
+                            <p class="text-gray-black text-[22px] leading-[120%] font-display font-semibold" id="total"></p>
+                        </div>
+                        <button class="mt-6 bg-accents hover:bg-[#272343] transition-all duration-300 py-[19px] rounded-lg text-[18px] font-bold font-display leading-[110%] text-gray-white text-center w-full">proceed to Checkout</button>
+                    </div>
+                </div>
+                <!-- Cart Total Start -->
+            </div>
+        </div>
+
+
+    </div>
+
+</section>
+
+@section Scripts {
+    <script>
+
+        $(document).ready(function() {
+
+                    var svg = `<svg width = "12" height = "12" viewBox = "0 0 12 12" fill = "none" xmlns = "http://www.w3.org/2000/svg" >
+                                                     <path d="M2 2L6.00003 6M6.00003 6L10 2M6.00003 6L2 10M6.00003 6L10 10" stroke = "#9A9CAA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                         </svg>`;
+        //function obtenerCarrito() {
+        vCarrito = []
+        jQuery.ajax({
+            url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=10059',
+            type: "GET",
+            data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+
+                if (data.data != null) {
+                    var subTotal = 0;
+                    var descuento = 0;
+
+                    $.each(data.data.carritoItems, function (i, item) {
+                        vCarrito.push(item)
+
+                        $('<tr>').addClass('cart-item').append(
+                            //PRIMER TD
+                            $('<td>').addClass("py-6 text-sm").append(
+
+                                $('<div>').addClass("flex gap-2 items-center").append(
+                                    $('<button>').addClass("eliminar").append(
+                                        svg
+                                    ).on('click',function() {
+                                            removeItem(this);
+
+                                    }),//button
+                                    $('<div>').addClass("w-[70px] h-[70px]").append(
+                                        $('<img>').addClass("w-full h-full rounded-lg").attr({ 'src': data.data.carritoItems[i].oProducto.imagen, 'alt': '' })
+                                    ),//"w-[70px] h-[70px]"
+                                    $('<div>').addClass("ml-1").append(
+                                        $('<p>').addClass("mb-0 text-[#272343] text-sm").text(data.data.carritoItems[i].oProducto.descripcion)
+                                    )//"ml-1"
+                                )//flex gap-2 items-center
+
+                            ),//py-6 text-sm"
+                            //SEGUNDO TD
+                            $('<td>').addClass("py-6 text-sm").append(
+                                $('<p>').addClass("mb-0 precio").text(data.data.carritoItems[i].punitario.toFixed(2))
+                            ),
+                            //TERCER TD
+                            $('<td>').addClass("py-6 text-sm").append(
+                                $('<div>').addClass("border inline-flex justify-around items-center h-[52px] w-[140px] border-[#D6D9DD] rounded-lg").append(
+                                    $('<span>').addClass("w-5 h-5 inline-flex justify-center items-center text-[#9A9CAA] pl-[14px] select-none menos").attr({ 'id': 'minus' }).text('-'),
+                                    $('<input>').addClass("text-[#272343] text-base plus_mines_input select-none cantidad col-2").attr({ 'type': 'text', 'value': data.data.carritoItems[i].cantidad}),
+                                    $('<span>').addClass("w-5 h-5 inline-flex justify-center items-center text-[#9A9CAA] pr-[14px] select-none mas").attr({ 'id': 'plus' }).text('+')
+                                  
+
+                                )//"border inline-flex justify-around items-center h-[52px] w-[140px] border-[#D6D9DD] rounded-lg"
+                            ),//"py-6 text-sm"
+                            //CUARTO TD
+                            $('<td>').attr({'id':'idst'}).addClass("py-6 text-sm").append(
+                                $('<p>').addClass('subtotal').text((data.data.carritoItems[i].punitario * data.data.carritoItems[i].cantidad).toFixed(2))
+                            )//"py-6 text-sm"
+                        ).appendTo('#tabla')//cart-item
+                        subTotal = subTotal + (data.data.carritoItems[i].punitario * data.data.carritoItems[i].cantidad)
+                    })
+                    // renderCarrito(vCarrito)
+
+                 calcularTotales();
+                }
+
+            },
+            error: function (error) {
+                console.log(error)
+            },
+            beforeSend: function () {
+
+            },
+        });
+      
+        function eliminar(id) {
+
+
+            jQuery.ajax({
+                url: '@Url.Action("Delete", "CarritoItem")?id=' + id,
+                type: "POST",
+                // data: JSON.stringify(item),
+                contentType: 'application/json',
+                success: function (data) {
+                    if (data.resultado) {
+                        totalProductos = totalProductos - 1;
+                        totalPesos = totalPesos - data.data.oProducto.punitario
+                        obteberCarrito();
+                    }
+                },
+                error: function (error) {
+                    console.log(error);
+                }
+            })
+        }
+        // function renderCarrito(data) {
+
+        //     alert('dibujar carrito');
+        //     totalProductos = 0;
+        //     totalPesos = 0;
+        //     var svgEliminar = `<svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+        //                                                                                                           <path d="M10 10L14 14M14 14L18 10M14 14L10 18M14 14L18 18" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+        //                                                                                                       </svg>`;
+        //     $("ul[name='ulCarrito']").html("");
+        //     $('#ulCarrito li').remove();
+        //     $('#ulCarrito p').remove();
+        //     $('#ulCarrito a').remove();
+        //     $("#cantProducto").html();
+        //     $("#cantProducto").empty();
+
+        //     if (data != null) {
+        //         let totalProductos = 0;
+        //         let totalPesos = 0;
+        //         $.each(data, function (i, item) {
+        //             $('<li>').addClass("pb-4").append(
+        //                 $('<div>').addClass("flex items-center justify-between").append(
+        //                     $('<div>').addClass("flex items-center gap-1").append(
+        //                         $('<div>').append(
+        //                             $('<img>').attr({ 'src': data[i].oProducto.Imagen, 'alt': '' })
+
+        //                         ),
+        //                         $('<div>').addClass("px-2").append(
+        //                             $('<h2>').addClass("text-gray-black").append(
+
+        //                                 $('<span>').text(data[i].oProducto.descripcion),
+        //                                 $('<span>').addClass("text-[#636270]").text(' x ' + data[i].Cantidad),
+        //                             ),
+        //                             $('<p id="idPesos">').addClass("text-gray-black font-semibold mb-0").text('$' + data[i].PUnitario)
+        //                         )
+        //                     ),
+        //                     $('<div>').append(
+        //                         $('<button>').addClass("hover:bg-[#F0F2F3] bg-transparent p-2 hover:text-gray-black rounded-full text-[#9A9CAA] transition-all duration-500").append(svgEliminar).on('click', function () { eliminar(data[i].id) })
+        //                     )
+        //                 )
+        //             ).appendTo('#ulCarrito')
+        //             //    vCarrito.push(data.data);
+        //             totalProductos = totalProductos + 1;
+        //             totalPesos = totalPesos + (data[i].Cantidad * data[i].PUnitario)
+        //         })
+        //         $('<div>').addClass('flex justify-between items-center py-2 mb-4').append(
+        //             $('<p>').addClass('text-[#636270] text-lg').text(totalProductos + ' Productos '),
+        //             $('<p>').addClass('text-gray-black text-xl font-medium').text('$' + totalPesos)
+        //         ).appendTo('#ulCarrito')
+        //         $('<div>').addClass('flex justify-between items-center').append(
+        //             $('<a>').attr({ 'href': '/Store/ShoppingCart' }).addClass('btn-transparent').text('Ver Carrito'),
+        //             $('<a>').attr({ 'href': '/Store/Checkout' }).addClass('btn-primary').text('Comprar')
+
+        //         ).appendTo('#ulCarrito')
+        //         $("#cantProducto").addClass("bg-dark-accents text-white rounded-full py-[3px] px-[9px] ml-1 inline-flex justify-center items-center text-[10px] leading-[100%]").text(totalProductos).appendTo('#cantProducto')
+        //     }
+
+        // }
+
+
+               
+            // Función para actualizar el subtotal de una fila
+            function actualizarSubtotal(fila) {
+                let precioUnitario = parseFloat(fila.find('.precio').text());
+                let cantidad = parseInt(fila.find('.cantidad').val());
+                let subtotal = precioUnitario * cantidad;
+                fila.find('.subtotal').text(subtotal.toFixed(2));
+            }
+
+            // Botón "+" para sumar
+            $('#tabla tbody').on('click', '.mas', function() {
+                let fila = $(this).closest('tr');
+                let cantidadActual = parseInt(fila.find('.cantidad').val());
+                fila.find('.cantidad').val(cantidadActual + 1);
+                actualizarSubtotal(fila); // Actualizar subtotal o total
+                calcularTotales()
+            });
+
+            // Botón "-" para restar
+            $('#tabla tbody').on('click', '.menos', function() {
+                let fila = $(this).closest('tr');
+                let cantidadActual = parseInt(fila.find('.cantidad').val());
+                if (cantidadActual > 1) {
+                    fila.find('.cantidad').val(cantidadActual - 1);
+                    actualizarSubtotal(fila); // Actualizar subtotal o total
+                    calcularTotales()
+                }
+            });
+
+            // Botón "Eliminar"
+            $('#tabla tbody').on('click', '.eliminar', function() {
+                $(this).closest('tr').remove(); // Elimina la fila completa
+                calcularTotales()
+            });
+
+            function calcularTotales(){
+                var total = 0;
+                var descuento = 0;
+                $('#tabla tbody tr').each(function() {
+                    var valorCelda = $(this).find('td').eq(3).text();
+                    total += parseFloat(valorCelda);
+                });
+
+                $('#subTotal').text(total.toFixed(2));
+                $('#descuento').text(descuento.toFixed(2));
+                $('#total').text((total - descuento).toFixed(2));
+            }
+        });
+    </script>
+}
+
+
+
+
+
+
+
+
+<!-- shoping cart List End -->

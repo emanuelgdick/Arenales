@@ -1,0 +1,362 @@
+﻿ @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor;
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml"; 
+}
+
+ @model Usuario
+
+
+<!-- page-title -->
+<div class="tf-page-title">
+  
+    <div class="container-full">
+        <div class="row">
+            <div class="col-12">
+             
+                <div class="heading text-center">Tienda</div>
+                <p class="text-center text-2 text_black-2 mt_5">Shop through our latest selection of Fashion</p>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /page-title -->
+
+<section class="flat-spacing-1">
+    <div class="container">
+        <div class="tf-shop-control grid-3 align-items-center">
+            <div class="tf-control-filter">
+                <a href="product-style-01.html#filterShop" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" class="tf-btn-filter"><span class="icon icon-filter"></span><span class="text">Filtrar</span></a>
+            </div>
+            <ul class="tf-control-layout d-flex justify-content-center">
+                <li class="tf-view-layout-switch sw-layout-2" data-value-grid="grid-2">
+                    <div class="item"><span class="icon icon-grid-2"></span></div>
+                </li>
+                <li class="tf-view-layout-switch sw-layout-3" data-value-grid="grid-3">
+                    <div class="item"><span class="icon icon-grid-3"></span></div>
+                </li>
+                <li class="tf-view-layout-switch sw-layout-4 active" data-value-grid="grid-4">
+                    <div class="item"><span class="icon icon-grid-4"></span></div>
+                </li>
+                <li class="tf-view-layout-switch sw-layout-5" data-value-grid="grid-5">
+                    <div class="item"><span class="icon icon-grid-5"></span></div>
+                </li>
+                <li class="tf-view-layout-switch sw-layout-6" data-value-grid="grid-6">
+                    <div class="item"><span class="icon icon-grid-6"></span></div>
+                </li>
+            </ul>
+         @*    <div class="tf-control-sorting d-flex justify-content-end">
+                <div class="tf-dropdown-sort" data-bs-toggle="dropdown">
+                    <div class="btn-select">
+                        <span class="text-sort-value">Featured</span>
+                        <span class="icon icon-arrow-down"></span>
+                    </div>
+                    <div class="dropdown-menu">
+                        <div class="select-item active">
+                            <span class="text-value-item">Featured</span>
+                        </div>
+                        <div class="select-item">
+                            <span class="text-value-item">Best selling</span>
+                        </div>
+                        <div class="select-item">
+                            <span class="text-value-item">Alphabetically, A-Z</span>
+                        </div>
+                        <div class="select-item">
+                            <span class="text-value-item">Alphabetically, Z-A</span>
+                        </div>
+                        <div class="select-item">
+                            <span class="text-value-item">Price, low to high</span>
+                        </div>
+                        <div class="select-item">
+                            <span class="text-value-item">Price, high to low</span>
+                        </div>
+                        <div class="select-item">
+                            <span class="text-value-item">Date, old to new</span>
+                        </div>
+                        <div class="select-item">
+                            <span class="text-value-item">Date, new to old</span>
+                        </div>
+                    </div>
+                </div>
+
+            </div> *@
+        </div>
+        <div class="grid-layout wrapper-shop" data-grid="grid-4" id="divProducto">
+        </div>
+        <!-- pagination -->
+        <ul class="tf-pagination-wrap tf-pagination-list">
+            <li class="active">
+                <a href="product-style-01.html#" class="pagination-link">1</a>
+            </li>
+            <li>
+                <a href="product-style-01.html#" class="pagination-link animate-hover-btn">2</a>
+            </li>
+            <li>
+                <a href="product-style-01.html#" class="pagination-link animate-hover-btn">3</a>
+            </li>
+            <li>
+                <a href="product-style-01.html#" class="pagination-link animate-hover-btn">4</a>
+            </li>
+            <li>
+                <a href="product-style-01.html#" class="pagination-link animate-hover-btn">
+                    <span class="icon icon-arrow-right"></span>
+                </a>
+            </li>
+        </ul>
+    </div>
+</section>
+
+@section Scripts {
+    <script>
+        
+        document.addEventListener("DOMContentLoaded",function(){
+
+               var producto = null;
+              // //Get Rubros
+              //  jQuery.ajax({
+              //                    url: '@Url.Action("GetAllRubros", "Rubro")',
+              //                    type: "GET",
+              //                    data: null,
+              //                    dataType: "json",
+              //                    contentType: "application/json; charset=utf-8",
+              //                    success: function (data) {
+              //                        $("ul[name='ulCategoria']").html("");
+              //                        if (data.data != null) {
+              //                            $.each(data.data, function (i, item) {
+              //                                $('<li>').append(
+              //                                    $("<a>").append($("<i>").addClass("far fa-square")).text(data.data[i].descripcion)
+              //                ).appendTo('#ulCategoria')
+              //                }
+              //                )
+              //                }
+              //                },
+              //                error: function (error) {
+              //                console.log(error)
+              //                },
+              //                beforeSend: function () {
+
+              //                },
+              //                });
+
+              //Get Productos
+
+              jQuery.ajax({
+                           url: '@Url.Action("GetAllProductos", "Producto")',
+                           type: "GET",
+                           data: null,
+                           dataType: "json",
+                           contentType: "application/json; charset=utf-8",
+                           success: function (data) {
+                          //     console.log(data.talles)
+                               
+                              
+                           $("#divProducto").html("");
+                           if (data.data != null) {
+                           $.each(data.data, function (i, item) {
+
+                               $('<div>').addClass('card-product').append(
+                                   $('<div>').addClass('card-product-wrapper').append(
+                                    $('<a>').addClass('product-img').attr({ 'src': 'product-detail.html', 'href': 'product-style-01.html#quick_view', 'data-bs-toggle': "modal" }).append(
+                                           $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
+                                           $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
+                                       ),//<a>product-img
+                                       $('<div>').addClass('list-product-btn ').append(
+                                           $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
+                                               //'href':'#quick_add',
+                                               .on('click', function (event) {
+                                                   event.preventDefault();
+                                                   producto = data.data[i];
+                                                console.log('123');
+                                                   console.log(producto);
+                                                console.log('456');
+                                                abrirModalQA(data.data[i], data.talles[i].idTalle)
+                                               })
+                                               .append(
+                                                   $('<span>').addClass('fa fa-shopping-bag'),
+                                                   $('<span>').addClass('tooltip').text(' Quick Add'),
+                                               ),//<a> box-icon bg_white quick-add tf-btn-loading
+                                           $('<a>').addClass('box-icon bg_white wishlist btn-icon-action').attr({ 'href': 'javascript:void(0);' }).append(
+                                               $('<span>').addClass('fa fa-heart'),
+                                               $('<span>').addClass('tooltip').text(' Add to Wishlist'),
+                                               $('<span>').addClass('icon icon-delete')
+                                           ),//<a> box-icon bg_white wishlist btn-icon-action
+                                           $('<a>').addClass('box-icon bg_white compare btn-icon-action').attr({ 'href': 'product-style-01.html#compare', 'data-bs-toggle': "offcanvas", 'aria-controls': "offcanvasLeft" }).append(
+                                               //$('<span>').addClass('fa fa-code-compare'),
+                                            $('<span>').addClass('fa fa-eye'),
+                                               $('<span>').addClass('tooltip').text(' Add to Compare'),
+                                               //$('<span>').addClass('icon icon-check')
+                                                
+                                           ),//<a>box-icon bg_white wishlist btn-icon-action
+                                           //$('<a>').addClass('box-icon bg_white quickview tf-btn-loading').attr({ 'href': 'product-style-01.html#quick_view', 'data-bs-toggle': "modal" }).append(
+                                               
+                                           //    $('<span>').addClass('tooltip').text(' Quick View '),
+                                           //)//<a>box-icon bg_white quickview tf-btn-loading
+                                       ),//list-product-btn absolute-2
+
+                                       $('<div>').addClass('size-list').append(
+                                           $('<span>').text('Talles:'),
+                                           $.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
+                                       )
+                                   ),//card-product-wrapper
+                                   $('<div>').addClass('card-product-info').append(
+                                       $('<a>').attr({ 'href': 'product-detail.html' }).text(data.data[i].descripcion).addClass('title link'),
+                                       $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
+                                       $('<ul>').addClass('list-color-product').append(
+                                        $('<li>').addClass('list-color-item color-swatch').append(// active
+
+                                            //$.each(data.colores[i], function (index, valor) {
+                                                //const $nuevoSpan = $("<span>").text(valor); // Asigna el texto del dato
+                                                //$nuevoSpan.attr("data-id", index);
+                                                //$nuevoSpan.addClass("span-dinamico");
+                                                //$contenedor.append($nuevoSpan);
+                                              
+                                                 
+                                            //});
+                                            
+                                            // $.each($('<span>').addClass('swatch-value').css({ 'background-color': '#135000' }).text(''), function (index, value) {
+                                              //   $('<span>').addClass('tooltip').attr({ 'text': value });
+                                           
+                                              //         // $('<span>').addClass('tooltip').text(value),
+                                              //           //  $('<span>').addClass('swatch-value bg_orange-3').attr({ 'text': value}),
+                                              //       //  $('<img>').addClass('lazyload').attr({ 'data-src': 'images/products/orange-1.jpg', 'src': 'images/products/orange-1.jpg', 'alt': 'image-product' })
+                                              //  })
+
+                                               ),//list-color-item color-swatch active
+
+
+                       // $('<li>').addClass('list-color-item color-swatch active').append(
+                       //    $('<span>').addClass('tooltip').text(' Naranja '),
+                       //    $('<span>').addClass('swatch-value bg_orange-3').attr({ 'text': 'Naranja'}),
+                       //    $('<img>').addClass('lazyload').attr({ 'data-src': 'images/products/orange-1.jpg', 'src': 'images/products/orange-1.jpg', 'alt': 'image-product' })
+                       // ),//list-color-item color-swatch active
+                       //  $('<li>').addClass('list-color-item color-swatch').append(
+                       //  $('<span>').addClass('tooltip').text(' Negro '),
+                       //  $('<span>').addClass('swatch-value bg_dark').attr({ 'text': ' Negro '} ),
+                       //  $('<img>').addClass('lazyload').attr({ 'data-src': 'images/products/black-1.jpg', 'src': 'images/products/black-1.jpg', 'alt': 'image-product' })
+                       // ),//list-color-item color-swatch
+                       // $('<li>').addClass('list-color-item color-swatch').append(
+                       // $('<span>').addClass('tooltip').text(' Blanco '),
+                       // $('<span>').addClass('swatch-value bg_white').attr({'text':'Blanco'}),
+                       // $('<img>').addClass('lazyload').attr({ 'data-src': 'images/products/white-1.jpg', 'src': 'images/products/white-1.jpg', 'alt': 'image-product' })
+                       // )//list-color-item color-swatch
+                       )//list-color-product
+               )//card-product-info
+               ).appendTo('#divProducto')//card-product
+               })//each
+               }//if
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+               // $("#productoProfile").html("");
+               // if (data.data != null) {
+               //     $.each(data.data, function (i, item) {
+               //         $('<div>').addClass('row').append(
+               //             $('<div>').addClass('col-xl-4').append(
+                //                 $('<div>').addClass('product-wrapper mb-30').append(
+               //                     $('<div>').addClass('product-img').append(
+               //                         $('<a>').attr({ 'href': 'product-details.html' }).append(
+               //                             $('<img>').attr({ 'src': '../Fashion/img/product/pro13.jpg', 'alt': '' }),
+               //                             $('<img>').addClass('secondary-img').attr({ 'src': '../Fashion/img/product/pro14.jpg', 'alt': '' })
+               //                         )//div <a>
+               //                     )//div product-img
+               //                 )//div product-wrapper mb-30
+                                //             ),//div col-xl-4
+                                //             $('<div>').addClass('col-xl-8').append(
+               //                 $('<div>').addClass('product-content pro-list-content pr-0 mb-50').append(
+               //                     $('<div>').addClass('pro-cat mb-10').append(
+               //                         $('<a>').attr({ 'href': 'shop.html' }).text(data.data[i].descripcion),
+               //                         $('<a>').attr({ 'href': 'shop.html' }).text('furniture')
+               //                     ),//div pro-cat mb-10
+               //                     $('<h4>').append(
+               //                         $('<a>').attr({ 'href': 'product-details.html' }).text(data.data[i].descripcion)
+               //                     ), // h4
+               // //                     $('<div>').addClass('product-meta mb-10').append(
+               //                         $('<div>').addClass('pro-price').append(
+               //                             $('<span>').text(data.data[i].precio),
+               //                             $('<span>').addClass('old-price').text('$230.00 USD'),
+               //                         )//div pro-price
+               //                     ),//div product-meta mb-10
+               //                     $('<p>').text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
+               //                     $('<div>').addClass('product-action').append(
+               //                         $('<a>').attr({ 'href': '#', 'title': 'Shoppingb Cart' }).append(
+               //                             $('<i>').addClass('flaticon-shopping-cart')
+               //                         ),// <a>//
+               // $('<a>').attr({ 'href': '#', 'title': 'Quick View' }).append(
+               //                             $('<i>').addClass('flaticon-eye')
+               //                         ),// <a>
+               //                         $('<a>').attr({ 'href': '#', 'title': 'Wishlist' }).append(
+               //                             $('<i>').addClass('flaticon-like')
+               //                         )// <a>
+               //                     )//div product-action
+               //                 )//div product-content pro-list-content pr-0 mb-50
+               //             )//div col-xl-8
+               //         )//div row
+               //             .appendTo('#productoProfile')//div
+               //     })//each
+               // }//if
+               },//success
+               error: function (error) {
+               console.log(error)
+               },
+               beforeSend: function () {
+               },
+               });
+              
+               //Abrir Modal Quick Add
+               $('#btnMenos').click(function(){
+                           if( $("#cantidadQA").val()>1){
+                           var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
+                           $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())-1,num));
+               }
+               });
+               $('#btnMas').click(function(){
+                             var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
+                           $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())+1,num));
+               });
+               $('#btnAddCarrito').on('click',  function (event) {
+            
+              let item = {
+                Id:0,
+               IdCarrito: null,
+               IdProducto:producto.id,
+               IdProductoNavigation:null,
+               IdCarritoNavigation: null,
+               Precio: producto.precio,
+               oProducto: producto,
+               Cantidad: $("#cantidadQA").val()
+               }
+               
+
+               enviarProductoCarrito(item);
+               carrito.push(item);
+                $('#cantProducto').text(carrito.length);
+               }
+               )
+              })
+    </script>
+    }

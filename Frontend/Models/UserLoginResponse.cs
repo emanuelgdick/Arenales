@@ -1,0 +1,11 @@
+﻿using Frontend.Models;
+
+namespace FrontEnd.Models
+{
+    public class UserLoginResponse
+    {
+
+        public Usuario Usuario { get; set; }
+        public string Token { get; set; }
+    }
+}
