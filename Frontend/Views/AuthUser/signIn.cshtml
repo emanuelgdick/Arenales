@@ -110,9 +110,43 @@ async function enviarLogin(user,password)
                  .then(data => {
                          if (data.success){
                 
-                    obtenerCarritoByCliente(1);
+                   // obtenerCarritoByCliente(1);
+
+                             debugger;
+                    jQuery.ajax({
+                        url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=1' ,
+                        type: "GET",
+                        data: null,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+
+                             if (data.data != null) {
+                           
+                                 $.each(data.data.carritoItems, function (i, item) {
+                                     carrito.push(data.data.carritoItems[i]);
+                                 })
+                                 $('#cantProducto').text(carrito.length);
+                                
+                             }
+                            window.location.href = '/Home/Index';
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        },
+                        beforeSend: function () {
+
+
+                        },
+                    });
+
+
+
+
+
+
                              
-                                 window.location.href='/Home/Index';
+                          
                          }else{
 
                                 alert(data.message);

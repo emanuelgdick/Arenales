@@ -2339,19 +2339,18 @@
                 totales();
                 $("#shoppingCart").modal("show");
               }
-
-        function obtenerCarritoByCliente(idCliente) {
+            function obtenerCarritoByCliente(idCliente) {
             alert('obteniendo carrito2');
             jQuery.ajax({
-                url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente='+idCliente,
+                url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=' + idCliente,
                 type: "GET",
-               // data: null,
+                data: null,
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                  
+
                     // if (data.data != null) {
-                         alert('carrito')
+                    alert('carrito')
                     //     $.each(data.data.carritoItems, function (i, item) {
                     //         carrito.push(data.data.carritoItems[i]);
                     //     })
@@ -2363,7 +2362,7 @@
                 },
                 beforeSend: function () {
 
-                 
+
                 },
             });
         }

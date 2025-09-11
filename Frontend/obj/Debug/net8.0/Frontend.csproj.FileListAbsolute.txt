@@ -1006,3 +1006,4 @@ C:\EcomusArenales\Frontend\obj\Debug\net8.0\refint\Frontend.dll
 C:\EcomusArenales\Frontend\obj\Debug\net8.0\Frontend.pdb
 C:\EcomusArenales\Frontend\obj\Debug\net8.0\Frontend.genruntimeconfig.cache
 C:\EcomusArenales\Frontend\obj\Debug\net8.0\ref\Frontend.dll
+C:\EcomusArenales\Frontend\obj\Debug\net8.0\Frontend.sourcelink.json
