@@ -21,32 +21,6 @@
   },
   {
     "ContainingType": "Api.Controllers.CarritoProductosController",
-    "Method": "PostCarritoProducto",
-    "RelativePath": "api/CarritoProductos",
-    "HttpMethod": "POST",
-    "IsController": true,
-    "Order": 0,
-    "Parameters": [
-      {
-        "Name": "carritoProducto",
-        "Type": "Api.Models.CarritoProducto",
-        "IsRequired": true
-      }
-    ],
-    "ReturnTypes": [
-      {
-        "Type": "Api.Models.CarritoProducto",
-        "MediaTypes": [
-          "text/plain",
-          "application/json",
-          "text/json"
-        ],
-        "StatusCode": 200
-      }
-    ]
-  },
-  {
-    "ContainingType": "Api.Controllers.CarritoProductosController",
     "Method": "GetCarritoProducto",
     "RelativePath": "api/CarritoProductos/{id}",
     "HttpMethod": "GET",
@@ -107,6 +81,32 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.CarritoProductosController",
+    "Method": "PostCarritoProducto",
+    "RelativePath": "api/CarritoProductos/PostCarritoProducto",
+    "HttpMethod": "POST",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "carritoProducto",
+        "Type": "Api.Models.CarritoProducto",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Api.Models.CarritoProducto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Api.Controllers.CarritosController",
@@ -207,7 +207,7 @@
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Carrito",
+        "Type": "System.Collections.Generic.List\u00601[[Api.Models.Carrito, Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",

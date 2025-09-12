@@ -88,21 +88,51 @@ namespace Api.Controllers
 
 
 
-            List<Carrito> carritos = await _context.Carrito.Where(s => s.IdCliente == idCliente).ToListAsync();
-            List<CarritoProducto>  carritoProducto = await _context.CarritoProducto.Where(d=>d.IdCarrito==1).ToListAsync();
-            var resultado = (from m in carritos
+            //List<Carrito> carritos = await _context.Carrito.Where(s => s.IdCliente == idCliente).ToListAsync();
+            //List<CarritoProducto> carritoProducto = await _context.CarritoProducto.Where(d => d.IdCarrito == 1).ToListAsync();
+            //List<Producto> producto = (from p in  _context.Producto join
+            //                          cp in carritoProducto  on p.Id equals cp.IdProducto
+            //                          select p).ToList();
+
+
+
+
+
+
+            //       await _context.CarritoProducto.Where(d => d.IdCarrito == 1).ToListAsync();
+
+
+            var carritoP = (from cp in _context.CarritoProducto
+                                  join p in _context.Producto on cp.IdProducto equals p.Id
+                            where cp.Id==1
+                                  select new CarritoProducto
+                                  {
+                                      IdCarrito = cp.IdCarrito,
+                                      Cantidad = cp.Cantidad,
+                                      Precio = cp.Precio,
+                                      IdProductoNavigation = new Producto() {
+                                          Id = p.Id,
+                                          Descripcion = p.Descripcion
+                                      }
+                                      
+                                  }).ToList();
+
+
+            var resultado = (from m in _context.Carrito
+                             from cp in _context.CarritoProducto
+                             where cp.IdCarrito == m.Id
+
                              select new Carrito
                              {
-                              Id = m.Id,
-                              Total = m.Total,
-                              Fecha = m.Fecha,
-                              Numero = m.Numero,
-                              IdEstadoCarrito = m?.IdEstadoCarrito == null?0: m?.IdEstadoCarrito,
-                              IdComprobante = m?.IdComprobante == null ? 0 : m?.IdComprobante,
+                                 Id = m.Id,
+                                 Total = m.Total,
+                                 Fecha = m.Fecha,
+                                 Numero = m.Numero,
+                                 IdEstadoCarrito = m.IdEstadoCarrito == null ? 0 : m.IdEstadoCarrito,
+                                 IdComprobante = m.IdComprobante == null ? 0 : m.IdComprobante,
                                  IdCliente = m.IdCliente,
-                              CarritoProductos = (from d in carritoProducto
-                                                  where d.IdCarrito == m.Id
-                                                  select d).ToList()
+                                 CarritoProductos = carritoP,
+
                              }).ToList();
             return resultado;
         }

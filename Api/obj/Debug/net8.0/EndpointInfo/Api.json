@@ -41,52 +41,6 @@
             }
           }
         }
-      },
-      "post": {
-        "tags": [
-          "CarritoProductos"
-        ],
-        "requestBody": {
-          "content": {
-            "application/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CarritoProducto"
-              }
-            },
-            "text/json": {
-              "schema": {
-                "$ref": "#/components/schemas/CarritoProducto"
-              }
-            },
-            "application/*+json": {
-              "schema": {
-                "$ref": "#/components/schemas/CarritoProducto"
-              }
-            }
-          }
-        },
-        "responses": {
-          "200": {
-            "description": "OK",
-            "content": {
-              "text/plain": {
-                "schema": {
-                  "$ref": "#/components/schemas/CarritoProducto"
-                }
-              },
-              "application/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CarritoProducto"
-                }
-              },
-              "text/json": {
-                "schema": {
-                  "$ref": "#/components/schemas/CarritoProducto"
-                }
-              }
-            }
-          }
-        }
       }
     },
     "/api/CarritoProductos/{id}": {
@@ -186,6 +140,54 @@
         "responses": {
           "200": {
             "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/CarritoProductos/PostCarritoProducto": {
+      "post": {
+        "tags": [
+          "CarritoProductos"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarritoProducto"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarritoProducto"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/CarritoProducto"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/CarritoProducto"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CarritoProducto"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/CarritoProducto"
+                }
+              }
+            }
           }
         }
       }
@@ -350,17 +352,26 @@
             "content": {
               "text/plain": {
                 "schema": {
-                  "$ref": "#/components/schemas/Carrito"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Carrito"
+                  }
                 }
               },
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Carrito"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Carrito"
+                  }
                 }
               },
               "text/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Carrito"
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Carrito"
+                  }
                 }
               }
             }
@@ -2189,22 +2200,23 @@
           },
           "idCarrito": {
             "type": "integer",
-            "format": "int64"
+            "format": "int64",
+            "nullable": true
           },
           "idProducto": {
             "type": "integer",
-            "format": "int64"
+            "format": "int64",
+            "nullable": true
           },
           "cantidad": {
-            "type": "number",
-            "format": "double"
+            "type": "integer",
+            "format": "int32",
+            "nullable": true
           },
           "precio": {
             "type": "number",
-            "format": "double"
-          },
-          "idCarritoNavigation": {
-            "$ref": "#/components/schemas/Carrito"
+            "format": "double",
+            "nullable": true
           },
           "idProductoNavigation": {
             "$ref": "#/components/schemas/Producto"

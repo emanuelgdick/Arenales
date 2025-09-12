@@ -1,142 +1,30 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\EcomusArenales\\",
+  "WorkspaceRootPath": "C:\\Arenales\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\controllers\\carritoproductoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\carritoproductoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\carritoitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\carritoitemservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\controllers\\carritoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\carritoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\apiuserservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\productoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\talleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\talleservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\rubroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\rubroservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\colorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\colorservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\apiservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\productoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\appsettings.development.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\models\\caja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\models\\caja.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\models\\cai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\models\\cai.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\ecomusarenales\\api\\models\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\models\\banco.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\ComprobanteItemsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\ComprobanteItemsController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\RubrosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\RubrosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\MarcasController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\MarcasController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\TallesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\TallesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\EstadoCarritosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\EstadoCarritosController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\ComprobantesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\ComprobantesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\ColoresController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\ColoresController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\EcomusArenales\\Api\\Controllers\\ClientesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:Api\\Controllers\\ClientesController.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\views\\authuser\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\authuser\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\authuser\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\ecomusarenales\\frontend\\views\\authuser\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\authuser\\signup.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\arenales\\api\\controllers\\carritoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\carritoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\carritoservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\arenales\\api\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\models\\carrito.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -163,439 +51,80 @@
             {
               "$type": "Document",
               "DocumentIndex": 0,
-              "Title": "CarritoProductosController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\CarritoProductosController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\CarritoProductosController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\CarritoProductosController.cs",
-              "RelativeToolTip": "Api\\Controllers\\CarritoProductosController.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAowAgAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:20:04.099Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CarritosController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\CarritosController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\CarritosController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\CarritosController.cs",
-              "RelativeToolTip": "Api\\Controllers\\CarritosController.cs",
-              "ViewState": "AgIAAFUAAAAAAAAAAAAAAGIAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T20:20:19.009Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CarritoController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Controllers\\CarritoController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\CarritoController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Controllers\\CarritoController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\CarritoController.cs",
-              "ViewState": "AgIAALQAAAAAAAAAAAAAAM0AAAA8AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:05:56.272Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "Carrito.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Models\\Carrito.cs",
-              "RelativeDocumentMoniker": "Api\\Models\\Carrito.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Models\\Carrito.cs",
-              "RelativeToolTip": "Api\\Models\\Carrito.cs",
-              "ViewState": "AgIAAAMAAAAAAAAAAAAAAAcAAAAVAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T22:21:59.531Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "CarritoService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\CarritoService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\CarritoService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\CarritoService.cs",
-              "RelativeToolTip": "Frontend\\Services\\CarritoService.cs",
-              "ViewState": "AgIAACsAAAAAAAAAAAAuwDgAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:05:56.225Z",
+              "Title": "signIn.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-09-11T22:46:41.492Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CarritoItemService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\CarritoItemService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\CarritoItemService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\CarritoItemService.cs",
-              "RelativeToolTip": "Frontend\\Services\\CarritoItemService.cs",
-              "ViewState": "AgIAABMAAAAAAAAAAAAQwA0AAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T22:11:24.044Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 8,
-              "Title": "ProductoService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\ProductoService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\ProductoService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\ProductoService.cs",
-              "RelativeToolTip": "Frontend\\Services\\ProductoService.cs",
-              "ViewState": "AgIAAAgAAAAAAAAAAAAxwBsAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T21:36:22.076Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ApiUserService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\ApiUserService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\ApiUserService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\ApiUserService.cs",
-              "RelativeToolTip": "Frontend\\Services\\ApiUserService.cs",
-              "ViewState": "AgIAAAcAAAAAAAAAAAA+wBYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T18:26:20.51Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
-              "Title": "AuthUserController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Controllers\\AuthUserController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\AuthUserController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Controllers\\AuthUserController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\AuthUserController.cs",
-              "ViewState": "AgIAAB8AAAAAAAAAAAAuwCwAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T18:37:29.357Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "TalleService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\TalleService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\TalleService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\TalleService.cs",
-              "RelativeToolTip": "Frontend\\Services\\TalleService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T22:11:49.525Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "ProductosController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\ProductosController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\ProductosController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\ProductosController.cs",
-              "RelativeToolTip": "Api\\Controllers\\ProductosController.cs",
-              "ViewState": "AgIAAA8AAAAAAAAAAAAAABwAAAArAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:37.189Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 12,
-              "Title": "ApiService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\ApiService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\ApiService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\ApiService.cs",
-              "RelativeToolTip": "Frontend\\Services\\ApiService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T22:11:16.882Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "ColorService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\ColorService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\ColorService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\ColorService.cs",
-              "RelativeToolTip": "Frontend\\Services\\ColorService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T22:11:33.176Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 10,
-              "Title": "RubroService.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Services\\RubroService.cs",
-              "RelativeDocumentMoniker": "Frontend\\Services\\RubroService.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Services\\RubroService.cs",
-              "RelativeToolTip": "Frontend\\Services\\RubroService.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAqAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T22:11:45.511Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 15,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Program.cs",
-              "RelativeDocumentMoniker": "Api\\Program.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Program.cs",
-              "RelativeToolTip": "Api\\Program.cs",
-              "ViewState": "AgIAACoAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T22:06:02.247Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 14,
-              "Title": "ProductoController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Controllers\\ProductoController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\ProductoController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Controllers\\ProductoController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\ProductoController.cs",
-              "ViewState": "AgIAADYAAAAAAAAAAAAwwD8AAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T21:34:38.028Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "appsettings.Development.json",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\appsettings.Development.json",
-              "RelativeDocumentMoniker": "Api\\appsettings.Development.json",
-              "ToolTip": "C:\\EcomusArenales\\Api\\appsettings.Development.json",
-              "RelativeToolTip": "Api\\appsettings.Development.json",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-09-10T19:20:20.177Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 17,
-              "Title": "Caja.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Models\\Caja.cs",
-              "RelativeDocumentMoniker": "Api\\Models\\Caja.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Models\\Caja.cs",
-              "RelativeToolTip": "Api\\Models\\Caja.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T20:00:27.382Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "Cai.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Models\\Cai.cs",
-              "RelativeDocumentMoniker": "Api\\Models\\Cai.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Models\\Cai.cs",
-              "RelativeToolTip": "Api\\Models\\Cai.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T20:00:26.445Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 20,
-              "Title": "ComprobanteItemsController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\ComprobanteItemsController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\ComprobanteItemsController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\ComprobanteItemsController.cs",
-              "RelativeToolTip": "Api\\Controllers\\ComprobanteItemsController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:13.814Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "RubrosController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\RubrosController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\RubrosController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\RubrosController.cs",
-              "RelativeToolTip": "Api\\Controllers\\RubrosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:42.634Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 22,
-              "Title": "MarcasController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\MarcasController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\MarcasController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\MarcasController.cs",
-              "RelativeToolTip": "Api\\Controllers\\MarcasController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:32.371Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "Banco.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Models\\Banco.cs",
-              "RelativeDocumentMoniker": "Api\\Models\\Banco.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Models\\Banco.cs",
-              "RelativeToolTip": "Api\\Models\\Banco.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAANAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:27:27.803Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 23,
-              "Title": "TallesController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\TallesController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\TallesController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\TallesController.cs",
-              "RelativeToolTip": "Api\\Controllers\\TallesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:49.348Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 24,
-              "Title": "EstadoCarritosController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\EstadoCarritosController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\EstadoCarritosController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\EstadoCarritosController.cs",
-              "RelativeToolTip": "Api\\Controllers\\EstadoCarritosController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:25.427Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 25,
-              "Title": "ComprobantesController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\ComprobantesController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\ComprobantesController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\ComprobantesController.cs",
-              "RelativeToolTip": "Api\\Controllers\\ComprobantesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:20.805Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 26,
-              "Title": "ColoresController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\ColoresController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\ColoresController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\ColoresController.cs",
-              "RelativeToolTip": "Api\\Controllers\\ColoresController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:26:08.996Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 27,
-              "Title": "ClientesController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Api\\Controllers\\ClientesController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\ClientesController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Api\\Controllers\\ClientesController.cs",
-              "RelativeToolTip": "Api\\Controllers\\ClientesController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAJAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-10T19:25:54.4Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 28,
               "Title": "index.cshtml",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Views\\Home\\index.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Home\\index.cshtml",
               "RelativeDocumentMoniker": "Frontend\\Views\\Home\\index.cshtml",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Views\\Home\\index.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Home\\index.cshtml",
               "RelativeToolTip": "Frontend\\Views\\Home\\index.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAABMAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAI4BAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
               "WhenOpened": "2025-09-09T20:07:39.537Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 29,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-09T22:28:23.646Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 33,
-              "Title": "signUp.cshtml",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Views\\AuthUser\\signUp.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\AuthUser\\signUp.cshtml",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Views\\AuthUser\\signUp.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\AuthUser\\signUp.cshtml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAM8AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-08T18:37:01.432Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 30,
-              "Title": "HomeController.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Controllers\\HomeController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\HomeController.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Controllers\\HomeController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\HomeController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAMAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "CarritoController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\CarritoController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\CarritoController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\CarritoController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\CarritoController.cs",
+              "ViewState": "AgIAAEMAAAAAAAAAAAAEwE0AAAAMAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-08T21:22:23.581Z"
+              "WhenOpened": "2025-09-10T19:05:56.272Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 31,
-              "Title": "signIn.cshtml",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Views\\AuthUser\\signIn.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\AuthUser\\signIn.cshtml",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Views\\AuthUser\\signIn.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\AuthUser\\signIn.cshtml",
-              "ViewState": "AgIAAD4AAAAAAAAAAAAUwEoAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-08T21:22:54.756Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 32,
-              "Title": "Program.cs",
-              "DocumentMoniker": "C:\\EcomusArenales\\Frontend\\Program.cs",
-              "RelativeDocumentMoniker": "Frontend\\Program.cs",
-              "ToolTip": "C:\\EcomusArenales\\Frontend\\Program.cs",
-              "RelativeToolTip": "Frontend\\Program.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAB0AAAADAAAAAAAAAA==",
+              "DocumentIndex": 4,
+              "Title": "CarritoService.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Services\\CarritoService.cs",
+              "RelativeDocumentMoniker": "Frontend\\Services\\CarritoService.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Services\\CarritoService.cs",
+              "RelativeToolTip": "Frontend\\Services\\CarritoService.cs",
+              "ViewState": "AgIAAD4AAAAAAAAAAAAuwEkAAAAfAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-09T18:43:35.834Z"
+              "WhenOpened": "2025-09-10T19:05:56.225Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "CarritosController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\Controllers\\CarritosController.cs",
+              "RelativeDocumentMoniker": "Api\\Controllers\\CarritosController.cs",
+              "ToolTip": "C:\\Arenales\\Api\\Controllers\\CarritosController.cs",
+              "RelativeToolTip": "Api\\Controllers\\CarritosController.cs",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAQwGoAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T20:20:19.009Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "Carrito.cs",
+              "DocumentMoniker": "C:\\Arenales\\Api\\Models\\Carrito.cs",
+              "RelativeDocumentMoniker": "Api\\Models\\Carrito.cs",
+              "ToolTip": "C:\\Arenales\\Api\\Models\\Carrito.cs",
+              "RelativeToolTip": "Api\\Models\\Carrito.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAAVAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-09-10T22:21:59.531Z",
+              "EditorCaption": ""
             }
           ]
         }

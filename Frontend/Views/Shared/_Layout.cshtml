@@ -2264,12 +2264,14 @@
 
             }
 
-        function abrirCarrito() {
+     
+                  function abrirCarrito() {
 
                   $('#itemCarrito').empty();
                     //totales();
                  let cantProd = 0;
                  let total = 0;
+                 alert('abriendo carrito');
 
                  carrito.forEach(function(number, index) {
 
@@ -2339,33 +2341,7 @@
                 totales();
                 $("#shoppingCart").modal("show");
               }
-            function obtenerCarritoByCliente(idCliente) {
-            alert('obteniendo carrito2');
-            jQuery.ajax({
-                url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=' + idCliente,
-                type: "GET",
-                data: null,
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (data) {
-
-                    // if (data.data != null) {
-                    alert('carrito')
-                    //     $.each(data.data.carritoItems, function (i, item) {
-                    //         carrito.push(data.data.carritoItems[i]);
-                    //     })
-                    //     $('#cantProducto').text(carrito.length);
-                    // }
-                },
-                error: function (error) {
-                    console.log(error)
-                },
-                beforeSend: function () {
-
-
-                },
-            });
-        }
+     
     </script>
 
     <!--* JavaScript Links Start -->
