@@ -19,5 +19,6 @@ public partial class CarritoProducto
     [JsonIgnore]
     public virtual Carrito? IdCarritoNavigation { get; set; } = null!;
 
+    
     public virtual Producto? IdProductoNavigation { get; set; } = null!;
 }

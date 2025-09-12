@@ -335,24 +335,25 @@
                }
                });
                $('#btnMas').click(function(){
+
                              var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
                            $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())+1,num));
                });
                $('#btnAddCarrito').on('click',  function (event) {
             
               let item = {
-                Id:0,
-               IdCarrito: null,
-               IdProducto:producto.id,
-               IdProductoNavigation:null,
-               IdCarritoNavigation: null,
-               Precio: producto.precio,
-               oProducto: producto,
-               Cantidad: $("#cantidadQA").val()
+                id:0,
+               idCarrito: null,
+               idProducto:producto.id,
+               idProductoNavigation: null,
+               idCarritoNavigation: null,
+               precio: producto.precio,
+               cantidad: $("#cantidadQA").val()
                }
                
 
                enviarProductoCarrito(item);
+               item.idProductoNavigation = { descripcion: producto.descripcion };
                carrito.push(item);
                 $('#cantProducto').text(carrito.length);
                }
@@ -360,14 +361,25 @@
 
 
 
+           function enviarProductoCarrito(item) {
+
+                jQuery.ajax({
+                    url: '@Url.Action("AddProductoCarrito", "Carrito")?idCliente=1',
+                    type: "POST",
+                    data: JSON.stringify(item),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        //obtenerCarrito();
+                        //vCarrito.push(prod);
+                        //renderCarrito(vCarrito);
+                        $("#quick_add").modal("hide");
+                    }
+                })
 
 
-
-
-
-                 
-
-            jQuery.ajax({
+            }
+           jQuery.ajax({
                 url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=1',// + idCliente,
                 type: "GET",
                 //data: null,
@@ -375,10 +387,11 @@
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
                    debugger;
-                    if (data.data[0] != null) {
+                    if (data != null) {
                      //   alert('obteniendo carrito');
-                        $.each(data.data[0].carritoProductos, function (i, item) {
-                            carrito.push(data.data[0].carritoProductos[i]);
+                        $.each(data.data.carritoProductos, function (i, item) {
+
+                            carrito.push(data.data.carritoProductos[i]);
                         })
                          console.log(carrito);
 
@@ -395,6 +408,8 @@
                 },
             });
 
+
+          
 
          
 

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "IF0gT4z85bY=",
+  "dgSpecHash": "GclcuqbPiN4uMechSezYYYn8XPetA9aCtwRbx09eYHTQYBEjfTTcI1C4z6XtIHSuvXlz0qtAajZJiWfl8MDzkA==",
   "success": true,
-  "projectFilePath": "C:\\Arenales\\Frontend\\Frontend.csproj",
+  "projectFilePath": "C:\\EcomusArenales\\Frontend\\Frontend.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Emanuel\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\8.0.5\\microsoft.aspnetcore.authentication.jwtbearer.8.0.5.nupkg.sha512",
     "C:\\Users\\Emanuel\\.nuget\\packages\\microsoft.aspnetcore.mvc.razor.extensions\\6.0.0\\microsoft.aspnetcore.mvc.razor.extensions.6.0.0.nupkg.sha512",

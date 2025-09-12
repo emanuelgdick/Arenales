@@ -73,13 +73,13 @@ namespace Frontend.Services
             var APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
             return APIResponse;
         }
-        public async Task<List<Carrito>> GetCarritoByCliente(long idCliente, string token)
+        public async Task<Carrito> GetCarritoByCliente(long idCliente, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
             HttpResponseMessage response = await _httpClient.GetAsync($"api/Carritos/GetCarritoByCliente?idCliente={idCliente}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var  APIResponse = JsonConvert.DeserializeObject<List<Carrito>>(contents);
+            var  APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
            
             return APIResponse;
         }

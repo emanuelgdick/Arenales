@@ -47,7 +47,7 @@ namespace Api.Controllers
         [HttpGet("GetCarritoByCliente")]
         [Authorize]
      //   [ResponseCache(CacheProfileName = "apicache")]
-        public async Task<ActionResult<List<Carrito>>> GetCarritoByCliente(long idCliente)
+        public async Task<ActionResult<Carrito>> GetCarritoByCliente(long idCliente)
         {
             //////var carrito = await _context.Carrito.FindAsync(idCliente);
 
@@ -61,8 +61,8 @@ namespace Api.Controllers
 
 
 
-          //  var carrito = _db.Carrito.Where(s=>s.IdCliente==idCliente).ToList();
-            
+            //  var carrito = _db.Carrito.Where(s=>s.IdCliente==idCliente).ToList();
+
 
 
             // Realizar la unión utilizando Join
@@ -75,14 +75,12 @@ namespace Api.Controllers
             //                    Nro=car.Nro,
             //                    idCliente=car.IdCliente,
             //                    CarritoProductos =new CarritoProducto{ 
-                                        
-            
-            
+
+
+
             //}
 
 
-            
-                                
             //                };
             //return Ok(resultado);
 
@@ -103,25 +101,25 @@ namespace Api.Controllers
 
 
             var carritoP = (from cp in _context.CarritoProducto
-                                  join p in _context.Producto on cp.IdProducto equals p.Id
-                            where cp.Id==1
-                                  select new CarritoProducto
-                                  {
-                                      IdCarrito = cp.IdCarrito,
-                                      Cantidad = cp.Cantidad,
-                                      Precio = cp.Precio,
-                                      IdProductoNavigation = new Producto() {
-                                          Id = p.Id,
-                                          Descripcion = p.Descripcion
-                                      }
-                                      
-                                  }).ToList();
+                            join p in _context.Producto on cp.IdProducto equals p.Id
+                            where cp.IdCarrito == 1
+                            select new CarritoProducto
+                            {
+                                IdCarrito = cp.IdCarrito,
+                                Cantidad = cp.Cantidad,
+                                Precio = cp.Precio,
+                                IdProducto = cp.IdProducto,
+                             //   IdCarritoNavigation=cp.IdCarrito,
+                                IdProductoNavigation = new Producto() {
+                                    Id = p.Id,
+                                    Descripcion = p.Descripcion
+                                }
+                            }).ToList();
 
 
             var resultado = (from m in _context.Carrito
                              from cp in _context.CarritoProducto
                              where cp.IdCarrito == m.Id
-
                              select new Carrito
                              {
                                  Id = m.Id,
@@ -129,11 +127,15 @@ namespace Api.Controllers
                                  Fecha = m.Fecha,
                                  Numero = m.Numero,
                                  IdEstadoCarrito = m.IdEstadoCarrito == null ? 0 : m.IdEstadoCarrito,
+
                                  IdComprobante = m.IdComprobante == null ? 0 : m.IdComprobante,
                                  IdCliente = m.IdCliente,
                                  CarritoProductos = carritoP,
 
-                             }).ToList();
+                             }).FirstOrDefault();
+
+        
+            
             return resultado;
         }
 

@@ -74,7 +74,7 @@ namespace FrontEnd.Controllers
 
         public async Task<JsonResult> GetCarritoByCliente(long idCliente)
         {
-            List<Carrito> oLista = new List<Carrito>();
+            Carrito oLista = new Carrito();
             oLista = await _CarritoService.GetCarritoByCliente(idCliente,HttpContext.Session.GetString("APIToken"));
             if (oLista != null) { 
             //foreach (CarritoProducto ci in oLista.CarritoProductos)

@@ -113,7 +113,7 @@
                                 <label for="check-agree" class="text_black-2">I have read and agree to the website <a href="terms-conditions.html" class="text-decoration-underline">terms and conditions</a>.</label>
                             </div>
                         </div> *@
-                        <button class="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">Place order</button>
+                        <button class="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">Confirmar Pedido</button>
                     </form>
                 </div>
             </div>
@@ -126,35 +126,68 @@
 @section Scripts {
     <script>
 
+
+        jQuery.ajax({
+            url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=1',// + idCliente,
+            type: "GET",
+            //data: null,
+            dataType: "json",
+            contentType: "application/json; charset=utf-8",
+            success: function (data) {
+                debugger;
+                if (data != null) {
+                    //   alert('obteniendo carrito');
+                    $.each(data.data.carritoProductos, function (i, item) {
+
+                        carrito.push(data.data.carritoProductos[i]);
+                    })
+                    console.log(carrito);
+
+                    $('#cantProducto').text(carrito.length);
+
+                }
+            },
+            error: function (error) {
+                console.log(error)
+            },
+            beforeSend: function () {
+
+
+            },
+        });
+
+
+
+      
         //Get Carrito
         jQuery.ajax({
-            url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=10059',
+            url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=1',
             type: "GET",
             data: null,
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                if (data.data != null) {
+                if (data != null) {
                     $('#lipedido').empty();
                     let total = 0;
                     let subTotal = 0;
-                    $.each(data.data.carritoItems, function (i, item) {
+                    $.each(data.data.carritoProductos, function (i, item) {
                         debugger;
-                        carrito.push(data.data.carritoItems[i]);
+                        carrito.push(data.data.carritoProductos[i]);
                         $('<li>').addClass("checkout-product-item").append(
                             $('<figure>').addClass("img-product").append(
                                 $('<img>').attr({ 'src': "../images/products/brown.jpg", 'alt': "product" }),
-                                $('<span>').addClass('quantity').text(data.data.carritoItems[i].cantidad)
+                                    $('<span>').addClass('quantity').text(data.data.carritoProductos[i].cantidad)
                             ),//img-product
                             $('<div>').addClass('content').append(
                                 $('<div>').addClass('info').append(
-                                    $('<p>').addClass('name').text(data.data.carritoItems[i].oProducto.descripcion),
-                                    $('<span>').addClass('price').text('$ '+data.data.carritoItems[i].punitario.toFixed(2))
+                                    $('<p>').addClass('name').text(data.data.carritoProductos[i].idProductoNavigation.descripcion),
+                                    $('<span>').addClass('price').text('$ ' + data.data.carritoProductos[i].precio.toFixed(2))
                                 )//info
                             )//content
 
                         ).appendTo('#lipedido');//checkout-product-item
-                        subTotal = data.data.carritoItems[i].cantidad * data.data.carritoItems[i].punitario;
+                        subTotal = data.data.carritoProductos[i].cantidad * data.data.carritoProductos[i].precio;
                         total = total + subTotal;
                     })
                     

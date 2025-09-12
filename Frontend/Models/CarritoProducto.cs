@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Frontend.Models;
 
@@ -15,6 +16,7 @@ public partial class CarritoProducto
 
     public decimal? Precio { get; set; }
 
+    [JsonIgnore]
     public virtual Carrito? IdCarritoNavigation { get; set; } = null!;
 
     public virtual Producto? IdProductoNavigation { get; set; } = null!;

@@ -2209,7 +2209,7 @@
                  debugger;
                  carrito.forEach(function (number, index) {
                      console.log(index);
-                    total = total + (carrito[index].punitario * carrito[index].cantidad);
+                    total = total + (carrito[index].precio * carrito[index].cantidad);
                       cantProd++;
                   });
                 $('<div>').addClass("tf-totals-total-value fw-6").text(cantProd).appendTo('#idCantProd')
@@ -2245,102 +2245,85 @@
             };
 
 
-        function enviarProductoCarrito(item){
 
-              jQuery.ajax({
-                         url: '@Url.Action("AddProductoCarrito", "Carrito")?idCliente=1',
-                        type: "POST",
-                        data: JSON.stringify(item),
-                        dataType: "json",
-                        contentType: "application/json; charset=utf-8",
-                        success: function (data) {
-                            //obtenerCarrito();
-                            //vCarrito.push(prod);
-                            //renderCarrito(vCarrito);
-                            $("#quick_add").modal("hide");
-                        }
-                })
+        
+              function abrirCarrito() {
+                $('#itemCarrito').empty();
+                //totales();
+            
+                let cantProd = 0;
+                let total = 0;
+                carrito.forEach(function (number, index) {
 
+                    $('<div>').addClass('tf-mini-cart-item').append(
+                        $('<div>').addClass('tf-mini-cart-image').append(
+                            $('<a>').attr({ 'href': 'product-detail.html' }).append(
+                                $('<img>').attr({ 'src': '../images/products/white-2.jpg', 'alt': '' })
+                            )//<a>
+                        ),//tf-mini-cart-image
+                        $('<div>').addClass('tf-mini-cart-info').append(
 
-            }
-
-     
-                  function abrirCarrito() {
-
-                  $('#itemCarrito').empty();
-                    //totales();
-                 let cantProd = 0;
-                 let total = 0;
-                 alert('abriendo carrito');
-
-                 carrito.forEach(function(number, index) {
-
-                       $('<div>').addClass('tf-mini-cart-item').append(
-                          $('<div>').addClass('tf-mini-cart-image').append(
-                              $('<a>').attr({ 'href': 'product-detail.html' }).append(
-                                  $('<img>').attr({ 'src': '../images/products/white-2.jpg', 'alt': '' })
-                              )//<a>
-                          ),//tf-mini-cart-image
-                          $('<div>').addClass('tf-mini-cart-info').append(
-                              $('<a>').attr({ 'href': "product-detail.html" }).addClass('title link').text(carrito[index].oProducto.descripcion),
-                              $('<div>').addClass('meta-variant').attr({'id':'idproducto'}).text(carrito[index].oProducto.id),
-                              $('<div>').attr({ 'id': 'precioSC', "data-indice": index }).addClass('price fw-6').text('$ ' + carrito[index].punitario),
-                              $('<div>').addClass('tf-mini-cart-btns').append(
-                                  $('<div>').addClass('wg-quantity small').append(
-                                      $('<span>').addClass('btn-quantity minus-btn').text('-').attr({ 'id': 'btnMenosSC' }).on('click', function (event) {
-                                          event.preventDefault();
+                            $('<a>').attr({ 'href': "product-detail.html" }).addClass('title link').text(carrito[index].idProductoNavigation.descripcion),
+                            $('<div>').addClass('meta-variant').attr({ 'id': 'idproducto' }).text(carrito[index].idProductoNavigation.id),
+                            $('<div>').attr({ 'id': 'precioSC', "data-indice": index }).addClass('price fw-6').text('$ ' + carrito[index].precio),
+                            $('<div>').addClass('tf-mini-cart-btns').append(
+                                $('<div>').addClass('wg-quantity small').append(
+                                    $('<span>').addClass('btn-quantity minus-btn').text('-').attr({ 'id': 'btnMenosSC' }).on('click', function (event) {
+                                        event.preventDefault();
                                         let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
                                         let cantidad = $('input[data-indice="' + id + '"]').val();
                                         let precio = parseInt($('#precioSC[data-indice="' + id + '"]').text().replace('$', '').replace(' ', ''));
-                                          if (cantidad > 1) {
-                                              cantidad--;
+                                        if (cantidad > 1) {
+                                            cantidad--;
                                             $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
-                                              let subTotal = precio * cantidad;
-                                              $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
-                                             carrito[id].cantidad = cantidad;
-                                             totales();
+                                            let subTotal = precio * cantidad;
+                                            $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
+                                            carrito[id].cantidad = cantidad;
+                                            totales();
                                         }
-                                      }),
-                                      $('<input>').addClass('cantidad').attr({ 'type': 'text', 'name': 'number', 'value': carrito[index].cantidad, 'id': 'cantidadSC', "data-indice": index }),
-                                      $('<span>').addClass('btn-quantity plus-btn').text('+').attr({ 'id': 'btnMasSC' }).on('click', function (event) {
-                                          event.preventDefault();
-                                          debugger;
-                                  let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
-                                  let cantidad = $('input[data-indice="' + id + '"]').val();
-                                          let precio = parseInt($('#precioSC[data-indice="' + id + '"]').text().replace('$', '').replace(' ', ''));
-                                          cantidad++;
-                                          $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
-                                          let subTotal = precio * cantidad;
-                                          $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
+                                    }),
+                                    $('<input>').addClass('cantidad').attr({ 'type': 'text', 'name': 'number', 'value': carrito[index].cantidad, 'id': 'cantidadSC', "data-indice": index }),
+                                    $('<span>').addClass('btn-quantity plus-btn').text('+').attr({ 'id': 'btnMasSC' }).on('click', function (event) {
+                                        event.preventDefault();
+                                        debugger;
+                                        let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
+                                        let cantidad = $('input[data-indice="' + id + '"]').val();
+                                        let precio = parseInt($('#precioSC[data-indice="' + id + '"]').text().replace('$', '').replace(' ', ''));
+                                        cantidad++;
+                                        $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
+                                        let subTotal = precio * cantidad;
+                                        $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
 
                                         carrito[id].cantidad = cantidad;
-                                         totales();
+                                        totales();
                                     }),
-                                  ),//wg-quantity small
-                                  //$('<div>').addClass('tf-mini-cart-remove').text('Eliminar')
-                                  $('<a>').attr({ 'href': '#' }).append(
-                                      svg
-                                  )//<a>
-                                      .on('click', function () {
+                                ),//wg-quantity small
+                                //$('<div>').addClass('tf-mini-cart-remove').text('Eliminar')
+                                $('<a>').attr({ 'href': '#' }).append(
+                                    svg
+                                )//<a>
+                                    .on('click', function () {
                                         let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
                                         carrito.splice(id, 1);
                                         $(this).parent().parent().parent().remove();
                                         totales();
                                         $('#cantProducto').text(carrito.length);
                                     }),//button
-                              )//tf-mini-cart-btns"
-                           ),//"tf-mini-cart-info
-                          $('<div>').addClass('col-3 mt-5').append(
-                              $('<div>').attr({ "data-indice": index, 'id': 'subTotal' }).addClass('price').text('$ ' + (carrito[index].punitario * carrito[index].cantidad).toFixed(2))
-                          )//subtotal
+                            )//tf-mini-cart-btns"
+                        ),//"tf-mini-cart-info
+                        $('<div>').addClass('col-3 mt-5').append(
+                            $('<div>').attr({ "data-indice": index, 'id': 'subTotal' }).addClass('price').text('$ ' + (carrito[index].precio * carrito[index].cantidad).toFixed(2))
+                        )//subtotal
 
-                      ).appendTo('#itemCarrito')//tf-mini-cart-item
-                   cantProd++;
+                    ).appendTo('#itemCarrito')//tf-mini-cart-item
+                    cantProd++;
 
                 });
                 totales();
                 $("#shoppingCart").modal("show");
-              }
+            }
+
+
      
     </script>
 
