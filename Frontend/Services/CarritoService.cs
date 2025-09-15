@@ -24,13 +24,13 @@ namespace Frontend.Services
 
         }
 
-        public async Task<Carrito> TieneCarrito(long idCliente, string token)
+        public async Task<long> TieneCarrito(long idUsuario, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Carritos/GetCarritoByCliente?idCliente={idCliente}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Carritos/CarritoExists?idUsuario={idUsuario}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
+            var APIResponse= JsonConvert.DeserializeObject<long>(contents);
             return APIResponse;
         }
 
@@ -73,13 +73,13 @@ namespace Frontend.Services
             var APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
             return APIResponse;
         }
-        public async Task<Carrito> GetCarritoByCliente(long idCliente, string token)
+        public async Task<List<Carrito>> GetCarritoByUsuario(long idUsuario, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Carritos/GetCarritoByCliente?idCliente={idCliente}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Carritos/GetCarritoByUsuario?idUsuario={idUsuario}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
-            var  APIResponse = JsonConvert.DeserializeObject<Carrito>(contents);
+            var  APIResponse = JsonConvert.DeserializeObject<List<Carrito>>(contents);
            
             return APIResponse;
         }

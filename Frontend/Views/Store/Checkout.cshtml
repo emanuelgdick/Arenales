@@ -1,7 +1,10 @@
-﻿@{
-    ViewBag.Title = "Profesiones";
+﻿
+@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
+
+
+
 
 <!-- page-cart -->
  <section class="flat-spacing-11">
@@ -126,81 +129,62 @@
 @section Scripts {
     <script>
 
-
-        jQuery.ajax({
-            url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=1',// + idCliente,
-            type: "GET",
-            //data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
-                debugger;
-                if (data != null) {
-                    //   alert('obteniendo carrito');
-                    $.each(data.data.carritoProductos, function (i, item) {
-
-                        carrito.push(data.data.carritoProductos[i]);
-                    })
-                    console.log(carrito);
-
-                    $('#cantProducto').text(carrito.length);
-
-                }
-            },
-            error: function (error) {
-                console.log(error)
-            },
-            beforeSend: function () {
-
-
-            },
-        });
-
-
-
       
+
+
         //Get Carrito
         jQuery.ajax({
-            url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=1',
+            url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idUsuario=' +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
             type: "GET",
             data: null,
             dataType: "json",
             contentType: "application/json; charset=utf-8",
             success: function (data) {
-                if (data != null) {
-                    $('#lipedido').empty();
-                    let total = 0;
-                    let subTotal = 0;
-                    $.each(data.data.carritoProductos, function (i, item) {
-                        debugger;
-                        carrito.push(data.data.carritoProductos[i]);
-                        $('<li>').addClass("checkout-product-item").append(
-                            $('<figure>').addClass("img-product").append(
-                                $('<img>').attr({ 'src': "../images/products/brown.jpg", 'alt': "product" }),
-                                    $('<span>').addClass('quantity').text(data.data.carritoProductos[i].cantidad)
-                            ),//img-product
-                            $('<div>').addClass('content').append(
-                                $('<div>').addClass('info').append(
-                                    $('<p>').addClass('name').text(data.data.carritoProductos[i].idProductoNavigation.descripcion),
-                                    $('<span>').addClass('price').text('$ ' + data.data.carritoProductos[i].precio.toFixed(2))
-                                )//info
-                            )//content
 
-                        ).appendTo('#lipedido');//checkout-product-item
-                        subTotal = data.data.carritoProductos[i].cantidad * data.data.carritoProductos[i].precio;
-                        total = total + subTotal;
-                    })
-                    
-                    $('<div>').text('$' + total.toFixed(2)).appendTo('#idTotal')
-                }
+                 if (data.data != null) {
+                    $.each(data.data, function (i, item) {
+                          if (data.data[i].idEstadoCarrito==1){ //CArrito Abrierto
+                             $('#idCarrito').text(data.data[i].id);
+                             $('#lipedido').empty();
+                             let total = 0;
+                             let subTotal = 0;
+
+                              $.each(data.data[i].carritoProductos, function (j, item) {
+
+
+                               // carrito.push(data.data.carritoProductos[i]);
+                               $('<li>').addClass("checkout-product-item").append(
+                                   $('<figure>').addClass("img-product").append(
+                                       $('<img>').attr({ 'src': "../images/products/brown.jpg", 'alt': "product" }),
+                                           $('<span>').addClass('quantity').text(data.data[i].carritoProductos[j].cantidad)
+                                   ),//img-product
+                                   $('<div>').addClass('content').append(
+                                       $('<div>').addClass('info').append(
+                                           $('<p>').addClass('name').text(data.data[i].carritoProductos[j].idProductoNavigation.descripcion),
+                                           $('<span>').addClass('price').text('$ ' + data.data[i].carritoProductos[j].precio.toFixed(2))
+                                       )//info
+                                   )//content
+
+                               ).appendTo('#lipedido');//checkout-product-item
+                               subTotal = data.data[i].carritoProductos[j].cantidad * data.data[i].carritoProductos[j].precio;
+                               total = total + subTotal;
+                           })
+
+                             $('<div>').text('$' + total.toFixed(2)).appendTo('#idTotal')
+                            }
+                         })
+                         }
+                        
+                
             },
             error: function (error) {
                 console.log(error)
             },
             beforeSend: function () {
+                
             },
         });
-
+     
         
         
     </script>

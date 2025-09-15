@@ -1,6 +1,9 @@
 using Frontend.Models;
+using Microsoft.AspNetCore.Authentication.Cookies;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
+using System.Security.Claims;
 
 namespace Frontend.Controllers
 {
@@ -12,9 +15,16 @@ namespace Frontend.Controllers
         {
             _logger = logger;
         }
-
+        
         public IActionResult Index()
         {
+            var userIdClaim = User.Claims.FirstOrDefault(c => c.Type == "http://schemas.xmlsoap.org/ws/2005/05/identity/claims/nameidentifier"); // Reemplaza "id_usuario" con el nombre de tu claim
+            if (userIdClaim != null)
+            {
+                string idUsuario = userIdClaim.Value;
+                ViewBag.idUsuario = idUsuario;
+            }
+
             return View();
         }
 

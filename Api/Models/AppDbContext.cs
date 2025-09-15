@@ -108,8 +108,8 @@ namespace Api
                 entity.Property(e => e.Fecha).HasColumnType("datetime");
                 entity.Property(e => e.Total).HasColumnType("decimal(18, 2)");
 
-                entity.HasOne(d => d.IdClienteNavigation).WithMany(p => p.Carritos)
-                    .HasForeignKey(d => d.IdCliente)
+                entity.HasOne(d => d.IdUsuarioNavigation).WithMany(p => p.Carritos)
+                    .HasForeignKey(d => d.IdUsuario)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Carrito_Cliente");
 

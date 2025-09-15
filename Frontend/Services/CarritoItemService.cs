@@ -46,10 +46,10 @@ namespace Frontend.Services
             return APIResponse;
         }
 
-        public async Task<CarritoProducto> UpdateProductoCarritoItem(long id, CarritoProducto item/*, string token*/)
+        public async Task<CarritoProducto> UpdateProductoCarritoItem(long id, CarritoProducto item, string token)
         {
-            // _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<CarritoProducto>($"api/CarritoItem/Editar", item);
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsJsonAsync<CarritoProducto>($"api/CarritoProductos/PutCarritoProducto?id={id}", item);
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<CarritoProducto>(contents);
@@ -92,12 +92,12 @@ namespace Frontend.Services
             response.EnsureSuccessStatusCode();
         }
 
-        public async Task DeleteCarritoItem(long id/*, string token*/)
+        public async Task DeleteCarritoItem(long id, string token)
         {
-            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PutAsync($"api/CarritoItem/Eliminar?id={id}", null);
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/CarritoProductos/DeleteCarritoProducto?id={id}", null);
             response.EnsureSuccessStatusCode();
-        }
+        }   
 
     }
 }

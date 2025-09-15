@@ -1,11 +1,11 @@
-﻿@inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor
+﻿@* @inject Microsoft.AspNetCore.Http.IHttpContextAccessor HttpContextAccessor *@
 
 @{
 
     Layout = null;
 
 }
- @model Usuario
+@*  @model Usuario *@
 
 
 <!DOCTYPE html>
@@ -39,7 +39,7 @@
     <link href="~/Multi/css/YTPlayer.css" rel="stylesheet">
     <!--* Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,700;1,200&family=Poppins:wght@600;700&family=Potta+One&display=swap"
-    rel="stylesheet">
+          rel="stylesheet">
     <link href="~/Multi/css/fonts.css" rel="stylesheet">
     <link href="~/Multi/css/style.css" rel="stylesheet">
     <link href="~/Multi/css/style-responsive.css" rel="stylesheet">
@@ -86,7 +86,7 @@
     <div id="wrapper"> *@
     <!--* Page Loader Start -->
     <div class="page-loader">
-        <div class="loader" style="background-image: url('../images/logo/logo.jpg')">
+        <div class="loader" style="background-image: url('../images/logo/LogoAArenales.jpg')">
             <div class="face">
                 <div class="circle first-circle"></div>
             </div>
@@ -137,7 +137,7 @@
             </div> *@
                 <div class="col-9">
 
-                    <div class="col-xl-3 col-md-4 col-6" >
+                    <div class="col-xl-3 col-md-4 col-6">
                         <a href="/home/index" class="logo-header">
                             <img src="~/images/logo/logo.jpg" alt="logo" class="logo">
                         </a>
@@ -163,7 +163,7 @@
 
                                         <span>Carrito</span>
                                         @* <a href="product-style-01.html#shoppingCart" data-bs-toggle="modal"> *@
-                                        <span id="cantProducto" onClick="abrirCarrito()"class="bg-dark-accents text-white rounded-full py-[3px] px-[9px] ml-1 inline-flex justify-center items-center text-[10px] leading-[100%]">0</span>
+                                        <span id="cantProducto" onClick="abrirCarrito()" class="bg-dark-accents text-white rounded-full py-[3px] px-[9px] ml-1 inline-flex justify-center items-center text-[10px] leading-[100%]">0</span>
                                     </a>
                                     @*   <div class="cart-content" id="cartContent">
                                     <ul class="p-6" id="ulCarrito">
@@ -189,43 +189,43 @@
                                 <div class="profile-content">
                                     <ul class="py-3">
                                         <div class="px-3 shadow-[0px_1px_0px_#E1E3E6]">
-                                            <li>
-                                                <a href="/Authuser/signIn">Iniciar Sesión</a>
-                                            </li>
-                                            <li>
-                                                <a href="/AuthUser/signUp">Crear Cuenta</a>
-                                            </li>
+                                        <li>
+                                            <a href="/Authuser/signIn">Iniciar Sesión</a>
+                                        </li>
+                                        <li>
+                                            <a href="/AuthUser/signUp">Crear Cuenta</a>
+                                        </li>
 
-                                        </div>
-                                        <div class="px-3 shadow-[0px_1px_0px_#E1E3E6]">
-                                            <li>
-                                                <a href="/AuthUser/accountsetting">Configurar Cuenta</a>
-                                            </li>
-                                            <li>
-                                                <a href="order-history.html">Historial de pedidos</a>
-                                            </li>
-                                            <li>
-                                                <a href="/Store/shoppingCart">Carrito</a>
-                                            </li>
-                                        </div>
-                                        <div class="px-3 shadow-[0px_1px_0px_#E1E3E6]">
-                                            <li>
-                                                <a href="wishlist.html">Wishlist</a>
-                                            </li>
-                                            <li>
-                                                <a href="/Store/index">Tienda</a>
-                                            </li>
-                                        </div>
-                                        <div class="px-3">
-                                            <li>
-                                                <a href="/Authuser/Logout">Cerrar Sesión</a>
-                                            </li>
-                                        </div>
-                                    </ul>
                                 </div>
-
+                                <div class="px-3 shadow-[0px_1px_0px_#E1E3E6]">
+                            <li>
+                                <a href="/AuthUser/accountsetting">Configurar Cuenta</a>
+                            </li>
+                            <li>
+                                <a href="order-history.html">Historial de pedidos</a>
+                            </li>
+                            <li>
+                                <a href="/Store/shoppingCart">Carrito</a>
+                            </li>
                     </div>
+                    <div class="px-3 shadow-[0px_1px_0px_#E1E3E6]">
+                        <li>
+                            <a href="wishlist.html">Wishlist</a>
+                        </li>
+                        <li>
+                            <a href="/Store/index">Tienda</a>
+                        </li>
+                    </div>
+                    <div class="px-3">
+                        <li>
+                            <a href="/Authuser/Logout">Cerrar Sesión</a>
+                        </li>
+                    </div>
+                    </ul>
                 </div>
+
+            </div>
+        </div>
 
     </header>
     <!-- /header -->
@@ -1667,6 +1667,7 @@
             <div class="modal-content">
                 <div class="header">
                     <div class="title fw-5">Carrito de Compras</div>
+                    <div id="idCarrito">0</div>
                     <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
                 </div>
                 <div class="wrap">
@@ -2050,36 +2051,36 @@
                             </div>
                             @if (User.Identity.IsAuthenticated)
                             {
-                            <div class="tf-product-info-quantity">
-                                <div class="quantity-title fw-6">Cantidad</div>
-                                <div class="wg-quantity">
-                                    <span class="btn-quantity minus-btn">-</span>
-                                    <input type="text" name="number" value="1">
-                                    <span class="btn-quantity plus-btn">+</span>
-                                </div>
-                            </div>
-                            <div class="tf-product-info-buy-button">
-                                <form class="">
-                                    <a href="product-style-01.html#" class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn "><span>Add to cart -&nbsp;</span><span class="tf-qty-price">$8.00</span></a>
-                                    <a href="javascript:void(0);" class="tf-product-btn-wishlist hover-tooltip box-icon bg_white wishlist btn-icon-action">
-                                        <span class="icon icon-heart"></span>
-                                        <span class="tooltip">Add to Wishlist</span>
-                                        <span class="icon icon-delete"></span>
-                                    </a>
-                                    <a href="product-style-01.html#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" class="tf-product-btn-wishlist hover-tooltip box-icon bg_white compare btn-icon-action">
-                                        <span class="icon icon-compare"></span>
-                                        <span class="tooltip">Add to Compare</span>
-                                        <span class="icon icon-check"></span>
-                                    </a>
-                                    <div class="w-100">
-                                        <a href="product-style-01.html#" class="btns-full">Buy with <img src="~/images/payments/paypal.png" alt=""></a>
-                                        <a href="product-style-01.html#" class="payment-more-option">More payment options</a>
+                                <div class="tf-product-info-quantity">
+                                    <div class="quantity-title fw-6">Cantidad</div>
+                                    <div class="wg-quantity">
+                                        <span class="btn-quantity minus-btn">-</span>
+                                        <input type="text" name="number" value="1">
+                                        <span class="btn-quantity plus-btn">+</span>
                                     </div>
-                                </form>
-                            </div>
-                            <div>
-                                <a href="product-detail.html" class="tf-btn fw-6 btn-line">View full details<i class="icon icon-arrow1-top-left"></i></a>
-                            </div>
+                                </div>
+                                <div class="tf-product-info-buy-button">
+                                    <form class="">
+                                        <a href="product-style-01.html#" class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn "><span>Add to cart -&nbsp;</span><span class="tf-qty-price">$8.00</span></a>
+                                        <a href="javascript:void(0);" class="tf-product-btn-wishlist hover-tooltip box-icon bg_white wishlist btn-icon-action">
+                                            <span class="icon icon-heart"></span>
+                                            <span class="tooltip">Add to Wishlist</span>
+                                            <span class="icon icon-delete"></span>
+                                        </a>
+                                        <a href="product-style-01.html#compare" data-bs-toggle="offcanvas" aria-controls="offcanvasLeft" class="tf-product-btn-wishlist hover-tooltip box-icon bg_white compare btn-icon-action">
+                                            <span class="icon icon-compare"></span>
+                                            <span class="tooltip">Add to Compare</span>
+                                            <span class="icon icon-check"></span>
+                                        </a>
+                                        <div class="w-100">
+                                            <a href="product-style-01.html#" class="btns-full">Buy with <img src="~/images/payments/paypal.png" alt=""></a>
+                                            <a href="product-style-01.html#" class="payment-more-option">More payment options</a>
+                                        </div>
+                                    </form>
+                                </div>
+                                <div>
+                                    <a href="product-detail.html" class="tf-btn fw-6 btn-line">View full details<i class="icon icon-arrow1-top-left"></i></a>
+                                </div>
 
                             }
 
@@ -2191,140 +2192,236 @@
 
 
     <script>
-        var carrito = [];
-           
-        function TotalSC(n, precio) {
-                 return (n * precio).toFixed(2);
-        }
+                 var carrito = [];
 
-        var svg = `<svg width = "12" height = "12" viewBox = "0 0 12 12" fill = "none" xmlns = "http://www.w3.org/2000/svg" >
-                                                                 <path d="M2 2L6.00003 6M6.00003 6L10 2M6.00003 6L2 10M6.00003 6L10 10" stroke = "#9A9CAA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
-                                                                   </svg>`;
+                function TotalSC(n, precio) {
+                         return (n * precio).toFixed(2);
+                }
 
-           function totales(){
-                 let cantProd = 0;
-                 let total = 0;
-                $('#idCantProd').empty();
-                $('#idTotal').empty();
-                 debugger;
-                 carrito.forEach(function (number, index) {
-                     console.log(index);
-                    total = total + (carrito[index].precio * carrito[index].cantidad);
-                      cantProd++;
-                  });
-                $('<div>').addClass("tf-totals-total-value fw-6").text(cantProd).appendTo('#idCantProd')
-                $('<div>').addClass("tf-totals-total-value fw-6").text('$'+total.toFixed(2)).appendTo('#idTotal')
-              }
-           function TotalQA(n, precio) {
-                return (n * precio).toFixed(2);
-            }
-           function abrirModalQA(json,talles) {
-                 $('#id').val(json.id);
-                 $("#descripcionQA").text(json.descripcion);
-                 $("#precioQA").text('$'+json.precio.toFixed(2));
-                 $("#cantidadQA").val('1');
-                 $('#totalQA').text('$'+TotalQA($("#cantidadQA").val(),json.precio));
-            
-          
-            $('#idTalle').empty();
-              $.each(talles, function (i, item) {
-                var radio = $('<input/>').attr({
-                    type: 'radio',
-                    name: name,
-                    value: i,
-                    id: 'radio_' + i
-                }).on('click', function () {
-                    
-                    $('#talleSeleccionado').text(item);
-                });
-                console.log(item);
-                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item);
-                $('#idTalle').append(radio).append(label).append('<br/>');
-              })
-             $("#quick_add").modal("show");
-            };
+                var svg = `<svg width = "12" height = "12" viewBox = "0 0 12 12" fill = "none" xmlns = "http://www.w3.org/2000/svg" >
+                                                                         <path d="M2 2L6.00003 6M6.00003 6L10 2M6.00003 6L2 10M6.00003 6L10 10" stroke = "#9A9CAA" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
+                                                                           </svg>`;
+
+                   function totales(){
+                         let cantProd = 0;
+                         let total = 0;
+                        $('#idCantProd').empty();
+                        $('#idTotal').empty();
+                         debugger;
+                         carrito.forEach(function (number, index) {
+                             console.log(index);
+                            total = total + (carrito[index].precio * carrito[index].cantidad);
+                              cantProd++;
+                          });
+                        $('<div>').addClass("tf-totals-total-value fw-6").text(cantProd).appendTo('#idCantProd')
+                        $('<div>').addClass("tf-totals-total-value fw-6").text('$'+total.toFixed(2)).appendTo('#idTotal')
+                      }
+                   function TotalQA(n, precio) {
+                        return (n * precio).toFixed(2);
+                    }
+                   function abrirModalQA(json,talles) {
+                      
+                         $('#id').val(json.id);
+                         $("#descripcionQA").text(json.descripcion);
+                         $("#precioQA").text('$'+json.precio.toFixed(2));
+                         $("#cantidadQA").val('1');
+                         $('#totalQA').text('$'+TotalQA($("#cantidadQA").val(),json.precio));
 
 
+                    $('#idTalle').empty();
+                      $.each(talles, function (i, item) {
+                        var radio = $('<input/>').attr({
+                            type: 'radio',
+                            name: name,
+                            value: i,
+                            id: 'radio_' + i
+                        }).on('click', function () {
 
-        
-              function abrirCarrito() {
-                $('#itemCarrito').empty();
-                //totales();
-            
-                let cantProd = 0;
-                let total = 0;
-                carrito.forEach(function (number, index) {
+                            $('#talleSeleccionado').text(item);
+                        });
+                        console.log(item);
+                        var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item);
+                        $('#idTalle').append(radio).append(label).append('<br/>');
+                      })
+                     $("#quick_add").modal("show");
+                    };
 
-                    $('<div>').addClass('tf-mini-cart-item').append(
-                        $('<div>').addClass('tf-mini-cart-image').append(
-                            $('<a>').attr({ 'href': 'product-detail.html' }).append(
-                                $('<img>').attr({ 'src': '../images/products/white-2.jpg', 'alt': '' })
-                            )//<a>
-                        ),//tf-mini-cart-image
-                        $('<div>').addClass('tf-mini-cart-info').append(
+                function abrirCarrito() {
 
-                            $('<a>').attr({ 'href': "product-detail.html" }).addClass('title link').text(carrito[index].idProductoNavigation.descripcion),
-                            $('<div>').addClass('meta-variant').attr({ 'id': 'idproducto' }).text(carrito[index].idProductoNavigation.id),
-                            $('<div>').attr({ 'id': 'precioSC', "data-indice": index }).addClass('price fw-6').text('$ ' + carrito[index].precio),
-                            $('<div>').addClass('tf-mini-cart-btns').append(
-                                $('<div>').addClass('wg-quantity small').append(
-                                    $('<span>').addClass('btn-quantity minus-btn').text('-').attr({ 'id': 'btnMenosSC' }).on('click', function (event) {
-                                        event.preventDefault();
-                                        let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
-                                        let cantidad = $('input[data-indice="' + id + '"]').val();
-                                        let precio = parseInt($('#precioSC[data-indice="' + id + '"]').text().replace('$', '').replace(' ', ''));
-                                        if (cantidad > 1) {
-                                            cantidad--;
-                                            $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
-                                            let subTotal = precio * cantidad;
-                                            $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
-                                            carrito[id].cantidad = cantidad;
-                                            totales();
-                                        }
-                                    }),
-                                    $('<input>').addClass('cantidad').attr({ 'type': 'text', 'name': 'number', 'value': carrito[index].cantidad, 'id': 'cantidadSC', "data-indice": index }),
-                                    $('<span>').addClass('btn-quantity plus-btn').text('+').attr({ 'id': 'btnMasSC' }).on('click', function (event) {
-                                        event.preventDefault();
-                                        debugger;
-                                        let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
-                                        let cantidad = $('input[data-indice="' + id + '"]').val();
-                                        let precio = parseInt($('#precioSC[data-indice="' + id + '"]').text().replace('$', '').replace(' ', ''));
-                                        cantidad++;
-                                        $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
-                                        let subTotal = precio * cantidad;
-                                        $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
+                                        $('#itemCarrito').empty();
+                                        
+                                        //totales();
 
-                                        carrito[id].cantidad = cantidad;
+                                        let cantProd = 0;
+                                        let total = 0;
+                                        console.log(carrito);
+                                        carrito.forEach(function (number, index) {
+                                            var nombreProducto=carrito[index].idProductoNavigation.descripcion;
+                                            $('<div>').addClass('tf-mini-cart-item').append(
+                                                $('<div>').addClass('tf-mini-cart-image').append(
+                                                    $('<a>').attr({ 'href': 'product-detail.html' }).append(
+                                                        $('<img>').attr({ 'src': '../images/products/white-2.jpg', 'alt': '' })
+                                                    )//<a>
+                                                ),//tf-mini-cart-image
+                                                $('<div>').addClass('tf-mini-cart-info').append(
+
+                                                    $('<a>').attr({ 'href': "product-detail.html" }).addClass('title link').text(nombreProducto),
+                                                    
+                                                    $('<div>').addClass('meta-variant hidden').attr({ 'id': 'id' }).text(carrito[index].id),
+                                                   
+                                                    
+                                                    $('<div>').addClass('meta-variant hidden').attr({ 'id': 'idproducto' }).text(carrito[index].idProducto),
+
+                                                     
+
+                                                    $('<div>').attr({ 'id': 'precioSC', "data-indice": index }).addClass('price fw-6').text('$ ' + carrito[index].precio),
+                                                    $('<div>').addClass('tf-mini-cart-btns').append(
+                                                        $('<div>').addClass('wg-quantity small').append(
+                                                            $('<span>').addClass('btn-quantity minus-btn').text('-').attr({ 'id': 'btnMenosSC' }).on('click', function (event) {
+                                                                event.preventDefault();
+                                                                let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
+                                                                let cantidad = $('input[data-indice="' + id + '"]').val();
+                                                                let precio = parseInt($('#precioSC[data-indice="' + id + '"]').text().replace('$', '').replace(' ', ''));
+                                                                if (cantidad > 1) {
+                                                                    cantidad--;
+                                                                    $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
+                                                                    let subTotal = precio * cantidad;
+                                                                    $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
+                                                                    
+                                                                    carrito[index].cantidad = cantidad;
+                                                                    carrito[index].idProductoNavigation=null;
+                                                                    carrito[index].idCarrito=parseInt($('#idCarrito').text()),
+                                                                    actualizar(carrito[index]);
+                                                                  carrito[index].idProductoNavigation = {id:carrito[index].idProducto, descripcion:nombreProducto};
+                                                                    totales();
+                                                                }
+                                                            }),
+                                                            $('<input>').addClass('cantidad').attr({ 'type': 'text', 'name': 'number', 'value': carrito[index].cantidad, 'id': 'cantidadSC', "data-indice": index }),
+                                                            $('<span>').addClass('btn-quantity plus-btn').text('+').attr({ 'id': 'btnMasSC' }).on('click', function (event) {
+                                                                event.preventDefault();
+                                                                let id =carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
+                                                                let cantidad = $('input[data-indice="' + id + '"]').val();
+                                                                let precio = parseInt($('#precioSC[data-indice="' + id + '"]').text().replace('$', '').replace(' ', ''));
+                                                                cantidad++;
+                                                                $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
+                                                                let subTotal = precio * cantidad;
+                                                                $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
+                                                                
+                                                                carrito[index].cantidad = cantidad;
+                                                                carrito[index].idProductoNavigation=null;
+                                                                carrito[index].idCarrito=parseInt($('#idCarrito').text()),
+                                                                actualizar(carrito[index]);
+                                                                carrito[index].idProductoNavigation = {id:carrito[index].idProducto, descripcion:nombreProducto};
+                                                                totales();
+                                                            }),
+                                                        ),//wg-quantity small
+                                                        //$('<div>').addClass('tf-mini-cart-remove').text('Eliminar')
+                                                        $('<a>').attr({ 'href': '#' }).append(
+                                                            svg
+                                                        )//<a>
+                                                            .on('click', function () {
+                                                                debugger;
+                                                                let id = carrito.findIndex(it => it.id === parseInt($(this).parent().parent().parent().find('#id').text()));
+                                                                eliminar(parseInt(carrito[id].id));
+                                                                carrito.splice(id, 1);
+                                                               // index--;
+                                                                $(this).parent().parent().parent().remove();
+                                                                totales();
+                                                                $('#cantProducto').text(carrito.length);
+                                                            }),//button
+                                                    )//tf-mini-cart-btns"
+                                                ),//"tf-mini-cart-info
+                                                $('<div>').addClass('col-3 mt-5').append(
+                                                    $('<div>').attr({ "data-indice": index, 'id': 'subTotal' }).addClass('price').text('$ ' + (carrito[index].precio * carrito[index].cantidad).toFixed(2))
+                                                )//subtotal
+
+                                            ).appendTo('#itemCarrito')//tf-mini-cart-item
+                                            cantProd++;
+
+                                        });
                                         totales();
-                                    }),
-                                ),//wg-quantity small
-                                //$('<div>').addClass('tf-mini-cart-remove').text('Eliminar')
-                                $('<a>').attr({ 'href': '#' }).append(
-                                    svg
-                                )//<a>
-                                    .on('click', function () {
-                                        let id = carrito.findIndex(it => it.idProducto === parseInt($(this).parent().parent().parent().find('#idproducto').text()));
-                                        carrito.splice(id, 1);
-                                        $(this).parent().parent().parent().remove();
-                                        totales();
-                                        $('#cantProducto').text(carrito.length);
-                                    }),//button
-                            )//tf-mini-cart-btns"
-                        ),//"tf-mini-cart-info
-                        $('<div>').addClass('col-3 mt-5').append(
-                            $('<div>').attr({ "data-indice": index, 'id': 'subTotal' }).addClass('price').text('$ ' + (carrito[index].precio * carrito[index].cantidad).toFixed(2))
-                        )//subtotal
+                                        $("#shoppingCart").modal("show");
+                                    }
 
-                    ).appendTo('#itemCarrito')//tf-mini-cart-item
-                    cantProd++;
-
-                });
-                totales();
-                $("#shoppingCart").modal("show");
-            }
+                   function eliminar(id) {
+                    debugger;
+                    //Eliminar producto carrito
+                    jQuery.ajax({
+                        url: '@Url.Action("Delete", "CarritoItem")?id=' + id,
+                        type: "POST",
+                        // data: JSON.stringify(item),
+                        contentType: 'application/json',
+                        success: function (data) {
+                            if (data.resultado) {
+                                // totalProductos = totalProductos - 1;
+                                // totalPesos = totalPesos - data.data.oProducto.punitario
+                                // obteberCarrito();
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    })
+                }
 
 
-     
+                  function actualizar(it) {
+                      
+                    jQuery.ajax({
+                        url: '@Url.Action("Add", "CarritoItem")',
+                        type: "POST",
+                        data: JSON.stringify(it),
+                        contentType: 'application/json',
+                        success: function (data) {
+                            if (data.resultado) {
+                            
+                              
+                            }
+
+                               $("#quick_add").modal("hide");
+                        },
+                        error: function (error) {
+                            console.log(error);
+                        }
+                    })
+                }
+                     document.addEventListener('DOMContentLoaded',function(){
+
+                                carrito=[];
+                                jQuery.ajax({
+                                       url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idUsuario=' +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
+                                       type: "GET",
+                                       //data: null,
+                                       dataType: "json",
+                                       contentType: "application/json; charset=utf-8",
+                                       success: function (data) {
+                                      
+                                           if (data.data != null) {
+                                               $.each(data.data, function (i, item) {
+                                                       if (data.data[i].idEstadoCarrito==1){//CArrito Abrierto
+                                                           $('#idCarrito').text(data.data[i].id);
+                                                           $.each(data.data[i].carritoProductos, function (j, item) {
+                                                          
+                                                            carrito.push(data.data[i].carritoProductos[j]);
+                                                       })
+                                                       $('#cantProducto').text( carrito.length);
+                                                   }
+                                               })
+                                            
+                                           }
+                                       },
+                                       error: function (error) {
+                                           console.log(error)
+                                       },
+                                       beforeSend: function () {
+
+
+                                       },
+                                   });
+
+        })
+
+
     </script>
 
     <!--* JavaScript Links Start -->
@@ -2348,7 +2445,7 @@
     <script src="~/MULTI/js/jquery.simple-text-rotator.min.js"></script> *@
 
 
-   
+
 
     <!--* ECOMUS -->
     <script type="text/javascript" src="~/js/bootstrap.min.js"></script>
@@ -2367,7 +2464,7 @@
     <!--CONFORTY JS here -->
     @* <script src="~/Conforty/assets/plugins/js/jquery.js"></script> *@
     <script src="~/Conforty/assets/plugins/js/swipper.js"></script>
-   @*  <script src="~/Conforty/assets/plugins/js/select2.js"></script> *@
+    @*  <script src="~/Conforty/assets/plugins/js/select2.js"></script> *@
     <script src="~/Conforty/assets/plugins/js/mixitUp.js"></script>
     <script src="~/Conforty/js/app.js"></script>
 

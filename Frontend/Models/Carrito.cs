@@ -13,7 +13,7 @@ public partial class Carrito
 
     public int? IdComprobante { get; set; }
 
-    public long? IdCliente { get; set; }
+    public long? IdUsuario { get; set; }
 
     public decimal? Total { get; set; }
 
@@ -22,7 +22,7 @@ public partial class Carrito
 
     public virtual ICollection<CarritoProducto>? CarritoProductos { get; set; } = new List<CarritoProducto>();
 
-    public virtual Cliente? IdClienteNavigation { get; set; }
+    public virtual Usuario? IdUsuarioNavigation { get; set; }
 
     public virtual Comprobante? IdComprobanteNavigation { get; set; }
 

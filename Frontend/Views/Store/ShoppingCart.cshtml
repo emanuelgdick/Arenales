@@ -86,7 +86,7 @@
         //function obtenerCarrito() {
         vCarrito = []
         jQuery.ajax({
-            url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=10059',
+            url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idCliente=10059',
             type: "GET",
             data: null,
             dataType: "json",
@@ -155,26 +155,7 @@
             },
         });
       
-        function eliminar(id) {
-
-
-            jQuery.ajax({
-                url: '@Url.Action("Delete", "CarritoItem")?id=' + id,
-                type: "POST",
-                // data: JSON.stringify(item),
-                contentType: 'application/json',
-                success: function (data) {
-                    if (data.resultado) {
-                        totalProductos = totalProductos - 1;
-                        totalPesos = totalPesos - data.data.oProducto.punitario
-                        obteberCarrito();
-                    }
-                },
-                error: function (error) {
-                    console.log(error);
-                }
-            })
-        }
+    
         // function renderCarrito(data) {
 
         //     alert('dibujar carrito');

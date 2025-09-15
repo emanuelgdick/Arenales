@@ -37,7 +37,7 @@ public partial class Cliente
 
     public string? CodCliente { get; set; }
 
-    public virtual ICollection<Carrito> Carritos { get; set; } = new List<Carrito>();
+    //public virtual ICollection<Carrito> Carritos { get; set; } = new List<Carrito>();
 
     public virtual ICollection<Comprobante> Comprobantes { get; set; } = new List<Comprobante>();
 

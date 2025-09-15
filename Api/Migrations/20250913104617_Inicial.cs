@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Api.Migrations
 {
     /// <inheritdoc />
-    public partial class uno : Migration
+    public partial class Inicial : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -396,7 +396,7 @@ namespace Api.Migrations
                 name: "Usuario",
                 columns: table => new
                 {
-                    Id = table.Column<int>(type: "int", nullable: false)
+                    Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     ApeyNom = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     User = table.Column<string>(type: "nvarchar(max)", nullable: false),
@@ -883,7 +883,7 @@ namespace Api.Migrations
                     Fecha = table.Column<DateTime>(type: "datetime", nullable: true),
                     IdEstadoCarrito = table.Column<long>(type: "bigint", nullable: true),
                     IdComprobante = table.Column<int>(type: "int", nullable: true),
-                    IdCliente = table.Column<long>(type: "bigint", nullable: true),
+                    IdUsuario = table.Column<long>(type: "bigint", nullable: true),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
                     Numero = table.Column<int>(type: "int", nullable: true)
                 },
@@ -892,8 +892,8 @@ namespace Api.Migrations
                     table.PrimaryKey("PK_Carrito", x => x.Id);
                     table.ForeignKey(
                         name: "FK_Carrito_Cliente",
-                        column: x => x.IdCliente,
-                        principalTable: "Cliente",
+                        column: x => x.IdUsuario,
+                        principalTable: "Usuario",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Carrito_Comprobante",
@@ -1017,10 +1017,10 @@ namespace Api.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    IdCarrito = table.Column<long>(type: "bigint", nullable: false),
-                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
-                    Cantidad = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: false)
+                    IdCarrito = table.Column<long>(type: "bigint", nullable: true),
+                    IdProducto = table.Column<long>(type: "bigint", nullable: true),
+                    Cantidad = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -1100,11 +1100,6 @@ namespace Api.Migrations
                 column: "IdVendedor");
 
             migrationBuilder.CreateIndex(
-                name: "IX_Carrito_IdCliente",
-                table: "Carrito",
-                column: "IdCliente");
-
-            migrationBuilder.CreateIndex(
                 name: "IX_Carrito_IdComprobante",
                 table: "Carrito",
                 column: "IdComprobante");
@@ -1113,6 +1108,11 @@ namespace Api.Migrations
                 name: "IX_Carrito_IdEstadoCarrito",
                 table: "Carrito",
                 column: "IdEstadoCarrito");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Carrito_IdUsuario",
+                table: "Carrito",
+                column: "IdUsuario");
 
             migrationBuilder.CreateIndex(
                 name: "IX_CarritoProducto_IdCarrito",
@@ -1362,9 +1362,6 @@ namespace Api.Migrations
                 name: "TalleCentral");
 
             migrationBuilder.DropTable(
-                name: "Usuario");
-
-            migrationBuilder.DropTable(
                 name: "TipoMovimientoCaja");
 
             migrationBuilder.DropTable(
@@ -1396,6 +1393,9 @@ namespace Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "Sucursal");
+
+            migrationBuilder.DropTable(
+                name: "Usuario");
 
             migrationBuilder.DropTable(
                 name: "EstadoCarrito");

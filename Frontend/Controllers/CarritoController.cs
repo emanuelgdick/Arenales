@@ -72,10 +72,10 @@ namespace FrontEnd.Controllers
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
 
-        public async Task<JsonResult> GetCarritoByCliente(long idCliente)
+        public async Task<JsonResult> GetCarritoByUsuario(long idUsuario)
         {
-            Carrito oLista = new Carrito();
-            oLista = await _CarritoService.GetCarritoByCliente(idCliente,HttpContext.Session.GetString("APIToken"));
+            List<Carrito> oLista = new List<Carrito>();
+            oLista = await _CarritoService.GetCarritoByUsuario(idUsuario, HttpContext.Session.GetString("APIToken"));
             if (oLista != null) { 
             //foreach (CarritoProducto ci in oLista.CarritoProductos)
             //{
@@ -170,7 +170,7 @@ namespace FrontEnd.Controllers
         
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
-        public async Task<JsonResult> AddProductoCarrito([FromBody] CarritoProducto item, long idCliente)
+        public async Task<JsonResult> AddProductoCarrito([FromBody] CarritoProducto item, long idUsuario)
         {
             object resultado;
             string mensaje = String.Empty;
@@ -178,12 +178,12 @@ namespace FrontEnd.Controllers
             {
                 if (item.Id == 0)
                 {
-                    Carrito? tieneCarrito = await _CarritoService.TieneCarrito(idCliente, HttpContext.Session.GetString("APIToken"));
-                    if (tieneCarrito == null)
+                    long tieneCarrito = await _CarritoService.TieneCarrito(idUsuario, HttpContext.Session.GetString("APIToken"));
+                    if (tieneCarrito==0)
                     {
                         Carrito carro = new Carrito()
                         {
-                            IdCliente = idCliente,
+                            IdUsuario = idUsuario,
                             Total = item.Cantidad * item.Precio,
                             Fecha = DateTime.Now,
                             Numero = 0,
@@ -193,18 +193,18 @@ namespace FrontEnd.Controllers
                         item.IdCarrito = carrito.Id;
                     }
                     else {
-                       item.IdCarrito = tieneCarrito.Id;
+                        item.IdCarrito = tieneCarrito;
                     }
 
-                    await _CarritoService.AddProductoCarrito(item, HttpContext.Session.GetString("APIToken"));
+                    
 
-                    resultado = true;
+                    resultado = await _CarritoService.AddProductoCarrito(item, HttpContext.Session.GetString("APIToken"));
                     mensaje = "Producto ingresado correctamente";
                 }
                 else
                 {
                     //    await _CarritoService.UpdateProductoCarrito(producto.Id, producto/*, HttpContext.Session.GetString("APIToken")*/);
-                    resultado = true;
+                    resultado = item.Id;//true;
                     mensaje = "Producto modificado correctamente";
                 }
             }
@@ -213,7 +213,7 @@ namespace FrontEnd.Controllers
                 resultado = false;
                 mensaje += ex.Message;
             }
-            return Json(new { resultado = resultado, mensaje = mensaje });
+            return Json(new { resultado = resultado, mensaje = mensaje});
         }
 
         public IActionResult ErrorPage()

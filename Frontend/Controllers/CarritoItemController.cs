@@ -40,8 +40,8 @@ namespace FrontEnd.Controllers
         }
 
 
-        //[Authorize(Roles = "Admin,Student")]
-        //[ResponseCache(Duration = 30)]
+        [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
 
         public async Task<JsonResult> Delete(int id)
         {
@@ -49,7 +49,7 @@ namespace FrontEnd.Controllers
             string mensaje = string.Empty;
             try
             {
-                await _CarritoItemService.DeleteCarritoItem(id/*, HttpContext.Session.GetString("APIToken")*/);
+                await _CarritoItemService.DeleteCarritoItem(id, HttpContext.Session.GetString("APIToken"));
                 resultado = true;
                 mensaje = "Item eliminado correctamente";
             }
@@ -79,8 +79,9 @@ namespace FrontEnd.Controllers
                 }
                 else
                 {
-                    await _CarritoItemService.UpdateProductoCarritoItem(item.Id, item/*, HttpContext.Session.GetString("APIToken")*/);
-                    resultado = true;
+                 
+                    
+                    resultado = await _CarritoItemService.UpdateProductoCarritoItem(item.Id, item, HttpContext.Session.GetString("APIToken"));
                     mensaje = "Item modificado correctamente";
                 }
             }

@@ -8,7 +8,6 @@
 
 <!-- page-title -->
 <div class="tf-page-title">
-  
     <div class="container-full">
         <div class="row">
             <div class="col-12">
@@ -339,24 +338,57 @@
                              var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
                            $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())+1,num));
                });
-               $('#btnAddCarrito').on('click',  function (event) {
-            
-              let item = {
-                id:0,
-               idCarrito: null,
-               idProducto:producto.id,
-               idProductoNavigation: null,
-               idCarritoNavigation: null,
-               precio: producto.precio,
-               cantidad: $("#cantidadQA").val()
-               }
                
+               
+               
+               $('#btnAddCarrito').on('click',  function (event) {
 
-               enviarProductoCarrito(item);
-               item.idProductoNavigation = { descripcion: producto.descripcion };
-               carrito.push(item);
-                $('#cantProducto').text(carrito.length);
-               }
+                debugger;
+                var pro=carrito.find(p => p.idProducto === producto.id)
+                var idpro;
+                var cantidad;
+                if(pro==null){
+                    idpro=0;
+                    cant=0;
+                }
+                else{
+                        idpro=pro.id;
+                        cant=pro.cantidad;
+                }
+                
+                let item = {
+                   id:idpro,
+                   idCarrito:parseInt($('#idCarrito').text()),
+                   idProducto:producto.id,
+                   idProductoNavigation: null,
+                   idCarritoNavigation: null,
+                   precio: producto.precio,
+                   cantidad: cant + parseInt($("#cantidadQA").val())
+                }
+
+                
+
+                if(pro==null){
+                    enviarProductoCarrito(item);
+                    item.idProductoNavigation = { descripcion: producto.descripcion };
+                    carrito.push(item);
+                    $('#cantProducto').text(carrito.length);
+                }else
+                {
+                    item.id=pro.id;
+                    //item.cantidad++;
+                    let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
+                    carrito[indice].cantidad = carrito[indice].cantidad+parseInt($("#cantidadQA").val()); // Asigna el nuevo precio
+                    item.idProductoNavigation = { descripcion: producto.descripcion };
+
+                 actualizar(item);
+                   
+                    
+                
+                }
+
+                
+                }
                )
 
 
@@ -364,51 +396,25 @@
            function enviarProductoCarrito(item) {
 
                 jQuery.ajax({
-                    url: '@Url.Action("AddProductoCarrito", "Carrito")?idCliente=1',
+           url: '@Url.Action("AddProductoCarrito", "Carrito")?idUsuario=' +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
                     type: "POST",
                     data: JSON.stringify(item),
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",
                     success: function (data) {
-                        //obtenerCarrito();
-                        //vCarrito.push(prod);
-                        //renderCarrito(vCarrito);
+                        debugger;
+                        console.log(data);
+                       item.id=data.resultado.id;
+                        $('#idCarrito').text(data.resultado.idCarrito);
+                        $('#idProducto').text(data.resultado.idProducto);
+                     
                         $("#quick_add").modal("hide");
                     }
                 })
 
 
             }
-           jQuery.ajax({
-                url: '@Url.Action("GetCarritoByCliente", "Carrito")?idCliente=1',// + idCliente,
-                type: "GET",
-                //data: null,
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (data) {
-                   debugger;
-                    if (data != null) {
-                     //   alert('obteniendo carrito');
-                        $.each(data.data.carritoProductos, function (i, item) {
-
-                            carrito.push(data.data.carritoProductos[i]);
-                        })
-                         console.log(carrito);
-
-                        $('#cantProducto').text( carrito.length);
-                       
-                    }
-                },
-                error: function (error) {
-                    console.log(error)
-                },
-                beforeSend: function () {
-
-
-                },
-            });
-
-
+          
           
 
          

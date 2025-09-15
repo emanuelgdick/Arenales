@@ -45,19 +45,29 @@ namespace Api.Controllers
 
         // PUT: api/CarritoProductos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754
-        [HttpPut("{id}")]
-        [Authorize]
-        public async Task<IActionResult> PutCarritoProducto(long id, CarritoProducto carritoProducto)
+        [HttpPut("PutCarritoProducto")]
+        //[Authorize]
+        public async Task<IActionResult> PutCarritoProducto(long id, [FromBody] CarritoProducto item)
         {
-            if (id != carritoProducto.Id)
+            if (id != item.Id)
             {
                 return BadRequest();
             }
+            //int? cant = item.Cantidad;
+            //int? cantBase = _context.CarritoProducto.AsNoTracking().Where(s => s.Id == item.Id).FirstOrDefault().Cantidad;
 
-            _context.Entry(carritoProducto).State = EntityState.Modified;
+            //item.Cantidad = cantBase + cant;
+            _context.Entry(item).State = EntityState.Modified;
 
             try
             {
+                await _context.SaveChangesAsync();
+
+
+                Carrito carrito = _context.Carrito.Where(s => s.Id == item.IdCarrito).FirstOrDefault();
+                List<CarritoProducto> items = _context.CarritoProducto.ToList();
+                carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
+                _context.Entry(carrito).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
             }
             catch (DbUpdateConcurrencyException)
@@ -72,8 +82,10 @@ namespace Api.Controllers
                 }
             }
 
-            return NoContent();
+            //return NoContent();
+            return CreatedAtAction("GetCarritoProducto", new { id = item.Id }, item);
         }
+
 
 
         [HttpPost("PostCarritoProducto")]
@@ -82,14 +94,21 @@ namespace Api.Controllers
         {
             _context.CarritoProducto.Add(carritoProducto);
             await _context.SaveChangesAsync();
+            List<CarritoProducto> items= _context.CarritoProducto.ToList();
+            Carrito carrito = _context.Carrito.Where(s => s.Id == carritoProducto.IdCarrito).FirstOrDefault();
+            carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
+            _context.Entry(carrito).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
             return CreatedAtAction("GetCarritoProducto", new { id = carritoProducto.Id }, carritoProducto);
         }
 
         // DELETE: api/CarritoProductos/5
-        [HttpDelete("{id}")]
+        //[HttpDelete("{id}")]
+        [HttpPut("DeleteCarritoProducto")]
+        [Authorize]
         public async Task<IActionResult> DeleteCarritoProducto(long id)
         {
-            var carritoProducto = await _context.CarritoProducto.FindAsync(id);
+            var carritoProducto =  _context.CarritoProducto.Where(s => s.Id == id).FirstOrDefault();//.FindAsync(id);
             if (carritoProducto == null)
             {
                 return NotFound();
@@ -97,6 +116,17 @@ namespace Api.Controllers
 
             _context.CarritoProducto.Remove(carritoProducto);
             await _context.SaveChangesAsync();
+
+
+            List<CarritoProducto> items = _context.CarritoProducto.ToList();
+
+            Carrito carrito = _context.Carrito.Where(s => s.Id == carritoProducto.IdCarrito).FirstOrDefault();
+            carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
+            _context.Entry(carrito).State = EntityState.Modified;
+            await _context.SaveChangesAsync();
+
+
+
 
             return NoContent();
         }

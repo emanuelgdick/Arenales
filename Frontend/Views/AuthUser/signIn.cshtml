@@ -1,3 +1,4 @@
+
 @{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
@@ -109,6 +110,8 @@ async function enviarLogin(user,password)
                  })
                  .then(data => {
                          if (data.success){
+                             debugger;
+                             console.log(data);
                 
                     //obtenerCarritoByCliente(1);
                         window.location.href='/Home/Index';

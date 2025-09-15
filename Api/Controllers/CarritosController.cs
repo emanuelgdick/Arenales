@@ -44,67 +44,21 @@ namespace Api.Controllers
         }
 
         // GET: api/Carritos/5
-        [HttpGet("GetCarritoByCliente")]
+        [HttpGet("GetCarritoByUsuario")]
         [Authorize]
      //   [ResponseCache(CacheProfileName = "apicache")]
-        public async Task<ActionResult<Carrito>> GetCarritoByCliente(long idCliente)
+        public async Task<ActionResult<List<Carrito>>> GetCarritosByUsuario(long idUsuario)
         {
-            //////var carrito = await _context.Carrito.FindAsync(idCliente);
-
-            //////if (carrito == null)
-            //////{
-            //////    return null;//NotFound();
-            //////}
-
-            //////return carrito;
-
-
-
-
-            //  var carrito = _db.Carrito.Where(s=>s.IdCliente==idCliente).ToList();
-
-
-
-            // Realizar la unión utilizando Join
-            //var resultado = from car in carrito
-            //                select new
-            //                {
-            //                    Id = car.Id,
-            //                    Total=car.Total,
-            //                    Fecha=car.Fecha,
-            //                    Nro=car.Nro,
-            //                    idCliente=car.IdCliente,
-            //                    CarritoProductos =new CarritoProducto{ 
-
-
-
-            //}
-
-
-            //                };
-            //return Ok(resultado);
-
-
-
-            //List<Carrito> carritos = await _context.Carrito.Where(s => s.IdCliente == idCliente).ToListAsync();
-            //List<CarritoProducto> carritoProducto = await _context.CarritoProducto.Where(d => d.IdCarrito == 1).ToListAsync();
-            //List<Producto> producto = (from p in  _context.Producto join
-            //                          cp in carritoProducto  on p.Id equals cp.IdProducto
-            //                          select p).ToList();
-
-
-
-
-
-
-            //       await _context.CarritoProducto.Where(d => d.IdCarrito == 1).ToListAsync();
-
+         
+            
 
             var carritoP = (from cp in _context.CarritoProducto
-                            join p in _context.Producto on cp.IdProducto equals p.Id
-                            where cp.IdCarrito == 1
+                            join p in _context.Producto on cp.IdProducto equals p.Id 
+                            join c in _context.Carrito on  cp.IdCarrito equals c.Id 
+                            where c.Id == idUsuario
                             select new CarritoProducto
                             {
+                                Id=cp.Id,
                                 IdCarrito = cp.IdCarrito,
                                 Cantidad = cp.Cantidad,
                                 Precio = cp.Precio,
@@ -117,22 +71,24 @@ namespace Api.Controllers
                             }).ToList();
 
 
-            var resultado = (from m in _context.Carrito
-                             from cp in _context.CarritoProducto
-                             where cp.IdCarrito == m.Id
+            var resultado = (from ca in _context.Carrito //join 
+                             //cp in  _context.CarritoProducto on  
+                             //ca.Id equals cp.IdCarrito 
+                             where ca.IdUsuario == idUsuario
+
                              select new Carrito
                              {
-                                 Id = m.Id,
-                                 Total = m.Total,
-                                 Fecha = m.Fecha,
-                                 Numero = m.Numero,
-                                 IdEstadoCarrito = m.IdEstadoCarrito == null ? 0 : m.IdEstadoCarrito,
+                                 Id = ca.Id,
+                                 Total = ca.Total,
+                                 Fecha = ca.Fecha,
+                                 Numero = ca.Numero,
+                                 IdEstadoCarrito = ca.IdEstadoCarrito == null ? 0 : ca.IdEstadoCarrito,
 
-                                 IdComprobante = m.IdComprobante == null ? 0 : m.IdComprobante,
-                                 IdCliente = m.IdCliente,
+                                 IdComprobante = ca.IdComprobante == null ? 0 : ca.IdComprobante,
+                                 IdUsuario = ca.IdUsuario,
                                  CarritoProductos = carritoP,
 
-                             }).FirstOrDefault();
+                             }).ToList();
 
         
             
@@ -157,7 +113,7 @@ namespace Api.Controllers
             }
             catch (DbUpdateConcurrencyException)
             {
-                if (!CarritoExists(id))
+                if (CarritoExists(id)==0)
                 {
                     return NotFound();
                 }
@@ -203,10 +159,16 @@ namespace Api.Controllers
 
             return NoContent();
         }
-
-        private bool CarritoExists(long id)
+        
+        
+        [HttpGet("CarritoExists")]
+        [Authorize]
+        public long CarritoExists(long idUsuario)
         {
-            return _context.Carrito.Any(e => e.Id == id);
+            if (_context.Carrito.Where(s => s.IdUsuario == idUsuario && s.IdEstadoCarrito == 1).Count() == 0)
+                return 0;
+            else
+                return _context.Carrito.Where(s => s.IdUsuario == idUsuario && s.IdEstadoCarrito == 1).FirstOrDefault().Id;//.Any(e => e.Id == id);
         }
     }
 }

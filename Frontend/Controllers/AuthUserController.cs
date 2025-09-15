@@ -53,7 +53,6 @@ namespace FrontEnd.Controllers
                 var principal = new ClaimsPrincipal(identity);
                 await HttpContext.SignInAsync(CookieAuthenticationDefaults.AuthenticationScheme, principal);
                 HttpContext.Session.SetString("APIToken", objResponse.Token);
-             
                 return Json(new { success = true, token = objResponse.Token });
 
                 //return usuario;

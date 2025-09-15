@@ -166,13 +166,13 @@ namespace Api.Migrations
                     b.Property<DateTime?>("Fecha")
                         .HasColumnType("datetime");
 
-                    b.Property<long?>("IdCliente")
-                        .HasColumnType("bigint");
-
                     b.Property<int?>("IdComprobante")
                         .HasColumnType("int");
 
                     b.Property<long?>("IdEstadoCarrito")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdUsuario")
                         .HasColumnType("bigint");
 
                     b.Property<int?>("Numero")
@@ -183,11 +183,11 @@ namespace Api.Migrations
 
                     b.HasKey("Id");
 
-                    b.HasIndex("IdCliente");
-
                     b.HasIndex("IdComprobante");
 
                     b.HasIndex("IdEstadoCarrito");
+
+                    b.HasIndex("IdUsuario");
 
                     b.ToTable("Carrito", (string)null);
                 });
@@ -200,16 +200,16 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<decimal>("Cantidad")
+                    b.Property<decimal?>("Cantidad")
                         .HasColumnType("decimal(18, 2)");
 
-                    b.Property<long>("IdCarrito")
+                    b.Property<long?>("IdCarrito")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("IdProducto")
+                    b.Property<long?>("IdProducto")
                         .HasColumnType("bigint");
 
-                    b.Property<decimal>("Precio")
+                    b.Property<decimal?>("Precio")
                         .HasColumnType("decimal(18, 2)");
 
                     b.HasKey("Id");
@@ -1781,11 +1781,11 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Models.Usuario", b =>
                 {
-                    b.Property<int>("Id")
+                    b.Property<long>("Id")
                         .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
+                        .HasColumnType("bigint");
 
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
                     b.Property<string>("ApeyNom")
                         .IsRequired()
@@ -1887,11 +1887,6 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Models.Carrito", b =>
                 {
-                    b.HasOne("Api.Models.Cliente", "IdClienteNavigation")
-                        .WithMany("Carritos")
-                        .HasForeignKey("IdCliente")
-                        .HasConstraintName("FK_Carrito_Cliente");
-
                     b.HasOne("Api.Models.Comprobante", "IdComprobanteNavigation")
                         .WithMany("Carritos")
                         .HasForeignKey("IdComprobante")
@@ -1902,11 +1897,16 @@ namespace Api.Migrations
                         .HasForeignKey("IdEstadoCarrito")
                         .HasConstraintName("FK_Carrito_EstadoCarrito");
 
-                    b.Navigation("IdClienteNavigation");
+                    b.HasOne("Api.Models.Usuario", "IdUsuarioNavigation")
+                        .WithMany("Carritos")
+                        .HasForeignKey("IdUsuario")
+                        .HasConstraintName("FK_Carrito_Cliente");
 
                     b.Navigation("IdComprobanteNavigation");
 
                     b.Navigation("IdEstadoCarritoNavigation");
+
+                    b.Navigation("IdUsuarioNavigation");
                 });
 
             modelBuilder.Entity("Api.Models.CarritoProducto", b =>
@@ -1914,13 +1914,11 @@ namespace Api.Migrations
                     b.HasOne("Api.Models.Carrito", "IdCarritoNavigation")
                         .WithMany("CarritoProductos")
                         .HasForeignKey("IdCarrito")
-                        .IsRequired()
                         .HasConstraintName("FK_CarritoProducto_Carrito");
 
                     b.HasOne("Api.Models.Producto", "IdProductoNavigation")
                         .WithMany("CarritoProductos")
                         .HasForeignKey("IdProducto")
-                        .IsRequired()
                         .HasConstraintName("FK_CarritoProducto_Producto");
 
                     b.Navigation("IdCarritoNavigation");
@@ -2268,8 +2266,6 @@ namespace Api.Migrations
 
             modelBuilder.Entity("Api.Models.Cliente", b =>
                 {
-                    b.Navigation("Carritos");
-
                     b.Navigation("Comprobantes");
 
                     b.Navigation("Creditos");
@@ -2402,6 +2398,11 @@ namespace Api.Migrations
             modelBuilder.Entity("Api.Models.TipoMovimientoCaja", b =>
                 {
                     b.Navigation("CajaMovimientos");
+                });
+
+            modelBuilder.Entity("Api.Models.Usuario", b =>
+                {
+                    b.Navigation("Carritos");
                 });
 
             modelBuilder.Entity("Api.Models.Vendedor", b =>
