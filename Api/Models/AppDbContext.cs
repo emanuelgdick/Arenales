@@ -652,6 +652,11 @@ namespace Api
                     .HasForeignKey(d => d.IdTalle)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_Producto_Talle");
+
+                entity.HasOne(d => d.IdRubroNavigation).WithMany(p => p.Productos)
+               .HasForeignKey(d => d.IdRubro)
+               .OnDelete(DeleteBehavior.ClientSetNull)
+               .HasConstraintName("FK_Producto_Rubro");
             });
 
             modelBuilder.Entity<Producto2>(entity =>

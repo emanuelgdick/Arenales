@@ -18,6 +18,7 @@ function currentPasswordIcon(){
 
 function PasswordIcon() {
     var x = document.getElementById("myInput");
+  
     if (x.type === "password") {
         x.type = "text";
         document.getElementById('icon-hide').style.display = "inline-block";

@@ -28,7 +28,8 @@ namespace Api.Controllers
       //  [ResponseCache(CacheProfileName = "apicache")]
         public async Task<ActionResult<List<Producto>>> GetProducto()
         {
-            return await _context.Producto.Take(20).OrderBy(s=>s.Codigo).ToListAsync();
+            // try {}  catch(Exception e) {Console.WriteLine(e.Message);}
+            return await _context.Producto.OrderBy(s => s.Codigo).ToListAsync(); ;
         }
 
 	//	[HttpGet]

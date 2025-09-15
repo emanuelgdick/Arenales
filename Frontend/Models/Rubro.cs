@@ -12,4 +12,5 @@ public partial class Rubro
     public string Codigo { get; set; } = null!;
 
     public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
+    
 }

@@ -1010,6 +1010,9 @@ namespace Api.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<string>("LinkImagen")
+                        .HasColumnType("nvarchar(max)");
+
                     b.HasKey("Id");
 
                     b.ToTable("Marca", (string)null);
@@ -1187,6 +1190,9 @@ namespace Api.Migrations
                     b.Property<long>("IdMarca")
                         .HasColumnType("bigint");
 
+                    b.Property<long>("IdRubro")
+                        .HasColumnType("bigint");
+
                     b.Property<long>("IdTalle")
                         .HasColumnType("bigint");
 
@@ -1201,6 +1207,8 @@ namespace Api.Migrations
                     b.HasIndex("IdColor");
 
                     b.HasIndex("IdMarca");
+
+                    b.HasIndex("IdRubro");
 
                     b.HasIndex("IdTalle");
 
@@ -1484,6 +1492,27 @@ namespace Api.Migrations
                     b.HasKey("Id");
 
                     b.ToTable("Rol", (string)null);
+                });
+
+            modelBuilder.Entity("Api.Models.Rubro", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Codigo")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Rubro");
                 });
 
             modelBuilder.Entity("Api.Models.Sucursal", b =>
@@ -2153,6 +2182,12 @@ namespace Api.Migrations
                         .IsRequired()
                         .HasConstraintName("FK_Producto_Marca");
 
+                    b.HasOne("Api.Models.Rubro", "IdRubroNavigation")
+                        .WithMany("Productos")
+                        .HasForeignKey("IdRubro")
+                        .IsRequired()
+                        .HasConstraintName("FK_Producto_Rubro");
+
                     b.HasOne("Api.Models.Talle", "IdTalleNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdTalle")
@@ -2162,6 +2197,8 @@ namespace Api.Migrations
                     b.Navigation("IdColorNavigation");
 
                     b.Navigation("IdMarcaNavigation");
+
+                    b.Navigation("IdRubroNavigation");
 
                     b.Navigation("IdTalleNavigation");
                 });
@@ -2364,6 +2401,11 @@ namespace Api.Migrations
             modelBuilder.Entity("Api.Models.Rol", b =>
                 {
                     b.Navigation("Vendedors");
+                });
+
+            modelBuilder.Entity("Api.Models.Rubro", b =>
+                {
+                    b.Navigation("Productos");
                 });
 
             modelBuilder.Entity("Api.Models.Sucursal", b =>

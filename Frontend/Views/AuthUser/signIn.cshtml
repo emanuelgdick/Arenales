@@ -12,13 +12,13 @@
     <div class="sign_in ">
         <h2 class="text-center text-gray-black xl:text-[32px] text-[20px] font-semibold font-display">Iniciar Sesión</h2>
         <div class="form">
-    @*<form  action="" class="" *@>
+    @* <form  action="" class=""> *@
                 <div class="mb-4">
                     <input type="text" id="user" placeholder="Correo electrónico" class="input-box focus:outline-none focus:ring-2 focus:ring-accents font-display transition duration-300 ease-in-out">
                 </div>
 
                 <div class="relative">
- <input type="password" id="password" placeholder="Contraseña" class="form_password focus:outline-none focus:ring-2 focus:ring-accents font-display transition duration-300 ease-in-out"  name="password">
+                <input type="password" id="myInput" placeholder="Contraseña" class="form_password focus:outline-none focus:ring-2 focus:ring-accents font-display transition duration-300 ease-in-out" name="password">
                     <span class="absolute top-[17px] right-5 cursor-pointer ">
                         <svg id="icon-show" onclick="PasswordIcon()" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                             <path d="M12 4.24902C4.5 4.24902 1.5 11.9999 1.5 11.9999C1.5 11.9999 4.5 19.749 12 19.749C19.5 19.749 22.5 11.9999 22.5 11.9999C22.5 11.9999 19.5 4.24902 12 4.24902V4.24902Z" stroke="#272343" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" />
@@ -42,8 +42,8 @@
                      Olvidé la Contraseña
                     </a>
                 </div>
-      
- <button class="form_btn w-full" onclick="enviarLogin(document.getElementById('user').value,document.getElementById('password').value)">
+
+            <button class="form_btn w-full" onclick="enviarLogin(document.getElementById('user').value,document.getElementById('myInput').value)">
                   Entrar
                     <span>
                         <svg width="25" height="24" viewBox="0 0 25 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -53,7 +53,7 @@
                     </span>
                 </button>
 
-           @*  </form> *@
+        @*     </form> *@
             <div class="font-display font-normal text-[14px] leading-[110%] text-gray-black mt-6 text-center">
                 No tienes una cuenta? <a href="/AuthUser/SignUp" class="text-dark-accents font-display font-medium text-[14px] leading-[110%]">Crear</a>
             </div>
@@ -126,16 +126,6 @@ async function enviarLogin(user,password)
      }
    
  
-    
-
-
-
-
-
-    
-
-   
-
 
 
 </script>

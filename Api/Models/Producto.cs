@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace Api.Models;
 
@@ -8,6 +9,8 @@ public partial class Producto
     public long Id { get; set; }
 
     public long IdMarca { get; set; }
+
+    public long IdRubro { get; set; }
 
     public long IdTalle { get; set; }
 
@@ -36,9 +39,8 @@ public partial class Producto
     public virtual ICollection<ComprobanteItem> ComprobanteItems { get; set; } = new List<ComprobanteItem>();
 
     public virtual Color IdColorNavigation { get; set; } = null!;
-
     public virtual Marca IdMarcaNavigation { get; set; } = null!;
-
+    public virtual Rubro IdRubroNavigation { get; set; } = null!;
     public virtual Talle IdTalleNavigation { get; set; } = null!;
 
     public virtual ICollection<ProductoImagen> ProductoImagens { get; set; } = new List<ProductoImagen>();

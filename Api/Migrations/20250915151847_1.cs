@@ -6,7 +6,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 namespace Api.Migrations
 {
     /// <inheritdoc />
-    public partial class Inicial : Migration
+    public partial class _1 : Migration
     {
         /// <inheritdoc />
         protected override void Up(MigrationBuilder migrationBuilder)
@@ -171,7 +171,8 @@ namespace Api.Migrations
                 {
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
+                    Descripcion = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    LinkImagen = table.Column<string>(type: "nvarchar(max)", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -294,6 +295,20 @@ namespace Api.Migrations
                 constraints: table =>
                 {
                     table.PrimaryKey("PK_Rol", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Rubro",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descripcion = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    Codigo = table.Column<string>(type: "nvarchar(max)", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Rubro", x => x.Id);
                 });
 
             migrationBuilder.CreateTable(
@@ -558,6 +573,7 @@ namespace Api.Migrations
                     Id = table.Column<long>(type: "bigint", nullable: false)
                         .Annotation("SqlServer:Identity", "1, 1"),
                     IdMarca = table.Column<long>(type: "bigint", nullable: false),
+                    IdRubro = table.Column<long>(type: "bigint", nullable: false),
                     IdTalle = table.Column<long>(type: "bigint", nullable: false),
                     IdColor = table.Column<long>(type: "bigint", nullable: false),
                     Descripcion = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
@@ -582,6 +598,11 @@ namespace Api.Migrations
                         name: "FK_Producto_Marca",
                         column: x => x.IdMarca,
                         principalTable: "Marca",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Producto_Rubro",
+                        column: x => x.IdRubro,
+                        principalTable: "Rubro",
                         principalColumn: "Id");
                     table.ForeignKey(
                         name: "FK_Producto_Talle",
@@ -1250,6 +1271,11 @@ namespace Api.Migrations
                 column: "IdMarca");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Producto_IdRubro",
+                table: "Producto",
+                column: "IdRubro");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Producto_IdTalle",
                 table: "Producto",
                 column: "IdTalle");
@@ -1420,6 +1446,9 @@ namespace Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "Marca");
+
+            migrationBuilder.DropTable(
+                name: "Rubro");
 
             migrationBuilder.DropTable(
                 name: "Talle");
