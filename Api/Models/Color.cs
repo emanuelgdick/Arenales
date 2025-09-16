@@ -9,5 +9,7 @@ public partial class Color
 
     public string Descripcion { get; set; } = null!;
 
+    public string valor { get; set; }
+
     public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
 }

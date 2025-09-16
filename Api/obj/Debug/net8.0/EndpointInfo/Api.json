@@ -3141,6 +3141,10 @@
             "type": "string",
             "nullable": true
           },
+          "linkImagen": {
+            "type": "string",
+            "nullable": true
+          },
           "actualizacionPrecios": {
             "type": "array",
             "items": {
@@ -3290,6 +3294,10 @@
             "type": "integer",
             "format": "int64"
           },
+          "idRubro": {
+            "type": "integer",
+            "format": "int64"
+          },
           "idTalle": {
             "type": "integer",
             "format": "int64"
@@ -3352,6 +3360,9 @@
           },
           "idMarcaNavigation": {
             "$ref": "#/components/schemas/Marca"
+          },
+          "idRubroNavigation": {
+            "$ref": "#/components/schemas/Rubro"
           },
           "idTalleNavigation": {
             "$ref": "#/components/schemas/Talle"
@@ -3542,6 +3553,31 @@
             "type": "array",
             "items": {
               "$ref": "#/components/schemas/Vendedor"
+            },
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "Rubro": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "codigo": {
+            "type": "string",
+            "nullable": true
+          },
+          "productos": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Producto"
             },
             "nullable": true
           }
