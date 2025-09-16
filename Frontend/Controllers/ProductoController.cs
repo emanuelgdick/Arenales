@@ -53,7 +53,9 @@ namespace FrontEnd.Controllers
         public class aColores
         {
             public string codigo { get; set; }
-            public string[] IdColor { get; set; }
+            //public string[] IdColor { get; set; }
+            //public string[] Descripcion { get; set; }
+            public Color[] color { get; set; }
         }
 
 
@@ -101,15 +103,17 @@ namespace FrontEnd.Controllers
 
                 IEnumerable<Color> color = new List<Color>();
                 color = await _ColorService.GetAllColores(/*HttpContext.Session.GetString("APIToken")*/);
-                string[] arrayC = new string[filtro.Count];
+                //string[] arrayC = new string[filtro.Count];
+                Color[] arrayC = new Color[filtro.Count];
                 int k = 0;
                 while (k < filtro.Count())
                 {
-                    arrayC[k] = color.Where(s => s.Id == filtro[k].IdColor).FirstOrDefault().Descripcion;
+                    arrayC[k] = color.Where(s => s.Id == filtro[k].IdColor).FirstOrDefault();
+                    
                     k++;
                 }
                 //i = i + k - 1;
-                arrayColores.Add(new aColores { codigo = p.Codigo, IdColor = arrayC });
+                arrayColores.Add(new aColores { codigo = p.Codigo, color = arrayC });
 
             }
 

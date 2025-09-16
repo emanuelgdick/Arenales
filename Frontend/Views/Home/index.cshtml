@@ -145,29 +145,31 @@
                            dataType: "json",
                            contentType: "application/json; charset=utf-8",
                            success: function (data) {
-                          //     console.log(data.talles)
-                               
-                              
+                    
                            $("#divProducto").html("");
                            if (data.data != null) {
                            $.each(data.data, function (i, item) {
 
                                $('<div>').addClass('card-product').append(
                                    $('<div>').addClass('card-product-wrapper').append(
-                                    $('<a>').addClass('product-img').attr({ 'src': 'product-detail.html', 'href': 'product-style-01.html#quick_view', 'data-bs-toggle': "modal" }).append(
+                                    $('<a>').addClass('product-img').attr({ 'src': 'product-detail.html' }).append(
                                            $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
                                            $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
-                                       ),//<a>product-img
+                                    ).on('click', function (event) {
+                                        event.preventDefault();
+                                        producto = data.data[i];
+                                        console.log(data.colores[i]);
+                                        abrirModalQV(data.data[i], data.talles[i].idTalle, data.colores[i].color)
+                                        
+                                    }),//<a>product-img
                                        $('<div>').addClass('list-product-btn ').append(
                                            $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
                                                //'href':'#quick_add',
                                                .on('click', function (event) {
                                                    event.preventDefault();
                                                    producto = data.data[i];
-                                                console.log('123');
-                                                   console.log(producto);
-                                                console.log('456');
-                                                abrirModalQA(data.data[i], data.talles[i].idTalle)
+                                                   console.log(data.colores[i]);
+                                                abrirModalQA(data.data[i], data.talles[i].idTalle, data.colores[i].color)
                                                })
                                                .append(
                                                    $('<span>').addClass('fa fa-shopping-bag'),
@@ -193,7 +195,7 @@
 
                                        $('<div>').addClass('size-list').append(
                                            $('<span>').text('Talles:'),
-                                           $.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
+                                        $.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
                                        )
                                    ),//card-product-wrapper
                                    $('<div>').addClass('card-product-info').append(
@@ -201,6 +203,8 @@
                                        $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
                                        $('<ul>').addClass('list-color-product').append(
                                         $('<li>').addClass('list-color-item color-swatch').append(// active
+                                            
+                                            
 
                                             //$.each(data.colores[i], function (index, valor) {
                                                 //const $nuevoSpan = $("<span>").text(valor); // Asigna el texto del dato
@@ -341,7 +345,7 @@
                
                
                
-               $('#btnAddCarrito').on('click',  function (event) {
+          $('#btnAddCarritoQA').on('click',  function (event) {
 
                 debugger;
                 var pro=carrito.find(p => p.idProducto === producto.id)
@@ -380,16 +384,53 @@
                     let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
                     carrito[indice].cantidad = carrito[indice].cantidad+parseInt($("#cantidadQA").val()); // Asigna el nuevo precio
                     item.idProductoNavigation = { descripcion: producto.descripcion };
+                     actualizar(item);
+                }
+             }
+          )
 
-                 actualizar(item);
-                   
-                    
-                
+            $('#btnAddCarritoQV').on('click', function (event) {
+
+                debugger;
+                var pro = carrito.find(p => p.idProducto === producto.id)
+                var idpro;
+                var cantidad;
+                if (pro == null) {
+                    idpro = 0;
+                    cant = 0;
+                }
+                else {
+                    idpro = pro.id;
+                    cant = pro.cantidad;
                 }
 
-                
+                let item = {
+                    id: idpro,
+                    idCarrito: parseInt($('#idCarrito').text()),
+                    idProducto: producto.id,
+                    idProductoNavigation: null,
+                    idCarritoNavigation: null,
+                    precio: producto.precio,
+                    cantidad: cant + parseInt($("#cantidadQV").val())
                 }
-               )
+
+
+
+                if (pro == null) {
+                    enviarProductoCarrito(item);
+                    item.idProductoNavigation = { descripcion: producto.descripcion };
+                    carrito.push(item);
+                    $('#cantProducto').text(carrito.length);
+                } else {
+                    item.id = pro.id;
+                    //item.cantidad++;
+                    let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
+                    carrito[indice].cantidad = carrito[indice].cantidad + parseInt($("#cantidadQV").val()); // Asigna el nuevo precio
+                    item.idProductoNavigation = { descripcion: producto.descripcion };
+                    actualizar(item);
+                }
+            }
+            )
 
 
 
