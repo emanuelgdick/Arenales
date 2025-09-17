@@ -172,22 +172,10 @@ namespace Api.Controllers
         }
 
 
-        private  Task<IActionResult> CambiarEstadoCarrito(long id,Carrito carrito) {
-            if (_context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito == 1)//si carrito abierto paso a carrito pendiente
-            {
-                _context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito = 2;
-            }
-            else
-            {
-                if (_context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito == 2)//si carrito esta pendiente  paso a carrito Completado
-                {
-                    _context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito = 3;
-                }
-            }
-            _context.Entry(carrito).State = EntityState.Modified;
-             _context.SaveChangesAsync();
-            return null;
-        }
+        //private  Task<IActionResult> CambiarEstadoCarrito(long id,Carrito carrito) {
+         
+        //    return null;
+        //}
 
 
 
@@ -199,25 +187,19 @@ namespace Api.Controllers
                 return BadRequest();
             }
 
-            CambiarEstadoCarrito(id, carrito);
-            //_context.Entry(carrito).State = EntityState.Modified;
-
-            //try
-            //{
-            //    await _context.SaveChangesAsync();
-            //}
-            //catch (DbUpdateConcurrencyException)
-            //{
-            //    if (CarritoExists(id) == 0)
-            //    {
-            //        return NotFound();
-            //    }
-            //    else
-            //    {
-            //        throw;
-            //    }
-            //}
-
+            if (carrito.IdEstadoCarrito == 1)//si carrito abierto paso a carrito pendiente
+            {
+                carrito.IdEstadoCarrito = 2;
+            }
+            else
+            {
+                if (carrito.IdEstadoCarrito == 2)//si carrito esta pendiente  paso a carrito Completado
+                {
+                    carrito.IdEstadoCarrito = 3;
+                }
+            }
+            _context.Entry(carrito).State = EntityState.Modified;
+            _context.SaveChangesAsync();
             return NoContent();
         }
     }

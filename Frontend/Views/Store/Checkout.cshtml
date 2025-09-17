@@ -12,7 +12,7 @@
         <div class="tf-page-cart-wrap layout-2">
             <div class="tf-page-cart-item">
                 <h5 class="fw-5 mb_20">Detalles de Facturación</h5>
-                <form class="form-checkout">
+              @*   <form class="form-checkout"> *@
                     <div class="box grid-2 p-4">
                         <fieldset class="fieldset">
                             <label for="first-name">Nombre</label>
@@ -90,12 +90,12 @@
                         <label for="note">Observaciones</label>
                         <textarea name="note" id="note"></textarea>
                     </fieldset>
-                </form>
+               @*  </form> *@
             </div>
             <div class="tf-page-cart-footer">
                 <div class="tf-cart-footer-inner">
                     <h5 class="fw-5 mb_20">Tu pedido</h5>
-                    <form class="tf-page-cart-checkout widget-wrap-checkout">
+                    <div class="tf-page-cart-checkout widget-wrap-checkout">
                         <ul class="wrap-checkout-product">
                             <div id="lipedido"></div>
 
@@ -126,7 +126,7 @@
                             </div>
                         </div> *@
                         <button id="btnConfirmarCarrito"class="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">Confirmar Pedido</button>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
@@ -144,84 +144,78 @@
          var fecha;
          var idEstadoCarrito;
          var idUsuario;
+        document.addEventListener("DOMContentLoaded", function () {
+            // //Get Carrito
+            jQuery.ajax({
+                //url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idUsuario=1',// +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
+                url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idUsuario=' + @Html.Raw(Json.Serialize(ViewBag.idUsuario)),
+                type: "GET",
+                data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    debugger;
+                    if (data.data != null) {
+                        $.each(data.data, function (i, item) {
+                            if (data.data[i].idEstadoCarrito == 1) { //CArrito Abrierto
+                                $('#idCarrito').text(data.data[i].id);
+                                $('#lipedido').empty();
+                                total = 0;
+                                subTotal = 0;
 
-        //Get Carrito
-        jQuery.ajax({
-            url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idUsuario=' +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
-            type: "GET",
-            data: null,
-            dataType: "json",
-            contentType: "application/json; charset=utf-8",
-            success: function (data) {
+                                $.each(data.data[i].carritoProductos, function (j, item) {
+                                    // carrito.push(data.data.carritoProductos[i]);
+                                    $('<li>').addClass("checkout-product-item").append(
+                                        $('<figure>').addClass("img-product").append(
+                                            $('<img>').attr({ 'src': "../images/products/brown.jpg", 'alt': "product" }),
+                                            $('<span>').addClass('quantity').text(data.data[i].carritoProductos[j].cantidad)
+                                        ),//img-product
+                                        $('<div>').addClass('content').append(
+                                            $('<div>').addClass('info').append(
+                                                $('<p>').addClass('name').text(data.data[i].carritoProductos[j].idProductoNavigation.descripcion),
+                                                $('<span>').addClass('price').text('$ ' + data.data[i].carritoProductos[j].precio.toFixed(2))
+                                            )//info
+                                        )//content
 
-                 if (data.data != null) {
-                    $.each(data.data, function (i, item) {
-                          if (data.data[i].idEstadoCarrito==1){ //CArrito Abrierto
-                             $('#idCarrito').text(data.data[i].id);
-                             $('#lipedido').empty();
-                             total = 0;
-                             subTotal = 0;
+                                    ).appendTo('#lipedido');//checkout-product-item
+                                    subTotal = data.data[i].carritoProductos[j].cantidad * data.data[i].carritoProductos[j].precio;
+                                    total = total + subTotal;
+                                    cantProd = data.data[i].cantProductos;
+                                    idcar = data.data[i].id;
+                                    fecha = data.data[i].fecha;
+                                    idEstadoCarrito = data.data[i].idEstadoCarrito;
+                                    idUsuario = data.data[i].idUsuario;
+                                })
 
-                              $.each(data.data[i].carritoProductos, function (j, item) {
-
-
-                               // carrito.push(data.data.carritoProductos[i]);
-                               $('<li>').addClass("checkout-product-item").append(
-                                   $('<figure>').addClass("img-product").append(
-                                       $('<img>').attr({ 'src': "../images/products/brown.jpg", 'alt': "product" }),
-                                           $('<span>').addClass('quantity').text(data.data[i].carritoProductos[j].cantidad)
-                                   ),//img-product
-                                   $('<div>').addClass('content').append(
-                                       $('<div>').addClass('info').append(
-                                           $('<p>').addClass('name').text(data.data[i].carritoProductos[j].idProductoNavigation.descripcion),
-                                           $('<span>').addClass('price').text('$ ' + data.data[i].carritoProductos[j].precio.toFixed(2))
-                                       )//info
-                                   )//content
-
-                               ).appendTo('#lipedido');//checkout-product-item
-                               subTotal = data.data[i].carritoProductos[j].cantidad * data.data[i].carritoProductos[j].precio;
-                               total = total + subTotal;
-                               cantProd=data.data[i].cantProductos;
-                               idcar=data.data[i].id;
-                               fecha=data.data[i].fecha;
-                               idEstadoCarrito=data.data[i].idEstadoCarrito;
-                               idUsuario=data.data[i].idUsuario;
-                           })
-                         
-                             $('<div>').text('$' + total.toFixed(2)).appendTo('#idTotal')
+                                $('<div>').text('$' + total.toFixed(2)).appendTo('#idTotal')
                             }
-                         })
-                         }
+                        })
+                    }
+                },
+                error: function (error) {
+                    console.log(error)
+                },
+                beforeSend: function () {
 
-
-            },
-            error: function (error) {
-                console.log(error)
-            },
-            beforeSend: function () {
-
-            },
+                },
+            });
         });
-
-
-
 
         $('#btnConfirmarCarrito').on('click',function(){
 
-           
+          
                 let carrito = {
-                    id:idcar ,
-                    fecha:fecha,
-                    idEstadoCarrito: idEstadoCarrito,
-                    IdEstadoCarritoNavigation:1,
-                    IdUsuarioNavigation:1,
-                    idComprobante: null,
-                    idUsuario: idUsuario,
-                    total: total,
+                    Id:idcar ,
+                     Fecha:fecha,
+                     IdEstadoCarrito: idEstadoCarrito,
+                     IdEstadoCarritoNavigation: null,
+                     IdUsuarioNavigation:null,
+                     IdComprobante: null,
+                     IdUsuario: idUsuario,
+                     Total: total,
                     CantProductos: cantProd
                 }
-                console.log(carrito);
-
+               
               jQuery.ajax({
                     url: '@Url.Action("ConfirmarCarrito", "Carrito")?id='+idcar,
                     type: "POST",
@@ -229,10 +223,7 @@
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",
                     success: function (data) {
-
                        window.location.href='/Home/Index';
-
-
                     }
                 })
 
@@ -240,7 +231,7 @@
 
         })
 
-
+        
     </script>
 
         }

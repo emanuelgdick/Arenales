@@ -2126,6 +2126,8 @@
 
     <script>
         var carrito = [];
+        var marca = [];
+        var rubro = [];
 
         function TotalSC(n, precio) {
             return (n * precio).toFixed(2);
@@ -2152,7 +2154,7 @@
         function TotalQA(n, precio) {
             return (n * precio).toFixed(2);
         }
-          function TotalQV(n, precio) {
+        function TotalQV(n, precio) {
             return (n * precio).toFixed(2);
         }
         function abrirModalQA(json, talles, colores) {
@@ -2196,8 +2198,6 @@
 
             $("#quick_add").modal("show");
         };
-
-
         function abrirModalQV(json, talles, colores) {
 
             $('#id').val(json.id);
@@ -2237,9 +2237,6 @@
 
             $("#quick_view").modal("show");
         };
-
-
-
         function abrirCarrito() {
 
             $('#itemCarrito').empty();
@@ -2336,7 +2333,6 @@
             totales();
             $("#shoppingCart").modal("show");
         }
-
         function eliminar(id) {
             debugger;
             //Eliminar producto carrito
@@ -2357,8 +2353,6 @@
                 }
             })
         }
-
-
         function actualizar(it) {
 
             jQuery.ajax({
@@ -2380,7 +2374,7 @@
             })
         }
         document.addEventListener('DOMContentLoaded', function () {
-
+           
             carrito = [];
             jQuery.ajax({
                 url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idUsuario=' + @Html.Raw(Json.Serialize(ViewBag.idUsuario)),
@@ -2389,16 +2383,19 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-
                     if (data.data != null) {
                         $.each(data.data, function (i, item) {
+                            debugger;
                             if (data.data[i].idEstadoCarrito == 1) {//CArrito Abrierto
                                 $('#idCarrito').text(data.data[i].id);
                                 $.each(data.data[i].carritoProductos, function (j, item) {
-
                                     carrito.push(data.data[i].carritoProductos[j]);
                                 })
                                 $('#cantProducto').text(carrito.length);
+                            }
+                            else { 
+                                carrito = [];
+                                $('#cantProducto').text('0');
                             }
                         })
 
@@ -2408,12 +2405,9 @@
                     console.log(error)
                 },
                 beforeSend: function () {
-
-
                 },
             });
-
-        })
+       })
 
 
     </script>
