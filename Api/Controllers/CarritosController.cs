@@ -81,7 +81,7 @@ namespace Api.Controllers
                                  Id = ca.Id,
                                  Total = ca.Total,
                                  Fecha = ca.Fecha,
-                                 Numero = ca.Numero,
+                                 CantProductos = ca.CantProductos,
                                  IdEstadoCarrito = ca.IdEstadoCarrito == null ? 0 : ca.IdEstadoCarrito,
 
                                  IdComprobante = ca.IdComprobante == null ? 0 : ca.IdComprobante,
@@ -169,6 +169,56 @@ namespace Api.Controllers
                 return 0;
             else
                 return _context.Carrito.Where(s => s.IdUsuario == idUsuario && s.IdEstadoCarrito == 1).FirstOrDefault().Id;//.Any(e => e.Id == id);
+        }
+
+
+        private  Task<IActionResult> CambiarEstadoCarrito(long id,Carrito carrito) {
+            if (_context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito == 1)//si carrito abierto paso a carrito pendiente
+            {
+                _context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito = 2;
+            }
+            else
+            {
+                if (_context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito == 2)//si carrito esta pendiente  paso a carrito Completado
+                {
+                    _context.Carrito.Where(s => s.Id == id).FirstOrDefault().IdEstadoCarrito = 3;
+                }
+            }
+            _context.Entry(carrito).State = EntityState.Modified;
+             _context.SaveChangesAsync();
+            return null;
+        }
+
+
+
+        [HttpPut("ConfirmarCarrito")]
+        public async Task<IActionResult> ConfirmarCarrito(long id, [FromBody] Carrito carrito)
+        {
+            if (id != carrito.Id)
+            {
+                return BadRequest();
+            }
+
+            CambiarEstadoCarrito(id, carrito);
+            //_context.Entry(carrito).State = EntityState.Modified;
+
+            //try
+            //{
+            //    await _context.SaveChangesAsync();
+            //}
+            //catch (DbUpdateConcurrencyException)
+            //{
+            //    if (CarritoExists(id) == 0)
+            //    {
+            //        return NotFound();
+            //    }
+            //    else
+            //    {
+            //        throw;
+            //    }
+            //}
+
+            return NoContent();
         }
     }
 }

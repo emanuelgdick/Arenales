@@ -167,7 +167,28 @@ namespace FrontEnd.Controllers
         }
 
 
-        
+        [Authorize(Roles = "Admin,Student")]
+        [ResponseCache(Duration = 30)]
+        public async Task<JsonResult> ConfirmarCarrito(int id,[FromBody] Carrito Carrito)
+        {
+            bool resultado = false;
+            string mensaje = string.Empty;
+            try
+            {
+                await _CarritoService.ConfirmarCarrito(Carrito.Id,Carrito, HttpContext.Session.GetString("APIToken"));
+                resultado = true;
+                mensaje = "Carrito Condirmado correctamente";
+            }
+            catch (Exception ex)
+            {
+                resultado = false;
+                mensaje += ex.Message;
+
+            }
+            return Json(new { resultado = resultado, mensaje = mensaje });
+        }
+
+
         [Authorize(Roles = "Admin")]
         [ResponseCache(Duration = 30)]
         public async Task<JsonResult> AddProductoCarrito([FromBody] CarritoProducto item, long idUsuario)
@@ -186,7 +207,7 @@ namespace FrontEnd.Controllers
                             IdUsuario = idUsuario,
                             Total = item.Cantidad * item.Precio,
                             Fecha = DateTime.Now,
-                            Numero = 0,
+                            CantProductos = 0,
                             IdEstadoCarrito = 1,
                         };
                         Carrito carrito = await _CarritoService.AddCarrito(carro, HttpContext.Session.GetString("APIToken"));

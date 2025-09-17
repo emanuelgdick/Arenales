@@ -471,6 +471,47 @@
         }
       }
     },
+    "/api/Carritos/ConfirmarCarrito": {
+      "put": {
+        "tags": [
+          "Carritos"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carrito"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carrito"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Carrito"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Clientes": {
       "get": {
         "tags": [
@@ -2211,7 +2252,7 @@
             "format": "double",
             "nullable": true
           },
-          "numero": {
+          "cantProductos": {
             "type": "integer",
             "format": "int32",
             "nullable": true
@@ -2505,6 +2546,10 @@
             "format": "int64"
           },
           "descripcion": {
+            "type": "string",
+            "nullable": true
+          },
+          "valor": {
             "type": "string",
             "nullable": true
           },

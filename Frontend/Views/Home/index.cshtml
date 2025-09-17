@@ -152,13 +152,13 @@
 
                                $('<div>').addClass('card-product').append(
                                    $('<div>').addClass('card-product-wrapper').append(
-                                    $('<a>').addClass('product-img').attr({ 'src': 'product-detail.html' }).append(
+                                    $('<a>').addClass('product-img').append(
                                            $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
                                            $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
                                     ).on('click', function (event) {
                                         event.preventDefault();
                                         producto = data.data[i];
-                                        console.log(data.colores[i]);
+                                      
                                         abrirModalQV(data.data[i], data.talles[i].idTalle, data.colores[i].color)
                                         
                                     }),//<a>product-img
@@ -168,22 +168,22 @@
                                                .on('click', function (event) {
                                                    event.preventDefault();
                                                    producto = data.data[i];
-                                                   console.log(data.colores[i]);
+                                                 
                                                 abrirModalQA(data.data[i], data.talles[i].idTalle, data.colores[i].color)
                                                })
                                                .append(
                                                    $('<span>').addClass('fa fa-shopping-bag'),
-                                                   $('<span>').addClass('tooltip').text(' Quick Add'),
+                                                   $('<span>').addClass('tooltip').text(' Vista Rápida'),
                                                ),//<a> box-icon bg_white quick-add tf-btn-loading
                                            $('<a>').addClass('box-icon bg_white wishlist btn-icon-action').attr({ 'href': 'javascript:void(0);' }).append(
                                                $('<span>').addClass('fa fa-heart'),
-                                               $('<span>').addClass('tooltip').text(' Add to Wishlist'),
+                                               $('<span>').addClass('tooltip').text(' Agregar a lista de deseos'),
                                                $('<span>').addClass('icon icon-delete')
                                            ),//<a> box-icon bg_white wishlist btn-icon-action
-                                           $('<a>').addClass('box-icon bg_white compare btn-icon-action').attr({ 'href': 'product-style-01.html#compare', 'data-bs-toggle': "offcanvas", 'aria-controls': "offcanvasLeft" }).append(
+                                           $('<a>').addClass('box-icon bg_white compare btn-icon-action').append(
                                                //$('<span>').addClass('fa fa-code-compare'),
-                                            $('<span>').addClass('fa fa-eye'),
-                                               $('<span>').addClass('tooltip').text(' Add to Compare'),
+                                              $('<span>').addClass('fa fa-eye'),
+                                               $('<span>').addClass('tooltip').text(' Comparar')
                                                //$('<span>').addClass('icon icon-check')
                                                 
                                            ),//<a>box-icon bg_white wishlist btn-icon-action
@@ -331,21 +331,19 @@
                });
               
                //Abrir Modal Quick Add
-               $('#btnMenos').click(function(){
+               $('#btnMenosQA').click(function(){
                            if( $("#cantidadQA").val()>1){
                            var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
                            $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())-1,num));
                }
                });
-               $('#btnMas').click(function(){
+               $('#btnMasQA').click(function(){
 
                              var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
                            $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())+1,num));
                });
                
-               
-               
-          $('#btnAddCarritoQA').on('click',  function (event) {
+               $('#btnAddCarritoQA').on('click',  function (event) {
 
                 debugger;
                 var pro=carrito.find(p => p.idProducto === producto.id)
@@ -377,6 +375,7 @@
                     item.idProductoNavigation = { descripcion: producto.descripcion };
                     carrito.push(item);
                     $('#cantProducto').text(carrito.length);
+                      $("#quick_add").modal("hide");
                 }else
                 {
                     item.id=pro.id;
@@ -389,7 +388,19 @@
              }
           )
 
-            $('#btnAddCarritoQV').on('click', function (event) {
+               $('#btnMenosQV').click(function(){
+                           if( $("#cantidadQV").val()>1){
+                           var num = parseFloat($('#precioQV').text().replace('$', '').replace(' ', '')).toFixed(2);
+                           $('#totalQV').text('$'+TotalQV(parseInt($('#cantidadQV').val())-1,num));
+               }
+               });
+               $('#btnMasQV').click(function(){
+
+                             var num = parseFloat($('#precioQV').text().replace('$', '').replace(' ', '')).toFixed(2);
+                           $('#totalQV').text('$'+TotalQV(parseInt($('#cantidadQV').val())+1,num));
+               });
+          
+          $('#btnAddCarritoQV').on('click', function (event) {
 
                 debugger;
                 var pro = carrito.find(p => p.idProducto === producto.id)
@@ -421,6 +432,7 @@
                     item.idProductoNavigation = { descripcion: producto.descripcion };
                     carrito.push(item);
                     $('#cantProducto').text(carrito.length);
+                    $("#quick_view").modal("hide");
                 } else {
                     item.id = pro.id;
                     //item.cantidad++;
@@ -436,20 +448,19 @@
 
            function enviarProductoCarrito(item) {
 
-                jQuery.ajax({
+          jQuery.ajax({
            url: '@Url.Action("AddProductoCarrito", "Carrito")?idUsuario=' +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
                     type: "POST",
                     data: JSON.stringify(item),
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",
                     success: function (data) {
-                        debugger;
-                        console.log(data);
+                     
                        item.id=data.resultado.id;
                         $('#idCarrito').text(data.resultado.idCarrito);
                         $('#idProducto').text(data.resultado.idProducto);
                      
-                        $("#quick_add").modal("hide");
+                      
                     }
                 })
 

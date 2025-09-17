@@ -1989,12 +1989,12 @@
                                     <div class="wg-quantity">
                                         <span class="btn-quantity minus-btn" id="btnMenosQV">-</span>
                                         <input type="text" name="number" value="1"id="cantidadQV">
-                                        <span class="btn-quantity plus-btn" id="btnMenosQV">+</span>
+                                        <span class="btn-quantity plus-btn" id="btnMasQV">+</span>
                                     </div>
                                 </div>
                                 <div class="tf-product-info-buy-button">
                                     <form class="">
-                                        <a id="btnAddCarritoQA" href="product-style-01.html#" class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn "><span>Add to cart -&nbsp;</span><span class="tf-qty-price" id="totalQA"></span></a>
+                                        <a id="btnAddCarritoQV"  class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn "><span>Add to cart -&nbsp;</span><span class="tf-qty-price" id="totalQV"></span></a>
                                         <a href="javascript:void(0);" class="tf-product-btn-wishlist hover-tooltip box-icon bg_white wishlist btn-icon-action">
                                             <span class="icon icon-heart"></span>
                                             <span class="tooltip">Add to Wishlist</span>
@@ -2152,6 +2152,9 @@
         function TotalQA(n, precio) {
             return (n * precio).toFixed(2);
         }
+          function TotalQV(n, precio) {
+            return (n * precio).toFixed(2);
+        }
         function abrirModalQA(json, talles, colores) {
 
             $('#id').val(json.id);
@@ -2191,39 +2194,6 @@
 
 
 
-
-
-
-
-
-
-
-            // // // // $('#idColor').empty();
-            // // // //    $('<div>').addClass("variant-picker-values").append(
-            // // // //        $.each(colores, function (i, item) {
-            // // // //            $('<input>').attr({ 'id': 'values', 'type': 'radio', 'name': 'color' }),
-            // // // //                $('<label>').addClass('hover-tooltip radius-60').attr({ 'for': 'values', 'data-value': item }).append(
-            // // // //                    $('<span>').addClass('btn-checkbox bg-color-orange'),
-            // // // //                    //$('<span>').addClass('tooltip').text(item.descripcion)
-            // // // //                )//label
-            // // // //        })
-            // // // //    ).appendTo('#idColor');//variant-picker-values
-            // // // //   //idNombreColor
-
-
-            // <input id="values-orange" type = "radio" name = "color" checked >
-            // <label class="hover-tooltip radius-60" for= "values-orange" data - value= "Orange" >
-            //     <span class= "btn-checkbox bg-color-orange" > </span>
-            //     <span class="tooltip" > Orange </span>
-            //  </label>
-
-
-
-
-
-
-
-
             $("#quick_add").modal("show");
         };
 
@@ -2234,7 +2204,7 @@
             $("#descripcionQV").text(json.descripcion);
             $("#precioQV").text('$' + json.precio.toFixed(2));
             $("#cantidadQV").val('1');
-            $('#totalQV').text('$' + TotalQA($("#cantidadQV").val(), json.precio));
+            $('#totalQV').text('$' + TotalQV($("#cantidadQV").val(), json.precio));
             $('#talleSeleccionadoQV').text('');
             $('#colorSeleccionadoQV').text('');
             $('#idTalleQV').empty();
@@ -2264,18 +2234,6 @@
                 var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
                 $('#idColorQV').append(radioC).append(label).append('<br/>');
             })
-
-
-
-
-
-
-
-
-
-
-
-
 
             $("#quick_view").modal("show");
         };

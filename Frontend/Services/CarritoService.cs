@@ -92,6 +92,14 @@ namespace Frontend.Services
             response.EnsureSuccessStatusCode();
         }
 
+
+        public async Task ConfirmarCarrito(long id, Carrito Carrito, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.PutAsJsonAsync<Carrito>($"api/Carritos/ConfirmarCarrito?id={id}", Carrito);
+            response.EnsureSuccessStatusCode();
+        }
+
         public async Task DeleteCarrito(long id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);

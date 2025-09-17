@@ -17,7 +17,7 @@ public partial class Carrito
 
     public decimal? Total { get; set; }
 
-    public int? Numero { get; set; }
+    public int? CantProductos { get; set; }
 
 
     public virtual ICollection<CarritoProducto>? CarritoProductos { get; set; } = new List<CarritoProducto>();

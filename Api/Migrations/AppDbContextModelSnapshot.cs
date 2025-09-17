@@ -163,6 +163,9 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
+                    b.Property<int?>("CantProductos")
+                        .HasColumnType("int");
+
                     b.Property<DateTime?>("Fecha")
                         .HasColumnType("datetime");
 
@@ -174,9 +177,6 @@ namespace Api.Migrations
 
                     b.Property<long?>("IdUsuario")
                         .HasColumnType("bigint");
-
-                    b.Property<int?>("Numero")
-                        .HasColumnType("int");
 
                     b.Property<decimal?>("Total")
                         .HasColumnType("decimal(18, 2)");

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
@@ -7,24 +6,24 @@
 
 
 <!-- page-cart -->
- <section class="flat-spacing-11">
+<section class="flat-spacing-11">
 
     <div class="container">
         <div class="tf-page-cart-wrap layout-2">
             <div class="tf-page-cart-item">
                 <h5 class="fw-5 mb_20">Detalles de Facturación</h5>
                 <form class="form-checkout">
-                    <div class="box grid-2">
+                    <div class="box grid-2 p-4">
                         <fieldset class="fieldset">
                             <label for="first-name">Nombre</label>
-                            <input type="text" id="first-name" placeholder="Themesflat">
+                            <input type="text" id="first-name">
                         </fieldset>
                         <fieldset class="fieldset">
                             <label for="last-name">Apellido</label>
                             <input type="text" id="last-name">
                         </fieldset>
                     </div>
-                    <fieldset class="box fieldset">
+                    @*      <fieldset class="box fieldset">
                         <label for="country">País</label>
                         <div class="select-custom">
                             <select class="tf-select w-100" id="country" name="address[country]" data-default="">
@@ -60,24 +59,34 @@
                                 <option value="Vietnam" data-provinces="[]">Vietnam</option>
                             </select>
                         </div>
+                    </fieldset> *@
+                    <fieldset class="box fieldset p-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="city">Ciudad</label>
+                                <input type="text" id="city">
+                            </div>
+                            <div class="col-6">
+                                <label for="address">Dirección</label>
+                                <input type="text" id="address">
+                            </div>
+                        </div>
                     </fieldset>
-                    <fieldset class="box fieldset">
-                        <label for="city">Ciudad</label>
-                        <input type="text" id="city">
+
+                    <fieldset class="box fieldset  p-4">
+                        <div class="row">
+                            <div class="col-6">
+                                <label for="phone">Teléfono</label>
+                                <input type="number" id="phone">
+                            </div>
+                            <div class="col-6">
+                                <label for="email">Email</label>
+                                <input type="email" id="email">
+                            </div>
+                        </div>
                     </fieldset>
-                    <fieldset class="box fieldset">
-                        <label for="address">Dirección</label>
-                        <input type="text" id="address">
-                    </fieldset>
-                    <fieldset class="box fieldset">
-                        <label for="phone">Teléfono</label>
-                        <input type="number" id="phone">
-                    </fieldset>
-                    <fieldset class="box fieldset">
-                        <label for="email">Email</label>
-                        <input type="email" id="email">
-                    </fieldset>
-                    <fieldset class="box fieldset">
+
+                    <fieldset class="box fieldset  p-4">
                         <label for="note">Observaciones</label>
                         <textarea name="note" id="note"></textarea>
                     </fieldset>
@@ -89,8 +98,8 @@
                     <form class="tf-page-cart-checkout widget-wrap-checkout">
                         <ul class="wrap-checkout-product">
                             <div id="lipedido"></div>
-                            
-                      
+
+
                         </ul>
                         @* <div class="coupon-box">
                             <input type="text" placeholder="Discount code">
@@ -98,9 +107,9 @@
                         </div> *@
                         <div class="d-flex justify-content-between line pb_20">
                             <h6 class="fw-5">Total</h6>
-                            <h6 class="total fw-5"id="idTotal"></h6>
+                            <h6 class="total fw-5" id="idTotal"></h6>
                         </div>
-                    @*     <div class="wd-check-payment">
+                        @*     <div class="wd-check-payment">
                             <div class="fieldset-radio mb_20">
                                 <input type="radio" name="payment" id="bank" class="tf-check" checked>
                                 <label for="bank">Direct bank transfer</label>
@@ -116,21 +125,25 @@
                                 <label for="check-agree" class="text_black-2">I have read and agree to the website <a href="terms-conditions.html" class="text-decoration-underline">terms and conditions</a>.</label>
                             </div>
                         </div> *@
-                        <button class="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">Confirmar Pedido</button>
+                        <button id="btnConfirmarCarrito"class="tf-btn radius-3 btn-fill btn-icon animate-hover-btn justify-content-center">Confirmar Pedido</button>
                     </form>
                 </div>
             </div>
         </div>
     </div>
-</section> 
+</section>
 
 
 
 @section Scripts {
     <script>
-
-      
-
+         var total = 0;
+         var subTotal = 0;
+         var cantProd=0;
+         var idcar=0;
+         var fecha;
+         var idEstadoCarrito;
+         var idUsuario;
 
         //Get Carrito
         jQuery.ajax({
@@ -146,8 +159,8 @@
                           if (data.data[i].idEstadoCarrito==1){ //CArrito Abrierto
                              $('#idCarrito').text(data.data[i].id);
                              $('#lipedido').empty();
-                             let total = 0;
-                             let subTotal = 0;
+                             total = 0;
+                             subTotal = 0;
 
                               $.each(data.data[i].carritoProductos, function (j, item) {
 
@@ -168,25 +181,66 @@
                                ).appendTo('#lipedido');//checkout-product-item
                                subTotal = data.data[i].carritoProductos[j].cantidad * data.data[i].carritoProductos[j].precio;
                                total = total + subTotal;
+                               cantProd=data.data[i].cantProductos;
+                               idcar=data.data[i].id;
+                               fecha=data.data[i].fecha;
+                               idEstadoCarrito=data.data[i].idEstadoCarrito;
+                               idUsuario=data.data[i].idUsuario;
                            })
-
+                         
                              $('<div>').text('$' + total.toFixed(2)).appendTo('#idTotal')
                             }
                          })
                          }
-                        
-                
+
+
             },
             error: function (error) {
                 console.log(error)
             },
             beforeSend: function () {
-                
+
             },
         });
-     
-        
-        
+
+
+
+
+        $('#btnConfirmarCarrito').on('click',function(){
+
+           
+                let carrito = {
+                    id:idcar ,
+                    fecha:fecha,
+                    idEstadoCarrito: idEstadoCarrito,
+                    IdEstadoCarritoNavigation:1,
+                    IdUsuarioNavigation:1,
+                    idComprobante: null,
+                    idUsuario: idUsuario,
+                    total: total,
+                    CantProductos: cantProd
+                }
+                console.log(carrito);
+
+              jQuery.ajax({
+                    url: '@Url.Action("ConfirmarCarrito", "Carrito")?id='+idcar,
+                    type: "POST",
+                    data: JSON.stringify(carrito),
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+
+                       window.location.href='/Home/Index';
+
+
+                    }
+                })
+
+
+
+        })
+
+
     </script>
 
         }

@@ -97,6 +97,7 @@ namespace Api.Controllers
             List<CarritoProducto> items= _context.CarritoProducto.ToList();
             Carrito carrito = _context.Carrito.Where(s => s.Id == carritoProducto.IdCarrito).FirstOrDefault();
             carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
+            carrito.CantProductos++;
             _context.Entry(carrito).State = EntityState.Modified;
             await _context.SaveChangesAsync();
             return CreatedAtAction("GetCarritoProducto", new { id = carritoProducto.Id }, carritoProducto);
@@ -113,21 +114,14 @@ namespace Api.Controllers
             {
                 return NotFound();
             }
-
             _context.CarritoProducto.Remove(carritoProducto);
             await _context.SaveChangesAsync();
-
-
             List<CarritoProducto> items = _context.CarritoProducto.ToList();
-
             Carrito carrito = _context.Carrito.Where(s => s.Id == carritoProducto.IdCarrito).FirstOrDefault();
             carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
+            carrito.CantProductos--;
             _context.Entry(carrito).State = EntityState.Modified;
             await _context.SaveChangesAsync();
-
-
-
-
             return NoContent();
         }
 
