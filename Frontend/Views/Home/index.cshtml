@@ -25,16 +25,16 @@
         <h2 class="text-gray-black xl:text-[32px] xl:leading-[110%] text-xl md:text-2xl text-center font-semibold font-display mb-4">Our Products</h2>
         <ul id="filters" class="flex flex-wrap justify-center gap-2 mb-10 ">
            
-           @*  <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active" data-filter=".all" data-mixitup-control>All</button></li>
-            <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".newest">Newest</button></li>
-            <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".trending">Trending</button></li>
+             <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active" data-filter=".all" data-mixitup-control>Todos</button></li>
+            <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".1">Topper</button></li>
+            @*            <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".trending">Trending</button></li>
             <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".best-sellers">Best Sellers</button></li>
             <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".featured">Featured</button></li> *@
         </ul>
 
-        <div id="portfoliolist" class="portfoliolist justify-center mx-auto">
+      @*   <div id="portfoliolist" class="portfoliolist justify-center mx-auto"> *@
             
-            <div class="mix all featured" data-cat="featured">
+            @*  <div class="mix all featured" data-cat="featured">
                 <div class="product-card">
                     <a href="product-details.html">
                         <div class="product-thumb">
@@ -66,7 +66,7 @@
                 </div>
             </div>
 
-          @*   <div class="mix all trending" data-cat="trending">
+             <div class="mix all trending" data-cat="trending">
                 <div class="product-card">
                     <a href="product-details.html">
                         <div class="product-thumb">
@@ -289,7 +289,7 @@
                     </a>
                 </div>
             </div> *@
-        </div>
+     @*    </div> *@
     </div>
 </section>
 <!-- mixit up section end  -->
@@ -355,7 +355,7 @@
 
             </div> *@
         </div>
-        <div class="grid-layout wrapper-shop" data-grid="grid-4" id="divProducto">
+        <div class="grid-layout wrapper-shop portfoliolist justify-center mx-auto" data-grid="grid-4" id="divProducto">
         </div>
         <!-- pagination -->
         <ul class="tf-pagination-wrap tf-pagination-list">
@@ -382,6 +382,7 @@
 
 @section Scripts {
     <script>
+       
         
         document.addEventListener("DOMContentLoaded",function(){
                var producto = null;
@@ -414,169 +415,103 @@
               //Get Productos
 
             //Get Marcas
-             jQuery.ajax({
-                         url: '@Url.Action("GetAllMarcas", "Marca")',
-                         type: "GET",
-                         data: null,
-                         dataType: "json",
-                         contentType: "application/json; charset=utf-8",
-                         success: function (data) {
-                                      $("ul[name='filters']").html("");
-                                      if (data != null) {
-                                          $('#filters').mixItUp();
-                                          $('#filters').append(
-                                            $('<li>').append(
-                                                         $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active").attr({ 'data-filter': ".all","data-mixitup-control":'filter' }).text('Todos')
-                                             ),//.appendTo('#filters'),
-                                             $.each(data.data, function (i, item) {
+             // // // // jQuery.ajax({
+             // // // //             url: '@Url.Action("GetAllMarcas", "Marca")',
+             // // // //             type: "GET",
+             // // // //             data: null,
+             // // // //             dataType: "json",
+             // // // //             contentType: "application/json; charset=utf-8",
+             // // // //             success: function (data) {
+             // // // //                          $("ul[name='filters']").html("");
+             // // // //                          if (data != null) {
+             // // // //                                $('<li>').append(
+             // // // //                                             $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active").attr({ 'data-filter': ".all","data-mixitup-control":'filter' }).text('Todos')
+             // // // //                                 ).appendTo('#filters'),
+             // // // //                                 $.each(data.data, function (i, item) {
                                                           
-                                                                $('<li>').append(
-                                                                                $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2").attr({ 'data-filter': ".TOPPER"  }).text(item.descripcion)
-                                                                )//.appendTo('#filters')//append
-                                                        })
-                                          );
-                                               
-                                               
-        // // // // // // // // // jQuery.ajax({
-        // // // // // // // // //                       url: '@Url.Action("GetAllProductos", "Producto")',
-        // // // // // // // // //                       type: "GET",
-        // // // // // // // // //                       data: null,
-        // // // // // // // // //                       dataType: "json",
-        // // // // // // // // //                       contentType: "application/json; charset=utf-8",
-        // // // // // // // // //                       success: function (data) {
+             // // // //                                                    $('<li>').append(
+             // // // //                                                                    $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2").attr({ 'data-filter': ".TOPPER"  }).text(item.descripcion)
+                                                                                
+                                                                                
+             // // // //                                                    ).appendTo('#filters')//append
+             // // // //                                 })
+             // // // //                          }//if
 
-        // // // // // // // // //                       $("#divProducto").html("");
-        // // // // // // // // //                       if (data.data != null) {
-        // // // // // // // // //                              $('#portfolio').empty();
-        // // // // // // // // //                       $.each(data.data, function (i, item) {
+             // // // //                }//success
+             // // // //               })//ajax
+                                             
 
+             jQuery.ajax({
+                           url: '@Url.Action("GetAllProductos", "Producto")',
+                           type: "GET",
+                           data: null,
+                           dataType: "json",
+                           contentType: "application/json; charset=utf-8",
+                           success: function (data) {
+                           $("#divProducto").empty();
+                           if (data.data != null) {
+                        
+                               $.each(data.data, function (i, item) {
+                                      $('<div>').addClass('card-product all '+item.id.toString())/* .addClass('TOPPER') */.append(
+                                      $('<div>').addClass('card-product-wrapper').append(
+                                                    $('<a>').addClass('product-img').append(
+                                                    $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
+                                                    $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
+                                                ).on('click', function (event) {
+                                                        event.preventDefault();
+                                                        producto = data.data[i];
+                                                        abrirModalQV(data.data[i], data.talles[i].idTalle, data.colores[i].color)
+                                                }),//<a>product-img
+                                               $('<div>').addClass('list-product-btn ').append(
+                                                   $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
+                                               //'href':'#quick_add',
+                                                    .on('click', function (event) {
+                                                        event.preventDefault();
+                                                        producto = data.data[i];
+                                                        abrirModalQA(data.data[i], data.talles[i].idTalle, data.colores[i].color)
+                                                       }).append(
+                                                            $('<span>').addClass('fa fa-shopping-bag'),
+                                                            $('<span>').addClass('tooltip').text(' Vista Rápida'),
+                                                        ),//<a> box-icon bg_white quick-add tf-btn-loading
+                                                        $('<a>').addClass('box-icon bg_white wishlist btn-icon-action').attr({ 'href': 'javascript:void(0);' }).append(
+                                                            $('<span>').addClass('fa fa-heart'),
+                                                            $('<span>').addClass('tooltip').text(' Agregar a lista de deseos'),
+                                                            $('<span>').addClass('icon icon-delete')
+                                                        ),//<a> box-icon bg_white wishlist btn-icon-action
+                                                        $('<a>').addClass('box-icon bg_white compare btn-icon-action').append(
+                                                        //$('<span>').addClass('fa fa-code-compare'),
+                                                        $('<span>').addClass('fa fa-eye'),
+                                                        $('<span>').addClass('tooltip').text(' Comparar')
+                                                        //$('<span>').addClass('icon icon-check')
 
-                                     
-        // // // // // // // // //                                    $('<div>').addClass('card-product mix  TOPER').attr({'data-cat':'TOPER'}).append(
-        // // // // // // // // //                            $('<div>').addClass('card-product-wrapper').append(
-        // // // // // // // // //                             $('<a>').addClass('product-img').append(
-        // // // // // // // // //                                    $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
-        // // // // // // // // //                                    $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
-        // // // // // // // // //                             ).on('click', function (event) {
-        // // // // // // // // //                                 event.preventDefault();
-        // // // // // // // // //                                 producto = data.data[i];
+                                           ),//<a>box-icon bg_white wishlist btn-icon-action
+                                           //$('<a>').addClass('box-icon bg_white quickview tf-btn-loading').attr({ 'href': 'product-style-01.html#quick_view', 'data-bs-toggle': "modal" }).append(
 
-        // // // // // // // // //                                 abrirModalQV(data.data[i], data.talles[i].idTalle, data.colores[i].color)
+                                           //    $('<span>').addClass('tooltip').text(' Quick View '),
+                                           //)//<a>box-icon bg_white quickview tf-btn-loading
+                                       ),//list-product-btn absolute-2
 
-        // // // // // // // // //                             }),//<a>product-img
-        // // // // // // // // //                                $('<div>').addClass('list-product-btn ').append(
-        // // // // // // // // //                                    $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
-        // // // // // // // // //                                        //'href':'#quick_add',
-        // // // // // // // // //                                        .on('click', function (event) {
-        // // // // // // // // //                                            event.preventDefault();
-        // // // // // // // // //                                            producto = data.data[i];
+                                       $('<div>').addClass('size-list').append(
+                                           $('<span>').text('Talles:'),
+                                        $.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
+                                       )
+                                   ),//card-product-wrapper
+                                      $('<div>').addClass('card-product-info').append(
+                                                $('<a>').attr({ 'href': 'product-detail.html' }).text(data.data[i].descripcion).addClass('title link'),
+                                                $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
+                                                $('<ul>').addClass('list-color-product').append(
+                                                        $('<li>').addClass('list-color-item color-swatch').append(// active
+                                                        ),//list-color-item color-swatch active
+                                                )//list-color-product
+                                      )//card-product-info
+                                    ).appendTo('#divProducto')//card-product
+                                 })//each
 
-        // // // // // // // // //                                         abrirModalQA(data.data[i], data.talles[i].idTalle, data.colores[i].color)
-        // // // // // // // // //                                        })
-        // // // // // // // // //                                        .append(
-        // // // // // // // // //                                            $('<span>').addClass('fa fa-shopping-bag'),
-        // // // // // // // // //                                            $('<span>').addClass('tooltip').text(' Vista Rápida'),
-        // // // // // // // // //                                        ),//<a> box-icon bg_white quick-add tf-btn-loading
-        // // // // // // // // //                                    $('<a>').addClass('box-icon bg_white wishlist btn-icon-action').attr({ 'href': 'javascript:void(0);' }).append(
-        // // // // // // // // //                                        $('<span>').addClass('fa fa-heart'),
-        // // // // // // // // //                                        $('<span>').addClass('tooltip').text(' Agregar a lista de deseos'),
-        // // // // // // // // //                                        $('<span>').addClass('icon icon-delete')
-        // // // // // // // // //                                    ),//<a> box-icon bg_white wishlist btn-icon-action
-        // // // // // // // // //                                    $('<a>').addClass('box-icon bg_white compare btn-icon-action').append(
-        // // // // // // // // //                                        //$('<span>').addClass('fa fa-code-compare'),
-        // // // // // // // // //                                       $('<span>').addClass('fa fa-eye'),
-        // // // // // // // // //                                        $('<span>').addClass('tooltip').text(' Comparar')
-        // // // // // // // // //                                        //$('<span>').addClass('icon icon-check')
+                                   $(function() {
+           var mixer = mixitup('#divProducto');
+        });
 
-        // // // // // // // // //                                    ),//<a>box-icon bg_white wishlist btn-icon-action
-        // // // // // // // // //                                    //$('<a>').addClass('box-icon bg_white quickview tf-btn-loading').attr({ 'href': 'product-style-01.html#quick_view', 'data-bs-toggle': "modal" }).append(
-
-        // // // // // // // // //                                    //    $('<span>').addClass('tooltip').text(' Quick View '),
-        // // // // // // // // //                                    //)//<a>box-icon bg_white quickview tf-btn-loading
-        // // // // // // // // //                                ),//list-product-btn absolute-2
-
-        // // // // // // // // //                                $('<div>').addClass('size-list').append(
-        // // // // // // // // //                                    $('<span>').text('Talles:'),
-        // // // // // // // // //                                 $.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
-        // // // // // // // // //                                )
-        // // // // // // // // //                            ),//card-product-wrapper
-        // // // // // // // // //                            $('<div>').addClass('card-product-info').append(
-        // // // // // // // // //                                $('<a>').attr({ 'href': 'product-detail.html' }).text(data.data[i].descripcion).addClass('title link'),
-        // // // // // // // // //                                $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
-        // // // // // // // // //                                $('<ul>').addClass('list-color-product').append(
-        // // // // // // // // //                                 $('<li>').addClass('list-color-item color-swatch').append(// active
-
-
-
-
-        // // // // // // // // //                                        ),//list-color-item color-swatch active
-
-
-        // // // // // // // // //                // $('<li>').addClass('list-color-item color-swatch active').append(
-        // // // // // // // // //                //    $('<span>').addClass('tooltip').text(' Naranja '),
-        // // // // // // // // //                //    $('<span>').addClass('swatch-value bg_orange-3').attr({ 'text': 'Naranja'}),
-        // // // // // // // // //                //    $('<img>').addClass('lazyload').attr({ 'data-src': 'images/products/orange-1.jpg', 'src': 'images/products/orange-1.jpg', 'alt': 'image-product' })
-        // // // // // // // // //                // ),//list-color-item color-swatch active
-        // // // // // // // // //                //  $('<li>').addClass('list-color-item color-swatch').append(
-        // // // // // // // // //                //  $('<span>').addClass('tooltip').text(' Negro '),
-        // // // // // // // // //                //  $('<span>').addClass('swatch-value bg_dark').attr({ 'text': ' Negro '} ),
-        // // // // // // // // //                //  $('<img>').addClass('lazyload').attr({ 'data-src': 'images/products/black-1.jpg', 'src': 'images/products/black-1.jpg', 'alt': 'image-product' })
-        // // // // // // // // //                // ),//list-color-item color-swatch
-        // // // // // // // // //                // $('<li>').addClass('list-color-item color-swatch').append(
-        // // // // // // // // //                // $('<span>').addClass('tooltip').text(' Blanco '),
-        // // // // // // // // //                // $('<span>').addClass('swatch-value bg_white').attr({'text':'Blanco'}),
-        // // // // // // // // //                // $('<img>').addClass('lazyload').attr({ 'data-src': 'images/products/white-1.jpg', 'src': 'images/products/white-1.jpg', 'alt': 'image-product' })
-        // // // // // // // // //                // )//list-color-item color-swatch
-        // // // // // // // // //                )//list-color-product
-        // // // // // // // // //        )//card-product-info
-        // // // // // // // // //        ).appendTo('#portfolio')//card-product
-
-                                            
-                                        
-        // // // // // // // // //                      })//each
-        // // // // // // // // //           }//if
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-                                       
-
-
-
-                                       }//if
+                            }//if
                          },//success
                         error: function (error) {
                             console.log(error)
@@ -585,17 +520,12 @@
                         },
              })//ajax
 
-                 
 
-            //Get Productos
-
-
-
-            
-              
+          //   mixer.filter('.TOPPER');
+         
 
 
-
+    
               // jQuery.ajax({
               //              url: '@Url.Action("GetAllProductos", "Producto")',
               //              type: "GET",
@@ -707,86 +637,7 @@
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-              //  // $("#productoProfile").html("");
-              //  // if (data.data != null) {
-              //  //     $.each(data.data, function (i, item) {
-              //  //         $('<div>').addClass('row').append(
-              //  //             $('<div>').addClass('col-xl-4').append(
-              //   //                 $('<div>').addClass('product-wrapper mb-30').append(
-              //  //                     $('<div>').addClass('product-img').append(
-              //  //                         $('<a>').attr({ 'href': 'product-details.html' }).append(
-              //  //                             $('<img>').attr({ 'src': '../Fashion/img/product/pro13.jpg', 'alt': '' }),
-              //  //                             $('<img>').addClass('secondary-img').attr({ 'src': '../Fashion/img/product/pro14.jpg', 'alt': '' })
-              //  //                         )//div <a>
-              //  //                     )//div product-img
-              //  //                 )//div product-wrapper mb-30
-              //                   //             ),//div col-xl-4
-              //                   //             $('<div>').addClass('col-xl-8').append(
-              //  //                 $('<div>').addClass('product-content pro-list-content pr-0 mb-50').append(
-              //  //                     $('<div>').addClass('pro-cat mb-10').append(
-              //  //                         $('<a>').attr({ 'href': 'shop.html' }).text(data.data[i].descripcion),
-              //  //                         $('<a>').attr({ 'href': 'shop.html' }).text('furniture')
-              //  //                     ),//div pro-cat mb-10
-              //  //                     $('<h4>').append(
-              //  //                         $('<a>').attr({ 'href': 'product-details.html' }).text(data.data[i].descripcion)
-              //  //                     ), // h4
-              //  // //                     $('<div>').addClass('product-meta mb-10').append(
-              //  //                         $('<div>').addClass('pro-price').append(
-              //  //                             $('<span>').text(data.data[i].precio),
-              //  //                             $('<span>').addClass('old-price').text('$230.00 USD'),
-              //  //                         )//div pro-price
-              //  //                     ),//div product-meta mb-10
-              //  //                     $('<p>').text('Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.'),
-              //  //                     $('<div>').addClass('product-action').append(
-              //  //                         $('<a>').attr({ 'href': '#', 'title': 'Shoppingb Cart' }).append(
-              //  //                             $('<i>').addClass('flaticon-shopping-cart')
-              //  //                         ),// <a>//
-              //  // $('<a>').attr({ 'href': '#', 'title': 'Quick View' }).append(
-              //  //                             $('<i>').addClass('flaticon-eye')
-              //  //                         ),// <a>
-              //  //                         $('<a>').attr({ 'href': '#', 'title': 'Wishlist' }).append(
-              //  //                             $('<i>').addClass('flaticon-like')
-              //  //                         )// <a>
-              //  //                     )//div product-action
-              //  //                 )//div product-content pro-list-content pr-0 mb-50
-              //  //             )//div col-xl-8
-              //  //         )//div row
-              //  //             .appendTo('#productoProfile')//div
-              //  //     })//each
-              //  // }//if
-              //  },//success
-              //  error: function (error) {
-              //  console.log(error)
-              //  },
-              //  beforeSend: function () {
-              //  },
-              //  });
+                     
              
                //Abrir Modal Quick Add
                $('#btnMenosQA').click(function(){
