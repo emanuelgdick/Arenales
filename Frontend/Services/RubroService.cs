@@ -22,10 +22,10 @@ namespace Frontend.Services
 
         }
 
-        public async Task<List<Rubro>> GetAllRubros(/*string token*/)
+        public async Task<List<Rubro>> GetAllRubros(string token)
         {
-            //    _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubro?");
+                _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubros?");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<List<Rubro>>(contents);
@@ -35,7 +35,7 @@ namespace Frontend.Services
         public async Task<Rubro> AddRubro(Rubro rubro, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Rubro>($"api/Rubro/AddRubro", rubro);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Rubro>($"api/Rubros/AddRubro", rubro);
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Rubro>(contents);
@@ -45,7 +45,7 @@ namespace Frontend.Services
         public async Task<Rubro> GetRubroById(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubro/GetRubroById?id={id}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Rubros/GetRubroById?id={id}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Rubro>(contents);
@@ -55,14 +55,14 @@ namespace Frontend.Services
         public async Task UpdateRubro(long id, Rubro rubro, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Rubro>($"api/Rubro/UpdateRubro?id={id}", rubro);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Rubro>($"api/Rubros/UpdateRubro?id={id}", rubro);
             response.EnsureSuccessStatusCode();
         }
 
         public async Task DeleteRubro(long id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PutAsync($"api/Rubro/DeleteRubro?id={id}", null);
+            HttpResponseMessage response = await _httpClient.PutAsync($"api/Rubros/DeleteRubro?id={id}", null);
             response.EnsureSuccessStatusCode();
         }
 

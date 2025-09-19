@@ -22,11 +22,11 @@
 <!-- mixit up section start  -->
 <section class="lg:py-20 sm:py-8 py-6">
     <div class="container px-3 md:px-5 xl:px-0">
-        <h2 class="text-gray-black xl:text-[32px] xl:leading-[110%] text-xl md:text-2xl text-center font-semibold font-display mb-4">Our Products</h2>
+        <h2 class="text-gray-black xl:text-[32px] xl:leading-[110%] text-xl md:text-2xl text-center font-semibold font-display mb-4">Nuestras Marcas</h2>
         <ul id="filters" class="flex flex-wrap justify-center gap-2 mb-10 ">
            
-             <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active" data-filter=".all" data-mixitup-control>Todos</button></li>
-            <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".1">Topper</button></li>
+           @*  <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active" data-filter=".all" data-mixitup-control>Todos</button></li>
+            <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".marca_1">Topper</button></li> *@
             @*            <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".trending">Trending</button></li>
             <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".best-sellers">Best Sellers</button></li>
             <li><button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data-filter=".featured">Featured</button></li> *@
@@ -382,9 +382,14 @@
 
 @section Scripts {
     <script>
+
+       
+
+            
        
         
         document.addEventListener("DOMContentLoaded",function(){
+          
                var producto = null;
               // //Get Rubros
               //  jQuery.ajax({
@@ -415,30 +420,34 @@
               //Get Productos
 
             //Get Marcas
-             // // // // jQuery.ajax({
-             // // // //             url: '@Url.Action("GetAllMarcas", "Marca")',
-             // // // //             type: "GET",
-             // // // //             data: null,
-             // // // //             dataType: "json",
-             // // // //             contentType: "application/json; charset=utf-8",
-             // // // //             success: function (data) {
-             // // // //                          $("ul[name='filters']").html("");
-             // // // //                          if (data != null) {
-             // // // //                                $('<li>').append(
-             // // // //                                             $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active").attr({ 'data-filter': ".all","data-mixitup-control":'filter' }).text('Todos')
-             // // // //                                 ).appendTo('#filters'),
-             // // // //                                 $.each(data.data, function (i, item) {
-                                                          
-             // // // //                                                    $('<li>').append(
-             // // // //                                                                    $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2").attr({ 'data-filter': ".TOPPER"  }).text(item.descripcion)
-                                                                                
-                                                                                
-             // // // //                                                    ).appendTo('#filters')//append
-             // // // //                                 })
-             // // // //                          }//if
+             jQuery.ajax({
+                         url: '@Url.Action("GetAllMarcas", "Marca")',
+                         type: "GET",
+                         data: null,
+                         dataType: "json",
+                         contentType: "application/json; charset=utf-8",
+                         success: function (data) {
+                                      $("ul[name='filters']").html("");
+                                      if (data != null) {
+                                            $('<li>').append(
+                            $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active").attr({ 'data-filter': ".mix", "data-mixitup-control": 'filter' }).text('Todos'),
 
-             // // // //                }//success
-             // // // //               })//ajax
+                            //< li > <button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active" data - filter=".all" data - mixitup - control > Todos < /button></li >
+                        
+                                             ).appendTo('#filters'),
+                                             $.each(data.data, function (i, item) {
+                                                          
+                                                                $('<li>').append(
+                                                                                $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2").attr({ 'data-filter': ".marca_"+item.id  }).text(item.descripcion)
+                                   
+                                    //< li >          <button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data - filter=".marca_1" > Topper < /button></li >
+
+                                                                        ).appendTo('#filters')//append
+                                             })
+                                      }//if
+
+                            }//success
+                           })//ajax
                                              
 
              jQuery.ajax({
@@ -452,7 +461,8 @@
                            if (data.data != null) {
                         
                                $.each(data.data, function (i, item) {
-                                      $('<div>').addClass('card-product all '+item.id.toString())/* .addClass('TOPPER') */.append(
+
+                                   $('<div>').addClass('card-product mix all').addClass('marca_'+item.idMarca) .append(
                                       $('<div>').addClass('card-product-wrapper').append(
                                                     $('<a>').addClass('product-img').append(
                                                     $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
@@ -507,9 +517,46 @@
                                     ).appendTo('#divProducto')//card-product
                                  })//each
 
-                                   $(function() {
-           var mixer = mixitup('#divProducto');
-        });
+
+
+
+                      //  $(function () {
+                       
+                               var mixer = mixitup('#divProducto', {
+                               
+                                   selectors: {
+                                        target:'.mix'
+                                   },
+                           
+
+                        })
+
+                        var filterValue = $(this).attr('data-filter');
+                        console.log(filterValue);
+
+                        mixer.filter(filterValue);
+
+
+
+
+                        // $('.filter').on('click', function () {
+                            //     var filterValue = $(this).attr('data-filter');
+                            //     console.log(filterValue);
+
+                            //     mixer.filter(filterValue);
+
+                            // })
+
+//                        });
+
+                      
+
+
+
+
+
+                             
+                                
 
                             }//if
                          },//success
@@ -520,6 +567,11 @@
                         },
              })//ajax
 
+
+
+            
+          
+        
 
           //   mixer.filter('.TOPPER');
          

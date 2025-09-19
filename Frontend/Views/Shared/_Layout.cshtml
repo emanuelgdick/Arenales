@@ -1071,16 +1071,16 @@
             <div class="canvas-body">
                 <div class="widget-facet wd-categories">
                     <div class="facet-title" data-bs-target="#categories" data-bs-toggle="collapse" aria-expanded="true" aria-controls="categories">
-                        <span>Product categories</span>
+                        <span>Categorías</span>
                         <span class="icon icon-arrow-up"></span>
                     </div>
                     <div id="categories" class="collapse show">
-                        <ul class="list-categoris current-scrollbar mb_36">
-                            <li class="cate-item current"><a href="shop-default.html"><span>Fashion</span></a></li>
-                            <li class="cate-item"><a href="shop-default.html"><span>Men</span></a></li>
+                        <ul class="listaCategorias current-scrollbar mb_36">
+                            @* <li class="cate-item current"><a href="shop-default.html"><span>Fashion</span></a></li>
+                                <li class="cate-item"><a href="shop-default.html"><span>Men</span></a></li>
                             <li class="cate-item"><a href="shop-default.html"><span>Women</span></a></li>
                             <li class="cate-item"><a href="shop-default.html"><span>Denim</span></a></li>
-                            <li class="cate-item"><a href="shop-default.html"><span>Dress</span></a></li>
+                            <li class="cate-item"><a href="shop-default.html"><span>Dress</span></a></li> *@
                         </ul>
                     </div>
                 </div>
@@ -2407,6 +2407,45 @@
                 beforeSend: function () {
                 },
             });
+
+
+
+
+            //filtro categorias
+
+
+            jQuery.ajax({
+                url: '@Url.Action("GetAllRubros", "Rubro")',
+                        type: "GET",
+                //data: null,
+                dataType: "json",
+                contentType: "application/json; charset=utf-8",
+                success: function (data) {
+                    if (data.data != null) {
+                        $('#listaCategorias').empty();
+                        $.each(data.data, function (i, item) {
+                            $('<li>').addClass('cate-item current').append(
+                                $('<a>').attr({ 'href': '#' }).append(
+                                    $('<span>').text('item.descripcion')
+                                )//a
+                            ).appendTo('#listaCategorias')//li
+                        })
+                    }
+                },
+                error: function (error) {
+                    console.log(error)
+                },
+                beforeSend: function () {
+                },
+            });
+
+
+
+
+
+
+
+      
        })
 
 

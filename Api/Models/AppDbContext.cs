@@ -970,7 +970,8 @@ namespace Api
         public DbSet<Api.Models.Comprobante> Comprobante { get; set; } = default!;
         public DbSet<Api.Models.ComprobanteItem> ComprobanteItem { get; set; } = default!;
         public DbSet<Api.Models.Cliente> Cliente { get; set; } = default!;
-
+        
+        public DbSet<Api.Models.Rubro> Rubro { get; set; } = default!;
         public DbSet<Api.Models.Usuario> Usuario { get; set; } = default!;
 
     }
