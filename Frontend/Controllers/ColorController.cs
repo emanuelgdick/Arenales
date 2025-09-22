@@ -8,6 +8,9 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.CodeAnalysis;
 using Newtonsoft;
 using System.Security.Claims;
+using Newtonsoft.Json;
+using System.Net.Http.Headers;
+using System.Net.Http;
 
 namespace FrontEnd.Controllers
 {
@@ -64,6 +67,12 @@ namespace FrontEnd.Controllers
 
             return Json(new { data = resultados });
         }
+
+
+
+
+
+
 
 
         [Authorize(Roles = "Admin")]

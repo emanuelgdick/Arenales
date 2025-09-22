@@ -31,53 +31,67 @@ namespace Api.Controllers
         {
             List<Producto> listaProductos = _context.Producto.ToList();
 
-            List<Talle> listaTalles = _context.Talle.ToList();
-            List<Color> listaColores = _context.Color.ToList();
-            var productosAgrupados = listaProductos
-                .GroupBy(p => p.Codigo)
+            //List<Talle> listaTalles = _context.Talle.ToList();
+            //List<Color> listaColores = _context.Color.ToList();
+            //var productosAgrupados = listaProductos
+            //    .GroupBy(p => p.Codigo)
 
-                .Select(g => new Producto
-                {
-                    Codigo = g.Key,
-                    Descripcion = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Descripcion,
-                    Precio = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Precio,
+            //    .Select(g => new Producto
+            //    {
+            //        Codigo = g.Key,
+            //        Descripcion = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Descripcion,
+            //        Precio = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Precio,
 
-                    IdMarca = (from p in _context.Producto join m in _context.Marca on p.IdMarca equals m.Id where p.Codigo == g.Key select m).FirstOrDefault().Id,
-                    IdRubro = (from p in _context.Producto join r in _context.Rubro on p.IdRubro equals r.Id where p.Codigo == g.Key select r).FirstOrDefault().Id,
-                    ListaTalles = (from lp in listaProductos
-                                   join lt in listaTalles on
-                                  lp.IdTalle equals lt.Id
-                                   where lp.Codigo == g.Key
-                                   select lt
-                                  ).Distinct().ToList(),
-                    ListaColores = (from lp in listaProductos
-                                    join lc in listaColores on
-                                   lp.IdColor equals lc.Id
-                                    where lp.Codigo == g.Key
-                                    select lc
-                                  ).Distinct().ToList()
-                }).ToList();
+            //        IdMarca = (from p in _context.Producto join m in _context.Marca on p.IdMarca equals m.Id where p.Codigo == g.Key select m).FirstOrDefault().Id,
+            //        IdRubro = (from p in _context.Producto join r in _context.Rubro on p.IdRubro equals r.Id where p.Codigo == g.Key select r).FirstOrDefault().Id,
+            //        ListaTalles = (from lp in listaProductos
+            //                       join lt in listaTalles on
+            //                      lp.IdTalle equals lt.Id
+            //                       where lp.Codigo == g.Key
+            //                       select lt
+            //                      ).Distinct().ToList(),
+            //        ListaColores = (from lp in listaProductos
+            //                        join lc in listaColores on
+            //                       lp.IdColor equals lc.Id
+            //                        where lp.Codigo == g.Key
+            //                        select lc
+            //                      ).Distinct().ToList()
+            //    }).ToList();
 
-            return productosAgrupados;
+            return listaProductos;//productosAgrupados;
         }
 
-	//	[HttpGet]
-		
 
 
-		// GET: api/Productos/5
-		//[HttpGet("{id}")]
-  //      public async Task<ActionResult<Producto>> GetProducto(long id)
-  //      {
-  //          var producto = await _context.Producto.FindAsync(id);
+        // GET: api/ColoresByProducto/5
+        [HttpGet("{id}")]
+        public async Task<ActionResult<List<Producto>>> GetColoresByProducto(string codigo, long idTalle)
+        {
+            var prod = _context.Producto.Where(s => s.Codigo == codigo && s.IdTalle == idTalle).ToList();
+            if (prod == null)
+            {
+                return NotFound();
+            }
+            return prod;
+        }
 
-  //          if (producto == null)
-  //          {
-  //              return NotFound();
-  //          }
+        //	[HttpGet]
 
-  //          return producto;
-  //      }
+
+
+        // GET: api/Productos/5
+        //[HttpGet("{id}")]
+        //      public async Task<ActionResult<Producto>> GetProducto(long id)
+        //      {
+        //          var producto = await _context.Producto.FindAsync(id);
+
+        //          if (producto == null)
+        //          {
+        //              return NotFound();
+        //          }
+
+        //          return producto;
+        //      }
 
         // PUT: api/Productos/5
         // To protect from overposting attacks, see https://go.microsoft.com/fwlink/?linkid=2123754

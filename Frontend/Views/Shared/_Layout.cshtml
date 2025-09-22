@@ -1554,7 +1554,7 @@
     </div>
     <!-- /toolbarShopmb -->
     <!-- modal login -->
-    <div class="modal modalCentered fade form-sign-in modal-part-content" id="login">
+ @*    <div class="modal modalCentered fade form-sign-in modal-part-content" id="login">
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content">
                 <div class="header">
@@ -1659,7 +1659,7 @@
                 </div>
             </div>
         </div>
-    </div>
+    </div> *@
     <!-- /modal login -->
     <!-- shoppingCart -->
     <div class="modal fullRight fade modal-shopping-cart" id="shoppingCart">
@@ -1871,19 +1871,21 @@
                     <div class="tf-product-info-variant-picker mb_15">
                         <div class="variant-picker-item">
                             <div class="variant-picker-label">
+                                Talle: <span id="talleSeleccionadoQA" class="fw-6 variant-picker-label-value"></span>
+                            </div>
+                            <div class="variant-picker-values" id="idTalleQA">
+                            </div>
+                        </div>
+
+                        <div class="variant-picker-item">
+                            <div class="variant-picker-label">
                                 Color: <span id="colorSeleccionadoQA" class="fw-6 variant-picker-label-value"></span>
                             </div>
                             <div class="variant-picker-values" id="idColorQA">
                             </div>
 
                         </div>
-                        <div class="variant-picker-item">
-                            <div class="variant-picker-label">
-                                Talle: <span id="talleSeleccionadoQA" class="fw-6 variant-picker-label-value"></span>
-                            </div>
-                            <div class="variant-picker-values" id="idTalleQA">
-                            </div>
-                        </div>
+                     
                     </div>
                     @if (User.Identity.IsAuthenticated)
 
@@ -2159,9 +2161,11 @@
         function TotalQV(n, precio) {
             return (n * precio).toFixed(2);
         }
+        
+        
         function abrirModalQA(json, talles, colores) {
+
             console.log(talles);
-            console.log(colores);
             $('#id').val(json.id);
             $("#descripcionQA").text(json.descripcion);
             $("#precioQA").text('$' + json.precio.toFixed(2));
@@ -2170,31 +2174,49 @@
             $('#talleSeleccionadoQA').text('');
             $('#colorSeleccionadoQA').text('');
             $('#idTalleQA').empty();
-            $.each(talles, function (i, item) {
+            
+            $.each(talles, function (k, item) {
+                
                 var radio = $('<input/>').attr({
                     type: 'radio',
                     name: name,
-                    value: i,
-                    id: 'radio_' + i
+                    value: k,
+                    id: 'radio_' + k
                 }).on('click', function () {
-                    $('#talleSeleccionadoQA').text(item.descripcion);
+                    $('#talleSeleccionadoQA').text(talles[k].descripcion);
+                    jQuery.ajax({
+                        url: '@Url.Action("GetColoresByProducto", "Producto")?codigo='+json.codigo+'&idTalle='+talles[k].id,
+                        type: "GET",
+                        //data: null,
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+                            console.log(data);
+                            if (data.data != null) {
+                                $('#idColorQV').empty();
+                                $.each(data.data, function (j, itemColor) {
+                                    var radioC = $('<input/>').attr({
+                                        type: 'radio',
+                                        name: name,
+                                        value: j,
+                                        id: 'radioC_' + j
+                                    }).on('click', function () {
+                                        $('#colorSeleccionadoQV').text(itemColor.descripcion)
+                                    });
+                                    var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
+                                    $('#idColorQV').append(radioC).append(label).append('<br/>');
+                                })
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        },
+                        beforeSend: function () {
+                        },
+                    });
                 });
-                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item.descripcion);
+                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + k).text(talles[k].descripcion);
                 $('#idTalleQA').append(radio).append(label).append('<br/>');
-            })
-
-            $('#idColorQA').empty();
-            $.each(colores, function (j, itemColor) {
-                var radioC = $('<input/>').attr({
-                    type: 'radio',
-                    name: name,
-                    value: j,
-                    id: 'radioC_' + j
-                }).on('click', function () {
-                    $('#colorSeleccionadoQA').text(itemColor.descripcion)
-                });
-                var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
-                $('#idColorQA').append(radioC).append(label).append('<br/>');
             })
 
 

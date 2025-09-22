@@ -451,10 +451,10 @@
                            success: function (data) {
                            $("#divProducto").empty();
                            if (data.data != null) {
-                               var talles;
+                               var tall;
                                $.each(data.data, function (i, item) {
-                                   talles='';
-                       $('<div>').addClass('card-product mix all').addClass('marca_'+item.idMarca).addClass('categoria_'+item.idRubro) /* .addClass('color_'+item.idRubro) */.append($('<div>').addClass('card-product-wrapper').append(
+                               tall='';
+                                $('<div>').addClass('card-product mix all').addClass('marca_'+item.idMarca).addClass('categoria_'+item.idRubro) /* .addClass('color_'+item.idRubro) */.append($('<div>').addClass('card-product-wrapper').append(
                                                     $('<a>').addClass('product-img').append(
                                                     $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
                                                     $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
@@ -462,7 +462,7 @@
                                                 .on('click', function (event) {
                                                         event.preventDefault();
                                                         producto = data.data[i];
-                                                        abrirModalQV(data.data[i], item.listaTalles, item.listaColores)
+                                                        abrirModalQV(data.data[i], data.talles, data.colores)
                                                 }),//<a>product-img
                                                $('<div>').addClass('list-product-btn ').append(
                                                    $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
@@ -470,7 +470,7 @@
                                                     .on('click', function (event) {
                                                         event.preventDefault();
                                                         producto = data.data[i];
-                                                        abrirModalQA(data.data[i], item.listaTalles, item.listaColores)
+                                            abrirModalQA(data.data[i], data.talles[i].talle, data.colores[i])
                                                        }).append(
                                                             $('<span>').addClass('fa fa-shopping-bag'),
                                                             $('<span>').addClass('tooltip').text(' Vista Rápida'),
@@ -494,11 +494,11 @@
                                        ),//list-product-btn absolute-2
                           $('<div>').addClass('size-list').append(
                                 $('<span>').text('Talles:'),
-                                $.each(item.listaTalles, function (j, itemTalle) {
-                                            talles=talles+' '+itemTalle.descripcion;
-                                   
+                                $.each(data.talles, function (j, itemTalle) {
+                                        //tall = tall + ' ' + itemTalle.descripcion;
+                                        $('<span>').text(itemTalle/* .descripcion */)//.append('<br/>')
                                 }),
-                                $('<span>').text(talles)//.append('<br/>')
+                                
                            )
                          ),//card-product-wrapper
                          $('<div>').addClass('card-product-info').append(

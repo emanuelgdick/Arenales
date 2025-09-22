@@ -35,7 +35,7 @@ namespace Frontend.Services
         public async Task<Producto> AddProducto(Producto Producto, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Producto>($"api/Producto/AddProducto", Producto);
+            HttpResponseMessage response = await _httpClient.PostAsJsonAsync<Producto>($"api/Productos/AddProducto", Producto);
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Producto>(contents);
@@ -45,12 +45,23 @@ namespace Frontend.Services
         public async Task<Producto> GetProductoById(int id, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Producto/GetProductoById?id={id}");
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Productos/GetProductoById?id={id}");
             response.EnsureSuccessStatusCode();
             var contents = await response.Content.ReadAsStringAsync();
             var APIResponse = JsonConvert.DeserializeObject<Producto>(contents);
             return APIResponse;
         }
+
+        public async Task<List<Color>> GetColoresByProducto(string codigo, long idTalle, string token)
+        {
+            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Productos/GetColoresByProducto?codigo={codigo}&idTalle={idTalle}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Color>>(contents);
+            return APIResponse;
+        }
+
 
         public async Task UpdateProducto(long id, Producto Producto, string token)
         {

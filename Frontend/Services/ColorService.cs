@@ -32,6 +32,14 @@ namespace Frontend.Services
             return APIResponse;
         }
 
+     
+
+
+
+
+
+
+
         public async Task<Color> AddColor(Color Color, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
