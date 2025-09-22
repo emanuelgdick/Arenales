@@ -8,6 +8,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api;
 using Api.Models;
+using Microsoft.AspNetCore.Mvc.Formatters;
 
 namespace Api.Controllers
 {
@@ -28,10 +29,36 @@ namespace Api.Controllers
       //  [ResponseCache(CacheProfileName = "apicache")]
         public async Task<ActionResult<List<Producto>>> GetProducto()
         {
-            
+            List<Producto> listaProductos = _context.Producto.ToList();
 
+            List<Talle> listaTalles = _context.Talle.ToList();
+            List<Color> listaColores = _context.Color.ToList();
+            var productosAgrupados = listaProductos
+                .GroupBy(p => p.Codigo)
 
-            return await _context.Producto.OrderBy(s => s.Codigo).ToListAsync(); ;
+                .Select(g => new Producto
+                {
+                    Codigo = g.Key,
+                    Descripcion = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Descripcion,
+                    Precio = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Precio,
+
+                    IdMarca = (from p in _context.Producto join m in _context.Marca on p.IdMarca equals m.Id where p.Codigo == g.Key select m).FirstOrDefault().Id,
+                    IdRubro = (from p in _context.Producto join r in _context.Rubro on p.IdRubro equals r.Id where p.Codigo == g.Key select r).FirstOrDefault().Id,
+                    ListaTalles = (from lp in listaProductos
+                                   join lt in listaTalles on
+                                  lp.IdTalle equals lt.Id
+                                   where lp.Codigo == g.Key
+                                   select lt
+                                  ).Distinct().ToList(),
+                    ListaColores = (from lp in listaProductos
+                                    join lc in listaColores on
+                                   lp.IdColor equals lc.Id
+                                    where lp.Codigo == g.Key
+                                    select lc
+                                  ).Distinct().ToList()
+                }).ToList();
+
+            return productosAgrupados;
         }
 
 	//	[HttpGet]

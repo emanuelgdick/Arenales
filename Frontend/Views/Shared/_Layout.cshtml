@@ -1075,7 +1075,7 @@
                         <span class="icon icon-arrow-up"></span>
                     </div>
                     <div id="categories" class="collapse show">
-                        <ul class="listaCategorias current-scrollbar mb_36">
+                        <ul id="listaCategorias" class="list-categoris current-scrollbar mb_36">
                             @* <li class="cate-item current"><a href="shop-default.html"><span>Fashion</span></a></li>
                                 <li class="cate-item"><a href="shop-default.html"><span>Men</span></a></li>
                             <li class="cate-item"><a href="shop-default.html"><span>Women</span></a></li>
@@ -1130,30 +1130,30 @@
                     </div>
                     <div class="widget-facet">
                         <div class="facet-title" data-bs-target="#brand" data-bs-toggle="collapse" aria-expanded="true" aria-controls="brand">
-                            <span>Brand</span>
+                            <span>Marcas</span>
                             <span class="icon icon-arrow-up"></span>
                         </div>
                         <div id="brand" class="collapse show">
-                            <ul class="tf-filter-group current-scrollbar mb_36">
-                                <li class="list-item d-flex gap-12 align-items-center">
+                            <ul  id="listaMarcas" class="tf-filter-group current-scrollbar mb_36">
+                              @*   <li class="list-item d-flex gap-12 align-items-center">
                                     <input type="radio" name="brand" class="tf-check" id="brand-1">
                                     <label for="brand-1" class="label"><span>Ecomus</span>&nbsp;<span>(8)</span></label>
                                 </li>
                                 <li class="list-item d-flex gap-12 align-items-center">
                                     <input type="radio" name="brand" class="tf-check" id="brand-2">
                                     <label for="brand-2" class="label"><span>M&H</span>&nbsp;<span>(8)</span></label>
-                                </li>
+                                </li> *@
                             </ul>
                         </div>
                     </div>
                     <div class="widget-facet">
                         <div class="facet-title" data-bs-target="#color" data-bs-toggle="collapse" aria-expanded="true" aria-controls="color">
-                            <span>Color</span>
+                            <span>Colores</span>
                             <span class="icon icon-arrow-up"></span>
                         </div>
                         <div id="color" class="collapse show">
-                            <ul class="tf-filter-group filter-color current-scrollbar mb_36">
-                                <li class="list-item d-flex gap-12 align-items-center">
+                            <ul id="listaColores"class="tf-filter-group filter-color current-scrollbar mb_36">
+                                @* <li class="list-item d-flex gap-12 align-items-center">
                                     <input type="radio" name="color" class="tf-check-color bg_beige" id="beige">
                                     <label for="beige" class="label"><span>Beige</span>&nbsp;<span>(3)</span></label>
                                 </li>
@@ -1236,7 +1236,7 @@
                                 <li class="list-item d-flex gap-12 align-items-center">
                                     <input type="radio" name="color" class="tf-check-color bg_yellow" id="yellow">
                                     <label for="yellow" class="label"><span>Yellow</span>&nbsp;<span>(1)</span></label>
-                                </li>
+                                </li> *@
                             </ul>
                         </div>
                     </div>
@@ -1967,18 +1967,20 @@
                                 <p>Nunc arcu faucibus a et lorem eu a mauris adipiscing conubia ac aptent ligula facilisis a auctor habitant parturient a a.Interdum fermentum.</p>
                             </div>
                             <div class="tf-product-info-variant-picker">
-                                <div class="variant-picker-item">
-                                    <div class="variant-picker-label">
-                                        Color: <span id="colorSeleccionadoQV" class="fw-6 variant-picker-label-value"></span>
-                                    </div>
-                                    <div class="variant-picker-values" id="idColorQV">
-                                    </div>
-                                </div>
+                               
                                 <div class="variant-picker-item">
                                     <div class="variant-picker-label">
                                         Talle: <span id="talleSeleccionadoQV" class="fw-6 variant-picker-label-value"></span>
                                     </div>
                                     <div class="variant-picker-values" id="idTalleQV">
+                                    </div>
+                                </div>
+
+                                <div class="variant-picker-item">
+                                    <div class="variant-picker-label">
+                                        Color: <span id="colorSeleccionadoQV" class="fw-6 variant-picker-label-value"></span>
+                                    </div>
+                                    <div class="variant-picker-values" id="idColorQV">
                                     </div>
                                 </div>
                             </div>
@@ -2158,7 +2160,8 @@
             return (n * precio).toFixed(2);
         }
         function abrirModalQA(json, talles, colores) {
-
+            console.log(talles);
+            console.log(colores);
             $('#id').val(json.id);
             $("#descripcionQA").text(json.descripcion);
             $("#precioQA").text('$' + json.precio.toFixed(2));
@@ -2174,9 +2177,9 @@
                     value: i,
                     id: 'radio_' + i
                 }).on('click', function () {
-                    $('#talleSeleccionadoQA').text(item);
+                    $('#talleSeleccionadoQA').text(item.descripcion);
                 });
-                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item);
+                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item.descripcion);
                 $('#idTalleQA').append(radio).append(label).append('<br/>');
             })
 
@@ -2215,9 +2218,9 @@
                     value: i,
                     id: 'radio_' + i
                 }).on('click', function () {
-                    $('#talleSeleccionadoQV').text(item);
+                    $('#talleSeleccionadoQV').text(item.descripcion);
                 });
-                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item);
+                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item.descripcion);
                 $('#idTalleQV').append(radio).append(label).append('<br/>');
             })
 
@@ -2409,11 +2412,7 @@
             });
 
 
-
-
             //filtro categorias
-
-
             jQuery.ajax({
                 url: '@Url.Action("GetAllRubros", "Rubro")',
                         type: "GET",
@@ -2424,9 +2423,9 @@
                     if (data.data != null) {
                         $('#listaCategorias').empty();
                         $.each(data.data, function (i, item) {
-                            $('<li>').addClass('cate-item current').append(
+                             $('<li>').addClass('cate-item ').attr({ 'data-filter': ".categoria_"+item.id}).append(
                                 $('<a>').attr({ 'href': '#' }).append(
-                                    $('<span>').text('item.descripcion')
+                                    $('<span>').text(item.descripcion)
                                 )//a
                             ).appendTo('#listaCategorias')//li
                         })
@@ -2439,10 +2438,49 @@
                 },
             });
 
+            //filtro marcas
+            jQuery.ajax({
+                 url: '@Url.Action("GetAllMarcas", "Marca")',
+                 type: "GET",
+                 data: null,
+                 dataType: "json",
+                 contentType: "application/json; charset=utf-8",
+                 success: function (data) {
+                       if (data != null) {
+                          $('#listaMarcas').empty();
+                          $.each(data.data, function (i, item) {
+                                     $('<li>').addClass('filter list-item d-flex gap-12 align-items-center').attr({ 'data-filter': ".marca_"+item.id}).append(
+                                      $('<input>').attr({'type':'radio','name':'brand','id':'brand-'+i}).addClass("tf-check"),
+                                      $('<label>').attr({'for':'brand-'+i}).addClass('label').append(
+                                           $('<span>').text(item.descripcion)
+                                      )//label
+                              ).appendTo('#listaMarcas')//li
+                         })//each
+                       }//if
+                 }//success
+            })//JQuery
 
-
-
-
+            //filtro colores
+            jQuery.ajax({
+                  url: '@Url.Action("GetAllColores", "Color")',
+                  type: "GET",
+                  data: null,
+                  dataType: "json",
+                  contentType: "application/json; charset=utf-8",
+                  success: function (data) {
+                        if (data != null) {
+                           $('#listaColores').empty();
+                           $.each(data.data, function (i, item) {
+                                $('<li>').addClass('list-item d-flex gap-12 align-items-center').attr({ 'data-filter': ".color_"+item.id  }).append(
+                                      $('<input>').attr({'type':'radio','name':'color','id':'color-'+i}).addClass("tf-check-color"),
+                                      $('<label>').attr({'for':'color-'+i}).addClass('label').append(
+                                           $('<span>').text(item.descripcion)
+                                      )//label
+                          ).appendTo('#listaColores')//li
+                          })//each
+                     }//if
+                  }//success
+             })//JQuery
 
 
       

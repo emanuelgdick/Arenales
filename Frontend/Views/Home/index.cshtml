@@ -431,21 +431,13 @@
                                       if (data != null) {
                                             $('<li>').append(
                             $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active").attr({ 'data-filter': ".mix", "data-mixitup-control": 'filter' }).text('Todos'),
-
-                            //< li > <button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active" data - filter=".all" data - mixitup - control > Todos < /button></li >
-                        
                                              ).appendTo('#filters'),
                                              $.each(data.data, function (i, item) {
-                                                          
-                                                                $('<li>').append(
-                                                                                $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2").attr({ 'data-filter': ".marca_"+item.id  }).text(item.descripcion)
-                                   
-                                    //< li >          <button class="filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2" data - filter=".marca_1" > Topper < /button></li >
-
-                                                                        ).appendTo('#filters')//append
+                                                $('<li>').append(
+                                                                $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2").attr({ 'data-filter': ".marca_"+item.id  }).text(item.descripcion)
+                                                 ).appendTo('#filters')//append
                                              })
                                       }//if
-
                             }//success
                            })//ajax
                                              
@@ -459,18 +451,18 @@
                            success: function (data) {
                            $("#divProducto").empty();
                            if (data.data != null) {
-                        
+                               var talles;
                                $.each(data.data, function (i, item) {
-
-                                   $('<div>').addClass('card-product mix all').addClass('marca_'+item.idMarca) .append(
-                                      $('<div>').addClass('card-product-wrapper').append(
+                                   talles='';
+                       $('<div>').addClass('card-product mix all').addClass('marca_'+item.idMarca).addClass('categoria_'+item.idRubro) /* .addClass('color_'+item.idRubro) */.append($('<div>').addClass('card-product-wrapper').append(
                                                     $('<a>').addClass('product-img').append(
                                                     $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
                                                     $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
-                                                ).on('click', function (event) {
+                                                )
+                                                .on('click', function (event) {
                                                         event.preventDefault();
                                                         producto = data.data[i];
-                                                        abrirModalQV(data.data[i], data.talles[i].idTalle, data.colores[i].color)
+                                                        abrirModalQV(data.data[i], item.listaTalles, item.listaColores)
                                                 }),//<a>product-img
                                                $('<div>').addClass('list-product-btn ').append(
                                                    $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
@@ -478,7 +470,7 @@
                                                     .on('click', function (event) {
                                                         event.preventDefault();
                                                         producto = data.data[i];
-                                                        abrirModalQA(data.data[i], data.talles[i].idTalle, data.colores[i].color)
+                                                        abrirModalQA(data.data[i], item.listaTalles, item.listaColores)
                                                        }).append(
                                                             $('<span>').addClass('fa fa-shopping-bag'),
                                                             $('<span>').addClass('tooltip').text(' Vista Rápida'),
@@ -500,22 +492,25 @@
                                            //    $('<span>').addClass('tooltip').text(' Quick View '),
                                            //)//<a>box-icon bg_white quickview tf-btn-loading
                                        ),//list-product-btn absolute-2
-
-                                       $('<div>').addClass('size-list').append(
-                                           $('<span>').text('Talles:'),
-                                        $.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
-                                       )
-                                   ),//card-product-wrapper
-                                      $('<div>').addClass('card-product-info').append(
-                                                $('<a>').attr({ 'href': 'product-detail.html' }).text(data.data[i].descripcion).addClass('title link'),
-                                                $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
-                                                $('<ul>').addClass('list-color-product').append(
-                                                        $('<li>').addClass('list-color-item color-swatch').append(// active
-                                                        ),//list-color-item color-swatch active
-                                                )//list-color-product
-                                      )//card-product-info
-                                    ).appendTo('#divProducto')//card-product
-                                 })//each
+                          $('<div>').addClass('size-list').append(
+                                $('<span>').text('Talles:'),
+                                $.each(item.listaTalles, function (j, itemTalle) {
+                                            talles=talles+' '+itemTalle.descripcion;
+                                   
+                                }),
+                                $('<span>').text(talles)//.append('<br/>')
+                           )
+                         ),//card-product-wrapper
+                         $('<div>').addClass('card-product-info').append(
+                                  $('<a>').attr({ 'href': 'product-detail.html' }).text( data.data[i].descripcion).addClass('title link'),
+                      $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
+                             $('<ul>').addClass('list-color-product').append(
+                                          $('<li>').addClass('list-color-item color-swatch').append(// active
+                              ),//list-color-item color-swatch active
+                      )//list-color-product
+                    )//card-product-info
+                  ).appendTo('#divProducto')//card-product
+               })//each
 
 
 
@@ -532,7 +527,7 @@
                         })
 
                         var filterValue = $(this).attr('data-filter');
-                        console.log(filterValue);
+                      
 
                         mixer.filter(filterValue);
 

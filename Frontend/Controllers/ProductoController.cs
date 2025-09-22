@@ -44,19 +44,19 @@ namespace FrontEnd.Controllers
         }
 
 
-        public class aTalles
-        {
-            public string codigo { get; set; }
-            public string[] IdTalle { get; set; }
-        }
+        //public class aTalles
+        //{
+        //    public string codigo { get; set; }
+        //    public string[] IdTalle { get; set; }
+        //}
 
-        public class aColores
-        {
-            public string codigo { get; set; }
-            //public string[] IdColor { get; set; }
-            //public string[] Descripcion { get; set; }
-            public Color[] color { get; set; }
-        }
+        //public class aColores
+        //{
+        //    public string codigo { get; set; }
+        //    //public string[] IdColor { get; set; }
+        //    //public string[] Descripcion { get; set; }
+        //    public Color[] color { get; set; }
+        //}
 
 
         //[Authorize(Roles = "Admin")]
@@ -75,49 +75,49 @@ namespace FrontEnd.Controllers
                 resultados = oLista.Where(s => s.Descripcion.ToLower().Contains(q.ToLower())).ToList();
             }
 
-            var arrayTalles = new List<aTalles>();
-            var arrayColores = new List<aColores>();
-            List<Producto> productos = new List<Producto>();
-            
-            IEnumerable<Talle> talle = new List<Talle>();
+            //var arrayTalles = new List<aTalles>();
+            //var arrayColores = new List<aColores>();
+            //List<Producto> productos = new List<Producto>();
 
-            for (int i= 0; i <= resultados.Count()-1;i++)
-            {
-                Producto p = new Producto();
-                p=resultados[i];
-                
-                List<Producto> filtro = new List<Producto>();
-                filtro =resultados.Where(s => s.Codigo == p.Codigo).ToList();
-                productos.Add(p);
-              
-                talle = await _TalleService.GetAllTalles(/*HttpContext.Session.GetString("APIToken")*/);
-                string[] arrayT = new string[filtro.Count];
-                int j = 0;
-                while (j < filtro.Count())
-                {
-                    arrayT[j] = talle.Where(s => s.Id == filtro[j].IdTalle).FirstOrDefault().Descripcion;
-                    j++;
-                }
-                i = i + j - 1;
-                arrayTalles.Add(new aTalles { codigo = p.Codigo, IdTalle = arrayT });
+            //IEnumerable<Talle> talle = new List<Talle>();
 
-                IEnumerable<Color> color = new List<Color>();
-                color = await _ColorService.GetAllColores(/*HttpContext.Session.GetString("APIToken")*/);
-                //string[] arrayC = new string[filtro.Count];
-                Color[] arrayC = new Color[filtro.Count];
-                int k = 0;
-                while (k < filtro.Count())
-                {
-                    arrayC[k] = color.Where(s => s.Id == filtro[k].IdColor).FirstOrDefault();
-                    
-                    k++;
-                }
-                //i = i + k - 1;
-                arrayColores.Add(new aColores { codigo = p.Codigo, color = arrayC });
+            //for (int i = 0; i <= resultados.Count() - 1; i++)
+            //{
+            //    Producto p = new Producto();
+            //    p = resultados[i];
 
-            }
+            //    List<Producto> filtro = new List<Producto>();
+            //    filtro = resultados.Where(s => s.Codigo == p.Codigo).ToList();
+            //    productos.Add(p);
 
-            return Json(new { data = productos ,talles = arrayTalles, colores = arrayColores });
+            //    talle = await _TalleService.GetAllTalles(/*HttpContext.Session.GetString("APIToken")*/);
+            //    string[] arrayT = new string[filtro.Count];
+            //    int j = 0;
+            //    while (j < filtro.Count())
+            //    {
+            //        arrayT[j] = talle.Where(s => s.Id == filtro[j].IdTalle).FirstOrDefault().Descripcion;
+            //        j++;
+            //    }
+            //    i = i + j - 1;
+            //    arrayTalles.Add(new aTalles { codigo = p.Codigo, IdTalle = arrayT });
+
+            //    IEnumerable<Color> color = new List<Color>();
+            //    color = await _ColorService.GetAllColores(HttpContext.Session.GetString("APIToken"));
+            //    //string[] arrayC = new string[filtro.Count];
+            //    Color[] arrayC = new Color[filtro.Count];
+            //    int k = 0;
+            //    while (k < filtro.Count())
+            //    {
+            //        arrayC[k] = color.Where(s => s.Id == filtro[k].IdColor).FirstOrDefault();
+
+            //        k++;
+            //    }
+            //    //i = i + k - 1;
+            //    arrayColores.Add(new aColores { codigo = p.Codigo, color = arrayC });
+
+            //}
+
+            return Json(new { data = resultados/*, talles = arrayTalles, colores = arrayColores*/ });
         }
 
 

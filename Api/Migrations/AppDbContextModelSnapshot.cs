@@ -429,11 +429,16 @@ namespace Api.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<long?>("ProductoId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("valor")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductoId");
 
                     b.ToTable("Color", (string)null);
                 });
@@ -1595,8 +1600,13 @@ namespace Api.Migrations
                     b.Property<int?>("Numero")
                         .HasColumnType("int");
 
+                    b.Property<long?>("ProductoId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id")
                         .HasName("PK_Modelo");
+
+                    b.HasIndex("ProductoId");
 
                     b.ToTable("Talle", (string)null);
                 });
@@ -1998,6 +2008,13 @@ namespace Api.Migrations
                     b.Navigation("IdComprobanteNavigation");
                 });
 
+            modelBuilder.Entity("Api.Models.Color", b =>
+                {
+                    b.HasOne("Api.Models.Producto", null)
+                        .WithMany("ListaColores")
+                        .HasForeignKey("ProductoId");
+                });
+
             modelBuilder.Entity("Api.Models.Comprobante", b =>
                 {
                     b.HasOne("Api.Models.Caja", "IdCajaNavigation")
@@ -2256,6 +2273,13 @@ namespace Api.Migrations
                     b.Navigation("IdSucursalNavigation");
                 });
 
+            modelBuilder.Entity("Api.Models.Talle", b =>
+                {
+                    b.HasOne("Api.Models.Producto", null)
+                        .WithMany("ListaTalles")
+                        .HasForeignKey("ProductoId");
+                });
+
             modelBuilder.Entity("Api.Models.Tarjetum", b =>
                 {
                     b.HasOne("Api.Models.Banco", "IdBancoNavigation")
@@ -2389,6 +2413,10 @@ namespace Api.Migrations
                     b.Navigation("CarritoProductos");
 
                     b.Navigation("ComprobanteItems");
+
+                    b.Navigation("ListaColores");
+
+                    b.Navigation("ListaTalles");
 
                     b.Navigation("ProductoImagens");
 

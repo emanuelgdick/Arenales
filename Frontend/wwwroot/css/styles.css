@@ -8103,9 +8103,9 @@ header.header-bg {
   border-color: var(--main);
   box-shadow: 0 0.4rem 0.4rem rgba(0, 0, 0, 0.1019607843);
 }
-.variant-picker-item .variant-picker-values input:checked + label.style-text {
-  background-color: var(--main);
-}
+    .variant-picker-item .variant-picker-values input:checked + label.style-text {
+        background-color: #679e96; /*var(--main);*/
+    }
 .variant-picker-item .variant-picker-values input:checked + label.style-text p {
   color: var(--white);
 }

@@ -1769,6 +1769,191 @@
         }
       }
     },
+    "/api/Rubros": {
+      "get": {
+        "tags": [
+          "Rubros"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rubro"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rubro"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Rubro"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "post": {
+        "tags": [
+          "Rubros"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rubro"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rubro"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rubro"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rubro"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rubro"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rubro"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Rubros/{id}": {
+      "get": {
+        "tags": [
+          "Rubros"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rubro"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rubro"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Rubro"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Rubros"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rubro"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rubro"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Rubro"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      },
+      "delete": {
+        "tags": [
+          "Rubros"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
     "/api/Talles": {
       "get": {
         "tags": [
@@ -2551,13 +2736,6 @@
           },
           "valor": {
             "type": "string",
-            "nullable": true
-          },
-          "productos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Producto"
-            },
             "nullable": true
           }
         },
@@ -3432,6 +3610,20 @@
               "$ref": "#/components/schemas/ProductoStock"
             },
             "nullable": true
+          },
+          "listaTalles": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Talle"
+            },
+            "nullable": true
+          },
+          "listaColores": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Color"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -3703,13 +3895,6 @@
           "numero": {
             "type": "integer",
             "format": "int32",
-            "nullable": true
-          },
-          "productos": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/Producto"
-            },
             "nullable": true
           }
         },

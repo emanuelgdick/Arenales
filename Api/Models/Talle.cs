@@ -1,5 +1,7 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
+using System.Text.Json.Serialization;
 
 namespace Api.Models;
 
@@ -11,5 +13,6 @@ public partial class Talle
 
     public int? Numero { get; set; }
 
-    public virtual ICollection<Producto> Productos { get; set; } = new List<Producto>();
+    [JsonIgnore]
+    public virtual ICollection<Producto>? Productos { get; set; } = new List<Producto>();
 }
