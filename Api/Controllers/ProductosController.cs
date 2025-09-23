@@ -69,7 +69,7 @@ namespace Api.Controllers
         //  [ResponseCache(CacheProfileName = "apicache")]
         public async Task<ActionResult<Producto>> GetProductoByTCC(long talle, long color, string codigo)
         {
-            Producto p = _context.Producto.Where(s=>s.IdTalle==talle && s.IdColor==color && s.Codigo==codigo).FirstOrDefault();
+            Producto p = _context.Producto.Where(s=>s.IdTalle==talle && s.IdColor==color && s.Codigo==codigo).Include(s=>s.IdColorNavigation).Include(s => s.IdTalleNavigation).FirstOrDefault();
             return p;
         }
 

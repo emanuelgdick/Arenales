@@ -55,6 +55,8 @@ namespace Api.Controllers
             var carritoP = (from cp in _context.CarritoProducto
                             join p in _context.Producto on cp.IdProducto equals p.Id 
                             join c in _context.Carrito on  cp.IdCarrito equals c.Id 
+                            join col in _context.Color on p.IdColor equals col.Id
+                            join tal in _context.Talle on p.IdTalle equals tal.Id
                             where c.Id == idUsuario
                             select new CarritoProducto
                             {
@@ -66,7 +68,18 @@ namespace Api.Controllers
                              //   IdCarritoNavigation=cp.IdCarrito,
                                 IdProductoNavigation = new Producto() {
                                     Id = p.Id,
-                                    Descripcion = p.Descripcion
+                                    Descripcion = p.Descripcion,
+                                    IdColor = p.IdColor,
+                                    IdColorNavigation=new Color() { 
+                                        Id=p.IdColor,
+                                        Descripcion=col.Descripcion,
+                                        valor = col.valor
+                                    },
+                                    IdTalle = p.IdTalle,
+                                    IdTalleNavigation=new Talle() { 
+                                        Id=p.IdTalle,
+                                        Descripcion=tal.Descripcion
+                                    }
                                 }
                             }).ToList();
 

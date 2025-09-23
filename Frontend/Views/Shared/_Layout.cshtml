@@ -2268,8 +2268,11 @@
 
             let cantProd = 0;
             let total = 0;
+            debugger;
             carrito.forEach(function (number, index) {
+                var idProductoNavigation=carrito[index].idProductoNavigation;
                 var nombreProducto = carrito[index].idProductoNavigation.descripcion;
+                var colorProducto = carrito[index].idProductoNavigation.idColorNavigation.valor;
                 $('<div>').addClass('tf-mini-cart-item').append(
                     $('<div>').addClass('tf-mini-cart-image').append(
                         $('<a>').attr({ 'href': 'product-detail.html' }).append(
@@ -2277,18 +2280,19 @@
                         )//<a>
                     ),//tf-mini-cart-image
                     $('<div>').addClass('tf-mini-cart-info').append(
-                        $('<a>').attr({ 'href': "product-detail.html" }).addClass('title link').text(nombreProducto),
+                          $('<a>').attr({ 'href': "product-detail.html" }).addClass('title link').text(nombreProducto),
                         $('<div>').addClass('meta-variant hidden').attr({ 'id': 'id' }).text(carrito[index].id),
                         $('<div>').addClass('meta-variant hidden').attr({ 'id': 'idproducto' }).text(carrito[index].idProducto),
-                        $('<div>').attr({ 'id': 'precioSC', "data-indice": index }).addClass('price fw-6').text('$ ' + carrito[index].precio),
+                        $('<div>').attr({ 'id': 'precioSC', "data-indice": index }).addClass('price fw-6').text('$ ' + carrito[index].precio.toFixed(2)),
                         
                         $('<ul>').addClass('list-color-product').append(
                             $('<span>').text('Color'),
                             $('<li>').addClass('list-color-item color-swatch').append(// active
-                                
-                                $('<span>').addClass('swatch-value ').css({ 'background-color': 'red' }),
+
+                                 $('<span>').addClass('swatch-value ').css({ 'background-color':colorProducto }),
                                 // $('<label/>').addClass('hover-tooltip radius-60').css({ 'background-color': 'red'})
-                             )//list-color-item color-swatch active
+                             ),//list-color-item color-swatch active
+                              $('<span>').text('Talle:'+carrito[index].idProductoNavigation.idTalleNavigation.descripcion ),
                              ),
                         $('<div>').addClass('tf-mini-cart-btns').append(
                             $('<div>').addClass('wg-quantity small').append(
@@ -2306,7 +2310,7 @@
                                         carrito[index].idProductoNavigation = null;
                                         carrito[index].idCarrito = parseInt($('#idCarrito').text()),
                                         actualizar(carrito[index]);
-                                        carrito[index].idProductoNavigation = { id: carrito[index].idProducto, descripcion: nombreProducto };
+                                        carrito[index].idProductoNavigation =idProductoNavigation;
                                         totales();
                                     }
                                 }),
@@ -2323,9 +2327,9 @@
 
                                     carrito[index].cantidad = cantidad;
                                     carrito[index].idProductoNavigation = null;
-                                    carrito[index].idCarrito = parseInt($('#idCarrito').text()),
+                                    carrito[index].idCarrito = parseInt($('#idCarrito').text());
                                     actualizar(carrito[index]);
-                                    carrito[index].idProductoNavigation = { id: carrito[index].idProducto, descripcion: nombreProducto };
+                                    carrito[index].idProductoNavigation =idProductoNavigation;
                                     totales();
                                 }),
                             ),//wg-quantity small
@@ -2384,7 +2388,8 @@
                 contentType: 'application/json',
                 success: function (data) {
                     if (data.resultado) {
-
+                        debugger;
+                        console.log(data.resultado);
 
                     }
 

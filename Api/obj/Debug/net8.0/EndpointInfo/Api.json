@@ -1729,7 +1729,7 @@
         }
       }
     },
-    "/api/Productos/GetProductoByTCC({talle},{color},{codigo})": {
+    "/api/Productos/GetProductoByTCC": {
       "get": {
         "tags": [
           "Productos"
@@ -1737,8 +1737,7 @@
         "parameters": [
           {
             "name": "talle",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int64"
@@ -1746,8 +1745,7 @@
           },
           {
             "name": "color",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "integer",
               "format": "int64"
@@ -1755,8 +1753,7 @@
           },
           {
             "name": "codigo",
-            "in": "path",
-            "required": true,
+            "in": "query",
             "schema": {
               "type": "string"
             }

@@ -65,7 +65,7 @@ namespace Api.Controllers
 
 
                 Carrito carrito = _context.Carrito.Where(s => s.Id == item.IdCarrito).FirstOrDefault();
-                List<CarritoProducto> items = _context.CarritoProducto.ToList();
+                List<CarritoProducto> items = _context.CarritoProducto/*.Include(s=>s.IdProductoNavigation)*/.ToList();
                 carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
                 _context.Entry(carrito).State = EntityState.Modified;
                 await _context.SaveChangesAsync();

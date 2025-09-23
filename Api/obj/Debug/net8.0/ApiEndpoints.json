@@ -1040,7 +1040,7 @@
   {
     "ContainingType": "Api.Controllers.ProductosController",
     "Method": "GetProductoByTCC",
-    "RelativePath": "api/Productos/GetProductoByTCC({talle},{color},{codigo})",
+    "RelativePath": "api/Productos/GetProductoByTCC",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
@@ -1048,17 +1048,17 @@
       {
         "Name": "talle",
         "Type": "System.Int64",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "color",
         "Type": "System.Int64",
-        "IsRequired": true
+        "IsRequired": false
       },
       {
         "Name": "codigo",
         "Type": "System.String",
-        "IsRequired": true
+        "IsRequired": false
       }
     ],
     "ReturnTypes": [
