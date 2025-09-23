@@ -9,6 +9,7 @@ using Microsoft.CodeAnalysis;
 using Newtonsoft;
 using System.Security.Claims;
 using static System.Runtime.InteropServices.JavaScript.JSType;
+using System.Linq;
 
 namespace FrontEnd.Controllers
 {
@@ -94,12 +95,15 @@ namespace FrontEnd.Controllers
                 talle = await _TalleService.GetAllTalles(/*HttpContext.Session.GetString("APIToken")*/);
                 Talle[] arrayT = new Talle[filtro.Count];
                 int j = 0;
+                
                 while (j < filtro.Count())
                 {
-                    arrayT[j] = talle.Where(s => s.Id == filtro[j].IdTalle).FirstOrDefault();
-                    j++;
+                        arrayT[j] = talle.Where(s => s.Id == filtro[j].IdTalle).FirstOrDefault();
+                
+                 j++;
                 }
                 i = i + j - 1;
+                
                 arrayTalles.Add(new aTalles { codigo = p.Codigo, talle = arrayT });
 
                 IEnumerable<Color> color = new List<Color>();
@@ -122,12 +126,13 @@ namespace FrontEnd.Controllers
         }
 
 
-        public async Task<JsonResult> GetColoresByProducto(string codigo,long idTalle)
-        {
-            List<Color> color = new List<Color>();
-            color = await _ProductoService.GetColoresByProducto(codigo, idTalle,HttpContext.Session.GetString("APIToken"));
-            return Json(new { data = color });
 
+        public async Task<JsonResult> GetProductoByTCC(long talle, long color, string codigo) {
+
+            Producto resultados = new Producto();
+            resultados = await _ProductoService.GetProductoByTCC(talle,color,codigo,HttpContext.Session.GetString("APIToken"));
+            
+            return Json(new { data = resultados });
         }
 
 

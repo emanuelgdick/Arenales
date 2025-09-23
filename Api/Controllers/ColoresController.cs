@@ -8,6 +8,7 @@ using Microsoft.EntityFrameworkCore;
 using Api;
 using Api.Models;
 
+
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
@@ -29,19 +30,38 @@ namespace Api.Controllers
         }
 
         // GET: api/Colores/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<Color>> GetColor(long id)
-        {
-            var color = await _context.Color.FindAsync(id);
+        //[HttpGet("{id}")]
+        //public async Task<ActionResult<Color>> GetColor(long id)
+        //{
+        //    var color = await _context.Color.FindAsync(id);
 
-            if (color == null)
+        //    if (color == null)
+        //    {
+        //        return NotFound();
+        //    }
+
+        //    return color;
+        //}
+
+        // GET: api/ColoresByProducto/5
+        [HttpGet("{id}")]
+        //[Authorize]
+        //[ResponseCache(CacheProfileName = "apicache")]
+        public async Task<ActionResult<List<Color>>> GetColoresByProducto(string codigo, long idTalle)
+        {
+            
+            List <Color> colores  = (from c in _context.Color
+                                     join p in _context.Producto.Where(s => s.Codigo == codigo && s.IdTalle == idTalle) on
+                                     c.Id equals p.IdColor
+                                     select c).ToList();
+            
+                
+            if (colores == null)
             {
                 return NotFound();
             }
-
-            return color;
+            return colores;
         }
-
 
 
 

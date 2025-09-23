@@ -63,17 +63,18 @@ namespace Api.Controllers
 
 
 
-        // GET: api/ColoresByProducto/5
-        [HttpGet("{id}")]
-        public async Task<ActionResult<List<Producto>>> GetColoresByProducto(string codigo, long idTalle)
+
+        [HttpGet("GetProductoByTCC({talle},{color},{codigo})")]
+        // [Authorize]
+        //  [ResponseCache(CacheProfileName = "apicache")]
+        public async Task<ActionResult<Producto>> GetProductoByTCC(long talle, long color, string codigo)
         {
-            var prod = _context.Producto.Where(s => s.Codigo == codigo && s.IdTalle == idTalle).ToList();
-            if (prod == null)
-            {
-                return NotFound();
-            }
-            return prod;
+            Producto p = _context.Producto.Where(s=>s.IdTalle==talle && s.IdColor==color && s.Codigo==codigo).FirstOrDefault();
+            return p;
         }
+
+
+
 
         //	[HttpGet]
 

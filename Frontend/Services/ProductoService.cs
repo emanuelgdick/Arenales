@@ -32,6 +32,16 @@ namespace Frontend.Services
             return APIResponse;
         }
 
+        public async Task<Producto> GetProductoByTCC(long talle,long color,string codigo, string token)
+        {
+            //   _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Productos/GetProductoByTCC?talle={talle}&&color={color}&&codigo={codigo}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<Producto>(contents);
+            return APIResponse;
+        }
+        
         public async Task<Producto> AddProducto(Producto Producto, string token)
         {
             _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
@@ -52,16 +62,7 @@ namespace Frontend.Services
             return APIResponse;
         }
 
-        public async Task<List<Color>> GetColoresByProducto(string codigo, long idTalle, string token)
-        {
-            _httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
-            HttpResponseMessage response = await _httpClient.GetAsync($"api/Productos/GetColoresByProducto?codigo={codigo}&idTalle={idTalle}");
-            response.EnsureSuccessStatusCode();
-            var contents = await response.Content.ReadAsStringAsync();
-            var APIResponse = JsonConvert.DeserializeObject<List<Color>>(contents);
-            return APIResponse;
-        }
-
+        
 
         public async Task UpdateProducto(long id, Producto Producto, string token)
         {

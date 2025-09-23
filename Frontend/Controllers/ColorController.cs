@@ -70,6 +70,13 @@ namespace FrontEnd.Controllers
 
 
 
+        public async Task<JsonResult> GetColoresByProducto(string codigo, long idTalle)
+        {
+            List<Color> color = new List<Color>();
+            color = await _ColorService.GetColoresByProducto(codigo, idTalle, HttpContext.Session.GetString("APIToken"));
+            return Json(new { data = color });
+
+        }
 
 
 

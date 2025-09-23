@@ -32,9 +32,18 @@ namespace Frontend.Services
             return APIResponse;
         }
 
-     
 
 
+
+        public async Task<List<Color>> GetColoresByProducto(string codigo, long idTalle, string token)
+        {
+            //_httpClient.DefaultRequestHeaders.Authorization = new AuthenticationHeaderValue("Bearer", token);
+            HttpResponseMessage response = await _httpClient.GetAsync($"api/Colores/GetColoresByProducto?codigo={codigo}&idTalle={idTalle}");
+            response.EnsureSuccessStatusCode();
+            var contents = await response.Content.ReadAsStringAsync();
+            var APIResponse = JsonConvert.DeserializeObject<List<Color>>(contents);
+            return APIResponse;
+        }
 
 
 

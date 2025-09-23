@@ -2174,7 +2174,7 @@
             $('#talleSeleccionadoQA').text('');
             $('#colorSeleccionadoQA').text('');
             $('#idTalleQA').empty();
-            
+             $('#idColorQA').empty();
             $.each(talles, function (k, item) {
                 
                 var radio = $('<input/>').attr({
@@ -2185,26 +2185,27 @@
                 }).on('click', function () {
                     $('#talleSeleccionadoQA').text(talles[k].descripcion);
                     jQuery.ajax({
-                        url: '@Url.Action("GetColoresByProducto", "Producto")?codigo='+json.codigo+'&idTalle='+talles[k].id,
+                        url: '@Url.Action("GetColoresByProducto", "Color")?codigo='+json.codigo+'&idTalle='+talles[k].id,
                         type: "GET",
                         //data: null,
                         dataType: "json",
                         contentType: "application/json; charset=utf-8",
                         success: function (data) {
-                            console.log(data);
+                            
                             if (data.data != null) {
-                                $('#idColorQV').empty();
+                                $('#idColorQA').empty();
                                 $.each(data.data, function (j, itemColor) {
+                                     console.log(data);
                                     var radioC = $('<input/>').attr({
                                         type: 'radio',
                                         name: name,
                                         value: j,
                                         id: 'radioC_' + j
                                     }).on('click', function () {
-                                        $('#colorSeleccionadoQV').text(itemColor.descripcion)
+                                        $('#colorSeleccionadoQA').text(itemColor.descripcion)
                                     });
                                     var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
-                                    $('#idColorQV').append(radioC).append(label).append('<br/>');
+                                    $('#idColorQA').append(radioC).append(label).append('<br/>');
                                 })
                             }
                         },

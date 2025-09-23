@@ -447,21 +447,31 @@
   },
   {
     "ContainingType": "Api.Controllers.ColoresController",
-    "Method": "GetColor",
+    "Method": "GetColoresByProducto",
     "RelativePath": "api/Colores/{id}",
     "HttpMethod": "GET",
     "IsController": true,
     "Order": 0,
     "Parameters": [
       {
-        "Name": "id",
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": false
+      },
+      {
+        "Name": "idTalle",
         "Type": "System.Int64",
+        "IsRequired": false
+      },
+      {
+        "Name": "id",
+        "Type": "",
         "IsRequired": true
       }
     ],
     "ReturnTypes": [
       {
-        "Type": "Api.Models.Color",
+        "Type": "System.Collections.Generic.List\u00601[[Api.Models.Color, Api, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null]]",
         "MediaTypes": [
           "text/plain",
           "application/json",
@@ -1026,6 +1036,42 @@
       }
     ],
     "ReturnTypes": []
+  },
+  {
+    "ContainingType": "Api.Controllers.ProductosController",
+    "Method": "GetProductoByTCC",
+    "RelativePath": "api/Productos/GetProductoByTCC({talle},{color},{codigo})",
+    "HttpMethod": "GET",
+    "IsController": true,
+    "Order": 0,
+    "Parameters": [
+      {
+        "Name": "talle",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "color",
+        "Type": "System.Int64",
+        "IsRequired": true
+      },
+      {
+        "Name": "codigo",
+        "Type": "System.String",
+        "IsRequired": true
+      }
+    ],
+    "ReturnTypes": [
+      {
+        "Type": "Api.Models.Producto",
+        "MediaTypes": [
+          "text/plain",
+          "application/json",
+          "text/json"
+        ],
+        "StatusCode": 200
+      }
+    ]
   },
   {
     "ContainingType": "Api.Controllers.RubrosController",
