@@ -494,17 +494,17 @@
                                        ),//list-product-btn absolute-2
                           $('<div>').addClass('size-list').append(
                                 $('<span>').text('Talles:'),
-                                $.each(data.talles, function (j, itemTalle) {
-                                        //tall = tall + ' ' + itemTalle.descripcion;
-                                        $('<span>').text(itemTalle/* .descripcion */)//.append('<br/>')
-                                }),
+                                    $.each(data.talles[i].talle, function (j, itemTalle) {
+                                        $('<span>').text(itemTalle.descripcion/* .descripcion */)//.append('<br/>')
+                                    }),
+                                   
                                 
                            )
                          ),//card-product-wrapper
                          $('<div>').addClass('card-product-info').append(
                                   $('<a>').attr({ 'href': 'product-detail.html' }).text( data.data[i].descripcion).addClass('title link'),
-                      $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
-                             $('<ul>').addClass('list-color-product').append(
+                         $('<span>').addClass('price').text(' $ ' + data.data[i].precio.toFixed(2)),
+                         $('<ul>').addClass('list-color-product').append(
                                           $('<li>').addClass('list-color-item color-swatch').append(// active
                               ),//list-color-item color-swatch active
                       )//list-color-product
@@ -544,14 +544,7 @@
 
 //                        });
 
-                      
-
-
-
-
-
-                             
-                                
+                              
 
                             }//if
                          },//success
@@ -683,9 +676,9 @@
               //  }//if
 
 
+         
 
-                     
-             
+
                //Abrir Modal Quick Add
                $('#btnMenosQA').click(function(){
                            if( $("#cantidadQA").val()>1){
@@ -694,77 +687,10 @@
                }
                });
                $('#btnMasQA').click(function(){
-
-                             var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
-                           $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())+1,num));
+                          var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
+                          $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())+1,num));
                });
-               $('#btnAddCarritoQA').on('click',  function (event) {
-
-                debugger;
-
-
-                //obtengo id del producto en funcion del talle,color y codigo
-                    jQuery.ajax({
-                        url: '@Url.Action("GetProductoByTCC", "Producto")?talle=1&&color=1&&codigo=1',
-                        type: "GET",
-                        dataType: "json",
-                        contentType: "application/json; charset=utf-8",
-                        success: function (data) {
-                            if (data.data != null) {
-                            }
-                        },
-                        error: function (error) {
-                            console.log(error)
-                        },
-                        beforeSend: function () {
-                        },
-                    });
-
-
-
-
-
-                var pro=carrito.find(p => p.idProducto === producto.id)
-                var idpro;
-                var cantidad;
-                if(pro==null){
-                    idpro=0;
-                    cant=0;
-                }
-                else{
-                        idpro=pro.id;
-                        cant=pro.cantidad;
-                }
-                
-                let item = {
-                   id:idpro,
-                   idCarrito:parseInt($('#idCarrito').text()),
-                   idProducto:producto.id,
-                   idProductoNavigation: null,
-                   idCarritoNavigation: null,
-                   precio: producto.precio,
-                   cantidad: cant + parseInt($("#cantidadQA").val())
-                }
-
-                
-
-                if(pro==null){
-                    enviarProductoCarrito(item);
-                    item.idProductoNavigation = { descripcion: producto.descripcion };
-                    carrito.push(item);
-                    $('#cantProducto').text(carrito.length);
-                      $("#quick_add").modal("hide");
-                }else
-                {
-                    item.id=pro.id;
-                    //item.cantidad++;
-                    let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
-                    carrito[indice].cantidad = carrito[indice].cantidad+parseInt($("#cantidadQA").val()); // Asigna el nuevo precio
-                    item.idProductoNavigation = { descripcion: producto.descripcion };
-                     actualizar(item);
-                }
-             }
-          )
+      
                $('#btnMenosQV').click(function(){
                            if( $("#cantidadQV").val()>1){
                            var num = parseFloat($('#precioQV').text().replace('$', '').replace(' ', '')).toFixed(2);
@@ -778,7 +704,6 @@
                });
                $('#btnAddCarritoQV').on('click', function (event) {
 
-                debugger;
                 var pro = carrito.find(p => p.idProducto === producto.id)
                 var idpro;
                 var cantidad;
@@ -801,8 +726,6 @@
                     cantidad: cant + parseInt($("#cantidadQV").val())
                 }
 
-
-
                 if (pro == null) {
                     enviarProductoCarrito(item);
                     item.idProductoNavigation = { descripcion: producto.descripcion };
@@ -819,7 +742,100 @@
                 }
             }
             )
-               function enviarProductoCarrito(item) {
+
+
+
+
+            //VALIDACIONES
+            $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+                return arg !== value;
+            }, "Value must not equal arg.");
+            $("#formAgregarProducto").validate({
+                rules: {
+
+                    colorSeleccionado: {
+                        required: true
+                    },
+
+                    talleSeleccionado: {
+                        required: true
+                    },
+                },
+                messages: {
+
+                    colorSeleccionado: " seleccione el color",
+                    talleSeleccionado: " seleccione el talle",
+                },
+                errorElement: "div",
+                errorLabelContainer: ".alert-danger"
+            });
+
+
+            $('#btnAddCarritoQA').on('click', function (event) {
+
+                debugger;
+                if (!$("#formAgregarProducto").valid()) {
+                    return;
+                }
+
+                var idProductoElegido;
+                //obtengo id del producto en funcion del talle,color y codigo
+                jQuery.ajax({
+                    url: '@Url.Action("GetProductoByTCC", "Producto")?talle=' + idTalleSeleccionado + '&&color=' + idColorSeleccionado + '&&codigo=' + producto.codigo,
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        if (data.data != null) {
+                            idProductoElegido = data.data.id;
+                            var pro = carrito.find(p => p.idProducto === idProductoElegido)
+                            var idpro;
+                            var cantidad;
+                            if (pro == null) {
+                                idpro = 0;
+                                cant = 0;
+                            }
+                            else {
+                                idpro = pro.id;
+                                cant = pro.cantidad;
+                            }
+
+                            let item = {
+                                id: idpro,
+                                idCarrito: parseInt($('#idCarrito').text()),
+                                idProducto: idProductoElegido,
+                                idProductoNavigation: null,
+                                idCarritoNavigation: null,
+                                precio: producto.precio,
+                                cantidad: cant + parseInt($("#cantidadQA").val())
+                            }
+
+                            if (pro == null) {
+                                enviarProductoCarrito(item);
+                                item.idProductoNavigation = { descripcion: producto.descripcion };
+                                carrito.push(item);
+                                $('#cantProducto').text(carrito.length);
+                                $("#quick_add").modal("hide");
+                            } else {
+                                item.id = pro.id;
+                                //item.cantidad++;
+                                let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
+                                carrito[indice].cantidad = carrito[indice].cantidad + parseInt($("#cantidadQA").val()); // Asigna el nuevo precio
+                                item.idProductoNavigation = { descripcion: producto.descripcion };
+                                actualizar(item);
+                            }
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    },
+                    beforeSend: function () {
+                    },
+                });
+            }
+            )
+
+        function enviarProductoCarrito(item) {
 
           jQuery.ajax({
            url: '@Url.Action("AddProductoCarrito", "Carrito")?idUsuario=' +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
@@ -828,18 +844,12 @@
                     dataType: "json",
                     contentType: "application/json; charset=utf-8",
                     success: function (data) {
-                     
                        item.id=data.resultado.id;
                         $('#idCarrito').text(data.resultado.idCarrito);
                         $('#idProducto').text(data.resultado.idProducto);
-                     
-                      
                     }
                 })
-
-
             }
-
-              })
+        })
     </script>
     }

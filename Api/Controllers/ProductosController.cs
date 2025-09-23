@@ -64,7 +64,7 @@ namespace Api.Controllers
 
 
 
-        [HttpGet("GetProductoByTCC({talle},{color},{codigo})")]
+        [HttpGet("GetProductoByTCC")]
         // [Authorize]
         //  [ResponseCache(CacheProfileName = "apicache")]
         public async Task<ActionResult<Producto>> GetProductoByTCC(long talle, long color, string codigo)

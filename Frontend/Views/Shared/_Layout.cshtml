@@ -1852,7 +1852,6 @@
             <div class="modal-content">
                 <div class="header">
                     <span class="icon-close icon-close-popup" data-bs-dismiss="modal"></span>
-
                 </div>
                 <div class="wrap">
                     <div id="id" @* hidden *@></div>
@@ -1871,7 +1870,7 @@
                     <div class="tf-product-info-variant-picker mb_15">
                         <div class="variant-picker-item">
                             <div class="variant-picker-label">
-                                Talle: <span id="talleSeleccionadoQA" class="fw-6 variant-picker-label-value"></span>
+                                Talle: <span id="talleSeleccionadoQA" name="talleSeleccionado" class="fw-6 variant-picker-label-value"></span>
                             </div>
                             <div class="variant-picker-values" id="idTalleQA">
                             </div>
@@ -1879,19 +1878,16 @@
 
                         <div class="variant-picker-item">
                             <div class="variant-picker-label">
-                                Color: <span id="colorSeleccionadoQA" class="fw-6 variant-picker-label-value"></span>
+                                Color: <span id="colorSeleccionadoQA" name="colorSeleccionado" class="fw-6 variant-picker-label-value"></span>
                             </div>
                             <div class="variant-picker-values" id="idColorQA">
                             </div>
-
                         </div>
-                     
                     </div>
+
                     @if (User.Identity.IsAuthenticated)
-
-
-
                     {
+
                         <div class="tf-product-info-quantity mb_15">
                             <div class="quantity-title fw-6">Cantidad</div>
                             <div class="wg-quantity">
@@ -1901,7 +1897,7 @@
                             </div>
                         </div>
                         <div class="tf-product-info-buy-button">
-                            <form class="" id="formAgregarProducto">
+                            <form class="" id="formAgregarProducto" >
                                 <a id="btnAddCarritoQA" href="#" class="tf-btn btn-fill justify-content-center fw-6 fs-16 flex-grow-1 animate-hover-btn "><span>Agregar al Carrito -&nbsp;</span><span class="tf-qty-price" id="totalQA"></span></a>
                                 <div class="tf-product-btn-wishlist btn-icon-action">
                                     <i class="icon-heart"></i>
@@ -1916,6 +1912,12 @@
                                     <a href="product-style-01.html#" class="payment-more-option">más opciones de pago</a>
                                 </div>
                             </form>
+                        </div>
+                        <div class="row mt-2" style="background-color:red">
+                            <div class="col-12">
+                                <div id="mensajeError" class="alert-danger" role="alert">
+                                </div>
+                            </div>
                         </div>
 
                     }
@@ -2124,10 +2126,6 @@
     <!-- /modal find_size -->
     <!-- Javascript -->
 
-
-
-
-
     <script>
         var carrito = [];
         var marca = [];
@@ -2162,10 +2160,11 @@
             return (n * precio).toFixed(2);
         }
         
-        
+        var idTalleSeleccionado;
+        var idColorSeleccionado;
         function abrirModalQA(json, talles, colores) {
 
-            console.log(talles);
+            
             $('#id').val(json.id);
             $("#descripcionQA").text(json.descripcion);
             $("#precioQA").text('$' + json.precio.toFixed(2));
@@ -2174,7 +2173,7 @@
             $('#talleSeleccionadoQA').text('');
             $('#colorSeleccionadoQA').text('');
             $('#idTalleQA').empty();
-             $('#idColorQA').empty();
+            $('#idColorQA').empty();
             $.each(talles, function (k, item) {
                 
                 var radio = $('<input/>').attr({
@@ -2184,6 +2183,7 @@
                     id: 'radio_' + k
                 }).on('click', function () {
                     $('#talleSeleccionadoQA').text(talles[k].descripcion);
+                    idTalleSeleccionado = talles[k].id;
                     jQuery.ajax({
                         url: '@Url.Action("GetColoresByProducto", "Color")?codigo='+json.codigo+'&idTalle='+talles[k].id,
                         type: "GET",
@@ -2195,7 +2195,6 @@
                             if (data.data != null) {
                                 $('#idColorQA').empty();
                                 $.each(data.data, function (j, itemColor) {
-                                     console.log(data);
                                     var radioC = $('<input/>').attr({
                                         type: 'radio',
                                         name: name,
@@ -2203,6 +2202,7 @@
                                         id: 'radioC_' + j
                                     }).on('click', function () {
                                         $('#colorSeleccionadoQA').text(itemColor.descripcion)
+                                        idColorSeleccionado = itemColor.id;
                                     });
                                     var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
                                     $('#idColorQA').append(radioC).append(label).append('<br/>');
@@ -2225,7 +2225,6 @@
             $("#quick_add").modal("show");
         };
         function abrirModalQV(json, talles, colores) {
-
             $('#id').val(json.id);
             $("#descripcionQV").text(json.descripcion);
             $("#precioQV").text('$' + json.precio.toFixed(2));
@@ -2246,7 +2245,6 @@
                 var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item.descripcion);
                 $('#idTalleQV').append(radio).append(label).append('<br/>');
             })
-
             $('#idColorQV').empty();
             $.each(colores, function (j, itemColor) {
                 var radioC = $('<input/>').attr({
@@ -2260,7 +2258,6 @@
                 var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
                 $('#idColorQV').append(radioC).append(label).append('<br/>');
             })
-
             $("#quick_view").modal("show");
         };
         function abrirCarrito() {
@@ -2271,7 +2268,6 @@
 
             let cantProd = 0;
             let total = 0;
-            console.log(carrito);
             carrito.forEach(function (number, index) {
                 var nombreProducto = carrito[index].idProductoNavigation.descripcion;
                 $('<div>').addClass('tf-mini-cart-item').append(
@@ -2281,17 +2277,19 @@
                         )//<a>
                     ),//tf-mini-cart-image
                     $('<div>').addClass('tf-mini-cart-info').append(
-
                         $('<a>').attr({ 'href': "product-detail.html" }).addClass('title link').text(nombreProducto),
-
                         $('<div>').addClass('meta-variant hidden').attr({ 'id': 'id' }).text(carrito[index].id),
-
-
                         $('<div>').addClass('meta-variant hidden').attr({ 'id': 'idproducto' }).text(carrito[index].idProducto),
-
-
-
                         $('<div>').attr({ 'id': 'precioSC', "data-indice": index }).addClass('price fw-6').text('$ ' + carrito[index].precio),
+                        
+                        $('<ul>').addClass('list-color-product').append(
+                            $('<span>').text('Color'),
+                            $('<li>').addClass('list-color-item color-swatch').append(// active
+                                
+                                $('<span>').addClass('swatch-value ').css({ 'background-color': 'red' }),
+                                // $('<label/>').addClass('hover-tooltip radius-60').css({ 'background-color': 'red'})
+                             )//list-color-item color-swatch active
+                             ),
                         $('<div>').addClass('tf-mini-cart-btns').append(
                             $('<div>').addClass('wg-quantity small').append(
                                 $('<span>').addClass('btn-quantity minus-btn').text('-').attr({ 'id': 'btnMenosSC' }).on('click', function (event) {
@@ -2304,11 +2302,10 @@
                                         $('input[data-indice="' + id + '"]').val(parseInt(cantidad));
                                         let subTotal = precio * cantidad;
                                         $('#subTotal[data-indice="' + id + '"]').text('$ ' + subTotal.toFixed(2));
-
                                         carrito[index].cantidad = cantidad;
                                         carrito[index].idProductoNavigation = null;
                                         carrito[index].idCarrito = parseInt($('#idCarrito').text()),
-                                            actualizar(carrito[index]);
+                                        actualizar(carrito[index]);
                                         carrito[index].idProductoNavigation = { id: carrito[index].idProducto, descripcion: nombreProducto };
                                         totales();
                                     }
@@ -2327,7 +2324,7 @@
                                     carrito[index].cantidad = cantidad;
                                     carrito[index].idProductoNavigation = null;
                                     carrito[index].idCarrito = parseInt($('#idCarrito').text()),
-                                        actualizar(carrito[index]);
+                                    actualizar(carrito[index]);
                                     carrito[index].idProductoNavigation = { id: carrito[index].idProducto, descripcion: nombreProducto };
                                     totales();
                                 }),
@@ -2354,7 +2351,6 @@
 
                 ).appendTo('#itemCarrito')//tf-mini-cart-item
                 cantProd++;
-
             });
             totales();
             $("#shoppingCart").modal("show");
@@ -2506,7 +2502,8 @@
              })//JQuery
 
 
-      
+       
+
        })
 
 
@@ -2556,6 +2553,8 @@
     <script src="~/Conforty/assets/plugins/js/mixitUp.js"></script>
     <script src="~/Conforty/js/app.js"></script>
 
+    <!-- Validar -->
+    <script src="~/js/jquery/jquery.validate.js"></script>
 
     @RenderSection("Scripts", required: false)
 </body>
