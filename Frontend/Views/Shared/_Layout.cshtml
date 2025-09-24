@@ -2401,7 +2401,7 @@
             })
         }
         document.addEventListener('DOMContentLoaded', function () {
-           
+         
             carrito = [];
             jQuery.ajax({
                 url: '@Url.Action("GetCarritoByUsuario", "Carrito")?idUsuario=' + @Html.Raw(Json.Serialize(ViewBag.idUsuario)),
@@ -2410,9 +2410,14 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
+                    
+                    alert('layout');
+                    console.log(data);
                     if (data.data != null) {
+                        
                         $.each(data.data, function (i, item) {
                             debugger;
+                        
                             if (data.data[i].idEstadoCarrito == 1) {//CArrito Abrierto
                                 $('#idCarrito').text(data.data[i].id);
                                 $.each(data.data[i].carritoProductos, function (j, item) {
