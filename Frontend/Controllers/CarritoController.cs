@@ -69,8 +69,8 @@ namespace FrontEnd.Controllers
         //}
 
 
-        [Authorize(Roles = "Admin")]
-        [ResponseCache(Duration = 30)]
+        //[Authorize(Roles = "Admin")]
+        //[ResponseCache(Duration = 30)]
 
         public async Task<JsonResult> GetCarritoByUsuario(long idUsuario)
         {

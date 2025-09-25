@@ -57,7 +57,7 @@ namespace Api.Controllers
                             join c in _context.Carrito on  cp.IdCarrito equals c.Id 
                             join col in _context.Color on p.IdColor equals col.Id
                             join tal in _context.Talle on p.IdTalle equals tal.Id
-                            where c.Id == idUsuario
+                            where c.IdUsuario == idUsuario
                             select new CarritoProducto
                             {
                                 Id=cp.Id,
