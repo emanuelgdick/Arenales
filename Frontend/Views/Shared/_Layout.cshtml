@@ -2163,7 +2163,7 @@
         var idTalleSeleccionado;
         var idColorSeleccionado;
         function abrirModalQA(json, talles, colores) {
-
+           
             
             $('#id').val(json.id);
             $("#descripcionQA").text(json.descripcion);
@@ -2233,33 +2233,52 @@
             $('#talleSeleccionadoQV').text('');
             $('#colorSeleccionadoQV').text('');
             $('#idTalleQV').empty();
-            $.each(talles, function (i, item) {
-                var radio = $('<input/>').attr({
-                    type: 'radio',
-                    name: name,
-                    value: i,
-                    id: 'radio_' + i
-                }).on('click', function () {
-                    $('#talleSeleccionadoQV').text(item.descripcion);
-                });
-                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + i).text(item.descripcion);
+
+            $.each(talles, function (k, item) {
+
+                var radio = $('<input/>').attr({ type: 'radio', name: name, value: k, id: 'radio_' + k })
+                 .on('click', function () {
+                              $('#talleSeleccionadoQV').text(talles[k].descripcion);
+                              idTalleSeleccionado = talles[k].id;
+                              
+                        jQuery.ajax({
+                        url: '@Url.Action("GetColoresByProducto", "Color")?codigo=' + json.codigo + '&idTalle=' + talles[k].id,
+                        type: "GET",
+                        dataType: "json",
+                        contentType: "application/json; charset=utf-8",
+                        success: function (data) {
+
+                            if (data.data != null) {
+                                $('#idColorQV').empty();
+                                $.each(data.data, function (j, itemColor) {
+                                    var radioC = $('<input/>').attr({
+                                        type: 'radio',
+                                        name: name,
+                                        value: j,
+                                        id: 'radioC_' + j
+                                    }).on('click', function () {
+                                        $('#colorSeleccionadoQV').text(itemColor.descripcion)
+                                        idColorSeleccionado = itemColor.id;
+                                    });
+                                    var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
+                                    $('#idColorQV').append(radioC).append(label).append('<br/>');
+                                })
+                            }
+                        },
+                        error: function (error) {
+                            console.log(error)
+                        },
+                        beforeSend: function () {
+                        },
+                        });
+                    });
+                var label = $('<label/>').addClass('style-text').attr('for', 'radio_' + k).text(talles[k].descripcion);
                 $('#idTalleQV').append(radio).append(label).append('<br/>');
-            })
-            $('#idColorQV').empty();
-            $.each(colores, function (j, itemColor) {
-                var radioC = $('<input/>').attr({
-                    type: 'radio',
-                    name: name,
-                    value: j,
-                    id: 'radioC_' + j
-                }).on('click', function () {
-                    $('#colorSeleccionadoQV').text(itemColor.descripcion)
-                });
-                var label = $('<label/>').addClass('hover-tooltip radius-60').attr({ 'for': 'radioC_' + j }).css({ 'background-color': itemColor.valor });
-                $('#idColorQV').append(radioC).append(label).append('<br/>');
-            })
+            });
+
             $("#quick_view").modal("show");
-        };
+        }
+
         function abrirCarrito() {
 
             $('#itemCarrito').empty();
@@ -2410,8 +2429,6 @@
                 dataType: "json",
                 contentType: "application/json; charset=utf-8",
                 success: function (data) {
-                    
-                
                     console.log(data);
                     if (data.data != null) {
                         
@@ -2430,7 +2447,6 @@
                                 $('#cantProducto').text('0');
                             }
                         })
-
                     }
                 },
                 error: function (error) {
@@ -2441,75 +2457,75 @@
             });
 
 
-            //filtro categorias
-            jQuery.ajax({
-                url: '@Url.Action("GetAllRubros", "Rubro")',
-                        type: "GET",
-                //data: null,
-                dataType: "json",
-                contentType: "application/json; charset=utf-8",
-                success: function (data) {
-                    if (data.data != null) {
-                        $('#listaCategorias').empty();
-                        $.each(data.data, function (i, item) {
-                             $('<li>').addClass('cate-item ').attr({ 'data-filter': ".categoria_"+item.id}).append(
-                                $('<a>').attr({ 'href': '#' }).append(
-                                    $('<span>').text(item.descripcion)
-                                )//a
-                            ).appendTo('#listaCategorias')//li
-                        })
-                    }
-                },
-                error: function (error) {
-                    console.log(error)
-                },
-                beforeSend: function () {
-                },
-            });
+            // // // // // //filtro categorias
+            // // // // // jQuery.ajax({
+            // // // // //     url: '@Url.Action("GetAllRubros", "Rubro")',
+            // // // // //             type: "GET",
+            // // // // //     //data: null,
+            // // // // //     dataType: "json",
+            // // // // //     contentType: "application/json; charset=utf-8",
+            // // // // //     success: function (data) {
+            // // // // //         if (data.data != null) {
+            // // // // //             $('#listaCategorias').empty();
+            // // // // //             $.each(data.data, function (i, item) {
+            // // // // //                  $('<li>').addClass('cate-item ').attr({ 'data-filter': ".categoria_"+item.id}).append(
+            // // // // //                     $('<a>').attr({ 'href': '#' }).append(
+            // // // // //                         $('<span>').text(item.descripcion)
+            // // // // //                     )//a
+            // // // // //                 ).appendTo('#listaCategorias')//li
+            // // // // //             })
+            // // // // //         }
+            // // // // //     },
+            // // // // //     error: function (error) {
+            // // // // //         console.log(error)
+            // // // // //     },
+            // // // // //     beforeSend: function () {
+            // // // // //     },
+            // // // // // });
 
-            //filtro marcas
-            jQuery.ajax({
-                 url: '@Url.Action("GetAllMarcas", "Marca")',
-                 type: "GET",
-                 data: null,
-                 dataType: "json",
-                 contentType: "application/json; charset=utf-8",
-                 success: function (data) {
-                       if (data != null) {
-                          $('#listaMarcas').empty();
-                          $.each(data.data, function (i, item) {
-                                     $('<li>').addClass('filter list-item d-flex gap-12 align-items-center').attr({ 'data-filter': ".marca_"+item.id}).append(
-                                      $('<input>').attr({'type':'radio','name':'brand','id':'brand-'+i}).addClass("tf-check"),
-                                      $('<label>').attr({'for':'brand-'+i}).addClass('label').append(
-                                           $('<span>').text(item.descripcion)
-                                      )//label
-                              ).appendTo('#listaMarcas')//li
-                         })//each
-                       }//if
-                 }//success
-            })//JQuery
+            // // // // // //filtro marcas
+            // // // // // jQuery.ajax({
+            // // // // //      url: '@Url.Action("GetAllMarcas", "Marca")',
+            // // // // //      type: "GET",
+            // // // // //      data: null,
+            // // // // //      dataType: "json",
+            // // // // //      contentType: "application/json; charset=utf-8",
+            // // // // //      success: function (data) {
+            // // // // //            if (data != null) {
+            // // // // //               $('#listaMarcas').empty();
+            // // // // //               $.each(data.data, function (i, item) {
+            // // // // //                          $('<li>').addClass('filter list-item d-flex gap-12 align-items-center').attr({ 'data-filter': ".marca_"+item.id}).append(
+            // // // // //                           $('<input>').attr({'type':'radio','name':'brand','id':'brand-'+i}).addClass("tf-check"),
+            // // // // //                           $('<label>').attr({'for':'brand-'+i}).addClass('label').append(
+            // // // // //                                $('<span>').text(item.descripcion)
+            // // // // //                           )//label
+            // // // // //                   ).appendTo('#listaMarcas')//li
+            // // // // //              })//each
+            // // // // //            }//if
+            // // // // //      }//success
+            // // // // // })//JQuery
 
-            //filtro colores
-            jQuery.ajax({
-                  url: '@Url.Action("GetAllColores", "Color")',
-                  type: "GET",
-                  data: null,
-                  dataType: "json",
-                  contentType: "application/json; charset=utf-8",
-                  success: function (data) {
-                        if (data != null) {
-                           $('#listaColores').empty();
-                           $.each(data.data, function (i, item) {
-                                $('<li>').addClass('list-item d-flex gap-12 align-items-center').attr({ 'data-filter': ".color_"+item.id  }).append(
-                                      $('<input>').attr({'type':'radio','name':'color','id':'color-'+i}).addClass("tf-check-color"),
-                                      $('<label>').attr({'for':'color-'+i}).addClass('label').append(
-                                           $('<span>').text(item.descripcion)
-                                      )//label
-                          ).appendTo('#listaColores')//li
-                          })//each
-                     }//if
-                  }//success
-             })//JQuery
+            // // // // // //filtro colores
+            // // // // // jQuery.ajax({
+            // // // // //       url: '@Url.Action("GetAllColores", "Color")',
+            // // // // //       type: "GET",
+            // // // // //       data: null,
+            // // // // //       dataType: "json",
+            // // // // //       contentType: "application/json; charset=utf-8",
+            // // // // //       success: function (data) {
+            // // // // //             if (data != null) {
+            // // // // //                $('#listaColores').empty();
+            // // // // //                $.each(data.data, function (i, item) {
+            // // // // //                     $('<li>').addClass('list-item d-flex gap-12 align-items-center').attr({ 'data-filter': ".color_"+item.id  }).append(
+            // // // // //                           $('<input>').attr({'type':'radio','name':'color','id':'color-'+i}).addClass("tf-check-color"),
+            // // // // //                           $('<label>').attr({'for':'color-'+i}).addClass('label').append(
+            // // // // //                                $('<span>').text(item.descripcion)
+            // // // // //                           )//label
+            // // // // //               ).appendTo('#listaColores')//li
+            // // // // //               })//each
+            // // // // //          }//if
+            // // // // //       }//success
+            // // // // //  })//JQuery
 
 
        

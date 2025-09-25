@@ -426,7 +426,7 @@
                                       $("ul[name='filters']").html("");
                                       if (data != null) {
                                             $('<li>').append(
-                            $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active").attr({ 'data-filter': ".mix", "data-mixitup-control": 'filter' }).text('Todos'),
+                            $("<button>").addClass("filter text-[#9A9CAA] text-base leading-[110%] font-display font-medium cursor-pointer p-2 mixitup-control-active").attr({ 'data-filter': ".mix ", "data-mixitup-control": 'filter' }).text('Todos'),
                                              ).appendTo('#filters'),
                                              $.each(data.data, function (i, item) {
                                                 $('<li>').append(
@@ -450,15 +450,14 @@
                                var tall;
                                $.each(data.data, function (i, item) {
                                tall='';
-                                $('<div>').addClass('card-product mix all').addClass('marca_'+item.idMarca).addClass('categoria_'+item.idRubro) /* .addClass('color_'+item.idRubro) */.append($('<div>').addClass('card-product-wrapper').append(
+                            $('<div>').addClass('card-product mix ').addClass('marca_' + item.idMarca)/* .addClass('categoria_'+item.idRubro) .addClass('color_'+item.idRubro) */.append($('<div>').addClass('card-product-wrapper').append(
                                                     $('<a>').addClass('product-img').append(
                                                     $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
                                                     $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
-                                                )
-                                                .on('click', function (event) {
+                                                ).on('click', function (event) {
                                                         event.preventDefault();
                                                         producto = data.data[i];
-                                                        abrirModalQV(data.data[i], data.talles, data.colores)
+                                        abrirModalQV(data.data[i], data.talles[i].talle, data.colores[i])
                                                 }),//<a>product-img
                                                $('<div>').addClass('list-product-btn ').append(
                                                    $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
@@ -492,6 +491,7 @@
                                 $('<span>').text('Talles:'),
                                     $.each(data.talles[i].talle, function (j, itemTalle) {
                                         $('<span>').text(itemTalle.descripcion/* .descripcion */)//.append('<br/>')
+                                        //$.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
                                     }),
                                    
                                 
@@ -506,24 +506,22 @@
                       )//list-color-product
                     )//card-product-info
                   ).appendTo('#divProducto')//card-product
-               })//each
+                         })//each
                         var mixer = mixitup('#divProducto', {
-                               
                                    selectors: {
-                                        target:'.mix'
+                                        target: '.mix '
                                    },
+                            load: {
+                                filter: '.mix '
+                            }
+
                         })
-                 var filterValue = $(this).attr('data-filter');
-                        mixer.filter(filterValue);
-                        // $('.filter').on('click', function () {
-                            //     var filterValue = $(this).attr('data-filter');
-                            //     console.log(filterValue);
+                         var filterValue = $(this).attr( 'data-filter');
+                              
+                             mixer.filter(filterValue);
+                        
 
-                            //     mixer.filter(filterValue);
 
-                            // })
-
-//                        });
 
                               
 
@@ -537,12 +535,12 @@
              })//ajax
 
 
-
+            
             
           
         
 
-          //   mixer.filter('.TOPPER');
+        
          
 
 
@@ -657,101 +655,128 @@
               //  }//if
 
 
-         
-
-
-               //Abrir Modal Quick Add
-               $('#btnMenosQA').click(function(){
+            //Abrir Modal Quick Add
+            $('#btnMenosQA').click(function(){
                            if( $("#cantidadQA").val()>1){
                            var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
                            $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())-1,num));
                }
                });
-               $('#btnMasQA').click(function(){
+            $('#btnMasQA').click(function(){
                           var num = parseFloat($('#precioQA').text().replace('$', '').replace(' ', '')).toFixed(2);
                           $('#totalQA').text('$'+TotalQA(parseInt($('#cantidadQA').val())+1,num));
                });
-      
-               $('#btnMenosQV').click(function(){
+            $('#btnMenosQV').click(function(){
                            if( $("#cantidadQV").val()>1){
                            var num = parseFloat($('#precioQV').text().replace('$', '').replace(' ', '')).toFixed(2);
                            $('#totalQV').text('$'+TotalQV(parseInt($('#cantidadQV').val())-1,num));
                }
                });
-               $('#btnMasQV').click(function(){
+            $('#btnMasQV').click(function(){
 
                              var num = parseFloat($('#precioQV').text().replace('$', '').replace(' ', '')).toFixed(2);
                            $('#totalQV').text('$'+TotalQV(parseInt($('#cantidadQV').val())+1,num));
                });
-               $('#btnAddCarritoQV').on('click', function (event) {
+            $('#btnAddCarritoQV').on('click', function (event) {
+                var idProductoElegido;
+                //obtengo id del producto en funcion del talle,color y codigo
+                jQuery.ajax({
+                    url: '@Url.Action("GetProductoByTCC", "Producto")?talle=' + idTalleSeleccionado + '&&color=' + idColorSeleccionado + '&&codigo=' + producto.codigo,
+                    type: "GET",
+                    dataType: "json",
+                    contentType: "application/json; charset=utf-8",
+                    success: function (data) {
+                        debugger;
+                        if (data.data != null) {
+                            idProductoElegido = data.data.id;
 
-                var pro = carrito.find(p => p.idProducto === producto.id)
-                var idpro;
-                var cantidad;
-                if (pro == null) {
-                    idpro = 0;
-                    cant = 0;
-                }
-                else {
-                    idpro = pro.id;
-                    cant = pro.cantidad;
-                }
+                            var pro = carrito.find(p => p.idProducto === idProductoElegido)
+                            var idpro;
+                            var cantidad;
+                            if (pro == null) {
+                                idpro = 0;
+                                cant = 0;
+                            }
+                            else {
+                                idpro = pro.id;
+                                cant = pro.cantidad;
+                            }
 
-                let item = {
-                    id: idpro,
-                    idCarrito: parseInt($('#idCarrito').text()),
-                    idProducto: producto.id,
-                    idProductoNavigation: null,
-                    idCarritoNavigation: null,
-                    precio: producto.precio,
-                    cantidad: cant + parseInt($("#cantidadQV").val())
-                }
+                            let item = {
+                                id: idpro,
+                                idCarrito: parseInt($('#idCarrito').text()),
+                                idProducto: idProductoElegido,
+                                idProductoNavigation: null,
+                                idCarritoNavigation: null,
+                                precio: producto.precio,
+                                cantidad: cant + parseInt($("#cantidadQV").val())
+                            }
 
-                if (pro == null) {
-                    enviarProductoCarrito(item);
-                    item.idProductoNavigation = { descripcion: producto.descripcion };
-                    carrito.push(item);
-                    $('#cantProducto').text(carrito.length);
-                    $("#quick_view").modal("hide");
-                } else {
-                    item.id = pro.id;
-                    //item.cantidad++;
-                    let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
-                    carrito[indice].cantidad = carrito[indice].cantidad + parseInt($("#cantidadQV").val()); // Asigna el nuevo precio
-                    item.idProductoNavigation = { descripcion: producto.descripcion };
-                    actualizar(item);
-                }
+                            if (pro == null) {
+                                enviarProductoCarrito(item);
+                                debugger;
+                                item.idProductoNavigation = data.data;
+                                carrito.push(item);
+                                $('#cantProducto').text(carrito.length);
+                                $("#quick_view").modal("hide");
+                            } else {
+
+                                item.id = pro.id;
+                                //item.cantidad++;
+                                let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
+                                carrito[indice].cantidad = carrito[indice].cantidad + parseInt($("#cantidadQA").val()); // Asigna el nuevo precio
+                                item.idProductoNavigation = { descripcion: producto.descripcion };
+                                actualizar(item);
+                                //  item.idProductoNavigation = data.data;
+                                carrito[indice].idProductoNavigation = data.data.idProductoNavigation;
+                            }
+                        }
+                    },
+                    error: function (error) {
+                        console.log(error)
+                    },
+                    beforeSend: function () {
+                    },
+                });
+
+                // // // // var pro = carrito.find(p => p.idProducto === producto.id)
+                // // // // var idpro;
+                // // // // var cantidad;
+                // // // // if (pro == null) {
+                // // // //     idpro = 0;
+                // // // //     cant = 0;
+                // // // // }
+                // // // // else {
+                // // // //     idpro = pro.id;
+                // // // //     cant = pro.cantidad;
+                // // // // }
+
+                // // // // let item = {
+                // // // //     id: idpro,
+                // // // //     idCarrito: parseInt($('#idCarrito').text()),
+                // // // //     idProducto: producto.id,
+                // // // //     idProductoNavigation: null,
+                // // // //     idCarritoNavigation: null,
+                // // // //     precio: producto.precio,
+                // // // //     cantidad: cant + parseInt($("#cantidadQV").val())
+                // // // // }
+
+                // // // // if (pro == null) {
+                // // // //     enviarProductoCarrito(item);
+                // // // //     item.idProductoNavigation = { descripcion: producto.descripcion };
+                // // // //     carrito.push(item);
+                // // // //     $('#cantProducto').text(carrito.length);
+                // // // //     $("#quick_view").modal("hide");
+                // // // // } else {
+                // // // //     item.id = pro.id;
+                // // // //     //item.cantidad++;
+                // // // //     let indice = carrito.findIndex(p => p.id === item.id); // Encuentra el índice del producto
+                // // // //     carrito[indice].cantidad = carrito[indice].cantidad + parseInt($("#cantidadQV").val()); // Asigna el nuevo precio
+                // // // //     item.idProductoNavigation = { descripcion: producto.descripcion };
+                // // // //     actualizar(item);
+                // // // // }
             }
             )
-
-
-
-
-            //VALIDACIONES
-            $.validator.addMethod("valueNotEquals", function (value, element, arg) {
-                return arg !== value;
-            }, "Value must not equal arg.");
-            $("#formAgregarProducto").validate({
-                rules: {
-
-                    colorSeleccionado: {
-                        required: true
-                    },
-
-                    talleSeleccionado: {
-                        required: true
-                    },
-                },
-                messages: {
-
-                    colorSeleccionado: " seleccione el color",
-                    talleSeleccionado: " seleccione el talle",
-                },
-                errorElement: "div",
-                errorLabelContainer: ".alert-danger"
-            });
-
-
             $('#btnAddCarritoQA').on('click', function (event) {
 
                 debugger;
@@ -760,7 +785,6 @@
                 }
 
                 var idProductoElegido;
-                
                 //obtengo id del producto en funcion del talle,color y codigo
                 jQuery.ajax({
                     url: '@Url.Action("GetProductoByTCC", "Producto")?talle=' + idTalleSeleccionado + '&&color=' + idColorSeleccionado + '&&codigo=' + producto.codigo,
@@ -810,7 +834,6 @@
                                 item.idProductoNavigation = { descripcion: producto.descripcion };
                                 actualizar(item);
                               //  item.idProductoNavigation = data.data;
-                              debugger;
                                 carrito[indice].idProductoNavigation=data.data.idProductoNavigation;
                             }
                         }
@@ -821,10 +844,34 @@
                     beforeSend: function () {
                     },
                 });
-            }
-            )
+            })
 
-        function enviarProductoCarrito(item) {
+
+            //VALIDACIONES
+            $.validator.addMethod("valueNotEquals", function (value, element, arg) {
+                return arg !== value;
+            }, "Value must not equal arg.");
+            $("#formAgregarProducto").validate({
+                rules: {
+
+                    colorSeleccionado: {
+                        required: true
+                    },
+
+                    talleSeleccionado: {
+                        required: true
+                    },
+                },
+                messages: {
+
+                    colorSeleccionado: " seleccione el color",
+                    talleSeleccionado: " seleccione el talle",
+                },
+                errorElement: "div",
+                errorLabelContainer: ".alert-danger"
+            });
+
+            function enviarProductoCarrito(item) {
            
           jQuery.ajax({
            url: '@Url.Action("AddProductoCarrito", "Carrito")?idUsuario=' +@Html.Raw(Json.Serialize(ViewBag.idUsuario)),

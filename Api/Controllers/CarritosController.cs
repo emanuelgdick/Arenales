@@ -50,61 +50,50 @@ namespace Api.Controllers
         public async Task<ActionResult<List<Carrito>>> GetCarritosByUsuario(long idUsuario)
         {
          
-            
-
-            var carritoP = (from cp in _context.CarritoProducto
-                            join p in _context.Producto on cp.IdProducto equals p.Id 
-                            join c in _context.Carrito on  cp.IdCarrito equals c.Id 
-                            join col in _context.Color on p.IdColor equals col.Id
-                            join tal in _context.Talle on p.IdTalle equals tal.Id
-                            where c.IdUsuario == idUsuario
-                            select new CarritoProducto
-                            {
-                                Id=cp.Id,
-                                IdCarrito = cp.IdCarrito,
-                                Cantidad = cp.Cantidad,
-                                Precio = cp.Precio,
-                                IdProducto = cp.IdProducto,
-                             //   IdCarritoNavigation=cp.IdCarrito,
-                                IdProductoNavigation = new Producto() {
-                                    Id = p.Id,
-                                    Descripcion = p.Descripcion,
-                                    IdColor = p.IdColor,
-                                    IdColorNavigation=new Color() { 
-                                        Id=p.IdColor,
-                                        Descripcion=col.Descripcion,
-                                        valor = col.valor
-                                    },
-                                    IdTalle = p.IdTalle,
-                                    IdTalleNavigation=new Talle() { 
-                                        Id=p.IdTalle,
-                                        Descripcion=tal.Descripcion
-                                    }
-                                }
-                            }).ToList();
-
-
-            var resultado = (from ca in _context.Carrito //join 
-                             //cp in  _context.CarritoProducto on  
-                             //ca.Id equals cp.IdCarrito 
-                             where ca.IdUsuario == idUsuario
-
-                             select new Carrito
-                             {
-                                 Id = ca.Id,
-                                 Total = ca.Total,
-                                 Fecha = ca.Fecha,
-                                 CantProductos = ca.CantProductos,
-                                 IdEstadoCarrito = ca.IdEstadoCarrito == null ? 0 : ca.IdEstadoCarrito,
-
-                                 IdComprobante = ca.IdComprobante == null ? 0 : ca.IdComprobante,
-                                 IdUsuario = ca.IdUsuario,
-                                 CarritoProductos = carritoP,
-
-                             }).ToList();
-
-        
-            
+                var resultado = (from ca in _context.Carrito 
+                                 where ca.IdUsuario == idUsuario
+                                 select new Carrito
+                                 {
+                                     Id = ca.Id,
+                                     Total = ca.Total,
+                                     Fecha = ca.Fecha,
+                                     CantProductos = ca.CantProductos,
+                                     IdEstadoCarrito = ca.IdEstadoCarrito == null ? 0 : ca.IdEstadoCarrito,
+                                     IdComprobante = ca.IdComprobante == null ? 0 : ca.IdComprobante,
+                                     IdUsuario = ca.IdUsuario,
+                                     CarritoProductos = (from cp in _context.CarritoProducto
+                                                         join p in _context.Producto on cp.IdProducto equals p.Id
+                                                         join col in _context.Color on p.IdColor equals col.Id
+                                                         join tal in _context.Talle on p.IdTalle equals tal.Id
+                                                         where cp.IdCarrito == ca.Id
+                                                         select new CarritoProducto
+                                                         {
+                                                             Id = cp.Id,
+                                                             IdCarrito = cp.IdCarrito,
+                                                             Cantidad = cp.Cantidad,
+                                                             Precio = cp.Precio,
+                                                             IdProducto = cp.IdProducto,
+                                                             
+                                                             IdProductoNavigation = new Producto()
+                                                             {
+                                                                 Id = p.Id,
+                                                                 Descripcion = p.Descripcion,
+                                                                 IdColor = p.IdColor,
+                                                                 IdColorNavigation = new Color()
+                                                                 {
+                                                                     Id = p.IdColor,
+                                                                     Descripcion = col.Descripcion,
+                                                                     valor = col.valor
+                                                                 },
+                                                                 IdTalle = p.IdTalle,
+                                                                 IdTalleNavigation = new Talle()
+                                                                 {
+                                                                     Id = p.IdTalle,
+                                                                     Descripcion = tal.Descripcion
+                                                                 }
+                                                             }
+                                                         }).ToList()
+                                 }).ToList();
             return resultado;
         }
 
