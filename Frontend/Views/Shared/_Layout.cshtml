@@ -2160,8 +2160,8 @@
             return (n * precio).toFixed(2);
         }
         
-        var idTalleSeleccionado;
-        var idColorSeleccionado;
+        var idTalleSeleccionado=0;
+        var idColorSeleccionado=0;
         function abrirModalQA(json, talles, colores) {
            
             
@@ -2235,12 +2235,12 @@
             $('#idTalleQV').empty();
 
             $.each(talles, function (k, item) {
-
+                
                 var radio = $('<input/>').attr({ type: 'radio', name: name, value: k, id: 'radio_' + k })
                  .on('click', function () {
+                     alert('talle');
                               $('#talleSeleccionadoQV').text(talles[k].descripcion);
                               idTalleSeleccionado = talles[k].id;
-                              
                         jQuery.ajax({
                         url: '@Url.Action("GetColoresByProducto", "Color")?codigo=' + json.codigo + '&idTalle=' + talles[k].id,
                         type: "GET",

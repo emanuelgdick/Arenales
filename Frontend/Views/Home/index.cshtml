@@ -449,6 +449,8 @@
                            if (data.data != null) {
                                var tall;
                                $.each(data.data, function (i, item) {
+
+                                   console.log(data.talles[i].talle);
                                tall='';
                             $('<div>').addClass('card-product mix ').addClass('marca_' + item.idMarca)/* .addClass('categoria_'+item.idRubro) .addClass('color_'+item.idRubro) */.append($('<div>').addClass('card-product-wrapper').append(
                                                     $('<a>').addClass('product-img').append(
@@ -489,13 +491,15 @@
                                        ),//list-product-btn absolute-2
                           $('<div>').addClass('size-list').append(
                                 $('<span>').text('Talles:'),
-                                    $.each(data.talles[i].talle, function (j, itemTalle) {
-                                        $('<span>').text(itemTalle.descripcion/* .descripcion */)//.append('<br/>')
+                                    //$.each($('<span>').text(data.talles[i].talle[0].descripcion), function (j, itemTalle) {
+                                       // $('<span>').text('a'/*itemTalle.descripcion */)//.append('<br/>')
                                         //$.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
-                                    }),
-                                   
-                                
-                           )
+                                    //}),
+                                    $.each(data.talles[i].talle, function (index, value) {
+                                        $('<span>').text(data.talles[i].talle[index].descripcion);
+                                        }
+                                    )
+                                )
                          ),//card-product-wrapper
                          $('<div>').addClass('card-product-info').append(
                                   $('<a>').attr({ 'href': 'product-detail.html' }).text( data.data[i].descripcion).addClass('title link'),
