@@ -30,7 +30,6 @@ namespace Api.Controllers
         public async Task<ActionResult<List<Producto>>> GetProducto()
         {
             List<Producto> listaProductos = _context.Producto.ToList();
-
             //List<Talle> listaTalles = _context.Talle.ToList();
             //List<Color> listaColores = _context.Color.ToList();
             //var productosAgrupados = listaProductos

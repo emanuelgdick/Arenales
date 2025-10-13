@@ -381,20 +381,10 @@
 </section>
 
 @section Scripts {
+
+    <script src="~/js/mio.js"></script>
     <script>
-
-          
-
-               
-
-        document.addEventListener("DOMContentLoaded",function(){
-
-         
-
-
-
-
-               var producto = null;
+            var producto = null;
               // //Get Rubros
               //  jQuery.ajax({
               //                    url: '@Url.Action("GetAllRubros", "Rubro")',
@@ -423,16 +413,13 @@
 
               //Get Productos
 
-   
 
 
+        
 
+       //Get Marcas
 
-
-
-            //Get Marcas
-
-             jQuery.ajax({
+       jQuery.ajax({
                          url: '@Url.Action("GetAllMarcas", "Marca")',
                          type: "GET",
                          data: null,
@@ -453,17 +440,12 @@
                             }//success
                            })//ajax
 
-
-
-
-
-
-            
-
-
-
-
-             jQuery.ajax({
+       var deseo = [];
+       //document.addEventListener("DOMContentLoaded", function () {
+           
+       //deseo = getWish(1/* @Html.Raw(Json.Serialize(ViewBag.idUsuario)) */);
+        
+       jQuery.ajax({
                            url: '@Url.Action("GetAllProductos", "Producto")',
                            type: "GET",
                            data: null,
@@ -472,23 +454,17 @@
                            success: function (data) {
                            $("#divProducto").empty();
                            if (data.data != null) {
-                              
                                var appendHeart;
-                             
-
-                              
                                $.each(data.data, function (i, item) {
                                    // var tall=data.talles[i].talle;
                                   // console.log(data.talles[i].talle);
                                  if (@Html.Raw(Json.Serialize(ViewBag.idUsuario))){
-                              
-                                    console.log(deseo);
-                                    console.log(data.data[i]);
                                     var elemento=data.data[i];
-                                    debugger;
                                     var appendGetWish;
-                                    if (deseo.find(item => item.id === elemento.id)){
-                                        appendGetWish=$('<span>').attr({'id':'idspanheart'+i}).addClass('fa fa-trash'),
+
+                                    if (deseo.find(item => item === elemento.id)){
+                                        appendGetWish=
+                                        $('<span>').attr({'id':'idspanheart'+i}).addClass('fa fa-trash'),
                                         $('<span>').addClass('tooltip').text('Quitar de la lista de deseos')
                                         }else
                                         {
@@ -496,11 +472,7 @@
                                          $('<span>').addClass('tooltip').text('Agregar a lista de deseos')
                                        
                                         }
-
-                                        
-                                     
-                                     
-                               appendHeart=  $('<a>').addClass('box-icon bg_white  tf-btn-loading')
+                                         appendHeart=  $('<a>').addClass('box-icon bg_white  tf-btn-loading')
                                                    .on('click',function (event) {
                                                                       event.preventDefault();
                                                                       $('#idspanheart'+i).toggleClass('fa fa-heart')
@@ -564,9 +536,6 @@
                                                    ),//<a> box-icon bg_white quick-add tf-btn-loading
                                                    appendHeart, 
                                                     
-                                                    
-                                                    
-                                                    
                                                     $('<a>').attr({'href':'#idcompare'}).addClass('box-icon bg_white  tf-btn-loading')
                                                    .on('click',function (event) {
                                                                       event.preventDefault();
@@ -608,24 +577,17 @@
                             }
 
                         })
-                         var filterValue = $(this).attr( 'data-filter');
-                              
+                        var filterValue = $(this).attr( 'data-filter');
                              mixer.filter(filterValue);
-                        
-
-
-
-                              
-
                             }//if
-                         },//success
+                        },//success
                         error: function (error) {
                             console.log(error)
                         },
                         beforeSend: function () {
                         },
              })//ajax
-
+      //  })
 
 
 
@@ -980,6 +942,7 @@
                     }
                 })
             }
-        })
+       
     </script>
+    
     }

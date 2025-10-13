@@ -1962,7 +1962,7 @@
     <script>
         var carrito = [];
         var compara = [];
-        var deseo = [] ;
+    
         var marca = [];
         var rubro = [];
 
@@ -2310,8 +2310,7 @@
                         carrito = [];
                         $('#cantProducto').text('0');
                         $.each(data.data, function (i, item) {
-                            debugger;
-                        
+                           
                             if (data.data[i].idEstadoCarrito == 1) {//CArrito Abrierto
                                 $('#idCarrito').text(data.data[i].id);
                                 $.each(data.data[i].carritoProductos, function (j, item) {
@@ -2333,39 +2332,7 @@
                 },
             });
 
-
-
-             
-              deseo = [];
-              jQuery.ajax({
-                         url: '@Url.Action("GetWishByUsuario", "Wish")?idUsuario=' + @Html.Raw(Json.Serialize(ViewBag.idUsuario)),
-                         type: "GET",
-                         //data: null,
-                         dataType: "json",
-                         contentType: "application/json; charset=utf-8",
-                         success: function (data) {
-
-                             if (data.data != null) {
-                                 //deseo = [];
-                                 $('#cantDeseo').text('0');
-                                 $.each(data.data, function (i, item) {
-
-                                        deseo.push(data.data[i].producto);
-
-                                 })
-                                   $('#cantDeseo').text(deseo.length);
-                             }
-                         },
-                         error: function (error) {
-                             console.log(error)
-                         },
-                         beforeSend: function () {
-                         },
-                     });
-
-
-             
-
+            
             // // // // // //filtro categorias
             // // // // // jQuery.ajax({
             // // // // //     url: '@Url.Action("GetAllRubros", "Rubro")',
@@ -2435,9 +2402,6 @@
             // // // // //          }//if
             // // // // //       }//success
             // // // // //  })//JQuery
-
-
-          
 
        })
 
