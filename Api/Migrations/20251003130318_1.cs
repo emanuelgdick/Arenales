@@ -57,19 +57,6 @@ namespace Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Color",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Color", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CondicionIva",
                 columns: table => new
                 {
@@ -333,20 +320,6 @@ namespace Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Talle",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    Descripcion = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    Numero = table.Column<int>(type: "int", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Modelo", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "TalleCentral",
                 columns: table => new
                 {
@@ -567,51 +540,6 @@ namespace Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "Producto",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdMarca = table.Column<long>(type: "bigint", nullable: false),
-                    IdRubro = table.Column<long>(type: "bigint", nullable: false),
-                    IdTalle = table.Column<long>(type: "bigint", nullable: false),
-                    IdColor = table.Column<long>(type: "bigint", nullable: false),
-                    Descripcion = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
-                    CodigoBarras = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
-                    Precio = table.Column<decimal>(type: "money", nullable: false),
-                    Codigo = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
-                    PrecioSinIva = table.Column<decimal>(type: "money", nullable: false),
-                    Costo = table.Column<decimal>(type: "money", nullable: false),
-                    IdImpuesto = table.Column<long>(type: "bigint", nullable: false),
-                    Activo = table.Column<bool>(type: "bit", nullable: false),
-                    Carrito = table.Column<bool>(type: "bit", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Producto", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_Producto_Color",
-                        column: x => x.IdColor,
-                        principalTable: "Color",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Producto_Marca",
-                        column: x => x.IdMarca,
-                        principalTable: "Marca",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Producto_Rubro",
-                        column: x => x.IdRubro,
-                        principalTable: "Rubro",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_Producto_Talle",
-                        column: x => x.IdTalle,
-                        principalTable: "Talle",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Movimiento",
                 columns: table => new
                 {
@@ -694,51 +622,6 @@ namespace Api.Migrations
                         name: "FK_CajaMovimiento_Vendedor",
                         column: x => x.IdVendedor,
                         principalTable: "Vendedor",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductoImagen",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
-                    LinkImagen = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
-                    Principal = table.Column<bool>(type: "bit", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductoImagen", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductoImagen_Producto",
-                        column: x => x.IdProducto,
-                        principalTable: "Producto",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
-                name: "ProductoStock",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
-                    Cantidad = table.Column<long>(type: "bigint", nullable: false),
-                    IdSucursal = table.Column<long>(type: "bigint", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductoStock", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductoStock_Producto",
-                        column: x => x.IdProducto,
-                        principalTable: "Producto",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductoStock_Sucursal",
-                        column: x => x.IdSucursal,
-                        principalTable: "Sucursal",
                         principalColumn: "Id");
                 });
 
@@ -844,31 +727,6 @@ namespace Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ProductoMovimiento",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
-                    IdMovimiento = table.Column<long>(type: "bigint", nullable: false),
-                    Cantidad = table.Column<int>(type: "int", nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ProductoMovimiento", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ProductoMovimiento_Movimiento",
-                        column: x => x.IdMovimiento,
-                        principalTable: "Movimiento",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ProductoMovimiento_Producto",
-                        column: x => x.IdProducto,
-                        principalTable: "Producto",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "CuotaCredito",
                 columns: table => new
                 {
@@ -906,7 +764,7 @@ namespace Api.Migrations
                     IdComprobante = table.Column<int>(type: "int", nullable: true),
                     IdUsuario = table.Column<long>(type: "bigint", nullable: true),
                     Total = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    Numero = table.Column<int>(type: "int", nullable: true)
+                    CantProductos = table.Column<int>(type: "int", nullable: true)
                 },
                 constraints: table =>
                 {
@@ -959,37 +817,6 @@ namespace Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "ComprobanteItem",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
-                    IdComprobante = table.Column<int>(type: "int", nullable: true),
-                    Cantidad = table.Column<int>(type: "int", nullable: false),
-                    PrecioUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    ImpuestoUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    TotalItem = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
-                    Bonificacion = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    NC = table.Column<bool>(type: "bit", nullable: true),
-                    IdComprobanteItemNC = table.Column<long>(type: "bigint", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_ComprobanteItem", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_ComprobanteItem_Comprobante",
-                        column: x => x.IdComprobante,
-                        principalTable: "Comprobante",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_ComprobanteItem_Producto",
-                        column: x => x.IdProducto,
-                        principalTable: "Producto",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "ComprobanteCompraDescuento",
                 columns: table => new
                 {
@@ -1033,32 +860,6 @@ namespace Api.Migrations
                 });
 
             migrationBuilder.CreateTable(
-                name: "CarritoProducto",
-                columns: table => new
-                {
-                    Id = table.Column<long>(type: "bigint", nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    IdCarrito = table.Column<long>(type: "bigint", nullable: true),
-                    IdProducto = table.Column<long>(type: "bigint", nullable: true),
-                    Cantidad = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
-                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_CarritoProducto", x => x.Id);
-                    table.ForeignKey(
-                        name: "FK_CarritoProducto_Carrito",
-                        column: x => x.IdCarrito,
-                        principalTable: "Carrito",
-                        principalColumn: "Id");
-                    table.ForeignKey(
-                        name: "FK_CarritoProducto_Producto",
-                        column: x => x.IdProducto,
-                        principalTable: "Producto",
-                        principalColumn: "Id");
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Pago",
                 columns: table => new
                 {
@@ -1098,6 +899,224 @@ namespace Api.Migrations
                         column: x => x.IdTarjeta,
                         principalTable: "Tarjetum",
                         principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "CarritoProducto",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdCarrito = table.Column<long>(type: "bigint", nullable: true),
+                    IdProducto = table.Column<long>(type: "bigint", nullable: true),
+                    Cantidad = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    Precio = table.Column<decimal>(type: "decimal(18,2)", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_CarritoProducto", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_CarritoProducto_Carrito",
+                        column: x => x.IdCarrito,
+                        principalTable: "Carrito",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Color",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descripcion = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    valor = table.Column<string>(type: "nvarchar(max)", nullable: false),
+                    ProductoId = table.Column<long>(type: "bigint", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Color", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ComprobanteItem",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
+                    IdComprobante = table.Column<int>(type: "int", nullable: true),
+                    Cantidad = table.Column<int>(type: "int", nullable: false),
+                    PrecioUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    ImpuestoUnitario = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    TotalItem = table.Column<decimal>(type: "decimal(18,2)", nullable: false),
+                    Bonificacion = table.Column<decimal>(type: "decimal(18,2)", nullable: true),
+                    NC = table.Column<bool>(type: "bit", nullable: true),
+                    IdComprobanteItemNC = table.Column<long>(type: "bigint", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ComprobanteItem", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ComprobanteItem_Comprobante",
+                        column: x => x.IdComprobante,
+                        principalTable: "Comprobante",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Producto",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdMarca = table.Column<long>(type: "bigint", nullable: false),
+                    IdRubro = table.Column<long>(type: "bigint", nullable: false),
+                    IdTalle = table.Column<long>(type: "bigint", nullable: false),
+                    IdColor = table.Column<long>(type: "bigint", nullable: false),
+                    Descripcion = table.Column<string>(type: "varchar(255)", unicode: false, maxLength: 255, nullable: false),
+                    CodigoBarras = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    Precio = table.Column<decimal>(type: "money", nullable: false),
+                    Codigo = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: true),
+                    PrecioSinIva = table.Column<decimal>(type: "money", nullable: false),
+                    Costo = table.Column<decimal>(type: "money", nullable: false),
+                    IdImpuesto = table.Column<long>(type: "bigint", nullable: false),
+                    Activo = table.Column<bool>(type: "bit", nullable: false),
+                    Carrito = table.Column<bool>(type: "bit", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Producto", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Producto_Color",
+                        column: x => x.IdColor,
+                        principalTable: "Color",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Producto_Marca",
+                        column: x => x.IdMarca,
+                        principalTable: "Marca",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_Producto_Rubro",
+                        column: x => x.IdRubro,
+                        principalTable: "Rubro",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductoImagen",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
+                    LinkImagen = table.Column<string>(type: "varchar(max)", unicode: false, nullable: false),
+                    Principal = table.Column<bool>(type: "bit", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductoImagen", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductoImagen_Producto",
+                        column: x => x.IdProducto,
+                        principalTable: "Producto",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductoMovimiento",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
+                    IdMovimiento = table.Column<long>(type: "bigint", nullable: false),
+                    Cantidad = table.Column<int>(type: "int", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductoMovimiento", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductoMovimiento_Movimiento",
+                        column: x => x.IdMovimiento,
+                        principalTable: "Movimiento",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_ProductoMovimiento_Producto",
+                        column: x => x.IdProducto,
+                        principalTable: "Producto",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "ProductoStock",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdProducto = table.Column<long>(type: "bigint", nullable: false),
+                    Cantidad = table.Column<long>(type: "bigint", nullable: false),
+                    IdSucursal = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_ProductoStock", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_ProductoStock_Producto",
+                        column: x => x.IdProducto,
+                        principalTable: "Producto",
+                        principalColumn: "Id");
+                    table.ForeignKey(
+                        name: "FK_ProductoStock_Sucursal",
+                        column: x => x.IdSucursal,
+                        principalTable: "Sucursal",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Talle",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    Descripcion = table.Column<string>(type: "varchar(50)", unicode: false, maxLength: 50, nullable: false),
+                    Numero = table.Column<int>(type: "int", nullable: true),
+                    ProductoId = table.Column<long>(type: "bigint", nullable: true)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Modelo", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Talle_Producto_ProductoId",
+                        column: x => x.ProductoId,
+                        principalTable: "Producto",
+                        principalColumn: "Id");
+                });
+
+            migrationBuilder.CreateTable(
+                name: "Wish",
+                columns: table => new
+                {
+                    Id = table.Column<long>(type: "bigint", nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    IdUsuario = table.Column<long>(type: "bigint", nullable: false),
+                    IdProducto = table.Column<long>(type: "bigint", nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Wish", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Wish_Producto_IdProducto",
+                        column: x => x.IdProducto,
+                        principalTable: "Producto",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Wish_Usuario_IdUsuario",
+                        column: x => x.IdUsuario,
+                        principalTable: "Usuario",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
                 });
 
             migrationBuilder.CreateIndex(
@@ -1164,6 +1183,11 @@ namespace Api.Migrations
                 name: "IX_ClienteCuentaCorrienteMovimiento_IdComprobante",
                 table: "ClienteCuentaCorrienteMovimiento",
                 column: "IdComprobante");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Color_ProductoId",
+                table: "Color",
+                column: "ProductoId");
 
             migrationBuilder.CreateIndex(
                 name: "IX_Comprobante_IdCaja",
@@ -1306,6 +1330,11 @@ namespace Api.Migrations
                 column: "IdSucursal");
 
             migrationBuilder.CreateIndex(
+                name: "IX_Talle_ProductoId",
+                table: "Talle",
+                column: "ProductoId");
+
+            migrationBuilder.CreateIndex(
                 name: "IX_Tarjetum_IdBanco",
                 table: "Tarjetum",
                 column: "IdBanco");
@@ -1319,11 +1348,61 @@ namespace Api.Migrations
                 name: "IX_Vendedor_IdSucursal",
                 table: "Vendedor",
                 column: "IdSucursal");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Wish_IdProducto",
+                table: "Wish",
+                column: "IdProducto");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Wish_IdUsuario",
+                table: "Wish",
+                column: "IdUsuario");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_CarritoProducto_Producto",
+                table: "CarritoProducto",
+                column: "IdProducto",
+                principalTable: "Producto",
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Color_Producto_ProductoId",
+                table: "Color",
+                column: "ProductoId",
+                principalTable: "Producto",
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_ComprobanteItem_Producto",
+                table: "ComprobanteItem",
+                column: "IdProducto",
+                principalTable: "Producto",
+                principalColumn: "Id");
+
+            migrationBuilder.AddForeignKey(
+                name: "FK_Producto_Talle",
+                table: "Producto",
+                column: "IdTalle",
+                principalTable: "Talle",
+                principalColumn: "Id");
         }
 
         /// <inheritdoc />
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropForeignKey(
+                name: "FK_Producto_Marca",
+                table: "Producto");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Color_Producto_ProductoId",
+                table: "Color");
+
+            migrationBuilder.DropForeignKey(
+                name: "FK_Talle_Producto_ProductoId",
+                table: "Talle");
+
             migrationBuilder.DropTable(
                 name: "ActualizacionPrecio");
 
@@ -1388,6 +1467,9 @@ namespace Api.Migrations
                 name: "TalleCentral");
 
             migrationBuilder.DropTable(
+                name: "Wish");
+
+            migrationBuilder.DropTable(
                 name: "TipoMovimientoCaja");
 
             migrationBuilder.DropTable(
@@ -1410,9 +1492,6 @@ namespace Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "Tarjetum");
-
-            migrationBuilder.DropTable(
-                name: "Producto");
 
             migrationBuilder.DropTable(
                 name: "Rol");
@@ -1442,18 +1521,6 @@ namespace Api.Migrations
                 name: "Banco");
 
             migrationBuilder.DropTable(
-                name: "Color");
-
-            migrationBuilder.DropTable(
-                name: "Marca");
-
-            migrationBuilder.DropTable(
-                name: "Rubro");
-
-            migrationBuilder.DropTable(
-                name: "Talle");
-
-            migrationBuilder.DropTable(
                 name: "Caja");
 
             migrationBuilder.DropTable(
@@ -1470,6 +1537,21 @@ namespace Api.Migrations
 
             migrationBuilder.DropTable(
                 name: "TipoMovimiento");
+
+            migrationBuilder.DropTable(
+                name: "Marca");
+
+            migrationBuilder.DropTable(
+                name: "Producto");
+
+            migrationBuilder.DropTable(
+                name: "Color");
+
+            migrationBuilder.DropTable(
+                name: "Rubro");
+
+            migrationBuilder.DropTable(
+                name: "Talle");
         }
     }
 }

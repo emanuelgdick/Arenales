@@ -12,8 +12,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace Api.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    [Migration("20250919151434_Rubros")]
-    partial class Rubros
+    [Migration("20251003130318_1")]
+    partial class _1
     {
         /// <inheritdoc />
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -432,11 +432,16 @@ namespace Api.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
+                    b.Property<long?>("ProductoId")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("valor")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("ProductoId");
 
                     b.ToTable("Color", (string)null);
                 });
@@ -1598,8 +1603,13 @@ namespace Api.Migrations
                     b.Property<int?>("Numero")
                         .HasColumnType("int");
 
+                    b.Property<long?>("ProductoId")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id")
                         .HasName("PK_Modelo");
+
+                    b.HasIndex("ProductoId");
 
                     b.ToTable("Talle", (string)null);
                 });
@@ -1884,6 +1894,29 @@ namespace Api.Migrations
                     b.ToTable("Vendedor", (string)null);
                 });
 
+            modelBuilder.Entity("Api.Models.Wish", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("IdProducto")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdUsuario")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdProducto");
+
+                    b.HasIndex("IdUsuario");
+
+                    b.ToTable("Wish");
+                });
+
             modelBuilder.Entity("Api.Models.ActualizacionPrecio", b =>
                 {
                     b.HasOne("Api.Models.Marca", "IdMarcaNavigation")
@@ -1999,6 +2032,13 @@ namespace Api.Migrations
                     b.Navigation("IdClienteCuentaCorrienteNavigation");
 
                     b.Navigation("IdComprobanteNavigation");
+                });
+
+            modelBuilder.Entity("Api.Models.Color", b =>
+                {
+                    b.HasOne("Api.Models.Producto", null)
+                        .WithMany("ListaColores")
+                        .HasForeignKey("ProductoId");
                 });
 
             modelBuilder.Entity("Api.Models.Comprobante", b =>
@@ -2259,6 +2299,13 @@ namespace Api.Migrations
                     b.Navigation("IdSucursalNavigation");
                 });
 
+            modelBuilder.Entity("Api.Models.Talle", b =>
+                {
+                    b.HasOne("Api.Models.Producto", null)
+                        .WithMany("ListaTalles")
+                        .HasForeignKey("ProductoId");
+                });
+
             modelBuilder.Entity("Api.Models.Tarjetum", b =>
                 {
                     b.HasOne("Api.Models.Banco", "IdBancoNavigation")
@@ -2285,6 +2332,25 @@ namespace Api.Migrations
                     b.Navigation("IdRolNavigation");
 
                     b.Navigation("IdSucursalNavigation");
+                });
+
+            modelBuilder.Entity("Api.Models.Wish", b =>
+                {
+                    b.HasOne("Api.Models.Producto", "Producto")
+                        .WithMany()
+                        .HasForeignKey("IdProducto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Usuario", "Usuario")
+                        .WithMany("Wishes")
+                        .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Producto");
+
+                    b.Navigation("Usuario");
                 });
 
             modelBuilder.Entity("Api.Models.Banco", b =>
@@ -2393,6 +2459,10 @@ namespace Api.Migrations
 
                     b.Navigation("ComprobanteItems");
 
+                    b.Navigation("ListaColores");
+
+                    b.Navigation("ListaTalles");
+
                     b.Navigation("ProductoImagens");
 
                     b.Navigation("ProductoMovimientos");
@@ -2452,6 +2522,8 @@ namespace Api.Migrations
             modelBuilder.Entity("Api.Models.Usuario", b =>
                 {
                     b.Navigation("Carritos");
+
+                    b.Navigation("Wishes");
                 });
 
             modelBuilder.Entity("Api.Models.Vendedor", b =>

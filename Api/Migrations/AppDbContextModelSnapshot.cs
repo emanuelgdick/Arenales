@@ -1891,6 +1891,29 @@ namespace Api.Migrations
                     b.ToTable("Vendedor", (string)null);
                 });
 
+            modelBuilder.Entity("Api.Models.Wish", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<long>("IdProducto")
+                        .HasColumnType("bigint");
+
+                    b.Property<long>("IdUsuario")
+                        .HasColumnType("bigint");
+
+                    b.HasKey("Id");
+
+                    b.HasIndex("IdProducto");
+
+                    b.HasIndex("IdUsuario");
+
+                    b.ToTable("Wish");
+                });
+
             modelBuilder.Entity("Api.Models.ActualizacionPrecio", b =>
                 {
                     b.HasOne("Api.Models.Marca", "IdMarcaNavigation")
@@ -2308,6 +2331,25 @@ namespace Api.Migrations
                     b.Navigation("IdSucursalNavigation");
                 });
 
+            modelBuilder.Entity("Api.Models.Wish", b =>
+                {
+                    b.HasOne("Api.Models.Producto", "Producto")
+                        .WithMany()
+                        .HasForeignKey("IdProducto")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("Api.Models.Usuario", "Usuario")
+                        .WithMany("Wishes")
+                        .HasForeignKey("IdUsuario")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Producto");
+
+                    b.Navigation("Usuario");
+                });
+
             modelBuilder.Entity("Api.Models.Banco", b =>
                 {
                     b.Navigation("Cheques");
@@ -2477,6 +2519,8 @@ namespace Api.Migrations
             modelBuilder.Entity("Api.Models.Usuario", b =>
                 {
                     b.Navigation("Carritos");
+
+                    b.Navigation("Wishes");
                 });
 
             modelBuilder.Entity("Api.Models.Vendedor", b =>

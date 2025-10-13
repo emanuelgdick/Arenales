@@ -2311,6 +2311,251 @@
           }
         }
       }
+    },
+    "/api/Wishes": {
+      "get": {
+        "tags": [
+          "Wishes"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wish"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wish"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wish"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wishes/{id}": {
+      "get": {
+        "tags": [
+          "Wishes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Wish"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Wish"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Wish"
+                }
+              }
+            }
+          }
+        }
+      },
+      "put": {
+        "tags": [
+          "Wishes"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Wishes/GetWishByUsuario": {
+      "get": {
+        "tags": [
+          "Wishes"
+        ],
+        "parameters": [
+          {
+            "name": "idUsuario",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wish"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wish"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Wish"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wishes/PostWish": {
+      "post": {
+        "tags": [
+          "Wishes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Wish"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Wish"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Wish"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Wishes/DeleteWish": {
+      "post": {
+        "tags": [
+          "Wishes"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Wish"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
     }
   },
   "components": {
@@ -4198,6 +4443,13 @@
               "$ref": "#/components/schemas/Carrito"
             },
             "nullable": true
+          },
+          "wishes": {
+            "type": "array",
+            "items": {
+              "$ref": "#/components/schemas/Wish"
+            },
+            "nullable": true
           }
         },
         "additionalProperties": false
@@ -4247,6 +4499,30 @@
           },
           "idSucursalNavigation": {
             "$ref": "#/components/schemas/Sucursal"
+          }
+        },
+        "additionalProperties": false
+      },
+      "Wish": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "idUsuario": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "usuario": {
+            "$ref": "#/components/schemas/Usuario"
+          },
+          "idProducto": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "producto": {
+            "$ref": "#/components/schemas/Producto"
           }
         },
         "additionalProperties": false

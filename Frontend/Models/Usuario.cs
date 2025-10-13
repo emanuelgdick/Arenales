@@ -10,5 +10,5 @@ public partial class Usuario
     public string User { get; set; }
     public string Password { get; set; }
     public virtual ICollection<Carrito>? Carritos { get; set; } = new List<Carrito>();
-
+    public virtual ICollection<Wish>? Wishes { get; set; } = new List<Wish>();
 }

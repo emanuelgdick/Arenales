@@ -974,5 +974,7 @@ namespace Api
         public DbSet<Api.Models.Rubro> Rubro { get; set; } = default!;
         public DbSet<Api.Models.Usuario> Usuario { get; set; } = default!;
 
+        public DbSet<Api.Models.Wish> Wish { get; set; } = default!;
+
     }
 }

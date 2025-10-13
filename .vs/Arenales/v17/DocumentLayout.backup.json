@@ -3,28 +3,40 @@
   "WorkspaceRootPath": "C:\\Arenales\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\arenales\\api\\controllers\\carritoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\carritoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|c:\\arenales\\api\\controllers\\carritoproductoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{CBFA08EA-AECE-205F-7B85-326FD0B81BAD}|Api\\Api.csproj|solutionrelative:api\\controllers\\carritoproductoscontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\shared\\_layout.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\carritocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\carritoitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\carritoitemcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
       "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\home\\index.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\wishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\wishcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\homecontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\authuser\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\authuser\\signin.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\productocontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\views\\authuser\\accountsetting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\views\\authuser\\accountsetting.cshtml||{40D31677-CBC0-4297-A9EF-89D907823A98}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\controllers\\authusercontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|c:\\arenales\\frontend\\services\\wishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{F7575659-3795-D654-7C13-9FD1B5855317}|Frontend\\Frontend.csproj|solutionrelative:frontend\\services\\wishservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -34,7 +46,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 11,
           "Children": [
             {
               "$type": "Bookmark",
@@ -50,80 +62,112 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "CarritosController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Api\\Controllers\\CarritosController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\CarritosController.cs",
-              "ToolTip": "C:\\Arenales\\Api\\Controllers\\CarritosController.cs",
-              "RelativeToolTip": "Api\\Controllers\\CarritosController.cs",
-              "ViewState": "AgIAAFoAAAAAAAAAAAAAADYAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-24T22:03:22.886Z",
-              "EditorCaption": ""
+              "DocumentIndex": 4,
+              "Title": "signIn.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\AuthUser\\signIn.cshtml",
+              "ViewState": "AgIAAF4AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-06T13:26:14.7Z"
             },
             {
               "$type": "Document",
               "DocumentIndex": 1,
-              "Title": "CarritoProductosController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Api\\Controllers\\CarritoProductosController.cs",
-              "RelativeDocumentMoniker": "Api\\Controllers\\CarritoProductosController.cs",
-              "ToolTip": "C:\\Arenales\\Api\\Controllers\\CarritoProductosController.cs",
-              "RelativeToolTip": "Api\\Controllers\\CarritoProductosController.cs",
-              "ViewState": "AgIAACMAAAAAAAAAAAAgwDMAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T19:54:44.566Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "CarritoItemController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\CarritoItemController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\CarritoItemController.cs",
-              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\CarritoItemController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\CarritoItemController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAFMAAAAUAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T19:54:28.922Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "CarritoController.cs",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\CarritoController.cs",
-              "RelativeDocumentMoniker": "Frontend\\Controllers\\CarritoController.cs",
-              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\CarritoController.cs",
-              "RelativeToolTip": "Frontend\\Controllers\\CarritoController.cs",
-              "ViewState": "AgIAAEUAAAAAAAAAAAASwFQAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-09-23T19:33:57.661Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "_Layout.cshtml",
-              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
-              "RelativeDocumentMoniker": "Frontend\\Views\\Shared\\_Layout.cshtml",
-              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
-              "RelativeToolTip": "Frontend\\Views\\Shared\\_Layout.cshtml",
-              "ViewState": "AgIAAGIJAAAAAAAAAAAAAGYJAAB/AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-21T18:42:47.558Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
               "Title": "index.cshtml",
               "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Home\\index.cshtml",
               "RelativeDocumentMoniker": "Frontend\\Views\\Home\\index.cshtml",
               "ToolTip": "C:\\Arenales\\Frontend\\Views\\Home\\index.cshtml",
               "RelativeToolTip": "Frontend\\Views\\Home\\index.cshtml",
-              "ViewState": "AgIAAP8CAAAAAAAAAAAgwB8DAABFAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAOQBAAA1AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
-              "WhenOpened": "2025-09-16T18:32:12.31Z",
+              "WhenOpened": "2025-10-04T12:35:00.038Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "HomeController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\HomeController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\HomeController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\HomeController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\HomeController.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAAABsAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T10:53:55.478Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "ProductoController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\ProductoController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\ProductoController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\ProductoController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\ProductoController.cs",
+              "ViewState": "AgIAAGwAAAAAAAAAAAAIwHwAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T10:32:50.702Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 7,
+              "Title": "AuthUserController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\AuthUserController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\AuthUserController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\AuthUserController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\AuthUserController.cs",
+              "ViewState": "AgIAABoAAAAAAAAAAAAgwCUAAAANAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-04T10:51:44.837Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "accountSetting.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\AuthUser\\accountSetting.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\AuthUser\\accountSetting.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\AuthUser\\accountSetting.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\AuthUser\\accountSetting.cshtml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAG8CAABqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-03T18:38:51.119Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 8,
+              "Title": "WishService.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Services\\WishService.cs",
+              "RelativeDocumentMoniker": "Frontend\\Services\\WishService.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Services\\WishService.cs",
+              "RelativeToolTip": "Frontend\\Services\\WishService.cs",
+              "ViewState": "AgIAAC4AAAAAAAAAAAAkwEgAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-03T14:56:17.325Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "WishController.cs",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Controllers\\WishController.cs",
+              "RelativeDocumentMoniker": "Frontend\\Controllers\\WishController.cs",
+              "ToolTip": "C:\\Arenales\\Frontend\\Controllers\\WishController.cs",
+              "RelativeToolTip": "Frontend\\Controllers\\WishController.cs",
+              "ViewState": "AgIAADMAAAAAAAAAAAAIwEYAAAAMAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-10-02T14:41:24.526Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "_Layout.cshtml",
+              "DocumentMoniker": "C:\\Arenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeDocumentMoniker": "Frontend\\Views\\Shared\\_Layout.cshtml",
+              "ToolTip": "C:\\Arenales\\Frontend\\Views\\Shared\\_Layout.cshtml",
+              "RelativeToolTip": "Frontend\\Views\\Shared\\_Layout.cshtml",
+              "ViewState": "AgIAAPsGAAAAAAAAAAAnwOMGAAAZAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000759|",
+              "WhenOpened": "2025-10-01T18:30:41.011Z",
               "EditorCaption": ""
             }
           ]

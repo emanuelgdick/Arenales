@@ -122,6 +122,7 @@ namespace FrontEnd.Controllers
 
             }
 
+           
             return Json(new { data = productos, talles = arrayTalles, colores = arrayColores });
         }
 

@@ -383,9 +383,17 @@
 @section Scripts {
     <script>
 
-        
-        document.addEventListener("DOMContentLoaded",function(){
           
+
+               
+
+        document.addEventListener("DOMContentLoaded",function(){
+
+         
+
+
+
+
                var producto = null;
               // //Get Rubros
               //  jQuery.ajax({
@@ -415,7 +423,15 @@
 
               //Get Productos
 
+   
+
+
+
+
+
+
             //Get Marcas
+
              jQuery.ajax({
                          url: '@Url.Action("GetAllMarcas", "Marca")',
                          type: "GET",
@@ -436,7 +452,16 @@
                                       }//if
                             }//success
                            })//ajax
-                                             
+
+
+
+
+
+
+            
+
+
+
 
              jQuery.ajax({
                            url: '@Url.Action("GetAllProductos", "Producto")',
@@ -447,59 +472,122 @@
                            success: function (data) {
                            $("#divProducto").empty();
                            if (data.data != null) {
-                               var tall;
-                               $.each(data.data, function (i, item) {
+                              
+                               var appendHeart;
+                             
 
-                                   console.log(data.talles[i].talle);
-                               tall='';
+                              
+                               $.each(data.data, function (i, item) {
+                                   // var tall=data.talles[i].talle;
+                                  // console.log(data.talles[i].talle);
+                                 if (@Html.Raw(Json.Serialize(ViewBag.idUsuario))){
+                              
+                                    console.log(deseo);
+                                    console.log(data.data[i]);
+                                    var elemento=data.data[i];
+                                    debugger;
+                                    var appendGetWish;
+                                    if (deseo.find(item => item.id === elemento.id)){
+                                        appendGetWish=$('<span>').attr({'id':'idspanheart'+i}).addClass('fa fa-trash'),
+                                        $('<span>').addClass('tooltip').text('Quitar de la lista de deseos')
+                                        }else
+                                        {
+                                         appendGetWish=$('<span>').attr({'id':'idspanheart'+i}).addClass('fa fa-heart'),
+                                         $('<span>').addClass('tooltip').text('Agregar a lista de deseos')
+                                       
+                                        }
+
+                                        
+                                     
+                                     
+                               appendHeart=  $('<a>').addClass('box-icon bg_white  tf-btn-loading')
+                                                   .on('click',function (event) {
+                                                                      event.preventDefault();
+                                                                      $('#idspanheart'+i).toggleClass('fa fa-heart')
+                                                                      $('#idspanheart'+i).toggleClass('fa fa-trash')
+                                                                      var URL;
+                                                                      var wish;
+                                                                      let indice = deseo.indexOf(data.data[i]);
+                                                                      if (indice > -1) {
+                                                                         deseo.splice(indice, 1);
+                                                                        URL= '@Url.Action("DeleteWish", "Wish")?idUsuario='+@Html.Raw(Json.Serialize(ViewBag.idUsuario));
+
+                                                                      } else {
+
+                                                                        deseo.push(data.data[i]);
+                                                                        URL= '@Url.Action("CreateWish", "Wish")?idUsuario='+@Html.Raw(Json.Serialize(ViewBag.idUsuario));
+                                                                      }
+                                                                       wish={
+
+                                                                            idUsuario:@Html.Raw(Json.Serialize(ViewBag.idUsuario)),
+                                                                            idProducto:data.data[i].id
+                                                                        }
+
+                                                                      jQuery.ajax({
+                                                                       url:URL,
+                                                                        type: "POST",
+                                                                        data: JSON.stringify(wish),
+                                                                        dataType: "json",
+                                                                        contentType: "application/json; charset=utf-8",
+                                                                        success: function (data) {
+
+                                                                                  }
+                                                                         })
+
+                                                    })
+                                                   .append(
+                                                           appendGetWish
+                                                    ) //<a> box-icon bg_white wishlist btn-icon-action
+
+                               }
+
+
                             $('<div>').addClass('card-product mix ').addClass('marca_' + item.idMarca)/* .addClass('categoria_'+item.idRubro) .addClass('color_'+item.idRubro) */.append($('<div>').addClass('card-product-wrapper').append(
                                                     $('<a>').addClass('product-img').append(
                                                     $('<img>').addClass('lazyload img-product').attr({ 'data-src': '../images/products/orange-1.jpg', 'src': '../images/products/orange-1.jpg', 'alt': 'image-product' }),
                                                     $('<img>').addClass('lazyload img-hover').attr({ 'data-src': '../images/products/white-1.jpg', 'src': '../images/products/white-1.jpg', 'alt': 'image-product' })
                                                 ).on('click', function (event) {
-                                                        event.preventDefault();
-                                                        producto = data.data[i];
-                                        abrirModalQV(data.data[i], data.talles[i].talle, data.colores[i])
+                                                                event.preventDefault();
+                                                                producto = data.data[i];
+                                                                abrirModalQV(data.data[i], data.talles[i].talle, data.colores[i])
                                                 }),//<a>product-img
                                                $('<div>').addClass('list-product-btn ').append(
-                                                   $('<a>')./*attr({ 'href':'#quick_add', 'data-bs-toggle':"modal"}).*/addClass('box-icon bg_white quick-add tf-btn-loading')
-                                               //'href':'#quick_add',
-                                                    .on('click', function (event) {
-                                                        event.preventDefault();
-                                                        producto = data.data[i];
-                                            abrirModalQA(data.data[i], data.talles[i].talle, data.colores[i])
-                                                       }).append(
+                                                   $('<a>').addClass('box-icon bg_white quick-add tf-btn-loading')
+                                                   .on('click', function (event) {
+                                                                      event.preventDefault();
+                                                                      producto = data.data[i];
+                                                                      abrirModalQA(data.data[i], data.talles[i].talle, data.colores[i])
+                                                   })
+                                                   .append(
                                                             $('<span>').addClass('fa fa-shopping-bag'),
-                                                            $('<span>').addClass('tooltip').text(' Vista Rápida'),
-                                                        ),//<a> box-icon bg_white quick-add tf-btn-loading
-                                                        $('<a>').addClass('box-icon bg_white wishlist btn-icon-action').attr({ 'href': 'javascript:void(0);' }).append(
-                                                            $('<span>').addClass('fa fa-heart'),
-                                                            $('<span>').addClass('tooltip').text(' Agregar a lista de deseos'),
-                                                            $('<span>').addClass('icon icon-delete')
-                                                        ),//<a> box-icon bg_white wishlist btn-icon-action
-                                                        $('<a>').addClass('box-icon bg_white compare btn-icon-action').append(
-                                                        //$('<span>').addClass('fa fa-code-compare'),
-                                                        $('<span>').addClass('fa fa-eye'),
+                                                            $('<span>').addClass('tooltip').text('Vista Rápida')
+                                                   ),//<a> box-icon bg_white quick-add tf-btn-loading
+                                                   appendHeart, 
+                                                    
+                                                    
+                                                    
+                                                    
+                                                    $('<a>').attr({'href':'#idcompare'}).addClass('box-icon bg_white  tf-btn-loading')
+                                                   .on('click',function (event) {
+                                                                      event.preventDefault();
+                                                                      $('#idspaneye'+i).toggleClass('fa fa-eye')
+                                                                      $('#idspaneye'+i).toggleClass('fa fa-check')
+                                                                    //  abrirComparar()
+                                                   })
+                                                   .append(
+                                                        
+                                                        $('<span>').attr({'id':'idspaneye'+i}).addClass('fa fa-eye'),
                                                         $('<span>').addClass('tooltip').text(' Comparar')
-                                                        //$('<span>').addClass('icon icon-check')
-
-                                           ),//<a>box-icon bg_white wishlist btn-icon-action
+                                                   ),//<a>box-icon bg_white wishlist btn-icon-action
                                            //$('<a>').addClass('box-icon bg_white quickview tf-btn-loading').attr({ 'href': 'product-style-01.html#quick_view', 'data-bs-toggle': "modal" }).append(
-
                                            //    $('<span>').addClass('tooltip').text(' Quick View '),
                                            //)//<a>box-icon bg_white quickview tf-btn-loading
                                        ),//list-product-btn absolute-2
                           $('<div>').addClass('size-list').append(
-                                $('<span>').text('Talles:'),
-                                    //$.each($('<span>').text(data.talles[i].talle[0].descripcion), function (j, itemTalle) {
-                                       // $('<span>').text('a'/*itemTalle.descripcion */)//.append('<br/>')
-                                        //$.each($('<span>').text(data.talles[i].idTalle), function (index, value) { })
-                                    //}),
-                                    $.each(data.talles[i].talle, function (index, value) {
-                                        $('<span>').text(data.talles[i].talle[index].descripcion);
-                                        }
-                                    )
-                                )
+                                $('<span>').attr({'id':'idTalle'}).text('Talles:'),
+                                    $.each($('<span>').text( data.talles[i].talle[0].descripcion ), function (index, value) {})
+                                   
+                             )
                          ),//card-product-wrapper
                          $('<div>').addClass('card-product-info').append(
                                   $('<a>').attr({ 'href': 'product-detail.html' }).text( data.data[i].descripcion).addClass('title link'),
@@ -539,9 +627,11 @@
              })//ajax
 
 
-            
-            
-          
+
+
+
+
+
         
 
         

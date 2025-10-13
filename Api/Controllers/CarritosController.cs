@@ -52,6 +52,7 @@ namespace Api.Controllers
          
                 var resultado = (from ca in _context.Carrito 
                                  where ca.IdUsuario == idUsuario
+                                 orderby ca.IdEstadoCarrito ascending
                                  select new Carrito
                                  {
                                      Id = ca.Id,
@@ -60,11 +61,15 @@ namespace Api.Controllers
                                      CantProductos = ca.CantProductos,
                                      IdEstadoCarrito = ca.IdEstadoCarrito == null ? 0 : ca.IdEstadoCarrito,
                                      IdComprobante = ca.IdComprobante == null ? 0 : ca.IdComprobante,
+                                     IdEstadoCarritoNavigation=(from ec in _context.EstadoCarrito
+                                                                where ec.Id == ca.IdEstadoCarrito
+                                                                select ec).FirstOrDefault(),
                                      IdUsuario = ca.IdUsuario,
                                      CarritoProductos = (from cp in _context.CarritoProducto
                                                          join p in _context.Producto on cp.IdProducto equals p.Id
                                                          join col in _context.Color on p.IdColor equals col.Id
                                                          join tal in _context.Talle on p.IdTalle equals tal.Id
+                                                         join mar in _context.Marca on p.IdMarca equals mar.Id
                                                          where cp.IdCarrito == ca.Id
                                                          select new CarritoProducto
                                                          {
@@ -90,6 +95,11 @@ namespace Api.Controllers
                                                                  {
                                                                      Id = p.IdTalle,
                                                                      Descripcion = tal.Descripcion
+                                                                 },
+                                                                 IdMarcaNavigation = new Marca()
+                                                                 {
+                                                                     Id = p.IdMarca,
+                                                                     Descripcion = mar.Descripcion
                                                                  }
                                                              }
                                                          }).ToList()
