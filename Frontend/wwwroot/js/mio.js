@@ -1,19 +1,19 @@
-﻿//Get Wish
-//  deseo = [];
+﻿
 
-//function getWish(usuario) {
+//Get Wish
+function getWish(usuario) {
 
-    
-   
+
    jQuery.ajax({
-        url: '@Url.Action("GetWishByUsuario","Wish")?idUsuario=1',// + usuario,
+       url: '/Wish/GetWishByUsuario?idUsuario=' + usuario,
+       
         type: "GET",
         //data: null,
         dataType: "json",
         contentType: "application/json; charset=utf-8",
         success: function (data) {
             if (data.data != null) {
-                //deseo = [];
+             
                 $('#cantDeseo').text('0');
                 $.each(data.data, function (i, item) {
                     deseo.push(data.data[i].producto);
@@ -30,7 +30,5 @@
         },
      });
 
-    //debugger;
-    //deseo = [3, 13];
-   // return deseo;
-//}
+      return deseo;
+}

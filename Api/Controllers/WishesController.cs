@@ -63,6 +63,8 @@ namespace Api.Controllers
                                     Id =p.Id,
                                     IdColor=p.IdColor,
                                     IdTalle=p.IdTalle,
+                                    IdMarca=p.IdMarca,
+                                    IdRubro=p.IdRubro,
                                     Descripcion=p.Descripcion,
                                     Precio=p.Precio
                                  },
