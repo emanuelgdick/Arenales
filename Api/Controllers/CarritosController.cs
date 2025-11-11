@@ -47,63 +47,80 @@ namespace Api.Controllers
         [HttpGet("GetCarritoByUsuario")]
         [Authorize]
      //   [ResponseCache(CacheProfileName = "apicache")]
-        public async Task<ActionResult<List<Carrito>>> GetCarritosByUsuario(long idUsuario)
+        public async Task<ActionResult<List<Carrito>>> GetCarritoByUsuario(long idUsuario)
         {
-         
-                var resultado = (from ca in _context.Carrito 
-                                 where ca.IdUsuario == idUsuario
-                                 orderby ca.IdEstadoCarrito ascending
-                                 select new Carrito
-                                 {
-                                     Id = ca.Id,
-                                     Total = ca.Total,
-                                     Fecha = ca.Fecha,
-                                     CantProductos = ca.CantProductos,
-                                     IdEstadoCarrito = ca.IdEstadoCarrito == null ? 0 : ca.IdEstadoCarrito,
-                                     IdComprobante = ca.IdComprobante == null ? 0 : ca.IdComprobante,
-                                     IdEstadoCarritoNavigation=(from ec in _context.EstadoCarrito
-                                                                where ec.Id == ca.IdEstadoCarrito
-                                                                select ec).FirstOrDefault(),
-                                     IdUsuario = ca.IdUsuario,
-                                     CarritoProductos = (from cp in _context.CarritoProducto
-                                                         join p in _context.Producto on cp.IdProducto equals p.Id
-                                                         join col in _context.Color on p.IdColor equals col.Id
-                                                         join tal in _context.Talle on p.IdTalle equals tal.Id
-                                                         join mar in _context.Marca on p.IdMarca equals mar.Id
-                                                         where cp.IdCarrito == ca.Id
-                                                         select new CarritoProducto
+
+            //var ids = (from ca in _context.Carrito join cp in _context.CarritoProducto on
+            //                ca.Id equals cp.IdCarrito
+            //                where ca.IdUsuario == idUsuario 
+            //                select cp).ToList();
+            //var q = (from prod in _context.Producto
+            //         join i in ids on
+            //         prod.Id equals i.IdProducto
+            //         select prod).ToList();
+            //var r = (from  )
+
+
+
+
+
+
+            var resultado = (from ca in _context.Carrito
+                             where ca.IdUsuario == idUsuario
+                             orderby ca.IdEstadoCarrito ascending
+                             select new Carrito
+                             {
+                                 Id = ca.Id,
+                                 Total = ca.Total,
+                                 Fecha = ca.Fecha,
+                                 CantProductos = ca.CantProductos,
+                                 IdEstadoCarrito = ca.IdEstadoCarrito == null ? 0 : ca.IdEstadoCarrito,
+                                 IdComprobante = ca.IdComprobante == null ? 0 : ca.IdComprobante,
+                                 IdEstadoCarritoNavigation = (from ec in _context.EstadoCarrito
+                                                              where ec.Id == ca.IdEstadoCarrito
+                                                              select ec).FirstOrDefault(),
+                                 IdUsuario = ca.IdUsuario,
+                                 CarritoProductos = (from cp in _context.CarritoProducto
+                                                     join p in _context.Producto on cp.IdProducto equals p.Id
+                                                     join col in _context.Color on p.IdColor equals col.Id
+                                                     join tal in _context.Talle on p.IdTalle equals tal.Id
+                                                     join mar in _context.Marca on p.IdMarca equals mar.Id
+                                                     //join pi in _context.ProductoImagen on cp.IdProductoConImagen equals pi.IdProducto
+                                                     where cp.IdCarrito == ca.Id
+                                                     select new CarritoProducto
+                                                     {
+                                                         Id = cp.Id,
+                                                         IdCarrito = cp.IdCarrito,
+                                                         Cantidad = cp.Cantidad,
+                                                         Precio = cp.Precio,
+                                                         IdProducto = cp.IdProducto,
+
+                                                         IdProductoNavigation = new Producto()
                                                          {
-                                                             Id = cp.Id,
-                                                             IdCarrito = cp.IdCarrito,
-                                                             Cantidad = cp.Cantidad,
-                                                             Precio = cp.Precio,
-                                                             IdProducto = cp.IdProducto,
-                                                             
-                                                             IdProductoNavigation = new Producto()
+                                                             Id = p.Id,
+                                                             Descripcion = p.Descripcion,
+                                                             IdColor = p.IdColor,
+                                                             IdColorNavigation = new Color()
                                                              {
-                                                                 Id = p.Id,
-                                                                 Descripcion = p.Descripcion,
-                                                                 IdColor = p.IdColor,
-                                                                 IdColorNavigation = new Color()
-                                                                 {
-                                                                     Id = p.IdColor,
-                                                                     Descripcion = col.Descripcion,
-                                                                     valor = col.valor
-                                                                 },
-                                                                 IdTalle = p.IdTalle,
-                                                                 IdTalleNavigation = new Talle()
-                                                                 {
-                                                                     Id = p.IdTalle,
-                                                                     Descripcion = tal.Descripcion
-                                                                 },
-                                                                 IdMarcaNavigation = new Marca()
-                                                                 {
-                                                                     Id = p.IdMarca,
-                                                                     Descripcion = mar.Descripcion
-                                                                 }
-                                                             }
-                                                         }).ToList()
-                                 }).ToList();
+                                                                 Id = p.IdColor,
+                                                                 Descripcion = col.Descripcion,
+                                                                 valor = col.valor
+                                                             },
+                                                             IdTalle = p.IdTalle,
+                                                             IdTalleNavigation = new Talle()
+                                                             {
+                                                                 Id = p.IdTalle,
+                                                                 Descripcion = tal.Descripcion
+                                                             },
+                                                             IdMarcaNavigation = new Marca()
+                                                             {
+                                                                 Id = p.IdMarca,
+                                                                 Descripcion = mar.Descripcion
+                                                             },
+                                                              ProductoImagens = p.ProductoImagens./*Take(1).*/ToList(),
+                                                         }
+                                                     }).ToList()
+                             }).ToList();
             return resultado;
         }
 

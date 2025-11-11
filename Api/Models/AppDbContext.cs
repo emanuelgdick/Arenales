@@ -123,7 +123,7 @@ namespace Api
                     .HasConstraintName("FK_Carrito_EstadoCarrito");
             });
 
-            modelBuilder.Entity<CarritoProducto>(entity =>
+            modelBuilder.Entity<CarritoProducto>( entity =>
             {
                 entity.ToTable("CarritoProducto");
 
@@ -135,11 +135,31 @@ namespace Api
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CarritoProducto_Carrito");
 
-                entity.HasOne(d => d.IdProductoNavigation).WithMany(p => p.CarritoProductos)
+                entity.HasOne(d => d.IdProductoNavigation)
+                    .WithMany(/*p => p.CarritoProductos*/)
                     .HasForeignKey(d => d.IdProducto)
                     .OnDelete(DeleteBehavior.ClientSetNull)
                     .HasConstraintName("FK_CarritoProducto_Producto");
+
+                //entity.HasOne(m => m.IdProductoConImagenNavigation)
+                //.WithMany()
+
+                //    .HasForeignKey(m => m.IdProductoConImagen)
+                //    .HasConstraintName("FK_CarritoProducto_ProductoConImagen")
+                //    .OnDelete(DeleteBehavior.ClientSetNull);
+
             });
+
+
+
+         
+      //.HasOne(m => m.Destinatario)
+      //.WithMany(u => u.MensajesRecibidos)
+      //.HasForeignKey(m => m.DestinatarioId)
+      //.OnDelete(DeleteBehavior.Restrict); // O el comportamiento deseado
+
+
+
 
             modelBuilder.Entity<Cheque>(entity =>
             {
@@ -961,6 +981,8 @@ namespace Api
 
         }
         public DbSet<Api.Models.Producto> Producto { get; set; } = default!;
+
+        public DbSet<Api.Models.ProductoImagen> ProductoImagen { get; set; } = default!;
         public DbSet<Api.Models.Talle> Talle { get; set; } = default!;
         public DbSet<Api.Models.Color> Color { get; set; } = default!;
         public DbSet<Api.Models.Marca> Marca { get; set; } = default!;
@@ -973,7 +995,8 @@ namespace Api
         
         public DbSet<Api.Models.Rubro> Rubro { get; set; } = default!;
         public DbSet<Api.Models.Usuario> Usuario { get; set; } = default!;
-
+        
+        public DbSet<Api.Models.Localidad> Localidad { get; set; } = default!;
         public DbSet<Api.Models.Wish> Wish { get; set; } = default!;
 
     }

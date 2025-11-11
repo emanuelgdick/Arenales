@@ -9,6 +9,7 @@ public partial class Marca
 
     public string Descripcion { get; set; } = null!;
 
+    public bool? Mostrar { get; set; } = null!;
     public string? LinkImagen { get; set; } = null!;
 
     public virtual ICollection<ActualizacionPrecio> ActualizacionPrecios { get; set; } = new List<ActualizacionPrecio>();

@@ -54,6 +54,10 @@ namespace Api.Controllers
                              ca.IdUsuario equals u.Id
                              join p in _context.Producto on
                              ca.IdProducto equals p.Id
+                             join ta in _context.Talle on
+                             p.IdTalle equals ta.Id 
+                             join co in _context.Color on
+                             p.IdColor equals  co.Id
 
                              where ca.IdUsuario == idUsuario
                              select new Wish
@@ -62,13 +66,24 @@ namespace Api.Controllers
                                  Producto =new Producto() { 
                                     Id =p.Id,
                                     IdColor=p.IdColor,
-                                    IdTalle=p.IdTalle,
+                                    IdColorNavigation=new Color() { 
+                                        Id=co.Id,
+                                        Descripcion=co.Descripcion,
+                                        valor = co.valor
+                                    },
+                                    IdTalle = p.IdTalle,
+                                    IdTalleNavigation = new Talle()
+                                    {
+                                       Id = ta.Id,
+                                       Descripcion = ta.Descripcion
+                                    },
+                                    
                                     IdMarca=p.IdMarca,
                                     IdRubro=p.IdRubro,
                                     Descripcion=p.Descripcion,
                                     Precio=p.Precio
                                  },
-                                 IdProducto = u.Id,
+                                 IdProducto = p.Id,
                                  Usuario = new Usuario(){ 
                                     Id=u.Id,
                                     ApeyNom = u.ApeyNom,
@@ -128,9 +143,9 @@ namespace Api.Controllers
         // DELETE: api/Wishes/5
         [HttpPost("DeleteWish")]
         [Authorize]
-        public async Task<IActionResult> DeleteWish([FromBody] Wish wish)
+        public async Task<IActionResult> DeleteWish(Wish wish)
         {
-            var Wish =  _context.Wish.Where(s => s.IdProducto == wish.IdProducto && s.IdUsuario == wish.IdUsuario).FirstOrDefault();//.FindAsync(1);
+            var Wish =  _context.Wish.Where(s => s.IdUsuario == wish.IdUsuario && s.IdProducto==wish.IdProducto).FirstOrDefault();
             if (Wish == null)
             {
                 return NotFound();

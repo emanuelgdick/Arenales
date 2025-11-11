@@ -10,6 +10,10 @@ using Microsoft.AspNetCore.Authorization;
 using Api;
 using Api.Models;
 using Api;
+using System.ComponentModel;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.Data.SqlClient;
+using System.Data;
 namespace Api.Controllers
 {
     [Route("api/[controller]")]
@@ -28,12 +32,14 @@ namespace Api.Controllers
         [HttpPost("UserLogin")]
         public async Task<LoginResponseDTO> Login( LoginRequestDTO logindetails)
         {
-            int cantidad = _db.Usuario.Count();
-
+            //int cantidad = _db.Usuario.Count();
+           
+           //try {
             var user = _db.Usuario.FirstOrDefault(u => u.User.ToLower() == logindetails.User.ToLower()
-            && u.Password.ToLower() == RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));
+            && u.Password.ToLower() == RecursosBiz.ConvertirSha256(logindetails.Password.ToLower()));//logindetails.Password.ToLower());
 
-
+            //   } catch (Exception e) { Console.WriteLine(e.Message); }
+            //return null;
             if (user == null)
             {
                 return null;
@@ -64,25 +70,148 @@ namespace Api.Controllers
             return loginResponse;
         }
 
+        // GET: api/usuario/5
+        [HttpGet("GetUsuarioByEmail")]
+        // [Authorize]
+        public async Task<ActionResult<Usuario>> GetUsuarioByEmail(string email)
+        {
+            var usuario = _db.Usuario.Where(s => s.User == email).FirstOrDefault();
+            if (usuario == null)
+            {
+                return NotFound();
+            }
+            return usuario;
+           
+        }
+
+
 
         [HttpPost("AddUser")]
-        public async Task<ActionResult<Usuario>> AddUser([FromBody] LoginRequestDTO usuario)
+        public async Task<ActionResult<Usuario>> AddUser([FromBody] RegisterRequestDTO usuario)
         {
             if (!ModelState.IsValid)
             {
                 return null;//BadRequest(ModelState);
             }
             Usuario u = new Usuario();
-           // u.Rol = usuario.Rol;
+            // u.Rol = usuario.Rol;
             u.ApeyNom = usuario.ApeyNom;
             u.User = usuario.User;
-            u.Password = RecursosBiz.ConvertirSha256(usuario.Password);
-            _db.Usuario.Add(u);
-            try { _db.SaveChanges(); } catch (Exception e){ Console.Write(e.Message); }
+            u.IdLocalidad = usuario.IdLocalidad;
+            u.Direccion = usuario.Direccion;
+            u.Telefono = usuario.Telefono;
+
+            u.Password =  RecursosBiz.ConvertirSha256(usuario.Password);//usuario.Password;//
+
+            var c = _db.Usuario.Where(x => x.User == usuario.User).Count();
+
+            if (c == 0)
+            {
+                _db.Usuario.Add(u);
+                try {
+
+                    await _db.SaveChangesAsync();
+                } catch (Exception e) { Console.WriteLine(e.Message); }
+                
+                return Ok(u);
+            }
+            else
+            {
+                return null;
+            }
+        }
+
+
+        [HttpPost("Reestablecer")]
+        public async Task<ActionResult> Reestablecer(Usuario usuario)
+        {
+            string nuevaclave = RecursosBiz.GenerarClave();
+            //ReestablecerClave(usuario.Id, RecursosBiz.ConvertirSha256(nuevaclave));
+            var @event = await _db.Usuario.SingleOrDefaultAsync(m => m.Id == usuario.Id);
+            if (@event == null)
+            {
+                return NotFound();
+            }
+            @event.Password = RecursosBiz.ConvertirSha256(nuevaclave);
+
+            try
+            {
+                await _db.SaveChangesAsync();
+                string asunto = "Crontraseña Reestablecida";
+                string mensaje_correo = "<h3>Su Cuenta fue reestablecida correctamente </h3></br><p>Su contraseña para acceder ahora es: !clave!</p>";
+                mensaje_correo = mensaje_correo.Replace("!clave!", nuevaclave);
+                bool respuesta = RecursosBiz.EnviarCorreo(usuario.User, asunto, mensaje_correo);
+                return Ok();
+            }
+            catch (Exception ex) {
+                return NoContent();
+            }
+
             
-            return Ok(u);
+
+            
+            
+        }
+
+        
+        
+        [HttpPost("ActualizarDatos")]
+        //[Authorize]
+        public ActionResult<Usuario> ActualizarDatos(long id, [FromBody] Usuario usuario)
+        {
+            if (usuario == null)
+            {
+                return BadRequest(usuario);
+            }
+
+            var Usuario = _db.Usuario.FirstOrDefault(x => x.Id == id);
+            if (Usuario == null)
+            {
+                return NotFound();
+            }
+
+            Usuario.Telefono = usuario.Telefono;
+            Usuario.Direccion = usuario.Direccion;
+            Usuario.ApeyNom = usuario.ApeyNom;
+            _db.SaveChanges();
+            return Ok(Usuario);
 
         }
+
+
+
+        //public  void ReestablecerClave(long idusuario, string clave/*, out string Mensaje*/)
+        //{
+        //    bool resultado = false;
+
+        //    if (!ModelState.IsValid)
+        //    {
+        //        return BadRequest(ModelState);
+        //    }
+
+        //    var @event = await _db.Usuario.SingleOrDefaultAsync(m => m.Id == idusuario);
+        //    if (@event == null)
+        //    {
+        //        return NotFound();
+        //    }
+        //    @event.Password = clave;
+
+        //    try
+        //    {
+        //        await _db.SaveChangesAsync();
+        //        return Ok();
+        //    }
+        //    catch (DbUpdateConcurrencyException)
+        //    {
+
+        //            throw;
+        // return NoContent();
+        //    }
+
+
+
+        //}
+
 
     }
 }

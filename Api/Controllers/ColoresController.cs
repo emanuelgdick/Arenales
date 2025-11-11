@@ -26,7 +26,13 @@ namespace Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Color>>> GetColor()
         {
-            return await _context.Color.ToListAsync();
+            
+            //try
+            //{
+                return await _context.Color.ToListAsync();
+            //}
+            //catch (Exception ex) { Console.WriteLine(ex.Message); }
+            //return null;
         }
 
         // GET: api/Colores/5

@@ -25,7 +25,7 @@ namespace Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Marca>>> GetMarca()
         {
-            return await _context.Marca.ToListAsync();
+            return await _context.Marca.Where(s=>s.Mostrar==true && s.Id!= 128800744).ToListAsync();
         }
 
         // GET: api/Marcas/5

@@ -7,6 +7,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.EntityFrameworkCore;
 using Api;
 using Api.Models;
+using Microsoft.AspNetCore.Authorization;
 
 namespace Api.Controllers
 {
@@ -25,7 +26,10 @@ namespace Api.Controllers
         [HttpGet]
         public async Task<ActionResult<IEnumerable<Talle>>> GetTalle()
         {
-            return await _context.Talle.ToListAsync();
+            try {
+                return await _context.Talle.ToListAsync();
+            }catch (Exception ex) { Console.WriteLine(ex.Message); }
+            return null;
         }
 
         // GET: api/Talles/5
@@ -42,8 +46,28 @@ namespace Api.Controllers
             return talle;
         }
 
-        
-    
+
+
+
+
+
+        // GET: api/Carritos/5
+        [HttpGet("GetTallesByProducto")]
+       // [Authorize]
+        public async Task<ActionResult<List<Talle>>> GetTallesByProducto(string codigo)
+        {
+
+            var resultado = (from pro in _context.Producto
+                             where pro.Codigo == codigo
+                             select new Talle
+                             {
+                                 Id = pro.IdTalle,
+                                 Descripcion = pro.IdTalleNavigation.Descripcion,
+                                 
+                             }).ToList();
+            return resultado;
+        }
+
 
 
         // PUT: api/Talles/5

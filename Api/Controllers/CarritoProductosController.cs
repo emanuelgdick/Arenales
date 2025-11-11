@@ -65,7 +65,7 @@ namespace Api.Controllers
 
 
                 Carrito carrito = _context.Carrito.Where(s => s.Id == item.IdCarrito).FirstOrDefault();
-                List<CarritoProducto> items = _context.CarritoProducto/*.Include(s=>s.IdProductoNavigation)*/.ToList();
+                List<CarritoProducto> items = _context.CarritoProducto.Where(s=>s.IdCarrito==carrito.Id)/*.Include(s=>s.IdProductoNavigation)*/.ToList();
                 carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
                 _context.Entry(carrito).State = EntityState.Modified;
                 await _context.SaveChangesAsync();
@@ -93,8 +93,13 @@ namespace Api.Controllers
         public async Task<ActionResult<CarritoProducto>> PostCarritoProducto([FromBody] CarritoProducto carritoProducto)
         {
             _context.CarritoProducto.Add(carritoProducto);
-            await _context.SaveChangesAsync();
-            List<CarritoProducto> items= _context.CarritoProducto.ToList();
+            try
+            {
+                await _context.SaveChangesAsync();
+            }
+            catch (Exception e) { Console.Write(e.Message); }
+           
+            List<CarritoProducto> items= _context.CarritoProducto.Where(s => s.IdCarrito == carritoProducto.IdCarrito).ToList();
             Carrito carrito = _context.Carrito.Where(s => s.Id == carritoProducto.IdCarrito).FirstOrDefault();
             carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
             carrito.CantProductos++;
@@ -116,7 +121,7 @@ namespace Api.Controllers
             }
             _context.CarritoProducto.Remove(carritoProducto);
             await _context.SaveChangesAsync();
-            List<CarritoProducto> items = _context.CarritoProducto.ToList();
+            List<CarritoProducto> items = _context.CarritoProducto.Where(s => s.IdCarrito == carritoProducto.IdCarrito).ToList();
             Carrito carrito = _context.Carrito.Where(s => s.Id == carritoProducto.IdCarrito).FirstOrDefault();
             carrito.Total = items.Sum(it => it.Cantidad * it.Precio);
             carrito.CantProductos--;

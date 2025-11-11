@@ -1460,6 +1460,84 @@
         }
       }
     },
+    "/api/Localidades": {
+      "get": {
+        "tags": [
+          "Localidades"
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Localidad"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Localidad"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Localidad"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Localidades/{id}": {
+      "get": {
+        "tags": [
+          "Localidades"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Localidad"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Localidad"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Localidad"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Marcas": {
       "get": {
         "tags": [
@@ -1649,6 +1727,32 @@
       "get": {
         "tags": [
           "Productos"
+        ],
+        "parameters": [
+          {
+            "name": "pageSize",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "pageNumber",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          },
+          {
+            "name": "arenales",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int32"
+            }
+          }
         ],
         "responses": {
           "200": {
@@ -2216,6 +2320,53 @@
         }
       }
     },
+    "/api/Talles/GetTallesByProducto": {
+      "get": {
+        "tags": [
+          "Talles"
+        ],
+        "parameters": [
+          {
+            "name": "codigo",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talle"
+                  }
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talle"
+                  }
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "type": "array",
+                  "items": {
+                    "$ref": "#/components/schemas/Talle"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Usuarios/UserLogin": {
       "post": {
         "tags": [
@@ -2264,6 +2415,44 @@
         }
       }
     },
+    "/api/Usuarios/GetUsuarioByEmail": {
+      "get": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "email",
+            "in": "query",
+            "schema": {
+              "type": "string"
+            }
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
     "/api/Usuarios/AddUser": {
       "post": {
         "tags": [
@@ -2273,17 +2462,106 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginRequestDTO"
+                "$ref": "#/components/schemas/RegisterRequestDTO"
               }
             },
             "text/json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginRequestDTO"
+                "$ref": "#/components/schemas/RegisterRequestDTO"
               }
             },
             "application/*+json": {
               "schema": {
-                "$ref": "#/components/schemas/LoginRequestDTO"
+                "$ref": "#/components/schemas/RegisterRequestDTO"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK",
+            "content": {
+              "text/plain": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              },
+              "text/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/Usuario"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/api/Usuarios/Reestablecer": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            }
+          }
+        },
+        "responses": {
+          "200": {
+            "description": "OK"
+          }
+        }
+      }
+    },
+    "/api/Usuarios/ActualizarDatos": {
+      "post": {
+        "tags": [
+          "Usuarios"
+        ],
+        "parameters": [
+          {
+            "name": "id",
+            "in": "query",
+            "schema": {
+              "type": "integer",
+              "format": "int64"
+            }
+          }
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "text/json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
+              }
+            },
+            "application/*+json": {
+              "schema": {
+                "$ref": "#/components/schemas/Usuario"
               }
             }
           }
@@ -2800,6 +3078,9 @@
             "format": "int64",
             "nullable": true
           },
+          "idProductoNavigation": {
+            "$ref": "#/components/schemas/Producto"
+          },
           "cantidad": {
             "type": "integer",
             "format": "int32",
@@ -2809,9 +3090,6 @@
             "type": "number",
             "format": "double",
             "nullable": true
-          },
-          "idProductoNavigation": {
-            "$ref": "#/components/schemas/Producto"
           }
         },
         "additionalProperties": false
@@ -3644,6 +3922,20 @@
         },
         "additionalProperties": false
       },
+      "Localidad": {
+        "type": "object",
+        "properties": {
+          "id": {
+            "type": "integer",
+            "format": "int64"
+          },
+          "descripcion": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "LoginRequestDTO": {
         "type": "object",
         "properties": {
@@ -3652,10 +3944,6 @@
             "nullable": true
           },
           "password": {
-            "type": "string",
-            "nullable": true
-          },
-          "apeyNom": {
             "type": "string",
             "nullable": true
           }
@@ -3684,6 +3972,10 @@
           },
           "descripcion": {
             "type": "string",
+            "nullable": true
+          },
+          "mostrar": {
+            "type": "boolean",
             "nullable": true
           },
           "linkImagen": {
@@ -3839,10 +4131,6 @@
             "type": "integer",
             "format": "int64"
           },
-          "idRubro": {
-            "type": "integer",
-            "format": "int64"
-          },
           "idTalle": {
             "type": "integer",
             "format": "int64"
@@ -3882,8 +4170,14 @@
           "activo": {
             "type": "boolean"
           },
-          "carrito": {
-            "type": "boolean",
+          "idProveedor": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "idRubro": {
+            "type": "integer",
+            "format": "int64",
             "nullable": true
           },
           "carritoProductos": {
@@ -3966,6 +4260,9 @@
             "nullable": true
           },
           "principal": {
+            "type": "boolean"
+          },
+          "mostrar": {
             "type": "boolean"
           },
           "idProductoNavigation": {
@@ -4097,6 +4394,37 @@
         },
         "additionalProperties": false
       },
+      "RegisterRequestDTO": {
+        "type": "object",
+        "properties": {
+          "user": {
+            "type": "string",
+            "nullable": true
+          },
+          "password": {
+            "type": "string",
+            "nullable": true
+          },
+          "apeyNom": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
+            "type": "string",
+            "nullable": true
+          },
+          "idLocalidad": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
       "Rol": {
         "type": "object",
         "properties": {
@@ -4126,10 +4454,6 @@
             "format": "int64"
           },
           "descripcion": {
-            "type": "string",
-            "nullable": true
-          },
-          "codigo": {
             "type": "string",
             "nullable": true
           },
@@ -4425,7 +4749,23 @@
             "type": "integer",
             "format": "int64"
           },
+          "idLocalidad": {
+            "type": "integer",
+            "format": "int64",
+            "nullable": true
+          },
+          "localidad": {
+            "$ref": "#/components/schemas/Localidad"
+          },
           "apeyNom": {
+            "type": "string",
+            "nullable": true
+          },
+          "direccion": {
+            "type": "string",
+            "nullable": true
+          },
+          "telefono": {
             "type": "string",
             "nullable": true
           },

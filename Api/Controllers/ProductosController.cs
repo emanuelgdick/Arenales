@@ -9,6 +9,7 @@ using Microsoft.EntityFrameworkCore;
 using Api;
 using Api.Models;
 using Microsoft.AspNetCore.Mvc.Formatters;
+using static System.Runtime.InteropServices.JavaScript.JSType;
 
 namespace Api.Controllers
 {
@@ -27,37 +28,96 @@ namespace Api.Controllers
         [HttpGet]
       // [Authorize]
       //  [ResponseCache(CacheProfileName = "apicache")]
-        public async Task<ActionResult<List<Producto>>> GetProducto()
+        public async Task<ActionResult<List<Producto>>> GetProducto(int pageSize, int pageNumber,int arenales)
         {
-            List<Producto> listaProductos = _context.Producto.ToList();
-            //List<Talle> listaTalles = _context.Talle.ToList();
-            //List<Color> listaColores = _context.Color.ToList();
-            //var productosAgrupados = listaProductos
-            //    .GroupBy(p => p.Codigo)
+            var productosAgrupados = (from pi in _context.ProductoImagen
+                                      join
+                                  p in _context.Producto on pi.IdProducto equals p.Id
+                                      join
+                                  m in _context.Marca on p.IdMarca equals m.Id
+                                      where (m.Mostrar == true) && ((p.IdMarca == 128800744 && arenales == 1) || (arenales == 0 && p.IdMarca != 128800744))
+                                      select p).ToList()
+             .GroupBy(p => p.Codigo)
+             .Select(g => new //Producto
+             {
 
-            //    .Select(g => new Producto
-            //    {
-            //        Codigo = g.Key,
-            //        Descripcion = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Descripcion,
-            //        Precio = (from p in _context.Producto where p.Codigo == g.Key select p).FirstOrDefault().Precio,
+                 Codigo = g.Key,
+                 Id = g.First().Id,
+                 Description = g.First().Descripcion,
+                 Precio = g.First().Precio,
+                 ListaColores = g.Select(p => p.IdColor).Distinct().ToList(), // Obtiene colores únicos
+                 ListaTalles = g.Select(p => p.IdTalle).Distinct().ToList(), // Obtiene talles únicos
+                 ListaIds = g.Select(p => p.Id).Distinct().ToList(), // Obtiene ids para las fotos
+             }).ToList().OrderBy(p => p.Codigo);
 
-            //        IdMarca = (from p in _context.Producto join m in _context.Marca on p.IdMarca equals m.Id where p.Codigo == g.Key select m).FirstOrDefault().Id,
-            //        IdRubro = (from p in _context.Producto join r in _context.Rubro on p.IdRubro equals r.Id where p.Codigo == g.Key select r).FirstOrDefault().Id,
-            //        ListaTalles = (from lp in listaProductos
-            //                       join lt in listaTalles on
-            //                      lp.IdTalle equals lt.Id
-            //                       where lp.Codigo == g.Key
-            //                       select lt
-            //                      ).Distinct().ToList(),
-            //        ListaColores = (from lp in listaProductos
-            //                        join lc in listaColores on
-            //                       lp.IdColor equals lc.Id
-            //                        where lp.Codigo == g.Key
-            //                        select lc
-            //                      ).Distinct().ToList()
-            //    }).ToList();
+            List<Producto> listaproducto = new List<Producto>();
+            var listaColor = _context.Color.ToList();
+            var listaTalle = _context.Talle.ToList();
+            var listaImagen = _context.ProductoImagen.ToList();
+            foreach (var p in productosAgrupados)
+            {
+                Producto prod = new Producto();
+                prod.Id = p.Id;
+                prod.Codigo = p.Codigo.ToString();
+                prod.Descripcion = p.Description;
+                prod.Precio = p.Precio;
 
-            return listaProductos;//productosAgrupados;
+                foreach (var item in p.ListaColores.ToList())
+                {
+
+                    Color color = new Color()
+                    {
+                        Id = item,
+                        Descripcion = listaColor.Where(s => s.Id == item).FirstOrDefault().Descripcion
+                    };
+                    prod.ListaColores.Add(color);
+                }
+                foreach (var item2 in p.ListaTalles.ToList())
+                {
+
+                    Talle talle = new Talle()
+                    {
+                        Id = item2,
+                        Descripcion = listaTalle.Where(s => s.Id == item2).FirstOrDefault().Descripcion,
+
+                    };
+                    prod.ListaTalles.Add(talle);
+                }
+                foreach (var item3 in p.ListaIds.ToList())
+                {
+                    if (listaImagen.Where(s => s.IdProducto == item3).Count() != 0)
+                    {
+                        List<ProductoImagen> prodImagen = new List<ProductoImagen>();
+                        prodImagen = listaImagen.Where(s => s.IdProducto == item3).ToList();
+                        foreach (var a in prodImagen)
+                        {
+
+                            a.IdProductoNavigation = null;
+                        }
+                        prod.ProductoImagens = prodImagen;
+
+                    }
+                }
+
+                listaproducto.Add(prod);
+            }
+            return listaproducto
+
+            .Skip((pageNumber - 1) * pageSize)
+            .Take(pageSize)
+            .ToList();
+
+
+            //var productos = (from pi in _context.ProductoImagen
+            //                 join
+            //             p in _context.Producto on pi.IdProducto equals p.Id
+            //                 join
+            //             m in _context.Marca on p.IdMarca equals m.Id
+            //                 where (m.Mostrar == true) && ((p.IdMarca == 128800744 && arenales == 1) || (arenales == 0))
+            //                 select p).ToList();
+            //return Ok(productos);
+
+
         }
 
 
@@ -66,10 +126,39 @@ namespace Api.Controllers
         [HttpGet("GetProductoByTCC")]
         // [Authorize]
         //  [ResponseCache(CacheProfileName = "apicache")]
-        public async Task<ActionResult<Producto>> GetProductoByTCC(long talle, long color, string codigo)
+        public async Task<ActionResult<Producto>> GetProductoByTCC( long talle, long color, string codigo)
         {
-            Producto p = _context.Producto.Where(s=>s.IdTalle==talle && s.IdColor==color && s.Codigo==codigo).Include(s=>s.IdColorNavigation).Include(s => s.IdTalleNavigation).FirstOrDefault();
-            return p;
+
+
+
+
+
+
+
+            //Producto prod = (from pi in _context.ProductoImagen
+            //                 join p in _context.Producto on pi.IdProducto equals p.Id
+            //                 where (p.IdTalle == talle) && (p.IdColor == color) && (p.Codigo == codigo)
+            //                 select  p).FirstOrDefault();
+
+            Producto prod = _context.Producto.Where(s => s.IdTalle == talle && s.IdColor == color && s.Codigo == codigo).Include(s => s.IdColorNavigation).Include(s => s.IdTalleNavigation).Include(s => s.ProductoImagens).FirstOrDefault();
+            
+            //var imagen = _context.ProductoImagen.Where(s => s.IdProducto == prod.Id).FirstOrDefault();
+            //prod.ProductoImagens.Add(imagen);
+            if (prod.ProductoImagens.Count() == 0) {
+
+                var idproducto = (from p in _context.Producto
+                                  join pi in _context.ProductoImagen on
+                                  p.Id equals pi.IdProducto
+                                  where p.Codigo == codigo
+                                  select pi).FirstOrDefault().IdProducto;
+
+               
+                prod.ProductoImagens = _context.ProductoImagen.Where(s => s.IdProducto == idproducto).ToList();
+
+            }
+
+
+            return prod;
         }
 
 

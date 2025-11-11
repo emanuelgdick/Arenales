@@ -1,6 +1,8 @@
-﻿using System;
+﻿using Microsoft.AspNetCore.Mvc;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations.Schema;
+using System.Text.Json.Serialization;
 
 namespace Api.Models;
 
@@ -10,10 +12,8 @@ public partial class Producto
 
     public long IdMarca { get; set; }
 
-    public long IdRubro { get; set; }
-
     public long IdTalle { get; set; }
-
+    
     public long IdColor { get; set; }
 
     public string Descripcion { get; set; } = null!;
@@ -32,7 +32,10 @@ public partial class Producto
 
     public bool Activo { get; set; }
 
-    public bool? Carrito { get; set; }
+    public long? IdProveedor { get; set; }
+    public long? IdRubro { get; set; }
+
+    //public bool? Carrito { get; set; }
 
     public virtual ICollection<CarritoProducto> CarritoProductos { get; set; } = new List<CarritoProducto>();
 
@@ -43,12 +46,14 @@ public partial class Producto
     public virtual Rubro IdRubroNavigation { get; set; } = null!;
     public  Talle IdTalleNavigation { get; set; } //= null!;
 
-    public virtual ICollection<ProductoImagen> ProductoImagens { get; set; } = new List<ProductoImagen>();
+
+    
+    public virtual ICollection<ProductoImagen>? ProductoImagens { get; set; } = new List<ProductoImagen>();
 
     public virtual ICollection<ProductoMovimiento> ProductoMovimientos { get; set; } = new List<ProductoMovimiento>();
 
     public virtual ICollection<ProductoStock> ProductoStocks { get; set; } = new List<ProductoStock>();
 
-    public  ICollection<Talle> ListaTalles { get; set; } //= new List<Talle>();
+    public  ICollection<Talle>? ListaTalles { get; set; } = new List<Talle>();
     public virtual ICollection<Color>? ListaColores { get; set; } = new List<Color>();
 }

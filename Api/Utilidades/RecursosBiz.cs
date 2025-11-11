@@ -57,13 +57,13 @@ namespace Api
             {
                 MailMessage mail = new MailMessage();
                 mail.To.Add(correo);
-                mail.From = new MailAddress("municipalidadayacucho@gmail.com");
+                mail.From = new MailAddress("arenalescloth@gmail.com");
                 mail.Subject = asunto;
                 mail.Body = mensaje;
                 mail.IsBodyHtml = true;
                 var smtp = new SmtpClient()
                 {
-                    Credentials = new NetworkCredential("municipalidadayacucho@gmail.com", "iouk rhrm yeqr jbce"), //"gjjbobmoiaomkmad"
+                    Credentials = new NetworkCredential("arenalescloth@gmail.com", "iytd kzon iqvw pbhq"), 
                     Host = "smtp.gmail.com",
                     Port = 587,
                     EnableSsl = true

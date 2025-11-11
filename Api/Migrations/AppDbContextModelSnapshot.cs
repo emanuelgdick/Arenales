@@ -212,11 +212,16 @@ namespace Api.Migrations
                     b.Property<decimal?>("Precio")
                         .HasColumnType("decimal(18, 2)");
 
+                    b.Property<long?>("IdProducto")
+                        .HasColumnType("bigint");
+
                     b.HasKey("Id");
 
                     b.HasIndex("IdCarrito");
 
                     b.HasIndex("IdProducto");
+
+                    //b.HasIndex("IdProducto");
 
                     b.ToTable("CarritoProducto", (string)null);
                 });
@@ -429,16 +434,15 @@ namespace Api.Migrations
                         .IsUnicode(false)
                         .HasColumnType("varchar(50)");
 
-                    b.Property<long?>("ProductoId")
+                    b.Property<long?>("IdProducto")
                         .HasColumnType("bigint");
 
                     b.Property<string>("valor")
-                        .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
 
-                    b.HasIndex("ProductoId");
+                    b.HasIndex("IdProducto");
 
                     b.ToTable("Color", (string)null);
                 });
@@ -1005,6 +1009,23 @@ namespace Api.Migrations
                     b.ToTable("Iva", (string)null);
                 });
 
+            modelBuilder.Entity("Api.Models.Localidad", b =>
+                {
+                    b.Property<long>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("bigint");
+
+                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
+
+                    b.Property<string>("Descripcion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Localidad");
+                });
+
             modelBuilder.Entity("Api.Models.Marca", b =>
                 {
                     b.Property<long>("Id")
@@ -1021,6 +1042,9 @@ namespace Api.Migrations
 
                     b.Property<string>("LinkImagen")
                         .HasColumnType("nvarchar(max)");
+
+                    b.Property<bool?>("Mostrar")
+                        .HasColumnType("bit");
 
                     b.HasKey("Id");
 
@@ -1167,9 +1191,6 @@ namespace Api.Migrations
                     b.Property<bool>("Activo")
                         .HasColumnType("bit");
 
-                    b.Property<bool?>("Carrito")
-                        .HasColumnType("bit");
-
                     b.Property<string>("Codigo")
                         .HasMaxLength(50)
                         .IsUnicode(false)
@@ -1199,7 +1220,10 @@ namespace Api.Migrations
                     b.Property<long>("IdMarca")
                         .HasColumnType("bigint");
 
-                    b.Property<long>("IdRubro")
+                    b.Property<long?>("IdProveedor")
+                        .HasColumnType("bigint");
+
+                    b.Property<long?>("IdRubro")
                         .HasColumnType("bigint");
 
                     b.Property<long>("IdTalle")
@@ -1288,6 +1312,9 @@ namespace Api.Migrations
                         .IsRequired()
                         .IsUnicode(false)
                         .HasColumnType("varchar(max)");
+
+                    b.Property<bool>("Mostrar")
+                        .HasColumnType("bit");
 
                     b.Property<bool>("Principal")
                         .HasColumnType("bit");
@@ -1511,10 +1538,6 @@ namespace Api.Migrations
 
                     SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<long>("Id"));
 
-                    b.Property<string>("Codigo")
-                        .IsRequired()
-                        .HasColumnType("nvarchar(max)");
-
                     b.Property<string>("Descripcion")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
@@ -1600,13 +1623,13 @@ namespace Api.Migrations
                     b.Property<int?>("Numero")
                         .HasColumnType("int");
 
-                    b.Property<long?>("ProductoId")
+                    b.Property<long?>("IdProducto")
                         .HasColumnType("bigint");
 
                     b.HasKey("Id")
                         .HasName("PK_Modelo");
 
-                    b.HasIndex("ProductoId");
+                    b.HasIndex("IdProducto");
 
                     b.ToTable("Talle", (string)null);
                 });
@@ -1834,7 +1857,18 @@ namespace Api.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
+                    b.Property<string>("Direccion")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<long?>("IdLocalidad")
+                        .HasColumnType("bigint");
+
                     b.Property<string>("Password")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
+
+                    b.Property<string>("Telefono")
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
@@ -1843,6 +1877,8 @@ namespace Api.Migrations
                         .HasColumnType("nvarchar(max)");
 
                     b.HasKey("Id");
+
+                    b.HasIndex("IdLocalidad");
 
                     b.ToTable("Usuario");
                 });
@@ -1983,9 +2019,13 @@ namespace Api.Migrations
                         .HasConstraintName("FK_CarritoProducto_Carrito");
 
                     b.HasOne("Api.Models.Producto", "IdProductoNavigation")
-                        .WithMany("CarritoProductos")
+                        .WithMany()
                         .HasForeignKey("IdProducto")
                         .HasConstraintName("FK_CarritoProducto_Producto");
+
+                    b.HasOne("Api.Models.Producto", null)
+                        .WithMany("CarritoProductos")
+                        .HasForeignKey("IdProducto");
 
                     b.Navigation("IdCarritoNavigation");
 
@@ -2035,7 +2075,7 @@ namespace Api.Migrations
                 {
                     b.HasOne("Api.Models.Producto", null)
                         .WithMany("ListaColores")
-                        .HasForeignKey("ProductoId");
+                        .HasForeignKey("IdProducto");
                 });
 
             modelBuilder.Entity("Api.Models.Comprobante", b =>
@@ -2229,7 +2269,6 @@ namespace Api.Migrations
                     b.HasOne("Api.Models.Rubro", "IdRubroNavigation")
                         .WithMany("Productos")
                         .HasForeignKey("IdRubro")
-                        .IsRequired()
                         .HasConstraintName("FK_Producto_Rubro");
 
                     b.HasOne("Api.Models.Talle", "IdTalleNavigation")
@@ -2300,7 +2339,7 @@ namespace Api.Migrations
                 {
                     b.HasOne("Api.Models.Producto", null)
                         .WithMany("ListaTalles")
-                        .HasForeignKey("ProductoId");
+                        .HasForeignKey("IdProducto");
                 });
 
             modelBuilder.Entity("Api.Models.Tarjetum", b =>
@@ -2312,6 +2351,15 @@ namespace Api.Migrations
                         .HasConstraintName("FK_TarjetaCredito_Banco");
 
                     b.Navigation("IdBancoNavigation");
+                });
+
+            modelBuilder.Entity("Api.Models.Usuario", b =>
+                {
+                    b.HasOne("Api.Models.Localidad", "Localidad")
+                        .WithMany()
+                        .HasForeignKey("IdLocalidad");
+
+                    b.Navigation("Localidad");
                 });
 
             modelBuilder.Entity("Api.Models.Vendedor", b =>
